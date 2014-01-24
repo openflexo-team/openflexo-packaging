@@ -3,7 +3,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                              http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<name>Test environment: provides an environment with all technology adapters</name>
+	<name>Integration Test environment</name>
+	<description>Integration Test environment: provides an environment with all modules and all technology adapters</description>
     <parent>
         <groupId>org.openflexo.packaging</groupId>
         <artifactId>openflexo-packaging</artifactId>
