@@ -95,9 +95,9 @@ public class TestViewpoints extends FlexoTestCase {
 
 		System.out.println("Read resource " + basicOntologyEditor.getResource().getFile().getAbsolutePath());
 
-		EditionPattern conceptEP = basicOntologyEditor.getDefaultDiagramSpecification().getEditionPattern("Concept");
+		FlexoConcept conceptEP = basicOntologyEditor.getDefaultDiagramSpecification().getFlexoConcept("Concept");
 
-		for (EditionPattern ep : basicOntologyEditor.getDefaultDiagramSpecification().getEditionPatterns()) {
+		for (FlexoConcept ep : basicOntologyEditor.getDefaultDiagramSpecification().getFlexoConcepts()) {
 			System.out.println("ep=" + ep);
 		}
 

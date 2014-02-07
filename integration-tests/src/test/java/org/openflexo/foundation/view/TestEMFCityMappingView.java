@@ -47,7 +47,7 @@ import org.openflexo.foundation.view.diagram.action.DropSchemeAction;
 import org.openflexo.foundation.view.diagram.model.Diagram;
 import org.openflexo.foundation.view.diagram.viewpoint.DiagramSpecification;
 import org.openflexo.foundation.view.diagram.viewpoint.DropScheme;
-import org.openflexo.foundation.viewpoint.EditionPattern;
+import org.openflexo.foundation.viewpoint.FlexoConcept;
 import org.openflexo.foundation.viewpoint.EditionSchemeParameter;
 import org.openflexo.foundation.viewpoint.ViewPoint;
 
@@ -195,9 +195,9 @@ public class TestEMFCityMappingView extends FlexoTestCase {
 
 		// Populate Diagram
 		DiagramSpecification diagramSpecification = cityMappingViewPoint.getDefaultDiagramSpecification();
-		assertEquals(6, diagramSpecification.getEditionPatterns().size());
-		EditionPattern cityEditionPattern = diagramSpecification.getEditionPattern("City");
-		Vector<DropScheme> cityDropSchemes = cityEditionPattern.getDropSchemes();
+		assertEquals(6, diagramSpecification.getFlexoConcepts().size());
+		FlexoConcept cityFlexoConcept = diagramSpecification.getFlexoConcept("City");
+		Vector<DropScheme> cityDropSchemes = cityFlexoConcept.getDropSchemes();
 		assertEquals(1, cityDropSchemes.size());
 
 		DropSchemeAction cityDropSchemeAction = DropSchemeAction.actionType.makeNewAction(createDiagram.getNewDiagram().getRootPane(),

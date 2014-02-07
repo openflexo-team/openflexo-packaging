@@ -45,7 +45,7 @@ import org.openflexo.foundation.utils.ProjectInitializerException;
 import org.openflexo.foundation.view.action.CreateView;
 import org.openflexo.foundation.view.action.CreateVirtualModelInstance;
 import org.openflexo.foundation.view.action.ModelSlotInstanceConfiguration.DefaultModelSlotInstanceConfigurationOption;
-import org.openflexo.foundation.viewpoint.EditionPattern;
+import org.openflexo.foundation.viewpoint.FlexoConcept;
 import org.openflexo.foundation.viewpoint.ViewPoint;
 import org.openflexo.foundation.viewpoint.VirtualModel;
 import org.openflexo.logging.FlexoLoggingManager;
@@ -256,11 +256,11 @@ public class TestCityMappingView extends FlexoTestCase {
 		assertEquals(project, newVirtualModelInstance.getResource().getProject());
 		assertEquals(project, newVirtualModelInstance.getProject());
 
-		EditionPattern cityEP = cityMappingVM.getEditionPattern("City");
-		EditionPattern houseEP = cityMappingVM.getEditionPattern("House");
-		EditionPattern appartmentEP = cityMappingVM.getEditionPattern("Appartment");
-		EditionPattern mansionEP = cityMappingVM.getEditionPattern("Mansion");
-		EditionPattern residentEP = cityMappingVM.getEditionPattern("Resident");
+		FlexoConcept cityEP = cityMappingVM.getFlexoConcept("City");
+		FlexoConcept houseEP = cityMappingVM.getFlexoConcept("House");
+		FlexoConcept appartmentEP = cityMappingVM.getFlexoConcept("Appartment");
+		FlexoConcept mansionEP = cityMappingVM.getFlexoConcept("Mansion");
+		FlexoConcept residentEP = cityMappingVM.getFlexoConcept("Resident");
 
 		assertNotNull(cityEP);
 		assertNotNull(houseEP);
