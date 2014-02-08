@@ -19,19 +19,30 @@
  */
 package org.openflexo.foundation.view;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.openflexo.foundation.FlexoEditor;
-import org.openflexo.foundation.FlexoTestCase;
+import org.openflexo.foundation.FlexoProject;
+import org.openflexo.foundation.OpenflexoRunTimeTestCase;
 import org.openflexo.foundation.action.AddRepositoryFolder;
 import org.openflexo.foundation.resource.RepositoryFolder;
-import org.openflexo.foundation.rm.FlexoProject;
-import org.openflexo.foundation.rm.ViewPointResource;
-import org.openflexo.foundation.rm.ViewResource;
 import org.openflexo.foundation.view.action.CreateView;
-import org.openflexo.foundation.view.diagram.action.CreateDiagram;
-import org.openflexo.foundation.view.diagram.model.Diagram;
+import org.openflexo.foundation.view.rm.ViewResource;
 import org.openflexo.foundation.viewpoint.ViewPoint;
+import org.openflexo.foundation.viewpoint.rm.ViewPointResource;
+import org.openflexo.technologyadapter.diagram.model.Diagram;
+import org.openflexo.technologyadapter.diagram.model.action.CreateDiagram;
+import org.openflexo.technologyadapter.diagram.rm.DiagramResource;
+import org.openflexo.test.OrderedRunner;
+import org.openflexo.test.TestOrder;
 
-public class TestBasicOntologyEditorView extends FlexoTestCase {
+@RunWith(OrderedRunner.class)
+public class TestBasicOntologyEditorView extends OpenflexoRunTimeTestCase {
 
 	public static FlexoProject project;
 	private static FlexoEditor editor;
@@ -42,6 +53,8 @@ public class TestBasicOntologyEditorView extends FlexoTestCase {
 	/**
 	 * Instantiate test resource center
 	 */
+	@Test
+	@TestOrder(1)
 	public void test0InstantiateResourceCenter() {
 
 		log("test0InstantiateResourceCenter()");
@@ -51,6 +64,8 @@ public class TestBasicOntologyEditorView extends FlexoTestCase {
 		instanciateTestServiceManager();
 	}
 
+	@Test
+	@TestOrder(2)
 	public void test1CreateProject() {
 		editor = createProject("TestCreateView");
 		project = editor.getProject();
@@ -77,12 +92,16 @@ public class TestBasicOntologyEditorView extends FlexoTestCase {
 
 	}
 
+	@Test
+	@TestOrder(3)
 	public void test2LoadBasicOntologyEditorViewPoint() {
 		basicOntologyEditor = loadViewPoint("http://www.agilebirds.com/openflexo/ViewPoints/Basic/BasicOntology.owl");
 		assertNotNull(basicOntologyEditor);
-		System.out.println("Found view point in " + basicOntologyEditor.getResource().getFile());
+		System.out.println("Found view point in " + ((ViewPointResource) basicOntologyEditor.getResource()).getFile());
 	}
 
+	@Test
+	@TestOrder(4)
 	public void test3CreateViewFolder() {
 		AddRepositoryFolder addRepositoryFolder = AddRepositoryFolder.actionType.makeNewAction(project.getViewLibrary().getRootFolder(),
 				null, editor);
@@ -93,11 +112,13 @@ public class TestBasicOntologyEditorView extends FlexoTestCase {
 		assertTrue(viewFolder.getFile().exists());
 	}
 
+	@Test
+	@TestOrder(5)
 	public void test4CreateView() {
 		CreateView addView = CreateView.actionType.makeNewAction(viewFolder, null, editor);
 		addView.newViewName = "TestNewView";
 		addView.newViewTitle = "A nice title for a new view";
-		addView.viewpointResource = basicOntologyEditor.getResource();
+		addView.viewpointResource = (ViewPointResource) basicOntologyEditor.getResource();
 		addView.doAction();
 		assertTrue(addView.hasActionExecutionSucceeded());
 		View newView = addView.getNewView();
@@ -148,21 +169,19 @@ public class TestBasicOntologyEditorView extends FlexoTestCase {
 		System.out.println("editor project = " + editor.getProject());
 		System.out.println("view project = " + view.getProject());
 		CreateDiagram createDiagram = CreateDiagram.actionType.makeNewAction(view, null, editor);
-		createDiagram.setNewVirtualModelInstanceName("TestNewDiagram");
-		createDiagram.setNewVirtualModelInstanceTitle("A nice title for a new diagram");
-		createDiagram.setDiagramSpecification(basicOntologyEditor.getDefaultDiagramSpecification());
+		createDiagram.setDiagramName("TestNewDiagram");
+		createDiagram.setDiagramTitle("A nice title for a new diagram");
+		// createDiagram.setDiagramSpecification(basicOntologyEditor.getDefaultDiagramSpecification());
 		createDiagram.doAction();
 		System.out.println("exception thrown=" + createDiagram.getThrownException());
 		// createDiagram.getThrownException().printStackTrace();
 		assertTrue(createDiagram.hasActionExecutionSucceeded());
 		Diagram newDiagram = createDiagram.getNewDiagram();
-		System.out.println("New diagram " + newDiagram + " created in " + newDiagram.getResource().getFile());
+		System.out.println("New diagram " + newDiagram + " created in " + ((DiagramResource) newDiagram.getResource()).getFile());
 		assertNotNull(newDiagram);
-		assertEquals(createDiagram.getNewVirtualModelInstanceName(), newDiagram.getName());
-		assertEquals(createDiagram.getNewVirtualModelInstanceTitle(), newDiagram.getTitle());
-		assertEquals(createDiagram.getDiagramSpecification(), basicOntologyEditor.getDefaultDiagramSpecification());
-		assertTrue(newDiagram.getResource().getFile().exists());
-		assertEquals(project, newDiagram.getResource().getProject());
-		assertEquals(project, newDiagram.getProject());
+		assertEquals(createDiagram.getDiagramName(), newDiagram.getName());
+		assertEquals(createDiagram.getDiagramTitle(), newDiagram.getTitle());
+		// assertEquals(createDiagram.getDiagramSpecification(), basicOntologyEditor.getDefaultDiagramSpecification());
+		assertTrue(((DiagramResource) newDiagram.getResource()).getFile().exists());
 	}
 }
