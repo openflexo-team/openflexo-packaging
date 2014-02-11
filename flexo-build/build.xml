@@ -47,7 +47,7 @@
 		<antcall target="packageCustomer" />-->
 		<antcall target="packageSemantics" />
 		<antcall target="packageSemanticsPlus" />
-		<antcall target="packageMaintainer" />
+		<!--<antcall target="packageMaintainer" />-->
 		<!--<antcall target="packageAnalyst" />
 		<antcall target="packageDeveloper" />-->
 	</target>
