@@ -39,6 +39,18 @@
             <classifier>resources</classifier>
             <type>zip</type>
         </dependency>
+        
+        <dependency>
+            <groupId>org.openflexo</groupId>
+            <artifactId>free-modelling-editor</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.openflexo</groupId>
+            <artifactId>free-modelling-editor</artifactId>
+            <classifier>resources</classifier>
+            <type>zip</type>
+        </dependency>
 	
 	
 		<!--  We list here all technology adapters we want to include in our integration test environment -->
