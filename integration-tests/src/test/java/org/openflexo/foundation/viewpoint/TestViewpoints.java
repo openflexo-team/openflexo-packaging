@@ -21,25 +21,33 @@ package org.openflexo.foundation.viewpoint;
 
 import java.util.logging.Logger;
 
-import org.openflexo.foundation.FlexoTestCase;
-import org.openflexo.foundation.dkv.TestPopulateDKV;
-import org.openflexo.foundation.rm.ViewPointResource;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.openflexo.foundation.OpenflexoTestCase;
 import org.openflexo.foundation.validation.ValidationError;
 import org.openflexo.foundation.validation.ValidationReport;
-import org.openflexo.foundation.view.diagram.viewpoint.DropScheme;
 import org.openflexo.foundation.viewpoint.ViewPointObject.BindingIsRequiredAndMustBeValid;
+import org.openflexo.foundation.viewpoint.rm.ViewPointResource;
+import org.openflexo.technologyadapter.diagram.fml.DropScheme;
+import org.openflexo.test.OrderedRunner;
+import org.openflexo.test.TestOrder;
 
-public class TestViewpoints extends FlexoTestCase {
+@RunWith(OrderedRunner.class)
+public class TestViewpoints extends OpenflexoTestCase {
 
-	protected static final Logger logger = Logger.getLogger(TestPopulateDKV.class.getPackage().getName());
+	protected static final Logger logger = Logger.getLogger(TestViewpoints.class.getPackage().getName());
 
-	public TestViewpoints(String name) {
-		super(name);
-	}
 
 	/**
 	 * Instantiate test resource center
 	 */
+	@Test
+	@TestOrder(1)
 	public void test0InstantiateResourceCenter() {
 
 		log("test0InstantiateResourceCenter()");
@@ -87,13 +95,14 @@ public class TestViewpoints extends FlexoTestCase {
 
 	}
 
+	@Test
+	@TestOrder(2)
 	public void test1BasicOntologyEditor() {
 		log("test1BasicOntologyEditor()");
 
 		ViewPoint basicOntologyEditor = testLoadViewPoint("http://www.agilebirds.com/openflexo/ViewPoints/Basic/BasicOntology.owl");
 		assertNotNull(basicOntologyEditor);
-
-		System.out.println("Read resource " + basicOntologyEditor.getResource().getFile().getAbsolutePath());
+		System.out.println("Read resource " + ((ViewPointResource)basicOntologyEditor.getResource()).getFile().getAbsolutePath());
 
 		FlexoConcept conceptEP = basicOntologyEditor.getDefaultDiagramSpecification().getFlexoConcept("Concept");
 
@@ -110,6 +119,8 @@ public class TestViewpoints extends FlexoTestCase {
 
 	}
 
+	@Test
+	@TestOrder(3)
 	public void test2BDN() {
 		log("test2BDN()");
 
@@ -117,6 +128,8 @@ public class TestViewpoints extends FlexoTestCase {
 
 	}
 
+	@Test
+	@TestOrder(4)
 	public void test3OrganizationalChart() {
 		log("test3OrganizationalChart()");
 
@@ -124,6 +137,8 @@ public class TestViewpoints extends FlexoTestCase {
 
 	}
 
+	@Test
+	@TestOrder(5)
 	public void test4OrganizationalMap() {
 		log("test4OrganizationalMap()");
 
@@ -131,6 +146,8 @@ public class TestViewpoints extends FlexoTestCase {
 
 	}
 
+	@Test
+	@TestOrder(6)
 	public void test5OrganizationalUnitDefinition() {
 		log("test5OrganizationalUnitDefinition()");
 
@@ -138,6 +155,8 @@ public class TestViewpoints extends FlexoTestCase {
 
 	}
 
+	@Test
+	@TestOrder(7)
 	public void test6SKOS() {
 		log("test6SKOS()");
 

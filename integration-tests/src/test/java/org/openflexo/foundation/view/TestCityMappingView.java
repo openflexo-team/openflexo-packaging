@@ -20,25 +20,23 @@
 package org.openflexo.foundation.view;
 
 import java.io.File;
-import java.util.logging.Level;
 
-import org.openflexo.foundation.DefaultFlexoEditor;
-import org.openflexo.foundation.DefaultFlexoServiceManager;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.openflexo.foundation.FlexoEditor;
-import org.openflexo.foundation.FlexoEditor.FlexoEditorFactory;
 import org.openflexo.foundation.FlexoProject;
-import org.openflexo.foundation.FlexoServiceManager;
 import org.openflexo.foundation.OpenflexoRunTimeTestCase;
 import org.openflexo.foundation.action.AddRepositoryFolder;
-import org.openflexo.foundation.resource.DirectoryResourceCenter;
 import org.openflexo.foundation.resource.FileSystemBasedResourceCenter;
-import org.openflexo.foundation.resource.FlexoResourceCenter;
-import org.openflexo.foundation.resource.FlexoResourceCenterService;
 import org.openflexo.foundation.resource.RepositoryFolder;
 import org.openflexo.foundation.technologyadapter.FlexoModelResource;
 import org.openflexo.foundation.technologyadapter.ModelSlot;
 import org.openflexo.foundation.technologyadapter.TypeAwareModelSlotInstanceConfiguration;
-import org.openflexo.foundation.utils.ProjectInitializerException;
 import org.openflexo.foundation.view.action.CreateView;
 import org.openflexo.foundation.view.action.CreateVirtualModelInstance;
 import org.openflexo.foundation.view.action.ModelSlotInstanceConfiguration.DefaultModelSlotInstanceConfigurationOption;
@@ -47,7 +45,10 @@ import org.openflexo.foundation.viewpoint.FlexoConcept;
 import org.openflexo.foundation.viewpoint.ViewPoint;
 import org.openflexo.foundation.viewpoint.VirtualModel;
 import org.openflexo.foundation.viewpoint.rm.ViewPointResource;
-import org.openflexo.logging.FlexoLoggingManager;
+import org.openflexo.test.OrderedRunner;
+import org.openflexo.test.TestOrder;
+
+@RunWith(OrderedRunner.class)
 
 public class TestCityMappingView extends OpenflexoRunTimeTestCase {
 
@@ -57,7 +58,7 @@ public class TestCityMappingView extends OpenflexoRunTimeTestCase {
 	private static RepositoryFolder<ViewResource> viewFolder;
 	private static View view;
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 
 		FlexoLoggingManager.forceInitialize(-1, true, null, Level.INFO, null);
 
@@ -107,15 +108,17 @@ public class TestCityMappingView extends OpenflexoRunTimeTestCase {
 		CreateView addView = CreateView.actionType.makeNewAction(viewFolder, null, editor);
 		addView.newViewName = "TestNewView";
 		addView.newViewTitle = "A nice title for a new view";
-		addView.viewpointResource = cityMappingVP.getResource();
+		addView.viewpointResource = (ViewPointResource) cityMappingVP.getResource();
 		addView.doAction();
 		View newView = addView.getNewView();
 		System.out.println("New view " + newView + " created in " + newView.getResource().getFile());
-	}
+	}*/
 
 	/**
 	 * Instantiate test resource center
 	 */
+	@Test
+	@TestOrder(1)
 	public void test0InstantiateResourceCenter() {
 
 		log("test0InstantiateResourceCenter()");
@@ -125,6 +128,8 @@ public class TestCityMappingView extends OpenflexoRunTimeTestCase {
 		instanciateTestServiceManager();
 	}
 
+	@Test
+	@TestOrder(2)
 	public void test1CreateProject() {
 		editor = createProject("TestCreateView");
 		project = editor.getProject();
@@ -132,8 +137,10 @@ public class TestCityMappingView extends OpenflexoRunTimeTestCase {
 		assertNotNull(project.getViewLibrary());
 	}
 
-	private ViewPoint loadViewPoint(String viewPointURI) {
-
+	@Test
+	@TestOrder(3)
+	public void loadViewPoint() {
+		String viewPointURI = "http://www.thalesgroup.com/openflexo/emf/CityMapping";
 		log("Testing ViewPoint loading: " + viewPointURI);
 
 		System.out.println("resourceCenter=" + resourceCenter);
@@ -146,17 +153,18 @@ public class TestCityMappingView extends OpenflexoRunTimeTestCase {
 
 		ViewPoint vp = vpRes.getViewPoint();
 		assertTrue(vpRes.isLoaded());
-
-		return vp;
-
+		cityMappingVP = vp;
 	}
 
+	@Test
+	@TestOrder(4)
 	public void test2LoadCityMappingViewPoint() {
-		cityMappingVP = loadViewPoint("http://www.thalesgroup.com/openflexo/emf/CityMapping");
 		assertNotNull(cityMappingVP);
-		System.out.println("Found view point in " + cityMappingVP.getResource().getFile());
+		System.out.println("Found view point in " + ((ViewPointResource) cityMappingVP.getResource()).getFile());
 	}
 
+	@Test
+	@TestOrder(5)
 	public void test3CreateViewFolder() {
 		AddRepositoryFolder addRepositoryFolder = AddRepositoryFolder.actionType.makeNewAction(project.getViewLibrary().getRootFolder(),
 				null, editor);
@@ -167,11 +175,13 @@ public class TestCityMappingView extends OpenflexoRunTimeTestCase {
 		assertTrue(viewFolder.getFile().exists());
 	}
 
+	@Test
+	@TestOrder(6)
 	public void test4CreateView() {
 		CreateView addView = CreateView.actionType.makeNewAction(viewFolder, null, editor);
 		addView.newViewName = "TestNewView";
 		addView.newViewTitle = "A nice title for a new view";
-		addView.viewpointResource = cityMappingVP.getResource();
+		addView.viewpointResource = (ViewPointResource) cityMappingVP.getResource();
 		addView.doAction();
 		assertTrue(addView.hasActionExecutionSucceeded());
 		View newView = addView.getNewView();
@@ -183,6 +193,8 @@ public class TestCityMappingView extends OpenflexoRunTimeTestCase {
 		assertTrue(newView.getResource().getFile().exists());
 	}
 
+	@Test
+	@TestOrder(7)
 	public void test5ReloadProject() {
 		editor = reloadProject(project.getProjectDirectory());
 		project = editor.getProject();
@@ -201,6 +213,8 @@ public class TestCityMappingView extends OpenflexoRunTimeTestCase {
 		assertEquals(project, view.getProject());
 	}
 
+	@Test
+	@TestOrder(8)
 	public void test6CreateVirtualModelInstance() {
 		System.out.println("Create virtual model instance, view=" + view + " editor=" + editor);
 
@@ -208,7 +222,7 @@ public class TestCityMappingView extends OpenflexoRunTimeTestCase {
 		createVirtualModelInstance.setNewVirtualModelInstanceName("TestNewVirtualModel");
 		createVirtualModelInstance.setNewVirtualModelInstanceTitle("A nice title for a new virtual model instance");
 
-		VirtualModel<?> cityMappingVM = cityMappingVP.getVirtualModelNamed("CityMapping");
+		VirtualModel cityMappingVM = cityMappingVP.getVirtualModelNamed("CityMapping");
 		assertNotNull(cityMappingVM);
 
 		createVirtualModelInstance.setVirtualModel(cityMappingVM);
@@ -221,7 +235,7 @@ public class TestCityMappingView extends OpenflexoRunTimeTestCase {
 		System.out.println("Searching " + modelFile1.getAbsolutePath());
 		assertTrue(modelFile1.exists());
 		System.out.println("Searching " + modelFile1.toURI().toString());
-		FlexoModelResource<?, ?> modelResource1 = project.getServiceManager().getInformationSpace()
+		FlexoModelResource<?, ?, ?> modelResource1 = project.getServiceManager().getInformationSpace()
 				.getModelWithURI(modelFile1.toURI().toString());
 		assertNotNull(modelResource1);
 		emfModelSlotConfiguration1.setModelResource(modelResource1);
@@ -235,7 +249,7 @@ public class TestCityMappingView extends OpenflexoRunTimeTestCase {
 		System.out.println("Searching " + modelFile2.getAbsolutePath());
 		assertTrue(modelFile2.exists());
 		System.out.println("Searching " + modelFile2.toURI().toString());
-		FlexoModelResource<?, ?> modelResource2 = project.getServiceManager().getInformationSpace()
+		FlexoModelResource<?, ?,?> modelResource2 = project.getServiceManager().getInformationSpace()
 				.getModelWithURI(modelFile2.toURI().toString());
 		assertNotNull(modelResource2);
 		emfModelSlotConfiguration2.setModelResource(modelResource2);

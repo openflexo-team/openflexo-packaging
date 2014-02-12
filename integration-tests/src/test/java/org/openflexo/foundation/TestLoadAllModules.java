@@ -7,6 +7,7 @@ import static org.junit.Assert.fail;
 import java.util.logging.Logger;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.openflexo.OpenflexoTestCaseWithGUI;
 import org.openflexo.fme.FMEModule;
 import org.openflexo.foundation.resource.FlexoResourceCenterService;
@@ -15,11 +16,14 @@ import org.openflexo.module.FlexoModule;
 import org.openflexo.module.ModuleLoader;
 import org.openflexo.module.ModuleLoadingException;
 import org.openflexo.module.ProjectLoader;
+import org.openflexo.test.OrderedRunner;
 import org.openflexo.test.TestOrder;
 import org.openflexo.ve.VEModule;
 import org.openflexo.view.controller.TechnologyAdapterControllerService;
 import org.openflexo.vpm.VPMModule;
 
+
+@RunWith(OrderedRunner.class)
 public class TestLoadAllModules extends OpenflexoTestCaseWithGUI {
 
 	protected static final Logger logger = Logger.getLogger(TestLoadAllModules.class.getPackage().getName());

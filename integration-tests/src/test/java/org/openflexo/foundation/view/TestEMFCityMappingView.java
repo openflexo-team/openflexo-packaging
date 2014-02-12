@@ -30,48 +30,62 @@ package org.openflexo.foundation.view;
 
 import java.util.Vector;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.openflexo.foundation.FlexoEditor;
-import org.openflexo.foundation.FlexoTestCase;
+import org.openflexo.foundation.FlexoProject;
+import org.openflexo.foundation.OpenflexoRunTimeTestCase;
 import org.openflexo.foundation.action.AddRepositoryFolder;
 import org.openflexo.foundation.resource.RepositoryFolder;
-import org.openflexo.foundation.rm.FlexoProject;
-import org.openflexo.foundation.rm.ViewPointResource;
-import org.openflexo.foundation.rm.ViewResource;
 import org.openflexo.foundation.technologyadapter.ModelSlot;
 import org.openflexo.foundation.technologyadapter.TypeAwareModelSlotInstanceConfiguration;
 import org.openflexo.foundation.view.action.CreateView;
 import org.openflexo.foundation.view.action.ModelSlotInstanceConfiguration.DefaultModelSlotInstanceConfigurationOption;
-import org.openflexo.foundation.view.diagram.DiagramModelSlotInstanceConfiguration;
-import org.openflexo.foundation.view.diagram.action.CreateDiagram;
-import org.openflexo.foundation.view.diagram.action.DropSchemeAction;
-import org.openflexo.foundation.view.diagram.model.Diagram;
-import org.openflexo.foundation.view.diagram.viewpoint.DiagramSpecification;
-import org.openflexo.foundation.view.diagram.viewpoint.DropScheme;
+import org.openflexo.foundation.view.rm.ViewResource;
 import org.openflexo.foundation.viewpoint.FlexoConcept;
 import org.openflexo.foundation.viewpoint.EditionSchemeParameter;
 import org.openflexo.foundation.viewpoint.ViewPoint;
+import org.openflexo.foundation.viewpoint.rm.ViewPointResource;
+import org.openflexo.technologyadapter.diagram.fml.DropScheme;
+import org.openflexo.technologyadapter.diagram.metamodel.DiagramSpecification;
+import org.openflexo.technologyadapter.diagram.model.Diagram;
+import org.openflexo.technologyadapter.diagram.model.action.CreateDiagram;
+import org.openflexo.technologyadapter.diagram.model.action.DropSchemeAction;
+import org.openflexo.test.OrderedRunner;
+import org.openflexo.test.TestOrder;
 
 /**
  * Test instanciation of City Mapping View with 2 EMF
  * 
  * @author gbesancon
  */
-public class TestEMFCityMappingView extends FlexoTestCase {
+@RunWith(OrderedRunner.class)
+public class TestEMFCityMappingView extends OpenflexoRunTimeTestCase {
 
 	/**
-	 * Follow the link.
-	 * 
-	 * @see junit.framework.TestCase#setUp()
+	 * Instantiate test resource center
 	 */
-	@Override
-	protected void setUp() throws Exception {
-		super.setUp();
+	@Test
+	@TestOrder(1)
+	public void test0InstantiateResourceCenter() {
+
+		log("test0InstantiateResourceCenter()");
+
+		// TODO: create a project where all those tests don't need a manual import of projects
+		// TODO: copy all test VP in tmp dir and work with those VP instead of polling GIT workspace
 		instanciateTestServiceManager();
 	}
 
 	/**
 	 * Test creating Diagram and model from scratch.
 	 */
+	@Test
+	@TestOrder(2)
 	public void testEMFCityMapping() {
 		// CreateProject
 		FlexoEditor editor = createProject("TestCreateView");
@@ -81,7 +95,7 @@ public class TestEMFCityMappingView extends FlexoTestCase {
 		// Load CityMapping ViewPoint
 		ViewPoint cityMappingViewPoint = loadViewPoint("http://www.thalesgroup.com/openflexo/emf/CityMapping");
 		assertNotNull(cityMappingViewPoint);
-		System.out.println("Found view point in " + cityMappingViewPoint.getResource().getFile());
+		System.out.println("Found view point in " +  ((ViewPointResource)cityMappingViewPoint.getResource()).getFile());
 
 		// Create View Folder
 		AddRepositoryFolder addRepositoryFolder = AddRepositoryFolder.actionType.makeNewAction(project.getViewLibrary().getRootFolder(),
@@ -96,7 +110,7 @@ public class TestEMFCityMappingView extends FlexoTestCase {
 		CreateView addView = CreateView.actionType.makeNewAction(viewFolder, null, editor);
 		addView.newViewName = "TestNewView";
 		addView.newViewTitle = "A nice title for a new view";
-		addView.viewpointResource = cityMappingViewPoint.getResource();
+		addView.viewpointResource = (ViewPointResource) cityMappingViewPoint.getResource();
 		addView.doAction();
 		assertTrue(addView.hasActionExecutionSucceeded());
 		View newView = addView.getNewView();
@@ -129,8 +143,8 @@ public class TestEMFCityMappingView extends FlexoTestCase {
 		System.out.println("editor project = " + editor.getProject());
 		System.out.println("view project = " + view.getProject());
 		CreateDiagram createDiagram = CreateDiagram.actionType.makeNewAction(view, null, editor);
-		createDiagram.setNewVirtualModelInstanceName("TestNewDiagram");
-		createDiagram.setNewVirtualModelInstanceTitle("A nice title for a new diagram");
+		createDiagram.setDiagramName("TestNewDiagram");
+		createDiagram.setDiagramTitle("A nice title for a new diagram");
 		createDiagram.setDiagramSpecification(cityMappingViewPoint.getDefaultDiagramSpecification());
 		// Populate modelSlots
 		assertEquals(3, cityMappingViewPoint.getDefaultDiagramSpecification().getModelSlots().size());

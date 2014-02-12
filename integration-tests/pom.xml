@@ -83,8 +83,16 @@
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>xmlconnector</artifactId>
-			<scope>runtime</scope>
+			<artifactId>flexo-ui</artifactId>
+			<classifier>tests</classifier>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.openflexo</groupId>
+			<artifactId>flexoutils</artifactId>
+			<version>${connie.version}</version>
+			<classifier>tests</classifier>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
