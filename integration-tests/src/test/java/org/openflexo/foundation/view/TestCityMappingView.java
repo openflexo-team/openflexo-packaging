@@ -28,7 +28,7 @@ import org.openflexo.foundation.FlexoEditor;
 import org.openflexo.foundation.FlexoEditor.FlexoEditorFactory;
 import org.openflexo.foundation.FlexoProject;
 import org.openflexo.foundation.FlexoServiceManager;
-import org.openflexo.foundation.OpenflexoRunTimeTestCase;
+import org.openflexo.foundation.OpenflexoProjectAtRunTimeTestCase;
 import org.openflexo.foundation.action.AddRepositoryFolder;
 import org.openflexo.foundation.resource.DirectoryResourceCenter;
 import org.openflexo.foundation.resource.FileSystemBasedResourceCenter;
@@ -49,7 +49,7 @@ import org.openflexo.foundation.viewpoint.VirtualModel;
 import org.openflexo.foundation.viewpoint.rm.ViewPointResource;
 import org.openflexo.logging.FlexoLoggingManager;
 
-public class TestCityMappingView extends OpenflexoRunTimeTestCase {
+public class TestCityMappingView extends OpenflexoProjectAtRunTimeTestCase {
 
 	public static FlexoProject project;
 	private static FlexoEditor editor;

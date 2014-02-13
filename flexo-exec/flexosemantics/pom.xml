@@ -34,6 +34,29 @@
             <classifier>resources</classifier>
             <type>zip</type>
         </dependency>
+
+        <dependency>
+            <groupId>org.openflexo</groupId>
+            <artifactId>flexodiagram</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.openflexo</groupId>
+            <artifactId>flexodiagram</artifactId>
+            <classifier>resources</classifier>
+            <type>zip</type>
+        </dependency>
+       <dependency>
+            <groupId>org.openflexo</groupId>
+            <artifactId>flexodiagram-ui</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.openflexo</groupId>
+            <artifactId>flexodiagram-ui</artifactId>
+            <classifier>resources</classifier>
+            <type>zip</type>
+        </dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>emfconnector</artifactId>

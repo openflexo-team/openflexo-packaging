@@ -28,7 +28,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openflexo.foundation.FlexoEditor;
 import org.openflexo.foundation.FlexoProject;
-import org.openflexo.foundation.OpenflexoRunTimeTestCase;
+import org.openflexo.foundation.OpenflexoProjectAtRunTimeTestCase;
 import org.openflexo.foundation.action.AddRepositoryFolder;
 import org.openflexo.foundation.resource.RepositoryFolder;
 import org.openflexo.foundation.view.action.CreateView;
@@ -42,7 +42,7 @@ import org.openflexo.test.OrderedRunner;
 import org.openflexo.test.TestOrder;
 
 @RunWith(OrderedRunner.class)
-public class TestBasicOntologyEditorView extends OpenflexoRunTimeTestCase {
+public class TestBasicOntologyEditorView extends OpenflexoProjectAtRunTimeTestCase {
 
 	public static FlexoProject project;
 	private static FlexoEditor editor;
