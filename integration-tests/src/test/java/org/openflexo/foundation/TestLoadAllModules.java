@@ -7,18 +7,23 @@ import static org.junit.Assert.fail;
 import java.util.logging.Logger;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.openflexo.OpenflexoTestCaseWithGUI;
+import org.openflexo.fme.FMEModule;
 import org.openflexo.foundation.resource.FlexoResourceCenterService;
 import org.openflexo.foundation.technologyadapter.TechnologyAdapterService;
 import org.openflexo.module.FlexoModule;
 import org.openflexo.module.ModuleLoader;
 import org.openflexo.module.ModuleLoadingException;
 import org.openflexo.module.ProjectLoader;
+import org.openflexo.test.OrderedRunner;
 import org.openflexo.test.TestOrder;
 import org.openflexo.ve.VEModule;
 import org.openflexo.view.controller.TechnologyAdapterControllerService;
 import org.openflexo.vpm.VPMModule;
 
+
+@RunWith(OrderedRunner.class)
 public class TestLoadAllModules extends OpenflexoTestCaseWithGUI {
 
 	protected static final Logger logger = Logger.getLogger(TestLoadAllModules.class.getPackage().getName());
@@ -56,7 +61,7 @@ public class TestLoadAllModules extends OpenflexoTestCaseWithGUI {
 		log("test1VPMModuleLoading()");
 
 		try {
-			FlexoModule loadedModule = moduleLoader.getModuleInstance(VPMModule.VPM);
+			FlexoModule<VPMModule> loadedModule = moduleLoader.getModuleInstance(moduleLoader.getModuleNamed(VPMModule.VPM_MODULE_NAME));
 			if (loadedModule == null) {
 				fail();
 			}
@@ -70,7 +75,7 @@ public class TestLoadAllModules extends OpenflexoTestCaseWithGUI {
 	}
 
 	/**
-	 * Try to load VPM module
+	 * Try to load VE module
 	 */
 	@Test
 	@TestOrder(3)
@@ -78,7 +83,29 @@ public class TestLoadAllModules extends OpenflexoTestCaseWithGUI {
 		log("test2VEModuleLoading()");
 
 		try {
-			FlexoModule loadedModule = moduleLoader.getModuleInstance(VEModule.VE);
+			FlexoModule<VEModule> loadedModule = moduleLoader.getModuleInstance(moduleLoader.getModuleNamed(VEModule.VE_MODULE_NAME));
+			if (loadedModule == null) {
+				fail();
+			}
+			// This module is not in the classpath, normal
+		} catch (ModuleLoadingException e) {
+			fail();
+		}
+
+		assertNotNull(serviceManager.getService(TechnologyAdapterControllerService.class));
+
+	}
+	
+	/**
+	 * Try to load FME module
+	 */
+	@Test
+	@TestOrder(4)
+	public void test3FMEModuleLoading() {
+		log("test3FMEModuleLoading()");
+
+		try {
+			FlexoModule<FMEModule> loadedModule = moduleLoader.getModuleInstance(moduleLoader.getModuleNamed(FMEModule.FME_MODULE_NAME));
 			if (loadedModule == null) {
 				fail();
 			}

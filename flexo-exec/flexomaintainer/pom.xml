@@ -7,12 +7,26 @@
 		<artifactId>flexo-exec</artifactId>
 		<version>1.7-SNAPSHOT</version>
 	</parent>
+		<artifactId>flexomaintainer</artifactId>
 	<properties>
 		<userType>developer_release</userType>
 		<vm.args>-Xmx1G -XX:MaxPermSize=256M</vm.args>
 	</properties>
-	<artifactId>flexomaintainer</artifactId>
+	<build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 	<dependencies>
+		<dependency>
+			<groupId>org.openflexo.packaging</groupId>
+			<artifactId>flexosemanticsplus</artifactId>
+			<scope>runtime</scope>
+			<type>pom</type>
+		</dependency>
         <dependency>
             <groupId>org.openflexo</groupId>
             <artifactId>free-modelling-editor</artifactId>
@@ -24,12 +38,7 @@
             <classifier>resources</classifier>
             <type>zip</type>
         </dependency>
-		<dependency>
-			<groupId>org.openflexo.packaging</groupId>
-			<artifactId>flexosemanticsplus</artifactId>
-			<scope>runtime</scope>
-			<type>pom</type>
-		</dependency>
+        
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>flexo-foundation</artifactId>

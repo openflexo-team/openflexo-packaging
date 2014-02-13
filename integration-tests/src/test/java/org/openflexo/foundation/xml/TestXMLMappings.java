@@ -24,34 +24,27 @@ import java.util.Enumeration;
 import java.util.Iterator;
 import java.util.logging.Logger;
 
-import org.openflexo.foundation.FlexoTestCase;
-import org.openflexo.foundation.cg.GeneratedCode;
-import org.openflexo.foundation.cg.GeneratedDoc;
-import org.openflexo.foundation.dkv.DKVModel;
-import org.openflexo.foundation.dm.DMModel;
-import org.openflexo.foundation.ie.IEWOComponent;
-import org.openflexo.foundation.ie.cl.FlexoComponentLibrary;
-import org.openflexo.foundation.ie.menu.FlexoNavigationMenu;
-import org.openflexo.foundation.rm.FlexoProject;
-import org.openflexo.foundation.toc.TOCData;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
+import org.flexo.model.FlexoProcess;
+import org.openflexo.foundation.FlexoProject;
+import org.openflexo.foundation.OpenflexoTestCase;
 import org.openflexo.foundation.view.View;
 import org.openflexo.foundation.view.VirtualModelInstance;
-import org.openflexo.foundation.view.diagram.model.Diagram;
-import org.openflexo.foundation.view.diagram.viewpoint.DiagramPalette;
-import org.openflexo.foundation.view.diagram.viewpoint.DiagramSpecification;
-import org.openflexo.foundation.view.diagram.viewpoint.ExampleDiagram;
 import org.openflexo.foundation.viewpoint.ViewPoint;
 import org.openflexo.foundation.viewpoint.VirtualModel;
-import org.openflexo.foundation.wkf.FlexoProcess;
-import org.openflexo.foundation.wkf.FlexoWorkflow;
-import org.openflexo.foundation.ws.FlexoWSLibrary;
-import org.openflexo.foundation.xml.XMLSerializationService.ClassModels;
+import org.openflexo.model.ModelEntity;
+import org.openflexo.model.ModelProperty;
+import org.openflexo.technologyadapter.diagram.metamodel.DiagramPalette;
+import org.openflexo.technologyadapter.diagram.metamodel.DiagramSpecification;
+import org.openflexo.technologyadapter.diagram.model.Diagram;
 import org.openflexo.toolbox.FlexoVersion;
-import org.openflexo.xmlcode.ModelEntity;
-import org.openflexo.xmlcode.ModelProperty;
-import org.openflexo.xmlcode.XMLMapping;
 
-public class TestXMLMappings extends FlexoTestCase {
+
+public class TestXMLMappings extends OpenflexoTestCase {
 
 	protected static final Logger logger = Logger.getLogger(TestXMLMappings.class.getPackage().getName());
 
@@ -129,7 +122,7 @@ public class TestXMLMappings extends FlexoTestCase {
 	}
 
 	public void testExampleDiagramModelMappings() {
-		checkClassModels(ExampleDiagram.class);
+		checkClassModels(Diagram.class);
 	}
 
 	public void testDiagramPaletteModelMappings() {

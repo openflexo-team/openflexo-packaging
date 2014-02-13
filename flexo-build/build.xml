@@ -43,18 +43,19 @@
 	<target name="package" depends="defineProperties">
 		<delete dir="${mac.app.dir}" failonerror="false" />
 		<mkdir dir="${mac.app.dir}" />
-		<antcall target="packageLite" />
-		<antcall target="packageCustomer" />
+		<!--<antcall target="packageLite" />
+		<antcall target="packageCustomer" />-->
 		<antcall target="packageSemantics" />
 		<antcall target="packageSemanticsPlus" />
-		<antcall target="packageAnalyst" />
-		<antcall target="packageDeveloper" />
+		<antcall target="packageMaintainer" />
+		<!--<antcall target="packageAnalyst" />
+		<antcall target="packageDeveloper" />-->
 	</target>
 
-	<target name="packageLite">
+	<!--<target name="packageLite">
 		<loadproperties srcfile="lite.properties" />
 		<antcall target="createPackage" />
-	</target>
+	</target>-->
 
 	<target name="packageSemantics">
 		<loadproperties srcfile="semantics.properties" />
@@ -65,8 +66,13 @@
 		<loadproperties srcfile="semanticsplus.properties" />
 		<antcall target="createPackage" />
 	</target>
+	
+	<target name="packageMaintainer">
+		<loadproperties srcfile="maintainer.properties" />
+		<antcall target="createPackage" />
+	</target>
 
-	<target name="packageCustomer">
+	<!--<target name="packageCustomer">
 		<loadproperties srcfile="customer.properties" />
 		<antcall target="createPackage" />
 	</target>
@@ -79,7 +85,7 @@
 	<target name="packageDeveloper">
 		<loadproperties srcfile="developer.properties" />
 		<antcall target="createPackage" />
-	</target>
+	</target>-->
 
 	<target name="createPackage">
 		<antcall target="cleanTempDir" />
@@ -92,7 +98,9 @@
 		<echoproperties destfile="${build.properties}" />
 		<antcall target="checkoutArtifact" />
 		<antcall target="generateFlexoProperties" />
+<!--
 		<antcall target="generateHelp" />
+-->
 		<antcall target="packageWindows" />
 		<antcall target="packageMacOSX" />
 		<antcall target="packageLinux" />
