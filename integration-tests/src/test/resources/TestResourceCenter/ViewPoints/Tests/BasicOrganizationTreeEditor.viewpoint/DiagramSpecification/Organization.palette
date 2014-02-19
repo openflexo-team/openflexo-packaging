@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Palette id="1" index="0" name="Organization">
   <description>Edit organization cells</description>
-  <PaletteElement id="2" name="Company" editionPattern="BOTCompany">
+  <PaletteElement id="2" name="Company" flexoConcept="BOTCompany">
     <Parameter id="3" name="companyName" value="enter company name here" />
     <Parameter id="4" name="companyURI" value="&lt; Computed URI &gt;" />
     <ShapeGraphicalRepresentation id="5" className="org.openflexo.vpm.palette.PaletteElementGR" x="10.0" y="4.0" width="224.79787851510477" height="90.9883344883345" isVisible="true" locationConstraints="FREELY_MOVABLE" dimensionConstraints="FREELY_RESIZABLE" layer="1" isFloatingLabel="true" text="Company" isMultilineAllowed="false" isReadOnly="false" isSelectable="true" isFocusable="true" relativeTextX="0.5" relativeTextY="0.5" absoluteTextX="51.359133513039524" absoluteTextY="12.720426635001509" textAlignment="CENTER">
@@ -13,7 +13,7 @@
       <TextStyle id="11" font="SansSerif,0,11" color="102,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" />
     </ShapeGraphicalRepresentation>
   </PaletteElement>
-  <PaletteElement id="12" name="Sub-department" editionPattern="BOTSubDepartment">
+  <PaletteElement id="12" name="Sub-department" flexoConcept="BOTSubDepartment">
     <Parameter id="13" name="subDepartmentName" value="enter sub-department name here" />
     <Parameter id="14" name="subDepartmentURI" value="&lt; Computed URI &gt;" />
     <ShapeGraphicalRepresentation id="15" className="org.openflexo.vpm.palette.PaletteElementGR" x="35.0" y="201.0" width="176.0" height="58.98550724637681" isVisible="true" locationConstraints="FREELY_MOVABLE" dimensionConstraints="FREELY_RESIZABLE" layer="1" isFloatingLabel="true" text="Sub-department" isMultilineAllowed="false" isReadOnly="false" isSelectable="true" isFocusable="true" relativeTextX="0.5" relativeTextY="0.5" absoluteTextX="59.99999999999999" absoluteTextY="13.220889555222389" textAlignment="CENTER">
@@ -25,7 +25,7 @@
       <TextStyle id="21" font="SansSerif,0,11" color="102,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" />
     </ShapeGraphicalRepresentation>
   </PaletteElement>
-  <PaletteElement id="22" name="Department" editionPattern="BOTDepartment">
+  <PaletteElement id="22" name="Department" flexoConcept="BOTDepartment">
     <Parameter id="23" name="departmentName" value="enter department name here" />
     <Parameter id="24" name="departmentURI" value="&lt; Computed URI &gt;" />
     <Parameter id="25" name="newShemaName" value="" />

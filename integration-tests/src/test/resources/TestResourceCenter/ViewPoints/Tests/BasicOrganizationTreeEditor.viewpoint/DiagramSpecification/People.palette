@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Palette id="1" index="1" name="People">
   <description>This palette contains all people elements</description>
-  <PaletteElement id="2" name="CEO" editionPattern="Employee">
+  <PaletteElement id="2" name="CEO" flexoConcept="Employee">
     <Parameter id="3" name="roleName" value="&lt; Takes palette element label &gt;" />
     <Parameter id="4" name="employeeURI" value="&lt; Computed URI &gt;" />
     <Parameter id="5" name="isManager" value="true" />
@@ -19,7 +19,7 @@
       <TextStyle id="17" font="SansSerif,0,11" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" />
     </ShapeGraphicalRepresentation>
   </PaletteElement>
-  <PaletteElement id="18" name="Marketing executive" editionPattern="Employee">
+  <PaletteElement id="18" name="Marketing executive" flexoConcept="Employee">
     <Parameter id="19" name="roleName" value="&lt; Takes palette element label &gt;" />
     <Parameter id="20" name="employeeURI" value="&lt; Computed URI &gt;" />
     <Parameter id="21" name="isManager" value="true" />
@@ -37,7 +37,7 @@
       <TextStyle id="33" font="Lucida Sans,0,11" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" />
     </ShapeGraphicalRepresentation>
   </PaletteElement>
-  <PaletteElement id="34" name="Account" editionPattern="Employee">
+  <PaletteElement id="34" name="Account" flexoConcept="Employee">
     <Parameter id="35" name="roleName" value="&lt; Takes palette element label &gt;" />
     <Parameter id="36" name="employeeURI" value="&lt; Computed URI &gt;" />
     <Parameter id="37" name="isManager" value="false" />
@@ -55,7 +55,7 @@
       <TextStyle id="49" font="Lucida Sans,0,11" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" />
     </ShapeGraphicalRepresentation>
   </PaletteElement>
-  <PaletteElement id="50" name="Author" editionPattern="Employee">
+  <PaletteElement id="50" name="Author" flexoConcept="Employee">
     <Parameter id="51" name="roleName" value="&lt; Takes palette element label &gt;" />
     <Parameter id="52" name="employeeURI" value="&lt; Computed URI &gt;" />
     <Parameter id="53" name="isManager" value="false" />
@@ -73,7 +73,7 @@
       <TextStyle id="65" font="Lucida Sans,0,11" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" />
     </ShapeGraphicalRepresentation>
   </PaletteElement>
-  <PaletteElement id="66" name="Manager" editionPattern="Employee">
+  <PaletteElement id="66" name="Manager" flexoConcept="Employee">
     <Parameter id="67" name="roleName" value="&lt; Takes palette element label &gt;" />
     <Parameter id="68" name="employeeURI" value="&lt; Computed URI &gt;" />
     <Parameter id="69" name="isManager" value="true" />
@@ -91,7 +91,7 @@
       <TextStyle id="81" font="Lucida Sans,0,11" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" />
     </ShapeGraphicalRepresentation>
   </PaletteElement>
-  <PaletteElement id="82" name="Manager" editionPattern="Employee">
+  <PaletteElement id="82" name="Manager" flexoConcept="Employee">
     <Parameter id="83" name="roleName" value="&lt; Takes palette element label &gt;" />
     <Parameter id="84" name="employeeURI" value="&lt; Computed URI &gt;" />
     <Parameter id="85" name="isManager" value="true" />
@@ -109,7 +109,7 @@
       <TextStyle id="97" font="Lucida Sans,0,11" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" />
     </ShapeGraphicalRepresentation>
   </PaletteElement>
-  <PaletteElement id="98" name="Manager" editionPattern="Employee">
+  <PaletteElement id="98" name="Manager" flexoConcept="Employee">
     <Parameter id="99" name="roleName" value="&lt; Takes palette element label &gt;" />
     <Parameter id="100" name="employeeURI" value="&lt; Computed URI &gt;" />
     <Parameter id="101" name="isManager" value="true" />
@@ -127,7 +127,7 @@
       <TextStyle id="113" font="Lucida Sans,0,11" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" />
     </ShapeGraphicalRepresentation>
   </PaletteElement>
-  <PaletteElement id="114" name="Manager Delivery" editionPattern="Employee">
+  <PaletteElement id="114" name="Manager Delivery" flexoConcept="Employee">
     <Parameter id="115" name="roleName" value="&lt; Takes palette element label &gt;" />
     <Parameter id="116" name="employeeURI" value="&lt; Computed URI &gt;" />
     <Parameter id="117" name="isManager" value="true" />
@@ -145,7 +145,7 @@
       <TextStyle id="129" font="Lucida Sans,0,11" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" />
     </ShapeGraphicalRepresentation>
   </PaletteElement>
-  <PaletteElement id="130" name="Manager Operation" editionPattern="Employee">
+  <PaletteElement id="130" name="Manager Operation" flexoConcept="Employee">
     <Parameter id="131" name="roleName" value="&lt; Takes palette element label &gt;" />
     <Parameter id="132" name="employeeURI" value="&lt; Computed URI &gt;" />
     <Parameter id="133" name="isManager" value="true" />
@@ -163,7 +163,7 @@
       <TextStyle id="145" font="Lucida Sans,0,11" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" />
     </ShapeGraphicalRepresentation>
   </PaletteElement>
-  <PaletteElement id="146" name="Receptionist" editionPattern="Employee">
+  <PaletteElement id="146" name="Receptionist" flexoConcept="Employee">
     <Parameter id="147" name="roleName" value="&lt; Takes palette element label &gt;" />
     <Parameter id="148" name="employeeURI" value="&lt; Computed URI &gt;" />
     <Parameter id="149" name="isManager" value="false" />
@@ -181,7 +181,7 @@
       <TextStyle id="161" font="Lucida Sans,0,11" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" />
     </ShapeGraphicalRepresentation>
   </PaletteElement>
-  <PaletteElement id="162" name="Worker" editionPattern="Employee">
+  <PaletteElement id="162" name="Worker" flexoConcept="Employee">
     <Parameter id="163" name="roleName" value="&lt; Takes palette element label &gt;" />
     <Parameter id="164" name="employeeURI" value="&lt; Computed URI &gt;" />
     <Parameter id="165" name="isManager" value="false" />
@@ -199,7 +199,7 @@
       <TextStyle id="177" font="Lucida Sans,0,11" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" />
     </ShapeGraphicalRepresentation>
   </PaletteElement>
-  <PaletteElement id="178" name="Worker" editionPattern="Employee">
+  <PaletteElement id="178" name="Worker" flexoConcept="Employee">
     <Parameter id="179" name="roleName" value="&lt; Takes palette element label &gt;" />
     <Parameter id="180" name="employeeURI" value="&lt; Computed URI &gt;" />
     <Parameter id="181" name="isManager" value="false" />
@@ -217,7 +217,7 @@
       <TextStyle id="193" font="Lucida Sans,0,11" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" />
     </ShapeGraphicalRepresentation>
   </PaletteElement>
-  <PaletteElement id="194" name="Worker" editionPattern="Employee">
+  <PaletteElement id="194" name="Worker" flexoConcept="Employee">
     <Parameter id="195" name="roleName" value="&lt; Takes palette element label &gt;" />
     <Parameter id="196" name="employeeURI" value="&lt; Computed URI &gt;" />
     <Parameter id="197" name="isManager" value="false" />
