@@ -10,6 +10,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openflexo.OpenflexoTestCaseWithGUI;
 import org.openflexo.fme.FMEModule;
+import org.openflexo.fme.FreeModellingEditor;
 import org.openflexo.foundation.resource.FlexoResourceCenterService;
 import org.openflexo.foundation.technologyadapter.TechnologyAdapterService;
 import org.openflexo.module.FlexoModule;
@@ -19,9 +20,10 @@ import org.openflexo.module.ProjectLoader;
 import org.openflexo.test.OrderedRunner;
 import org.openflexo.test.TestOrder;
 import org.openflexo.ve.VEModule;
+import org.openflexo.ve.ViewEditor;
 import org.openflexo.view.controller.TechnologyAdapterControllerService;
 import org.openflexo.vpm.VPMModule;
-
+import org.openflexo.vpm.ViewPointModeller;
 
 @RunWith(OrderedRunner.class)
 public class TestLoadAllModules extends OpenflexoTestCaseWithGUI {
@@ -61,7 +63,7 @@ public class TestLoadAllModules extends OpenflexoTestCaseWithGUI {
 		log("test1VPMModuleLoading()");
 
 		try {
-			FlexoModule<VPMModule> loadedModule = moduleLoader.getModuleInstance(moduleLoader.getModuleNamed(VPMModule.VPM_MODULE_NAME));
+			FlexoModule<VPMModule> loadedModule = moduleLoader.getModuleInstance(ViewPointModeller.INSTANCE);
 			if (loadedModule == null) {
 				fail();
 			}
@@ -83,7 +85,7 @@ public class TestLoadAllModules extends OpenflexoTestCaseWithGUI {
 		log("test2VEModuleLoading()");
 
 		try {
-			FlexoModule<VEModule> loadedModule = moduleLoader.getModuleInstance(moduleLoader.getModuleNamed(VEModule.VE_MODULE_NAME));
+			FlexoModule<VEModule> loadedModule = moduleLoader.getModuleInstance(ViewEditor.INSTANCE);
 			if (loadedModule == null) {
 				fail();
 			}
@@ -95,7 +97,7 @@ public class TestLoadAllModules extends OpenflexoTestCaseWithGUI {
 		assertNotNull(serviceManager.getService(TechnologyAdapterControllerService.class));
 
 	}
-	
+
 	/**
 	 * Try to load FME module
 	 */
@@ -105,7 +107,7 @@ public class TestLoadAllModules extends OpenflexoTestCaseWithGUI {
 		log("test3FMEModuleLoading()");
 
 		try {
-			FlexoModule<FMEModule> loadedModule = moduleLoader.getModuleInstance(moduleLoader.getModuleNamed(FMEModule.FME_MODULE_NAME));
+			FlexoModule<FMEModule> loadedModule = moduleLoader.getModuleInstance(FreeModellingEditor.INSTANCE);
 			if (loadedModule == null) {
 				fail();
 			}
