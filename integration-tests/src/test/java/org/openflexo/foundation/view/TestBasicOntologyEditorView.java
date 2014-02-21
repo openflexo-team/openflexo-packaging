@@ -116,18 +116,18 @@ public class TestBasicOntologyEditorView extends OpenflexoProjectAtRunTimeTestCa
 	@TestOrder(5)
 	public void test4CreateView() {
 		CreateView addView = CreateView.actionType.makeNewAction(viewFolder, null, editor);
-		addView.newViewName = "TestNewView";
-		addView.newViewTitle = "A nice title for a new view";
-		addView.viewpointResource = (ViewPointResource) basicOntologyEditor.getResource();
+		addView.setNewViewName("TestNewView");
+		addView.setNewViewTitle("A nice title for a new view");
+		addView.setViewpointResource((ViewPointResource) basicOntologyEditor.getResource());
 		addView.doAction();
 		assertTrue(addView.hasActionExecutionSucceeded());
 		View newView = addView.getNewView();
-		System.out.println("New view " + newView + " created in " + newView.getResource().getFile());
+		System.out.println("New view " + newView + " created in " + ((ViewResource) newView.getResource()).getFile());
 		assertNotNull(newView);
-		assertEquals(addView.newViewName, newView.getName());
-		assertEquals(addView.newViewTitle, newView.getTitle());
-		assertEquals(addView.viewpointResource.getViewPoint(), basicOntologyEditor);
-		assertTrue(newView.getResource().getFile().exists());
+		assertEquals(addView.getNewViewName(), newView.getName());
+		assertEquals(addView.getNewViewTitle(), newView.getTitle());
+		assertEquals(addView.getViewpointResource().getViewPoint(), basicOntologyEditor);
+		assertTrue(((ViewResource) newView.getResource()).getFile().exists());
 	}
 
 	public void test5ReloadProject() {
@@ -144,7 +144,7 @@ public class TestBasicOntologyEditorView extends OpenflexoProjectAtRunTimeTestCa
 		view = viewRes.getView();
 		assertTrue(viewRes.isLoaded());
 		assertNotNull(view);
-		assertEquals(project, view.getResource().getProject());
+		assertEquals(project, ((ViewResource) view.getResource()).getProject());
 		assertEquals(project, view.getProject());
 	}
 
@@ -168,7 +168,7 @@ public class TestBasicOntologyEditorView extends OpenflexoProjectAtRunTimeTestCa
 		System.out.println("Create diagram, view=" + view + " editor=" + editor);
 		System.out.println("editor project = " + editor.getProject());
 		System.out.println("view project = " + view.getProject());
-		CreateDiagram createDiagram = CreateDiagram.actionType.makeNewAction(view, null, editor);
+		CreateDiagram createDiagram = CreateDiagram.actionType.makeNewAction(view.getProject().getRootFolder(), null, editor);
 		createDiagram.setDiagramName("TestNewDiagram");
 		createDiagram.setDiagramTitle("A nice title for a new diagram");
 		// createDiagram.setDiagramSpecification(basicOntologyEditor.getDefaultDiagramSpecification());

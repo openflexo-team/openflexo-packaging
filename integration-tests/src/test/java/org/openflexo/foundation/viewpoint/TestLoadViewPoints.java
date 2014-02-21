@@ -1,15 +1,13 @@
 package org.openflexo.foundation.viewpoint;
 
-import java.util.logging.Logger;
-
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import java.util.logging.Logger;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.openflexo.foundation.OpenflexoRunTimeTestCase;
 import org.openflexo.foundation.OpenflexoTestCase;
 import org.openflexo.foundation.resource.FlexoResource;
 import org.openflexo.foundation.viewpoint.rm.ViewPointResource;
@@ -22,7 +20,7 @@ import org.openflexo.test.OrderedRunner;
 import org.openflexo.test.TestOrder;
 
 @RunWith(OrderedRunner.class)
-public class TestLoadViewPoints extends OpenflexoRunTimeTestCase {
+public class TestLoadViewPoints extends OpenflexoTestCase {
 
 	protected static final Logger logger = Logger.getLogger(TestLoadViewPoints.class.getPackage().getName());
 
