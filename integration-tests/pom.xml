@@ -75,6 +75,16 @@
 			<artifactId>owlconnector</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+ 		<dependency>
+			<groupId>org.openflexo</groupId>
+			<artifactId>excelconnector</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+ 		<dependency>
+			<groupId>org.openflexo</groupId>
+			<artifactId>powerpointconnector</artifactId>
+			<scope>runtime</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>flexo-foundation</artifactId>
