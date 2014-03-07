@@ -13,8 +13,22 @@
 			</includes>
 			<excludes>
 				<exclude>*:zip:*</exclude>
+				<exclude>
+					<groupId>org.openflexo</groupId>
+				</exclude>
 			</excludes>
 			<outputDirectory>lib</outputDirectory>
+		</dependencySet>
+		<dependencySet>
+			<includes>
+				<include>
+					<groupId>org.openflexo</groupId>
+				</include>
+			</includes>
+			<excludes>
+				<exclude>*:zip:*</exclude>
+			</excludes>
+			<outputDirectory>dev</outputDirectory>
 		</dependencySet>
 		<dependencySet>
 			<unpack>true</unpack>
