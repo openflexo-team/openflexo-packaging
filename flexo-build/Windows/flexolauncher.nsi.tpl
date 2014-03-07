@@ -15,8 +15,7 @@ VIAddVersionKey "FileDescription" "This executable launches @product.name@ and p
 VIAddVersionKey "FileVersion" "1.0.0"
 VIProductVersion "1.0.0.1"
  
-!define CLASSPATH "lib/*;./;"
-!define CLASSPATH "dev/*;./;"
+!define CLASSPATH "lib/*;./;dev/*;"
 !define CLASS "@main.class@"
 !define PRODUCT_NAME "Flexo"
  
