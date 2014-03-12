@@ -16,7 +16,7 @@
 				<exclude>org.openflexo</exclude>
 				<exclude>org.openflexo.packaging</exclude>
 			</excludes>
-			<outputDirectory>lib</outputDirectory>
+			<outputDirectory>deps</outputDirectory>
 		</dependencySet>
 		<dependencySet>
 			<includes>
@@ -27,7 +27,7 @@
 				<exclude>*:zip:*</exclude>
 				<exclude>*:pom:*</exclude>
 			</excludes>
-			<outputDirectory>deps</outputDirectory>
+			<outputDirectory>lib</outputDirectory>
 		</dependencySet>
 		<dependencySet>
 			<unpack>true</unpack>
