@@ -27,7 +27,7 @@
 				<exclude>*:zip:*</exclude>
 				<exclude>*:pom:*</exclude>
 			</excludes>
-			<outputDirectory>dev</outputDirectory>
+			<outputDirectory>deps</outputDirectory>
 		</dependencySet>
 		<dependencySet>
 			<unpack>true</unpack>
