@@ -194,6 +194,12 @@
 			</dependency>
 
 
+			<dependency>
+				<groupId>org.openflexo</groupId>
+				<artifactId>flexodocresourcecenter</artifactId>
+				<scope>runtime</scope>
+				<version>${project.version}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
