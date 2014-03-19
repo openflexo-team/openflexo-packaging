@@ -42,9 +42,9 @@
 	</build>
 	<dependencyManagement>
 		<dependencies>
-		
-			<!--  We list here all packaging which should be processed -->
-		
+
+			<!-- We list here all packaging which should be processed -->
+
 			<dependency>
 				<groupId>org.openflexo.packaging</groupId>
 				<artifactId>flexomaintainer</artifactId>
@@ -63,254 +63,140 @@
 				<version>${project.version}</version>
 				<type>pom</type>
 			</dependency>
-			
-			<!--  We list here all available modules -->
 
-		 <dependency>
-            <groupId>org.openflexo</groupId>
-            <artifactId>flexovieweditor</artifactId>
-			<version>${project.version}</version>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.openflexo</groupId>
-            <artifactId>flexovieweditor</artifactId>
-			<version>${project.version}</version>
-            <classifier>resources</classifier>
-            <type>zip</type>
-        </dependency>
-        
-        
-        <dependency>
-            <groupId>org.openflexo</groupId>
-            <artifactId>flexoviewpointmodeler</artifactId>
-			<version>${project.version}</version>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.openflexo</groupId>
-            <artifactId>flexoviewpointmodeler</artifactId>
- 			<version>${project.version}</version>
-            <classifier>resources</classifier>
-            <type>zip</type>
-        </dependency>
- 
-         <dependency>
-            <groupId>org.openflexo</groupId>
-            <artifactId>free-modelling-editor</artifactId>
- 			<version>${project.version}</version>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.openflexo</groupId>
-            <artifactId>free-modelling-editor</artifactId>
-			<version>${project.version}</version>
-             <classifier>resources</classifier>
-            <type>zip</type>
-        </dependency>
- 
- 		<!--  Now, we list here all available technology adapters -->
- 
- 
-		<dependency>
-			<groupId>org.openflexo</groupId>
-			<artifactId>flexodiagram</artifactId>
-			<version>${project.version}</version>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.openflexo</groupId>
-			<artifactId>flexodiagram</artifactId>
-			<version>${project.version}</version>
-            <classifier>resources</classifier>
-            <type>zip</type>
-		</dependency>
+			<!-- We list here all available modules -->
 
-		<dependency>
-			<groupId>org.openflexo</groupId>
-			<artifactId>flexodiagram-ui</artifactId>
-			<version>${project.version}</version>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.openflexo</groupId>
-			<artifactId>flexodiagram-ui</artifactId>
-			<version>${project.version}</version>
-            <classifier>resources</classifier>
-            <type>zip</type>
-		</dependency>
+			<dependency>
+				<groupId>org.openflexo</groupId>
+				<artifactId>flexovieweditor</artifactId>
+				<version>${project.version}</version>
+				<scope>runtime</scope>
+			</dependency>
 
-		<dependency>
-			<groupId>org.openflexo</groupId>
-			<artifactId>emfconnector</artifactId>
-			<version>${project.version}</version>
-			<scope>runtime</scope>
-		</dependency>
-        <dependency>
-            <groupId>org.openflexo</groupId>
-            <artifactId>emfconnector</artifactId>
-			<version>${project.version}</version>
-            <classifier>resources</classifier>
-            <type>zip</type>
-        </dependency>
-		<dependency>
-			<groupId>org.openflexo</groupId>
-			<artifactId>emfconnector-ui</artifactId>
-			<version>${project.version}</version>
-			<scope>runtime</scope>
-		</dependency>
-        <dependency>
-            <groupId>org.openflexo</groupId>
-            <artifactId>emfconnector-ui</artifactId>
-			<version>${project.version}</version>
-            <classifier>resources</classifier>
-            <type>zip</type>
-        </dependency>
-		<dependency>
-			<groupId>org.openflexo</groupId>
-			<artifactId>xmlconnector</artifactId>
-			<version>${project.version}</version>
-			<scope>runtime</scope>
-		</dependency>
-        <dependency>
-            <groupId>org.openflexo</groupId>
-            <artifactId>xmlconnector</artifactId>
- 			<version>${project.version}</version>
-            <classifier>resources</classifier>
-            <type>zip</type>
-        </dependency>
-		<dependency>
-			<groupId>org.openflexo</groupId>
-			<artifactId>xsdconnector</artifactId>
-			<version>${project.version}</version>
-			<scope>runtime</scope>
-		</dependency>
-        <dependency>
-            <groupId>org.openflexo</groupId>
-            <artifactId>xsdconnector</artifactId>
- 			<version>${project.version}</version>
-            <classifier>resources</classifier>
-            <type>zip</type>
-        </dependency>
-		<dependency>
-			<groupId>org.openflexo</groupId>
-			<artifactId>xsdconnector-ui</artifactId>
-			<version>${project.version}</version>
-			<scope>runtime</scope>
-		</dependency>
-        <dependency>
-            <groupId>org.openflexo</groupId>
-            <artifactId>xsdconnector-ui</artifactId>
-			<version>${project.version}</version>
-            <classifier>resources</classifier>
-            <type>zip</type>
-        </dependency>
- 		<dependency>
-			<groupId>org.openflexo</groupId>
-			<artifactId>owlconnector</artifactId>
-			<version>${project.version}</version>
-			<scope>runtime</scope>
-		</dependency>
-        <dependency>
-            <groupId>org.openflexo</groupId>
-            <artifactId>owlconnector</artifactId>
-			<version>${project.version}</version>
-            <classifier>resources</classifier>
-            <type>zip</type>
-        </dependency>
-		<dependency>
-			<groupId>org.openflexo</groupId>
-			<artifactId>owlconnector-ui</artifactId>
-			<version>${project.version}</version>
-			<scope>runtime</scope>
-		</dependency>
-        <dependency>
-            <groupId>org.openflexo</groupId>
-            <artifactId>owlconnector-ui</artifactId>
-			<version>${project.version}</version>
-            <classifier>resources</classifier>
-            <type>zip</type>
-        </dependency>
-  		<dependency>
-			<groupId>org.openflexo</groupId>
-			<artifactId>excelconnector</artifactId>
-			<version>${project.version}</version>
-			<scope>runtime</scope>
-		</dependency>
-        <dependency>
-            <groupId>org.openflexo</groupId>
-            <artifactId>excelconnector</artifactId>
-			<version>${project.version}</version>
-            <classifier>resources</classifier>
-            <type>zip</type>
-        </dependency>
-   		<dependency>
-			<groupId>org.openflexo</groupId>
-			<artifactId>excelconnector-ui</artifactId>
-			<version>${project.version}</version>
-			<scope>runtime</scope>
-		</dependency>
-        <dependency>
-            <groupId>org.openflexo</groupId>
-            <artifactId>excelconnector-ui</artifactId>
-			<version>${project.version}</version>
-            <classifier>resources</classifier>
-            <type>zip</type>
-        </dependency>
-        <dependency>
-			<groupId>org.openflexo</groupId>
-			<artifactId>powerpointconnector</artifactId>
-			<version>${project.version}</version>
-			<scope>runtime</scope>
-		</dependency>
-        <dependency>
-            <groupId>org.openflexo</groupId>
-            <artifactId>powerpointconnector</artifactId>
-			<version>${project.version}</version>
-            <classifier>resources</classifier>
-            <type>zip</type>
-        </dependency>
-        <dependency>
- 			<groupId>org.openflexo</groupId>
- 			<artifactId>powerpointconnector-ui</artifactId>
-			<version>${project.version}</version>
- 			<scope>runtime</scope>
- 		</dependency>
- 		<dependency>
- 			<groupId>org.openflexo</groupId>
- 			<artifactId>powerpointconnector-ui</artifactId>
-			<version>${project.version}</version>
- 			<classifier>resources</classifier>
- 			 <type>zip</type>
- 		</dependency>
-			
-			<!--  Now list test projects -->
-			
-		<dependency>
-			<groupId>org.openflexo</groupId>
-			<artifactId>flexo-foundation</artifactId>
-			<version>${project.version}</version>
-			<classifier>tests</classifier>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.openflexo</groupId>
-			<artifactId>flexo-ui</artifactId>
-			<version>${project.version}</version>
-			<classifier>tests</classifier>
-			<scope>test</scope>
-		</dependency>
-		
+			<dependency>
+				<groupId>org.openflexo</groupId>
+				<artifactId>flexoviewpointmodeler</artifactId>
+				<version>${project.version}</version>
+				<scope>runtime</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.openflexo</groupId>
+				<artifactId>free-modelling-editor</artifactId>
+				<version>${project.version}</version>
+				<scope>runtime</scope>
+			</dependency>
+			<!-- Now, we list here all available technology adapters -->
+
+
+			<dependency>
+				<groupId>org.openflexo</groupId>
+				<artifactId>flexodiagram</artifactId>
+				<version>${project.version}</version>
+				<scope>runtime</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.openflexo</groupId>
+				<artifactId>flexodiagram-ui</artifactId>
+				<version>${project.version}</version>
+				<scope>runtime</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.openflexo</groupId>
+				<artifactId>emfconnector</artifactId>
+				<version>${project.version}</version>
+				<scope>runtime</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.openflexo</groupId>
+				<artifactId>emfconnector-ui</artifactId>
+				<version>${project.version}</version>
+				<scope>runtime</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.openflexo</groupId>
+				<artifactId>xmlconnector</artifactId>
+				<version>${project.version}</version>
+				<scope>runtime</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.openflexo</groupId>
+				<artifactId>xsdconnector</artifactId>
+				<version>${project.version}</version>
+				<scope>runtime</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.openflexo</groupId>
+				<artifactId>xsdconnector-ui</artifactId>
+				<version>${project.version}</version>
+				<scope>runtime</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.openflexo</groupId>
+				<artifactId>owlconnector</artifactId>
+				<version>${project.version}</version>
+				<scope>runtime</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.openflexo</groupId>
+				<artifactId>owlconnector-ui</artifactId>
+				<version>${project.version}</version>
+				<scope>runtime</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.openflexo</groupId>
+				<artifactId>excelconnector</artifactId>
+				<version>${project.version}</version>
+				<scope>runtime</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.openflexo</groupId>
+				<artifactId>excelconnector-ui</artifactId>
+				<version>${project.version}</version>
+				<scope>runtime</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.openflexo</groupId>
+				<artifactId>powerpointconnector</artifactId>
+				<version>${project.version}</version>
+				<scope>runtime</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.openflexo</groupId>
+				<artifactId>powerpointconnector-ui</artifactId>
+				<version>${project.version}</version>
+				<scope>runtime</scope>
+			</dependency>
+
+			<!-- Now list test projects -->
+
+			<dependency>
+				<groupId>org.openflexo</groupId>
+				<artifactId>flexo-foundation</artifactId>
+				<version>${project.version}</version>
+				<classifier>tests</classifier>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.openflexo</groupId>
+				<artifactId>flexo-ui</artifactId>
+				<version>${project.version}</version>
+				<classifier>tests</classifier>
+				<scope>test</scope>
+			</dependency>
+
 			<dependency>
 				<groupId>junit</groupId>
 				<artifactId>junit</artifactId>
 				<version>4.10</version>
 			</dependency>
-			
-			
+
+
 		</dependencies>
 	</dependencyManagement>
-	
+
 	<properties>
 		<connie.version>1.0-SNAPSHOT</connie.version>
 	</properties>
