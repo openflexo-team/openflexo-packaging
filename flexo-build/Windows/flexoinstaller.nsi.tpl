@@ -30,7 +30,7 @@ SetCompressor lzma
 !define BUSINESS_VERSION "@productSuffix@"
 !define PRODUCT_NAME "$(^Name) ${BUSINESS_VERSION} ${VERSION}"
 !define EXE_FILE "${PRODUCT_NAME}.exe"
-Icon "@dist.dir@\Icons\Flexo\@wizard.setup.icon@"
+Icon "@icons.dir@\@wizard.setup.icon@"
 
 # Included files
 !include Sections.nsh
@@ -49,7 +49,7 @@ Var StartMenuGroup
 
 # Installer pages
 !insertmacro MUI_PAGE_WELCOME
-!insertmacro MUI_PAGE_LICENSE  @dist.dir@\License\@versionType@\License.rtf
+!insertmacro MUI_PAGE_LICENSE  @license.dir@\@versionType@\License.rtf
 !insertmacro MUI_PAGE_DIRECTORY
 !insertmacro MUI_PAGE_STARTMENU Application $StartMenuGroup
 !insertmacro MUI_PAGE_INSTFILES

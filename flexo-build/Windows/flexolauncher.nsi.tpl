@@ -3,7 +3,7 @@
  
 Name "@product.name@ Launcher"
 Caption "@product.name@ Launcher"
-Icon "@dist.dir@\Icons\Flexo\@wizard.setup.icon@"
+Icon "@icons.dir@\@wizard.setup.icon@"
 OutFile "@dist.dir@\@qualified_and_versioned_app_name@.exe"
  
 VIAddVersionKey "ProductName" "@product.name@ Launcher"

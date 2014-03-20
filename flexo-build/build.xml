@@ -9,6 +9,10 @@
 		<propertyregex property="flexo_version" input="${project.version}" regexp="-SNAPSHOT" replace="" />
 		<!-- Set a 3 digit version in normalized_version -->
 		<propertyregex property="normalized_version" input="${flexo_version}" regexp="([0-9]+)\.([0-9]+)\.([0-9]+)" select="\0" defaultvalue="${flexo_version}.0"/>
+		<!-- ./target/../Icons -->
+		<property name="icons.dir" value="${project.build.directory}/../Icons" />
+		<!-- ./target/../License -->
+		<property name="license.dir" value="${project.build.directory}/../License" />
 		<!-- ./target -->
 		<property name="flexobuild.work.dir" value="${project.build.directory}/flexobuild" />
 		<!-- ./target/flexobuild -->
@@ -211,15 +215,15 @@
 		<tstamp>
 			<format property="current.year" pattern="yyyy" />
 		</tstamp>
-		<jarbundler stubfile="${java.stubfile}" dir="${mac.app.dir.versioned}" name="${qualified_and_versioned_app_name}" mainclass="${main.class}" bundleid="${project.groupId}" signature="FLXO" version="${flexo_version}" jvmversion="1.6+" shortname="${product.name}" icon="${dist.dir}/Resources/Icons/Flexo/${icon_mac_name}" arguments="${program.args}" infostring="${product.name} ${flexo_version}, (c) ${organization.name} ${current.year}" vmoptions="${vm.args}">
+		<jarbundler stubfile="${java.stubfile}" dir="${mac.app.dir.versioned}" name="${qualified_and_versioned_app_name}" mainclass="${main.class}" bundleid="${project.groupId}" signature="FLXO" version="${flexo_version}" jvmversion="1.6+" shortname="${product.name}" icon="${icons.dir}/${icon_mac_name}" arguments="${program.args}" infostring="${product.name} ${flexo_version}, (c) ${organization.name} ${current.year}" vmoptions="${vm.args}">
 			<javaproperty name="apple.awt.antialiasing" value="true" />
 			<javaproperty name="apple.awt.antialiasedtext" value="true" />
 			<javaproperty name="apple.laf.useScreenMenuBar" value="true" />
 			<jarfileset dir="${dist.dir}/lib">
 				<include name="*.jar" />
 			</jarfileset>
-			<documenttype name="OpenFlexo document" extensions="prj" iconFile="${dist.dir}/Icons/Flexo/FlexoDocument.icns" bundle="true" role="Editor" />
-			<documenttype name="OpenFlexo palette" extensions="iepalette" iconFile="${dist.dir}/Icons/Flexo/FlexoDocument2.icns" bundle="true" role="Editor" />
+			<documenttype name="OpenFlexo document" extensions="prj" iconFile="${icons.dir}/FlexoDocument.icns" bundle="true" role="Editor" />
+			<documenttype name="OpenFlexo palette" extensions="iepalette" iconFile="${icons.dir}/FlexoDocument2.icns" bundle="true" role="Editor" />
 		</jarbundler>
 		<copy todir="${mac.app.dir.versioned}/${relative_res_path}">
 			<fileset dir="${dist.dir}">
