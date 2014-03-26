@@ -281,10 +281,10 @@ public class TestCityMappingView extends OpenflexoProjectAtRunTimeTestCase {
 		assertNotNull(mansionEP);
 		assertNotNull(residentEP);
 
-		assertEquals(5, newVirtualModelInstance.getEPInstances(cityEP).size());
-		assertEquals(3, newVirtualModelInstance.getEPInstances(houseEP).size());
-		assertEquals(2, newVirtualModelInstance.getEPInstances(appartmentEP).size());
-		assertEquals(1, newVirtualModelInstance.getEPInstances(mansionEP).size());
-		assertEquals(3, newVirtualModelInstance.getEPInstances(residentEP).size());
+		assertEquals(5, newVirtualModelInstance.getFlexoConceptInstances(cityEP).size());
+		assertEquals(3, newVirtualModelInstance.getFlexoConceptInstances(houseEP).size());
+		assertEquals(2, newVirtualModelInstance.getFlexoConceptInstances(appartmentEP).size());
+		assertEquals(1, newVirtualModelInstance.getFlexoConceptInstances(mansionEP).size());
+		assertEquals(3, newVirtualModelInstance.getFlexoConceptInstances(residentEP).size());
 	}
 }
