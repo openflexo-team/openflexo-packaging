@@ -37,8 +37,8 @@ import org.openflexo.foundation.resource.RepositoryFolder;
 import org.openflexo.foundation.technologyadapter.FlexoModelResource;
 import org.openflexo.foundation.technologyadapter.ModelSlot;
 import org.openflexo.foundation.technologyadapter.TypeAwareModelSlotInstanceConfiguration;
+import org.openflexo.foundation.view.action.CreateBasicVirtualModelInstance;
 import org.openflexo.foundation.view.action.CreateView;
-import org.openflexo.foundation.view.action.CreateVirtualModelInstance;
 import org.openflexo.foundation.view.action.ModelSlotInstanceConfiguration.DefaultModelSlotInstanceConfigurationOption;
 import org.openflexo.foundation.view.rm.ViewResource;
 import org.openflexo.foundation.view.rm.VirtualModelInstanceResource;
@@ -218,7 +218,8 @@ public class TestCityMappingView extends OpenflexoProjectAtRunTimeTestCase {
 	public void test6CreateVirtualModelInstance() {
 		System.out.println("Create virtual model instance, view=" + view + " editor=" + editor);
 
-		CreateVirtualModelInstance createVirtualModelInstance = CreateVirtualModelInstance.actionType.makeNewAction(view, null, editor);
+		CreateBasicVirtualModelInstance createVirtualModelInstance = CreateBasicVirtualModelInstance.actionType.makeNewAction(view, null,
+				editor);
 		createVirtualModelInstance.setNewVirtualModelInstanceName("TestNewVirtualModel");
 		createVirtualModelInstance.setNewVirtualModelInstanceTitle("A nice title for a new virtual model instance");
 
