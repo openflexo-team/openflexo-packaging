@@ -37,8 +37,8 @@ import org.openflexo.foundation.resource.RepositoryFolder;
 import org.openflexo.foundation.technologyadapter.FlexoModelResource;
 import org.openflexo.foundation.technologyadapter.ModelSlot;
 import org.openflexo.foundation.technologyadapter.TypeAwareModelSlotInstanceConfiguration;
+import org.openflexo.foundation.view.action.CreateBasicVirtualModelInstance;
 import org.openflexo.foundation.view.action.CreateView;
-import org.openflexo.foundation.view.action.CreateVirtualModelInstance;
 import org.openflexo.foundation.view.action.ModelSlotInstanceConfiguration.DefaultModelSlotInstanceConfigurationOption;
 import org.openflexo.foundation.view.rm.ViewResource;
 import org.openflexo.foundation.view.rm.VirtualModelInstanceResource;
@@ -218,7 +218,8 @@ public class TestCityMappingView extends OpenflexoProjectAtRunTimeTestCase {
 	public void test6CreateVirtualModelInstance() {
 		System.out.println("Create virtual model instance, view=" + view + " editor=" + editor);
 
-		CreateVirtualModelInstance createVirtualModelInstance = CreateVirtualModelInstance.actionType.makeNewAction(view, null, editor);
+		CreateBasicVirtualModelInstance createVirtualModelInstance = CreateBasicVirtualModelInstance.actionType.makeNewAction(view, null,
+				editor);
 		createVirtualModelInstance.setNewVirtualModelInstanceName("TestNewVirtualModel");
 		createVirtualModelInstance.setNewVirtualModelInstanceTitle("A nice title for a new virtual model instance");
 
@@ -281,10 +282,10 @@ public class TestCityMappingView extends OpenflexoProjectAtRunTimeTestCase {
 		assertNotNull(mansionEP);
 		assertNotNull(residentEP);
 
-		assertEquals(5, newVirtualModelInstance.getEPInstances(cityEP).size());
-		assertEquals(3, newVirtualModelInstance.getEPInstances(houseEP).size());
-		assertEquals(2, newVirtualModelInstance.getEPInstances(appartmentEP).size());
-		assertEquals(1, newVirtualModelInstance.getEPInstances(mansionEP).size());
-		assertEquals(3, newVirtualModelInstance.getEPInstances(residentEP).size());
+		assertEquals(5, newVirtualModelInstance.getFlexoConceptInstances(cityEP).size());
+		assertEquals(3, newVirtualModelInstance.getFlexoConceptInstances(houseEP).size());
+		assertEquals(2, newVirtualModelInstance.getFlexoConceptInstances(appartmentEP).size());
+		assertEquals(1, newVirtualModelInstance.getFlexoConceptInstances(mansionEP).size());
+		assertEquals(3, newVirtualModelInstance.getFlexoConceptInstances(residentEP).size());
 	}
 }
