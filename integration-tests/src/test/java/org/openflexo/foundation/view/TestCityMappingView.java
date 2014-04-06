@@ -232,7 +232,7 @@ public class TestCityMappingView extends OpenflexoProjectAtRunTimeTestCase {
 		TypeAwareModelSlotInstanceConfiguration emfModelSlotConfiguration1 = (TypeAwareModelSlotInstanceConfiguration) createVirtualModelInstance
 				.getModelSlotInstanceConfiguration(emfModelSlot1);
 		emfModelSlotConfiguration1.setOption(DefaultModelSlotInstanceConfigurationOption.SelectExistingModel);
-		File modelFile1 = new File(((FileSystemBasedResourceCenter) resourceCenter).getRootDirectory(), "EMF/Model/city1/my.city1");
+		File modelFile1 = new File(((FileSystemBasedResourceCenter) resourceCenter).getRootDirectory(), "TestResourceCenter/ViewPointsOpenflexo17/EMF/Model/city1/my.city1");
 		System.out.println("Searching " + modelFile1.getAbsolutePath());
 		assertTrue(modelFile1.exists());
 		System.out.println("Searching " + modelFile1.toURI().toString());
@@ -246,7 +246,7 @@ public class TestCityMappingView extends OpenflexoProjectAtRunTimeTestCase {
 		TypeAwareModelSlotInstanceConfiguration emfModelSlotConfiguration2 = (TypeAwareModelSlotInstanceConfiguration) createVirtualModelInstance
 				.getModelSlotInstanceConfiguration(emfModelSlot2);
 		emfModelSlotConfiguration2.setOption(DefaultModelSlotInstanceConfigurationOption.SelectExistingModel);
-		File modelFile2 = new File(((FileSystemBasedResourceCenter) resourceCenter).getRootDirectory(), "EMF/Model/city2/first.city2");
+		File modelFile2 = new File(((FileSystemBasedResourceCenter) resourceCenter).getRootDirectory(), "TestResourceCenter/ViewPointsOpenflexo17/EMF/Model/city2/first.city2");
 		System.out.println("Searching " + modelFile2.getAbsolutePath());
 		assertTrue(modelFile2.exists());
 		System.out.println("Searching " + modelFile2.toURI().toString());
