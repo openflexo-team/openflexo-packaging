@@ -37,9 +37,9 @@
   <ModelSlot_VirtualModelModelSlot id="27" isRequired="true" isReadOnly="false" name="virtualModelInstance" virtualModelURI="http://www.thalesgroup.com/openflexo/emf/CityMapping/CitiesDiagram" userID="FLX" />
   <SynchronizationScheme id="28" name="synchronization" label="synchronization" skipConfirmationPanel="false" definePopupDefaultSize="false" width="800" height="600" userID="FLX">
     <FetchRequestIterationAction id="29" iteratorName="city" userID="FLX">
-      <FetchRequest_SelectFlexoConceptInstance id="30" flexoConceptTypeURI="http://www.thalesgroup.com/openflexo/emf/CityMapping/CityMapping#City" userID="FLX">
+      <FetchRequest_SelectEditionPatternInstance id="30" flexoConceptTypeURI="http://www.thalesgroup.com/openflexo/emf/CityMapping/CityMapping#City" userID="FLX">
         <VirtualModelModelSlot idref="24" userID="FLX" />
-      </FetchRequest_SelectFlexoConceptInstance>
+      </FetchRequest_SelectEditionPatternInstance>
       <VirtualModelModelSlot idref="24" userID="FLX" />
       <MatchFlexoConceptInstance id="31" virtualModelInstance="virtualModelInstance" creationSchemeURI="http://www.thalesgroup.com/openflexo/emf/CityMapping/CitiesDiagram#CityGR.creation" userID="FLX">
         <MatchingCriteria id="32" patternRoleName="shape" userID="FLX" />
