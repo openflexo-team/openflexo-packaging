@@ -40,7 +40,7 @@
   <FlexoConcept id="23" name="House" userID="FLX">
     <Inspector id="24" inspectorTitle="House" userID="FLX" />
   </FlexoConcept>
-  <FlexoConcept id="25" name="Appartment" parentFlexoConcept="http://www.thalesgroup.com/openflexo/emf/CityMapping/CityMapping#House" userID="FLX">
+  <FlexoConcept id="25" name="Appartment" userID="FLX">
     <CreationScheme id="26" name="creation" label="creation" skipConfirmationPanel="false" definePopupDefaultSize="false" width="800" height="600" userID="FLX">
       <IndividualParameter id="27" conceptURI="http://www.thalesgroup.com/openflexo/emf/model/city1/House" name="houseInModel1" label="houseInModel1" usePaletteLabelAsDefaultValue="false" isRequired="false" userID="FLX">
         <EMFModelSlot idref="5" userID="FLX" />
@@ -72,8 +72,9 @@
     <Inspector id="40" inspectorTitle="Appartment" renderer="(&quot;Appartment &quot; + ((instance.houseInModel1 != null) ? ((instance.appartmentInModel2 != null) ? (instance.houseInModel1.info + &quot; [sync]&quot;) : (instance.houseInModel1.info + &quot; [model1]&quot;)) : (instance.appartmentInModel2.label + &quot; [model2]&quot;)))" userID="FLX" />
     <Constraint id="41" constraint="(houseInModel1.type.name = &quot;Appartment&quot;)" userID="FLX" />
     <Constraint id="42" constraint="(houseInModel1.info = appartmentInModel2.label)" userID="FLX" />
+    <ParentFlexoConcept idref="23" />
   </FlexoConcept>
-  <FlexoConcept id="43" name="Mansion" parentFlexoConcept="http://www.thalesgroup.com/openflexo/emf/CityMapping/CityMapping#House" userID="FLX">
+  <FlexoConcept id="43" name="Mansion" userID="FLX">
     <CreationScheme id="44" name="creation" label="creation" skipConfirmationPanel="false" definePopupDefaultSize="false" width="800" height="600" userID="FLX">
       <IndividualParameter id="45" conceptURI="http://www.thalesgroup.com/openflexo/emf/model/city1/House" name="houseInModel1" label="houseInModel1" usePaletteLabelAsDefaultValue="false" isRequired="false" userID="FLX">
         <EMFModelSlot idref="5" userID="FLX" />
@@ -105,6 +106,7 @@
     <Inspector id="57" inspectorTitle="Mansion" renderer="(&quot;Mansion &quot; + ((instance.houseInModel1 != null) ? ((instance.mansionInModel2 != null) ? (instance.houseInModel1.info + &quot; [sync]&quot;) : (instance.houseInModel1.info + &quot; [model1]&quot;)) : (instance.mansionInModel2.number.toString + &quot; [model2]&quot;)))" userID="FLX" />
     <Constraint id="58" constraint="(houseInModel1.type.name = &quot;Mansion&quot;)" userID="FLX" />
     <Constraint id="59" constraint="(houseInModel1.info = mansionInModel2.number.toString)" userID="FLX" />
+    <ParentFlexoConcept idref="23" />
   </FlexoConcept>
   <FlexoConcept id="60" name="Resident" userID="FLX">
     <CreationScheme id="61" name="creation" label="creation" skipConfirmationPanel="false" definePopupDefaultSize="false" width="800" height="600" userID="FLX">
@@ -127,8 +129,9 @@
     <Inspector id="68" inspectorTitle="Resident" renderer="((instance.residentInModel1 != null) ? ((instance.houseInModel2 != null) ? (instance.residentInModel1.name + &quot; [sync]&quot;) : (instance.residentInModel1.name + &quot; [model1]&quot;)) : (instance.houseInModel2.owner + &quot; [model2]&quot;))" userID="FLX" />
     <Constraint id="69" constraint="(residentInModel1.name = houseInModel2.owner)" userID="FLX" />
   </FlexoConcept>
-  <FlexoConcept id="70" name="Mayor" parentFlexoConcept="http://www.thalesgroup.com/openflexo/emf/CityMapping/CityMapping#Resident" userID="FLX">
+  <FlexoConcept id="70" name="Mayor" userID="FLX">
     <Inspector id="71" inspectorTitle="Mayor" userID="FLX" />
+    <ParentFlexoConcept idref="60" />
   </FlexoConcept>
   <LocalizedDictionary id="72" userID="FLX" />
   <ModelSlot_EMFModelSlot idref="5" userID="FLX" />

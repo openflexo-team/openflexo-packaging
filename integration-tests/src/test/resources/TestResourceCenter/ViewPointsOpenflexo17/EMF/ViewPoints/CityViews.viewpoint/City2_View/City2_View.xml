@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VirtualModel id="1" name="City2_View" modelVersion="1.0" userID="FLX">
+  <description userID="FLX">Diagramme to create City2 EMF models</description>
+  <FlexoConcept id="2" name="CityGR" userID="FLX">
+    <DropScheme id="3" target="top" name="dropCityAtTopLevel" label="dropCityAtTopLevel" skipConfirmationPanel="false" definePopupDefaultSize="false" width="800" height="600" userID="FLX">
+      <AddShape id="4" container="topLevel" extendParentBoundsToHostThisShape="false" assignation="shape" userID="FLX">
+        <TypedDiagramModelSlot idref="38" userID="FLX" />
+      </AddShape>
+      <AddShape id="6" container="shape" extendParentBoundsToHostThisShape="false" assignation="icon" userID="FLX">
+        <TypedDiagramModelSlot idref="38" userID="FLX" />
+      </AddShape>
+      <AddEMFObjectIndividual id="7" assignation="city" individualName="&quot;A New City&quot;" userID="FLX">
+        <EMFModelSlot idref="8" userID="FLX" />
+      </AddEMFObjectIndividual>
+    </DropScheme>
+    <EMFObjectIndividualRole id="9" name="city" ontologicType="http://www.thalesgroup.com/openflexo/emf/model/city2/City" userID="FLX">
+      <EMFModelSlot id="8" isRequired="true" isReadOnly="false" name="city2model" metaModelURI="http://www.thalesgroup.com/openflexo/emf/model/city2" userID="FLX" />
+    </EMFObjectIndividualRole>
+    <ShapeRole id="10" name="shape" exampleLabel="label" userID="FLX">
+      <ShapeGraphicalRepresentation id="11" x="1.0" y="1.0" width="398.0" height="128.0" minimalWidth="0.0" minimalHeight="0.0" maximalWidth="Infinity" maximalHeight="Infinity" relativeTextX="0.5" relativeTextY="0.5" lineWrap="true" locationConstraints="UNMOVABLE" dimensionConstraints="UNRESIZABLE" adjustMinimalWidthToLabelWidth="true" adjustMinimalHeightToLabelHeight="true" adjustMaximalWidthToLabelWidth="false" adjustMaximalHeightToLabelHeight="false" hasSelectedForeground="false" hasSelectedBackground="false" hasFocusedForeground="false" hasFocusedBackground="false" isFloatingLabel="false" allowToLeaveBounds="true" xConstraints="1" yConstraints="1" widthConstraints="(parent.width - 2)" heightConstraints="(parent.height - 2)" identifier="object_0" layer="1" hasText="true" isMultilineAllowed="true" continuousTextEditing="true" absoluteTextX="0.0" absoluteTextY="0.0" paragraphAlignment="CENTER" horizontalTextAlignment="CENTER" verticalTextAlignment="MIDDLE" isSelectable="true" isFocusable="true" drawControlPointsWhenFocused="true" drawControlPointsWhenSelected="true" isReadOnly="false" isLabelEditable="true" isVisible="true" userID="FLX">
+        <ForegroundStyle id="12" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
+        <ColorBackgroundStyle id="13" color="254,254,254" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
+        <SelectedForegroundStyle id="14" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
+        <SelectedColorBackgroundStyle id="15" color="192,192,192" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
+        <FocusedForegroundStyle id="16" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
+        <FocusedColorBackgroundStyle id="17" color="192,192,192" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
+        <ShapeBorder id="18" top="0" bottom="0" left="0" right="0" userID="FLX" />
+        <RectangleShape id="19" isRounded="true" arcSize="30.0" userID="FLX" />
+        <ShadowStyle id="20" drawShadow="true" shadowDarkness="150" shadowDepth="2" shadowBlur="4" userID="FLX" />
+        <TextStyle id="21" font="SansSerif,1,11" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
+      </ShapeGraphicalRepresentation>
+      <TypedDiagramModelSlot idref="38" isRequired="true" isReadOnly="false" userID="FLX" />
+    </ShapeRole>
+    <ShapeRole id="22" name="icon" exampleLabel="" userID="FLX">
+      <ShapeGraphicalRepresentation id="23" x="0.0" y="0.0" width="50.0" height="50.0" minimalWidth="0.0" minimalHeight="0.0" maximalWidth="Infinity" maximalHeight="Infinity" relativeTextX="0.5" relativeTextY="0.5" lineWrap="true" locationConstraints="UNMOVABLE" dimensionConstraints="UNRESIZABLE" adjustMinimalWidthToLabelWidth="true" adjustMinimalHeightToLabelHeight="true" adjustMaximalWidthToLabelWidth="false" adjustMaximalHeightToLabelHeight="false" hasSelectedForeground="false" hasSelectedBackground="false" hasFocusedForeground="false" hasFocusedBackground="false" isFloatingLabel="false" allowToLeaveBounds="true" xConstraints="0" yConstraints="0" widthConstraints="50" heightConstraints="50" identifier="object_0_0" layer="1" hasText="true" isMultilineAllowed="true" continuousTextEditing="true" absoluteTextX="0.0" absoluteTextY="0.0" paragraphAlignment="CENTER" horizontalTextAlignment="CENTER" verticalTextAlignment="MIDDLE" isSelectable="true" isFocusable="true" drawControlPointsWhenFocused="true" drawControlPointsWhenSelected="true" isReadOnly="false" isLabelEditable="true" isVisible="true" userID="FLX">
+        <ForegroundStyle id="24" noStroke="true" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
+        <ImageBackgroundStyle id="25" imageFile="../icons/City.png" scaleX="0.46875" scaleY="0.46875" deltaX="0.0" deltaY="0.0" imageBackgroundType="OPAQUE" imageBackgroundColor="255,255,255" fitToShape="true" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
+        <SelectedForegroundStyle id="26" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
+        <SelectedColorBackgroundStyle id="27" color="192,192,192" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
+        <FocusedForegroundStyle id="28" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
+        <FocusedColorBackgroundStyle id="29" color="192,192,192" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
+        <ShapeBorder id="30" top="0" bottom="0" left="0" right="0" userID="FLX" />
+        <CircleShape id="31" userID="FLX" />
+        <ShadowStyle id="32" drawShadow="false" shadowDarkness="150" shadowDepth="2" shadowBlur="4" userID="FLX" />
+        <TextStyle id="33" font="SansSerif,1,11" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
+      </ShapeGraphicalRepresentation>
+      <ParentShapeRole idref="10" userID="FLX" />
+      <TypedDiagramModelSlot idref="38" userID="FLX" />
+    </ShapeRole>
+    <PrimaryConceptEMFObjectIndividualPatternRole idref="9" userID="FLX" />
+    <Inspector id="34" inspectorTitle="CityGR" userID="FLX" />
+  </FlexoConcept>
+  <LocalizedDictionary id="35" userID="FLX" />
+  <ModelSlot_VirtualModelModelSlot virtualModelURI="http://www.openflexo.org/cityviews/City2_View" name="virtualModelInstance" id="5" userID="FLX" />
+  <ModelSlot_EMFModelSlot idref="8" userID="FLX" />
+  <Inspector id="36" inspectorTitle="City2_View" userID="FLX" />
+  <ModelSlot_TypedDiagramModelSlot metaModelURI="http://www.openflexo.org/cityviews/City2_View/City2_View.diagramspecification" name="typedDiagramModelSlot" id="38" userID="FLX">
+    <FMLDiagramPaletteElementBinding paletteElementId="http://www.openflexo.org/cityviews/City2_View/City2_View.diagramspecification/CityTwo_View.palette#CityGR" userID="FLX">
+      <DropScheme idref="3" userID="FLX" />
+    </FMLDiagramPaletteElementBinding>
+  </ModelSlot_TypedDiagramModelSlot>
+</VirtualModel>

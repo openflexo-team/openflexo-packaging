@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <VirtualModel id="1" name="GenealogyDiagram" modelVersion="1.0" userID="FLX">
-  <FlexoConcept id="2" name="Man" parentFlexoConcept="http://ExcelViewpoint/GenealogyDiagram#Human" userID="FLX">
+  <FlexoConcept id="2" name="Man" userID="FLX">
     <DropScheme id="3" target="top" name="dropManAtTopLevel" label="dropManAtTopLevel" skipConfirmationPanel="false" definePopupDefaultSize="false" width="800" height="600" userID="FLX">
       <IntegerParameter id="4" name="rowIndex" label="rowIndex" defaultValue="1" usePaletteLabelAsDefaultValue="false" isRequired="false" userID="FLX" />
       <TextFieldParameter id="5" name="name" label="name" usePaletteLabelAsDefaultValue="false" isRequired="false" userID="FLX" />
@@ -143,8 +143,9 @@
       <BasicExcelModelSlot idref="14" userID="FLX" />
     </ExcelCellRole>
     <Inspector id="85" inspectorTitle="Man" userID="FLX" />
+    <ParentFlexoConcept idref="344" />
   </FlexoConcept>
-  <FlexoConcept id="86" name="Woman" parentFlexoConcept="http://ExcelViewpoint/GenealogyDiagram#Human" userID="FLX">
+  <FlexoConcept id="86" name="Woman" userID="FLX">
     <DropScheme id="87" target="top" name="dropWomamAtTopLevel" label="dropWomamAtTopLevel" skipConfirmationPanel="false" definePopupDefaultSize="false" width="800" height="600" userID="FLX">
       <TextFieldParameter id="88" name="name" label="name" usePaletteLabelAsDefaultValue="false" isRequired="false" userID="FLX" />
       <IntegerParameter id="89" name="rowInde" label="rowInde" defaultValue="1" usePaletteLabelAsDefaultValue="false" isRequired="false" userID="FLX" />
@@ -284,6 +285,7 @@
       <BasicExcelModelSlot idref="14" userID="FLX" />
     </ExcelCellRole>
     <Inspector id="163" inspectorTitle="Womam" userID="FLX" />
+    <ParentFlexoConcept idref="344" />
   </FlexoConcept>
   <FlexoConcept id="164" name="BrotherRelationship" userID="FLX">
     <LinkScheme id="165" fromTarget="http://ExcelViewpoint/GenealogyDiagram#Human" toTarget="http://ExcelViewpoint/GenealogyDiagram#Human" isAvailableWithFloatingPalette="true" northDirectionSupported="true" eastDirectionSupported="true" southDirectionSupported="true" westDirectionSupported="true" name="linkManToMan" label="brother" skipConfirmationPanel="false" definePopupDefaultSize="false" width="800" height="600" userID="FLX">
