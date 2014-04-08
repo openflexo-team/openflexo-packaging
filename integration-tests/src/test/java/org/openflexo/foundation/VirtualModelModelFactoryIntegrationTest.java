@@ -91,7 +91,7 @@ public class VirtualModelModelFactoryIntegrationTest extends OpenflexoTestCase {
 			System.out.println("Instanciating ViewPointModelFactory");
 			TechnologyAdapterService taService = DefaultTechnologyAdapterService.getNewInstance(null);
 			taService.addToTechnologyAdapters(ta);
-			VirtualModelModelFactory factory = new VirtualModelModelFactory(taService);
+			VirtualModelModelFactory factory = new VirtualModelModelFactory(null, taService);
 			ModelContext modelContext = factory.getModelContext();
 			for (Iterator<ModelEntity> it = modelContext.getEntities(); it.hasNext();) {
 				ModelEntity e = it.next();
@@ -211,7 +211,7 @@ public class VirtualModelModelFactoryIntegrationTest extends OpenflexoTestCase {
 	public void testInstantiateVirtualModelModelFactoryForAllTechnologyAdapters() {
 		try {
 			System.out.println("Instanciating ViewPointModelFactory");
-			VirtualModelModelFactory factory = new VirtualModelModelFactory(serviceManager.getTechnologyAdapterService());
+			VirtualModelModelFactory factory = new VirtualModelModelFactory(null, serviceManager.getTechnologyAdapterService());
 			ModelContext modelContext = factory.getModelContext();
 			for (Iterator<ModelEntity> it = modelContext.getEntities(); it.hasNext();) {
 				ModelEntity e = it.next();
