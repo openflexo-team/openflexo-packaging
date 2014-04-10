@@ -272,7 +272,7 @@ BOTSubDepartment type, with a Shape connected to it.</description>
         <ForegroundStyle id="149" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
         <SelectedForegroundStyle id="150" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
         <FocusedForegroundStyle id="151" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <LineConnector id="173" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
+        <LineConnectorSpecification id="173" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
         <TextStyle id="174" font="Lucida Sans,0,11" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
       </ConnectorGraphicalRepresentation>
       <TypedDiagramModelSlot idref="234" userID="FLX" />

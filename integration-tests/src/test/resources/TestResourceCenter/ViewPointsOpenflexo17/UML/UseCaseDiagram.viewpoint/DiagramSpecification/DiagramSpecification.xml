@@ -121,7 +121,7 @@ A use case is a summary of scenarios for a single task or goal. An actor is who 
         <ForegroundStyle id="83" noStroke="false" color="102,102,102" lineWidth="2.100000001490116" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
         <SelectedForegroundStyle id="84" noStroke="false" color="102,102,102" lineWidth="2.100000001490116" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
         <FocusedForegroundStyle id="85" noStroke="false" color="102,102,102" lineWidth="2.100000001490116" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <LineConnector id="86" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
+        <LineConnectorSpecification id="86" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
         <TextStyle id="87" font="Lucida Sans,0,11" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
       </ConnectorGraphicalRepresentation>
       <TypedDiagramModelSlot idref="124" userID="FLX" />

@@ -116,7 +116,7 @@
         <ForegroundStyle id="71" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
         <SelectedForegroundStyle id="72" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
         <FocusedForegroundStyle id="73" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <LineConnector id="74" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
+        <LineConnectorSpecification id="74" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
         <TextStyle id="75" font="Lucida Sans,0,9" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
       </ConnectorGraphicalRepresentation>
       <GRSpec id="97" featureName="label" value="&quot;top concept of&quot;" readOnly="true" userID="FLX" />
@@ -155,7 +155,7 @@
         <ForegroundStyle id="117" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
         <SelectedForegroundStyle id="118" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
         <FocusedForegroundStyle id="119" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <LineConnector id="120" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
+        <LineConnectorSpecification id="120" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
         <TextStyle id="121" font="Lucida Sans,0,9" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
       </ConnectorGraphicalRepresentation>
       <GRSpec id="142" featureName="label" value="&quot;broader&quot;" readOnly="true" userID="FLX" />
@@ -165,7 +165,7 @@
         <ForegroundStyle id="145" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
         <SelectedForegroundStyle id="146" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
         <FocusedForegroundStyle id="147" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <LineConnector id="148" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
+        <LineConnectorSpecification id="148" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
         <TextStyle id="149" font="Lucida Sans,0,9" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
       </ConnectorGraphicalRepresentation>
       <GRSpec id="170" featureName="label" value="&quot;broader match&quot;" readOnly="true" userID="FLX" />
@@ -204,7 +204,7 @@
         <ForegroundStyle id="190" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
         <SelectedForegroundStyle id="191" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
         <FocusedForegroundStyle id="192" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <LineConnector id="193" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
+        <LineConnectorSpecification id="193" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
         <TextStyle id="194" font="Lucida Sans,0,9" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
       </ConnectorGraphicalRepresentation>
       <GRSpec id="215" featureName="label" value="&quot;narrower&quot;" readOnly="true" userID="FLX" />
@@ -214,7 +214,7 @@
         <ForegroundStyle id="218" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
         <SelectedForegroundStyle id="219" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
         <FocusedForegroundStyle id="220" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <LineConnector id="221" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
+        <LineConnectorSpecification id="221" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
         <TextStyle id="222" font="Lucida Sans,0,9" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
       </ConnectorGraphicalRepresentation>
       <GRSpec id="243" featureName="label" value="&quot;narrow match&quot;" readOnly="true" userID="FLX" />
@@ -250,7 +250,7 @@
         <ForegroundStyle id="262" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="MEDIUM_SPACED_DASHES" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
         <SelectedForegroundStyle id="263" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="MEDIUM_SPACED_DASHES" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
         <FocusedForegroundStyle id="264" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="MEDIUM_SPACED_DASHES" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <LineConnector id="265" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
+        <LineConnectorSpecification id="265" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
         <TextStyle id="266" font="Lucida Sans,0,9" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
       </ConnectorGraphicalRepresentation>
       <GRSpec id="287" featureName="label" value="&quot;related&quot;" readOnly="true" userID="FLX" />
@@ -260,7 +260,7 @@
         <ForegroundStyle id="290" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="MEDIUM_SPACED_DASHES" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
         <SelectedForegroundStyle id="291" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="MEDIUM_SPACED_DASHES" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
         <FocusedForegroundStyle id="292" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="MEDIUM_SPACED_DASHES" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <LineConnector id="293" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
+        <LineConnectorSpecification id="293" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
         <TextStyle id="294" font="Lucida Sans,0,9" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
       </ConnectorGraphicalRepresentation>
       <GRSpec id="315" featureName="label" value="&quot;related match&quot;" readOnly="true" userID="FLX" />

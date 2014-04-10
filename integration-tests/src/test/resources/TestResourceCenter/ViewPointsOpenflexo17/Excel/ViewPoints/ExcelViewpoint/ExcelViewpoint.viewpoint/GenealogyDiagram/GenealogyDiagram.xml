@@ -334,7 +334,7 @@
         <ForegroundStyle id="185" noStroke="false" color="0,153,153" lineWidth="2.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
         <SelectedForegroundStyle id="186" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
         <FocusedForegroundStyle id="187" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <LineConnector id="188" lineConnectorType="ADJUSTABLE" cp1RelativeToStartObject="1.0,0.5000000000000002" cp2RelativeToEndObject="1.7763568394002505E-15,0.5" userID="FLX" />
+        <LineConnectorSpecification id="188" lineConnectorType="ADJUSTABLE" cp1RelativeToStartObject="1.0,0.5000000000000002" cp2RelativeToEndObject="1.7763568394002505E-15,0.5" userID="FLX" />
         <TextStyle id="189" font="Lucida Sans,0,11" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
       </ConnectorGraphicalRepresentation>
       <TypedDiagramModelSlot idref="436" userID="FLX" />
@@ -380,7 +380,7 @@
         <ForegroundStyle id="259" noStroke="false" color="0,204,153" lineWidth="2.000000001490116" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="MEDIUM_DASHES" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
         <SelectedForegroundStyle id="260" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
         <FocusedForegroundStyle id="261" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <LineConnector id="262" lineConnectorType="ADJUSTABLE" cp1RelativeToStartObject="0.9999719746373534,0.49470617555773383" cp2RelativeToEndObject="2.8025362646733054E-5,0.4947061755577128" userID="FLX" />
+        <LineConnectorSpecification id="262" lineConnectorType="ADJUSTABLE" cp1RelativeToStartObject="0.9999719746373534,0.49470617555773383" cp2RelativeToEndObject="2.8025362646733054E-5,0.4947061755577128" userID="FLX" />
         <TextStyle id="263" font="Lucida Sans,0,11" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
       </ConnectorGraphicalRepresentation>
       <TypedDiagramModelSlot idref="436" userID="FLX" />

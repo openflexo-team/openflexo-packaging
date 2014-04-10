@@ -97,7 +97,7 @@
   <Connector id="76" name="top concept of" userID="FLX">
     <ConnectorGraphicalRepresentation id="77" isVisible="true" layer="64" startSymbol="NONE" endSymbol="ARROW" middleSymbol="NONE" startSymbolSize="10.0" endSymbolSize="10.0" middleSymbolSize="10.0" debugCoveringArea="false" text="top concept of" isMultilineAllowed="false" isReadOnly="false" isSelectable="true" isFocusable="true" relativeTextX="0.5" relativeTextY="0.5" absoluteTextX="-26.0" absoluteTextY="-21.0" textAlignment="CENTER" userID="FLX">
       <ForegroundStyle id="78" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="MEDIUM_SPACED_DASHES" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-      <LineConnector id="79" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
+      <LineConnectorSpecification id="79" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
       <TextStyle id="80" font="Lucida Sans,0,10" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
     </ConnectorGraphicalRepresentation>
     <StartShape idref="12" userID="FLX" />
@@ -106,7 +106,7 @@
   <Connector id="81" name="top concept of" userID="FLX">
     <ConnectorGraphicalRepresentation id="82" isVisible="true" layer="64" startSymbol="NONE" endSymbol="ARROW" middleSymbol="NONE" startSymbolSize="10.0" endSymbolSize="10.0" middleSymbolSize="10.0" debugCoveringArea="false" text="top concept of" isMultilineAllowed="false" isReadOnly="false" isSelectable="true" isFocusable="true" relativeTextX="0.5" relativeTextY="0.5" absoluteTextX="0.0" absoluteTextY="0.0" textAlignment="CENTER" userID="FLX">
       <ForegroundStyle id="83" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-      <LineConnector id="84" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
+      <LineConnectorSpecification id="84" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
       <TextStyle id="85" font="Lucida Sans,0,10" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
     </ConnectorGraphicalRepresentation>
     <StartShape idref="20" userID="FLX" />
@@ -115,7 +115,7 @@
   <Connector id="86" name="top concept of" userID="FLX">
     <ConnectorGraphicalRepresentation id="87" isVisible="true" layer="64" startSymbol="NONE" endSymbol="ARROW" middleSymbol="NONE" startSymbolSize="10.0" endSymbolSize="10.0" middleSymbolSize="10.0" debugCoveringArea="false" text="top concept of" isMultilineAllowed="false" isReadOnly="false" isSelectable="true" isFocusable="true" relativeTextX="0.5" relativeTextY="0.5" absoluteTextX="46.0" absoluteTextY="-11.0" textAlignment="CENTER" userID="FLX">
       <ForegroundStyle id="88" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-      <LineConnector id="89" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
+      <LineConnectorSpecification id="89" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
       <TextStyle id="90" font="Lucida Sans,0,10" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
     </ConnectorGraphicalRepresentation>
     <StartShape idref="28" userID="FLX" />
@@ -124,7 +124,7 @@
   <Connector id="91" name="broader" userID="FLX">
     <ConnectorGraphicalRepresentation id="92" isVisible="true" layer="64" startSymbol="NONE" endSymbol="ARROW" middleSymbol="NONE" startSymbolSize="10.0" endSymbolSize="10.0" middleSymbolSize="10.0" debugCoveringArea="false" text="broader" isMultilineAllowed="false" isReadOnly="false" isSelectable="true" isFocusable="true" relativeTextX="0.5" relativeTextY="0.5" absoluteTextX="34.0" absoluteTextY="3.0" textAlignment="CENTER" userID="FLX">
       <ForegroundStyle id="93" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-      <LineConnector id="94" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
+      <LineConnectorSpecification id="94" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
       <TextStyle id="95" font="Lucida Sans,0,10" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
     </ConnectorGraphicalRepresentation>
     <StartShape idref="36" userID="FLX" />
@@ -133,7 +133,7 @@
   <Connector id="96" name="broader" userID="FLX">
     <ConnectorGraphicalRepresentation id="97" isVisible="true" layer="64" startSymbol="NONE" endSymbol="ARROW" middleSymbol="NONE" startSymbolSize="10.0" endSymbolSize="10.0" middleSymbolSize="10.0" debugCoveringArea="false" text="broader" isMultilineAllowed="false" isReadOnly="false" isSelectable="true" isFocusable="true" relativeTextX="0.5" relativeTextY="0.5" absoluteTextX="34.0" absoluteTextY="2.0" textAlignment="CENTER" userID="FLX">
       <ForegroundStyle id="98" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-      <LineConnector id="99" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
+      <LineConnectorSpecification id="99" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
       <TextStyle id="100" font="Lucida Sans,0,10" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
     </ConnectorGraphicalRepresentation>
     <StartShape idref="44" userID="FLX" />
@@ -142,7 +142,7 @@
   <Connector id="101" name="broader" userID="FLX">
     <ConnectorGraphicalRepresentation id="102" isVisible="true" layer="64" startSymbol="NONE" endSymbol="ARROW" middleSymbol="NONE" startSymbolSize="10.0" endSymbolSize="10.0" middleSymbolSize="10.0" debugCoveringArea="false" text="broader" isMultilineAllowed="false" isReadOnly="false" isSelectable="true" isFocusable="true" relativeTextX="0.5" relativeTextY="0.5" absoluteTextX="-31.0" absoluteTextY="-2.0" textAlignment="CENTER" userID="FLX">
       <ForegroundStyle id="103" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-      <LineConnector id="104" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
+      <LineConnectorSpecification id="104" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
       <TextStyle id="105" font="Lucida Sans,0,10" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
     </ConnectorGraphicalRepresentation>
     <StartShape idref="60" userID="FLX" />
@@ -151,7 +151,7 @@
   <Connector id="106" name="broader" userID="FLX">
     <ConnectorGraphicalRepresentation id="107" isVisible="true" layer="64" startSymbol="NONE" endSymbol="ARROW" middleSymbol="NONE" startSymbolSize="10.0" endSymbolSize="10.0" middleSymbolSize="10.0" debugCoveringArea="false" text="broader" isMultilineAllowed="false" isReadOnly="false" isSelectable="true" isFocusable="true" relativeTextX="0.5" relativeTextY="0.5" absoluteTextX="-29.0" absoluteTextY="-3.0" textAlignment="CENTER" userID="FLX">
       <ForegroundStyle id="108" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-      <LineConnector id="109" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
+      <LineConnectorSpecification id="109" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
       <TextStyle id="110" font="Lucida Sans,0,10" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
     </ConnectorGraphicalRepresentation>
     <StartShape idref="68" userID="FLX" />
@@ -160,7 +160,7 @@
   <Connector id="111" name="broader" userID="FLX">
     <ConnectorGraphicalRepresentation id="112" isVisible="true" layer="64" startSymbol="NONE" endSymbol="ARROW" middleSymbol="NONE" startSymbolSize="10.0" endSymbolSize="10.0" middleSymbolSize="10.0" debugCoveringArea="false" text="broader" isMultilineAllowed="false" isReadOnly="false" isSelectable="true" isFocusable="true" relativeTextX="0.5" relativeTextY="0.5" absoluteTextX="-30.0" absoluteTextY="0.0" textAlignment="CENTER" userID="FLX">
       <ForegroundStyle id="113" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-      <LineConnector id="114" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
+      <LineConnectorSpecification id="114" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
       <TextStyle id="115" font="Lucida Sans,0,10" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
     </ConnectorGraphicalRepresentation>
     <StartShape idref="52" userID="FLX" />
@@ -169,7 +169,7 @@
   <Connector id="116" name="related" userID="FLX">
     <ConnectorGraphicalRepresentation id="117" isVisible="true" layer="64" startSymbol="ARROW" endSymbol="ARROW" middleSymbol="NONE" startSymbolSize="10.0" endSymbolSize="10.0" middleSymbolSize="10.0" debugCoveringArea="false" text="related" isMultilineAllowed="false" isReadOnly="false" isSelectable="true" isFocusable="true" relativeTextX="0.5" relativeTextY="0.5" absoluteTextX="0.0" absoluteTextY="-10.0" textAlignment="CENTER" userID="FLX">
       <ForegroundStyle id="118" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="MEDIUM_SPACED_DASHES" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-      <LineConnector id="119" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
+      <LineConnectorSpecification id="119" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
       <TextStyle id="120" font="Lucida Sans,0,10" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
     </ConnectorGraphicalRepresentation>
     <StartShape idref="60" userID="FLX" />

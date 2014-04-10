@@ -357,7 +357,7 @@
         <ForegroundStyle id="234" noStroke="false" color="102,102,102" lineWidth="2.200000001490116" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
         <SelectedForegroundStyle id="235" noStroke="false" color="102,102,102" lineWidth="2.200000001490116" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
         <FocusedForegroundStyle id="236" noStroke="false" color="102,102,102" lineWidth="2.200000001490116" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <LineConnector id="237" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
+        <LineConnectorSpecification id="237" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
         <TextStyle id="238" font="Lucida Sans,0,11" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
       </ConnectorGraphicalRepresentation>
       <TypedDiagramModelSlot idref="266" userID="FLX" />

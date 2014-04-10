@@ -120,7 +120,7 @@
       <ForegroundStyle id="97" noStroke="false" color="0,204,153" lineWidth="2.000000001490116" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="MEDIUM_DASHES" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
       <SelectedForegroundStyle id="98" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
       <FocusedForegroundStyle id="99" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-      <LineConnector id="100" lineConnectorType="ADJUSTABLE" cp1RelativeToStartObject="0.9999999999999999,0.4947058788183808" cp2RelativeToEndObject="0.0,0.4947058788183807" userID="FLX" />
+      <LineConnectorSpecification id="100" lineConnectorType="ADJUSTABLE" cp1RelativeToStartObject="0.9999999999999999,0.4947058788183808" cp2RelativeToEndObject="0.0,0.4947058788183807" userID="FLX" />
       <TextStyle id="101" font="Lucida Sans,0,11" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
     </ConnectorGraphicalRepresentation>
     <StartShape idref="50" userID="FLX" />

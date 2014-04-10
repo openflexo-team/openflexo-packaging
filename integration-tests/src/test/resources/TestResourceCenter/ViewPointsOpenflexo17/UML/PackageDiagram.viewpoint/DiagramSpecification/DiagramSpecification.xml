@@ -69,7 +69,7 @@ One package depends on another if changes in the other could possibly force chan
         <ForegroundStyle id="42" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="BIG_DASHES" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
         <SelectedForegroundStyle id="43" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="BIG_DASHES" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
         <FocusedForegroundStyle id="44" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="BIG_DASHES" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <LineConnector id="45" lineConnectorType="MINIMAL_LENGTH" cp1RelativeToStartObject="0.9965753021614381,0.5584206237836987" cp2RelativeToEndObject="0.0017271208775611058,0.5415227399268701" userID="FLX" />
+        <LineConnectorSpecification id="45" lineConnectorType="MINIMAL_LENGTH" cp1RelativeToStartObject="0.9965753021614381,0.5584206237836987" cp2RelativeToEndObject="0.0017271208775611058,0.5415227399268701" userID="FLX" />
         <TextStyle id="46" font="Lucida Sans,0,11" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
       </ConnectorGraphicalRepresentation>
       <GRSpec id="68" featureName="label" value="&quot;import&quot;" readOnly="true" userID="FLX" />
