@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Diagram id="1" name="GenalogyExample" uri="http://ExcelViewpoint/GenealogyDiagram/GenealogyDiagram.diagramspecification/GenalogyExample" userID="FLX">
+<Diagram id="1" name="GenalogyExample" uri="http://ExcelViewpoint/GenealogyDiagram/GenealogyDiagram.diagramspecification/GenalogyExample" diagramSpecificationURI="http://ExcelViewpoint/GenealogyDiagram/GenealogyDiagram.diagramspecification" userID="FLX">
   <DrawingGraphicalRepresentation id="2" width="1000.0" height="1000.0" drawWorkingArea="false" selectionColor="0,0,255" focusColor="255,0,0" backgroundColor="255,255,255" identifier="root" layer="0" hasText="true" isMultilineAllowed="true" continuousTextEditing="true" absoluteTextX="0.0" absoluteTextY="0.0" paragraphAlignment="CENTER" horizontalTextAlignment="CENTER" verticalTextAlignment="MIDDLE" isSelectable="true" isFocusable="true" drawControlPointsWhenFocused="true" drawControlPointsWhenSelected="true" isReadOnly="false" isLabelEditable="true" isVisible="true" userID="FLX">
     <TextStyle id="3" font="Lucida Sans,0,11" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
   </DrawingGraphicalRepresentation>
@@ -187,7 +187,7 @@
       <ForegroundStyle id="149" noStroke="false" color="255,0,51" lineWidth="2.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
       <SelectedForegroundStyle id="150" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
       <FocusedForegroundStyle id="151" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-      <RectPolylinConnector id="152" rectPolylinConstraints="NONE" straightLineWhenPossible="true" adjustability="AUTO_LAYOUT" startOrientation="NORTH" endOrientation="SOUTH" isRounded="false" arcSize="5" isStartingLocationFixed="true" isEndingLocationFixed="true" isStartingLocationDraggable="true" isEndingLocationDraggable="true" fixedStartLocation="0.9440226916645558,0.0030092830849712676" fixedEndLocation="0.8140318687642295,1.0" userID="FLX" />
+      <RectPolylinConnectorSpecification id="152" rectPolylinConstraints="NONE" straightLineWhenPossible="true" adjustability="AUTO_LAYOUT" startOrientation="NORTH" endOrientation="SOUTH" isRounded="false" arcSize="5" isStartingLocationFixed="true" isEndingLocationFixed="true" isStartingLocationDraggable="true" isEndingLocationDraggable="true" fixedStartLocation="0.9440226916645558,0.0030092830849712676" fixedEndLocation="0.8140318687642295,1.0" userID="FLX" />
       <TextStyle id="153" font="Lucida Sans,0,11" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
     </ConnectorGraphicalRepresentation>
     <StartShape idref="102" userID="FLX" />
@@ -254,7 +254,7 @@
       <ForegroundStyle id="200" noStroke="false" color="153,153,153" lineWidth="2.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="DOTS_DASHES" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
       <SelectedForegroundStyle id="201" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
       <FocusedForegroundStyle id="202" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-      <RectPolylinConnector id="203" rectPolylinConstraints="NONE" straightLineWhenPossible="true" adjustability="AUTO_LAYOUT" startOrientation="NORTH" endOrientation="NORTH" isRounded="false" arcSize="5" isStartingLocationFixed="true" isEndingLocationFixed="true" isStartingLocationDraggable="true" isEndingLocationDraggable="true" fixedStartLocation="0.6053057485682727,1.3877787807814457E-17" fixedEndLocation="0.45962628727259736,0.0" userID="FLX" />
+      <RectPolylinConnectorSpecification id="203" rectPolylinConstraints="NONE" straightLineWhenPossible="true" adjustability="AUTO_LAYOUT" startOrientation="NORTH" endOrientation="NORTH" isRounded="false" arcSize="5" isStartingLocationFixed="true" isEndingLocationFixed="true" isStartingLocationDraggable="true" isEndingLocationDraggable="true" fixedStartLocation="0.6053057485682727,1.3877787807814457E-17" fixedEndLocation="0.45962628727259736,0.0" userID="FLX" />
       <TextStyle id="204" font="Lucida Sans,0,11" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
     </ConnectorGraphicalRepresentation>
     <StartShape idref="4" userID="FLX" />
@@ -377,7 +377,7 @@
       <ForegroundStyle id="295" noStroke="false" color="255,0,51" lineWidth="2.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
       <SelectedForegroundStyle id="296" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
       <FocusedForegroundStyle id="297" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-      <RectPolylinConnector id="298" rectPolylinConstraints="NONE" straightLineWhenPossible="true" adjustability="AUTO_LAYOUT" startOrientation="NORTH" endOrientation="SOUTH" isRounded="false" arcSize="5" isStartingLocationFixed="true" isEndingLocationFixed="true" isStartingLocationDraggable="true" isEndingLocationDraggable="true" fixedStartLocation="0.3305177796117551,-4.440892098500626E-16" fixedEndLocation="0.5267627112562348,0.9999999999999998" userID="FLX" />
+      <RectPolylinConnectorSpecification id="298" rectPolylinConstraints="NONE" straightLineWhenPossible="true" adjustability="AUTO_LAYOUT" startOrientation="NORTH" endOrientation="SOUTH" isRounded="false" arcSize="5" isStartingLocationFixed="true" isEndingLocationFixed="true" isStartingLocationDraggable="true" isEndingLocationDraggable="true" fixedStartLocation="0.3305177796117551,-4.440892098500626E-16" fixedEndLocation="0.5267627112562348,0.9999999999999998" userID="FLX" />
       <TextStyle id="299" font="Lucida Sans,0,11" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
     </ConnectorGraphicalRepresentation>
     <StartShape idref="205" userID="FLX" />
@@ -388,7 +388,7 @@
       <ForegroundStyle id="302" noStroke="false" color="0,51,204" lineWidth="2.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
       <SelectedForegroundStyle id="303" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
       <FocusedForegroundStyle id="304" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-      <RectPolylinConnector id="305" rectPolylinConstraints="NONE" straightLineWhenPossible="true" adjustability="AUTO_LAYOUT" startOrientation="WEST" endOrientation="EAST" isRounded="false" arcSize="5" isStartingLocationFixed="false" isEndingLocationFixed="false" isStartingLocationDraggable="true" isEndingLocationDraggable="true" userID="FLX" />
+      <RectPolylinConnectorSpecification id="305" rectPolylinConstraints="NONE" straightLineWhenPossible="true" adjustability="AUTO_LAYOUT" startOrientation="WEST" endOrientation="EAST" isRounded="false" arcSize="5" isStartingLocationFixed="false" isEndingLocationFixed="false" isStartingLocationDraggable="true" isEndingLocationDraggable="true" userID="FLX" />
       <TextStyle id="306" font="Lucida Sans,0,11" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
     </ConnectorGraphicalRepresentation>
     <StartShape idref="50" userID="FLX" />
@@ -399,7 +399,7 @@
       <ForegroundStyle id="309" noStroke="false" color="255,0,51" lineWidth="2.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
       <SelectedForegroundStyle id="310" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
       <FocusedForegroundStyle id="311" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-      <RectPolylinConnector id="312" rectPolylinConstraints="NONE" straightLineWhenPossible="true" adjustability="AUTO_LAYOUT" startOrientation="NORTH" endOrientation="SOUTH" isRounded="false" arcSize="5" isStartingLocationFixed="true" isEndingLocationFixed="true" isStartingLocationDraggable="true" isEndingLocationDraggable="true" fixedStartLocation="0.7063200067468858,0.0" fixedEndLocation="0.26090765024494544,1.0000000000000002" userID="FLX" />
+      <RectPolylinConnectorSpecification id="312" rectPolylinConstraints="NONE" straightLineWhenPossible="true" adjustability="AUTO_LAYOUT" startOrientation="NORTH" endOrientation="SOUTH" isRounded="false" arcSize="5" isStartingLocationFixed="true" isEndingLocationFixed="true" isStartingLocationDraggable="true" isEndingLocationDraggable="true" fixedStartLocation="0.7063200067468858,0.0" fixedEndLocation="0.26090765024494544,1.0000000000000002" userID="FLX" />
       <TextStyle id="313" font="Lucida Sans,0,11" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
     </ConnectorGraphicalRepresentation>
     <StartShape idref="249" userID="FLX" />

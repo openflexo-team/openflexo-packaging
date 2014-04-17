@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<DiagramPalette id="1" index="0" name="GenealogyPalette" userID="FLX">
+<DiagramPalette id="1" index="0" name="GenealogyPalette" diagramSpecificationURI="http://ExcelViewpoint/GenealogyDiagram/GenealogyDiagram.diagramspecification" userID="FLX">
   <DiagramPaletteElement id="2" name="Man" flexoConcept="Man" dropSchemeName="dropManAtTopLevel" boundLabelToElementName="false" userID="FLX">
     <Parameter id="3" name="age" value="0" userID="FLX" />
     <Parameter id="4" name="nameInGen" value="" userID="FLX" />

@@ -227,10 +227,10 @@
       <CreateFlexoConceptInstanceParameter id="132" paramName="cityParameter" value="city" userID="FLX" />
     </MatchFlexoConceptInstance>
     <FetchRequestIterationAction id="133" iteratorName="appartment" userID="FLX">
-      <FetchRequest_SelectEditionPatternInstance id="134" flexoConceptTypeURI="http://www.thalesgroup.com/openflexo/emf/CityMapping/CityMapping#Appartment" userID="FLX">
+      <FetchRequest_SelectFlexoConceptInstance id="134" flexoConceptTypeURI="http://www.thalesgroup.com/openflexo/emf/CityMapping/CityMapping#Appartment" userID="FLX">
         <VirtualModelModelSlot idref="119" userID="FLX" />
         <Condition id="135" condition="(selected.city = city)" userID="FLX" />
-      </FetchRequest_SelectEditionPatternInstance>
+      </FetchRequest_SelectFlexoConceptInstance>
       <VirtualModelModelSlot idref="5" userID="FLX" />
       <MatchFlexoConceptInstance id="136" virtualModelInstance="virtualModelInstance" creationSchemeURI="http://www.thalesgroup.com/openflexo/emf/CityMapping/CityDiagram#AppartmentGR.createAppartmentGR" userID="FLX">
         <MatchingCriteria id="137" patternRoleName="shape" userID="FLX" />
@@ -239,10 +239,10 @@
       </MatchFlexoConceptInstance>
     </FetchRequestIterationAction>
     <FetchRequestIterationAction id="140" iteratorName="mansion" userID="FLX">
-      <FetchRequest_SelectEditionPatternInstance id="141" flexoConceptTypeURI="http://www.thalesgroup.com/openflexo/emf/CityMapping/CityMapping#Mansion" userID="FLX">
+      <FetchRequest_SelectFlexoConceptInstance id="141" flexoConceptTypeURI="http://www.thalesgroup.com/openflexo/emf/CityMapping/CityMapping#Mansion" userID="FLX">
         <VirtualModelModelSlot idref="119" userID="FLX" />
         <Condition id="142" condition="(selected.city = city)" userID="FLX" />
-      </FetchRequest_SelectEditionPatternInstance>
+      </FetchRequest_SelectFlexoConceptInstance>
       <VirtualModelModelSlot idref="5" userID="FLX" />
       <MatchFlexoConceptInstance id="143" virtualModelInstance="virtualModelInstance" creationSchemeURI="http://www.thalesgroup.com/openflexo/emf/CityMapping/CityDiagram#MansionGR.createMansionGR" userID="FLX">
         <MatchingCriteria id="144" patternRoleName="shape" userID="FLX" />

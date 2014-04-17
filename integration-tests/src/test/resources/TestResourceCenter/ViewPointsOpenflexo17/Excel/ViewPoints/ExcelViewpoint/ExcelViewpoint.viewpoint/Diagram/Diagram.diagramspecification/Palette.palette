@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<DiagramPalette id="1" index="0" name="Palette" userID="FLX">
+<DiagramPalette id="1" index="0" name="Palette" diagramSpecificationURI="http://ExcelViewpoint/Diagram/Diagram.diagramspecification" userID="FLX">
   <DiagramPaletteElement id="2" name="Row" flexoConcept="Row" dropSchemeName="dropAtTopLevel" boundLabelToElementName="true" userID="FLX">
     <Parameter id="3" name="index" value="" userID="FLX" />
     <Parameter id="4" name="editionPatternInstance" value="" userID="FLX" />
