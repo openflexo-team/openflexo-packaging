@@ -9,7 +9,7 @@
 		<artifactId>flexo-exec</artifactId>
 		<version>1.7-SNAPSHOT</version>
 	</parent>
-	<artifactId>freemodeling</artifactId>
+	<artifactId>freemodelling</artifactId>
 	<properties>
 		<userType>freemodelling_release</userType>
 		<vm.args>-Xmx256M</vm.args>

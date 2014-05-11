@@ -52,6 +52,7 @@
 		<antcall target="packageSemantics" />
 		<antcall target="packageSemanticsPlus" />
 		<antcall target="packageMaintainer" />
+		<antcall target="packageFreemodelling" />
 		<!--<antcall target="packageAnalyst" />
 		<antcall target="packageDeveloper" />-->
 	</target>
@@ -73,6 +74,11 @@
 	
 	<target name="packageMaintainer">
 		<loadproperties srcfile="maintainer.properties" />
+		<antcall target="createPackage" />
+	</target>
+
+	<target name="packageFreemodelling">
+		<loadproperties srcfile="freemodelling.properties" />
 		<antcall target="createPackage" />
 	</target>
 

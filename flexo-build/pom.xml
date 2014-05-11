@@ -114,7 +114,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo.packaging</groupId>
-			<artifactId>freemodeling</artifactId>
+			<artifactId>freemodelling</artifactId>
 			<type>pom</type>
 		</dependency>
 	</dependencies>
