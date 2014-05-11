@@ -222,12 +222,16 @@
 			<jarfileset dir="${dist.dir}/lib">
 				<include name="*.jar" />
 			</jarfileset>
+			<jarfileset dir="${dist.dir}/deps">
+				<include name="*.jar" />
+			</jarfileset>
 			<documenttype name="OpenFlexo document" extensions="prj" iconFile="${icons.dir}/FlexoDocument.icns" bundle="true" role="Editor" />
 			<documenttype name="OpenFlexo palette" extensions="iepalette" iconFile="${icons.dir}/FlexoDocument2.icns" bundle="true" role="Editor" />
 		</jarbundler>
 		<copy todir="${mac.app.dir.versioned}/${relative_res_path}">
 			<fileset dir="${dist.dir}">
 				<exclude name="lib/*" />
+				<exclude name="deps/*" />
 				<exclude name="*.exe" />
 				<exclude name="*.sh" />
 			</fileset>
