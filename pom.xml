@@ -10,7 +10,7 @@
 	<artifactId>openflexo-packaging</artifactId>
 	<version>1.7-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<name>Openflexo Packaging</name>
+	<name>Openflexo-Packaging</name>
 	<modules>
 		<module>flexo-build</module>
 		<module>flexo-exec</module>
