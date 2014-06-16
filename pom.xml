@@ -19,7 +19,8 @@
 	<properties>
 		<flexocore.version>1.7.0-beta</flexocore.version>
 		<ta.version>1.7.0-beta</ta.version>
-		<modules.version>1.7.0-beta</modules.version>
+		<modules.version>1.7.0-beta</modules.version>	
+		<connie.version>1.0</connie.version>
 	</properties>
 	<scm>
 		<connection>scm:git:ssh://git@github.com/openflexo-team/openflexo-packaging.git</connection>
