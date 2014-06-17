@@ -1,21 +1,31 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.openflexo</groupId>
 		<artifactId>openflexo-production</artifactId>
-		<version>0.1-SNAPSHOT</version>
+		<version>0.1</version>
 	</parent>
 	<groupId>org.openflexo.packaging</groupId>
 	<artifactId>openflexo-packaging</artifactId>
 	<version>1.7-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<name>Openflexo Packaging</name>
+	<name>Openflexo-Packaging</name>
 	<modules>
 		<module>flexo-build</module>
 		<module>flexo-exec</module>
 		<module>integration-tests</module>
 	</modules>
+	<properties>
+		<flexocore.version>1.7.0-beta</flexocore.version>
+		<ta.version>1.7.0-beta</ta.version>
+		<modules.version>1.7.0-beta</modules.version>	
+		<connie.version>1.0</connie.version>
+	</properties>
+	<scm>
+		<connection>scm:git:ssh://git@github.com/openflexo-team/openflexo-packaging.git</connection>
+		<url>https://github.com/openflexo-team/openflexo-packaging</url>
+	  <tag>Openflexo Packaging-1.7.0-beta</tag>
+  </scm>
 	<build>
 		<pluginManagement>
 			<plugins>
@@ -75,21 +85,21 @@
 			<dependency>
 				<groupId>org.openflexo</groupId>
 				<artifactId>flexovieweditor</artifactId>
-				<version>${project.version}</version>
+				<version>${modules.version}</version>
 				<scope>runtime</scope>
 			</dependency>
 
 			<dependency>
 				<groupId>org.openflexo</groupId>
 				<artifactId>flexoviewpointmodeler</artifactId>
-				<version>${project.version}</version>
+				<version>${modules.version}</version>
 				<scope>runtime</scope>
 			</dependency>
 
 			<dependency>
 				<groupId>org.openflexo</groupId>
 				<artifactId>free-modelling-editor</artifactId>
-				<version>${project.version}</version>
+				<version>${modules.version}</version>
 				<scope>runtime</scope>
 			</dependency>
 			<!-- Now, we list here all available technology adapters -->
@@ -98,81 +108,81 @@
 			<dependency>
 				<groupId>org.openflexo</groupId>
 				<artifactId>flexodiagram</artifactId>
-				<version>${project.version}</version>
+				<version>${ta.version}</version>
 				<scope>runtime</scope>
 			</dependency>
 
 			<dependency>
 				<groupId>org.openflexo</groupId>
 				<artifactId>flexodiagram-ui</artifactId>
-				<version>${project.version}</version>
+				<version>${ta.version}</version>
 				<scope>runtime</scope>
 			</dependency>
 
 			<dependency>
 				<groupId>org.openflexo</groupId>
 				<artifactId>emfconnector</artifactId>
-				<version>${project.version}</version>
+				<version>${ta.version}</version>
 				<scope>runtime</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.openflexo</groupId>
 				<artifactId>emfconnector-ui</artifactId>
-				<version>${project.version}</version>
+				<version>${ta.version}</version>
 				<scope>runtime</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.openflexo</groupId>
 				<artifactId>xmlconnector</artifactId>
-				<version>${project.version}</version>
+				<version>${ta.version}</version>
 				<scope>runtime</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.openflexo</groupId>
 				<artifactId>xsdconnector</artifactId>
-				<version>${project.version}</version>
+				<version>${ta.version}</version>
 				<scope>runtime</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.openflexo</groupId>
 				<artifactId>xsdconnector-ui</artifactId>
-				<version>${project.version}</version>
+				<version>${ta.version}</version>
 				<scope>runtime</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.openflexo</groupId>
 				<artifactId>owlconnector</artifactId>
-				<version>${project.version}</version>
+				<version>${ta.version}</version>
 				<scope>runtime</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.openflexo</groupId>
 				<artifactId>owlconnector-ui</artifactId>
-				<version>${project.version}</version>
+				<version>${ta.version}</version>
 				<scope>runtime</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.openflexo</groupId>
 				<artifactId>excelconnector</artifactId>
-				<version>${project.version}</version>
+				<version>${ta.version}</version>
 				<scope>runtime</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.openflexo</groupId>
 				<artifactId>excelconnector-ui</artifactId>
-				<version>${project.version}</version>
+				<version>${ta.version}</version>
 				<scope>runtime</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.openflexo</groupId>
 				<artifactId>powerpointconnector</artifactId>
-				<version>${project.version}</version>
+				<version>${ta.version}</version>
 				<scope>runtime</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.openflexo</groupId>
 				<artifactId>powerpointconnector-ui</artifactId>
-				<version>${project.version}</version>
+				<version>${ta.version}</version>
 				<scope>runtime</scope>
 			</dependency>
 
@@ -181,14 +191,14 @@
 			<dependency>
 				<groupId>org.openflexo</groupId>
 				<artifactId>flexo-foundation</artifactId>
-				<version>${project.version}</version>
+				<version>${flexocore.version}</version>
 				<classifier>tests</classifier>
 				<scope>test</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.openflexo</groupId>
 				<artifactId>flexo-ui</artifactId>
-				<version>${project.version}</version>
+				<version>${flexocore.version}</version>
 				<classifier>tests</classifier>
 				<scope>test</scope>
 			</dependency>
@@ -204,12 +214,9 @@
 				<groupId>org.openflexo</groupId>
 				<artifactId>flexodocresourcecenter</artifactId>
 				<scope>runtime</scope>
-				<version>${project.version}</version>
+				<version>${flexocore.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
-	<properties>
-		<connie.version>1.0-SNAPSHOT</connie.version>
-	</properties>
 </project>
