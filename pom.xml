@@ -187,7 +187,6 @@
 			</dependency>
 
 			<!-- Now list test projects -->
-
 			<dependency>
 				<groupId>org.openflexo</groupId>
 				<artifactId>flexo-foundation</artifactId>

@@ -1,40 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <name>Executable :: Flexo Semantics Packaging</name>
-    <parent>
-        <groupId>org.openflexo.packaging</groupId>
-        <artifactId>flexo-exec</artifactId>
-	<version>1.7.0-SNAPSHOT</version>
-    </parent>
-    <artifactId>flexosemantics</artifactId>
-    <properties>
-        <userType>semantics_release</userType>
-    </properties>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-assembly-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
-    <dependencies>
-        <dependency>
-            <groupId>org.openflexo</groupId>
-            <artifactId>flexovieweditor</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.openflexo</groupId>
-            <artifactId>flexodiagram</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-       <dependency>
-            <groupId>org.openflexo</groupId>
-            <artifactId>flexodiagram-ui</artifactId>
-            <scope>runtime</scope>
-        </dependency>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<name>Executable :: Flexo Semantics Packaging</name>
+	<parent>
+		<groupId>org.openflexo.packaging</groupId>
+		<artifactId>flexo-exec</artifactId>
+		<version>1.7.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>flexosemantics</artifactId>
+	<properties>
+		<userType>semantics_release</userType>
+	</properties>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>org.openflexo</groupId>
+			<artifactId>flexovieweditor</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.openflexo</groupId>
+			<artifactId>flexodiagram</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.openflexo</groupId>
+			<artifactId>flexodiagram-ui</artifactId>
+			<scope>runtime</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>emfconnector</artifactId>
@@ -55,7 +56,7 @@
 			<artifactId>xsdconnector-ui</artifactId>
 			<scope>runtime</scope>
 		</dependency>
- 		<dependency>
+		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>owlconnector</artifactId>
 			<scope>runtime</scope>
@@ -65,26 +66,39 @@
 			<artifactId>owlconnector-ui</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-  		<dependency>
+		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>excelconnector</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-   		<dependency>
+		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>excelconnector-ui</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-        <dependency>
+		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>powerpointconnector</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-        <dependency>
- 			<groupId>org.openflexo</groupId>
- 			<artifactId>powerpointconnector-ui</artifactId>
- 			<scope>runtime</scope>
- 		</dependency>
+		<dependency>
+			<groupId>org.openflexo</groupId>
+			<artifactId>powerpointconnector-ui</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.openflexo.technologyadapter</groupId>
+            <artifactId>freeplaneconnector</artifactId>
+            <version>1.7.0-SNAPSHOT</version>
+            <scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.openflexo.technologyadapter</groupId>
+            <artifactId>freeplaneconnector-ui</artifactId>
+            <version>1.7.0-SNAPSHOT</version>
+            <scope>runtime</scope>
+		</dependency>
  	
         <!-- CSV not yet functional --> 
  		<!--  <dependency>
