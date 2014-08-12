@@ -1,7 +1,9 @@
-/target
-.classpath
-.project
-.settings
+**/target
+
+# IDE Files #
+**/.classpath
+**/.project
+**/.settings
 *.ipr
 *.idea
 *.iws
