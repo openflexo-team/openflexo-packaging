@@ -36,7 +36,7 @@ import org.openflexo.technologyadapter.excel.ExcelTechnologyAdapter;
 import org.openflexo.technologyadapter.owl.OWLTechnologyAdapter;
 import org.openflexo.technologyadapter.powerpoint.PowerpointTechnologyAdapter;
 import org.openflexo.technologyadapter.xml.XMLTechnologyAdapter;
-import org.openflexo.technologyadapter.xsd.XSDTechnologyAdapter;
+import org.openflexo.technologyadapter.xml.XSDTechnologyAdapter;
 import org.openflexo.test.OrderedRunner;
 import org.openflexo.test.TestOrder;
 
