@@ -139,13 +139,7 @@
 			</dependency>
 			<dependency>
 				<groupId>org.openflexo</groupId>
-				<artifactId>xsdconnector</artifactId>
-				<version>${ta.version}</version>
-				<scope>runtime</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.openflexo</groupId>
-				<artifactId>xsdconnector-ui</artifactId>
+				<artifactId>xmlconnector-ui</artifactId>
 				<version>${ta.version}</version>
 				<scope>runtime</scope>
 			</dependency>
