@@ -47,7 +47,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>xsdconnector</artifactId>
+			<artifactId>xmlconnector</artifactId>
 			<scope>runtime</scope>
 		</dependency>
  		<dependency>
@@ -83,11 +83,6 @@
 			<version>${connie.version}</version>
 			<classifier>tests</classifier>
 			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.openflexo</groupId>
-			<artifactId>xmlconnector</artifactId>
-			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
