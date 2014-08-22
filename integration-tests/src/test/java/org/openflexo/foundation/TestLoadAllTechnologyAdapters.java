@@ -36,7 +36,6 @@ import org.openflexo.technologyadapter.excel.ExcelTechnologyAdapter;
 import org.openflexo.technologyadapter.owl.OWLTechnologyAdapter;
 import org.openflexo.technologyadapter.powerpoint.PowerpointTechnologyAdapter;
 import org.openflexo.technologyadapter.xml.XMLTechnologyAdapter;
-import org.openflexo.technologyadapter.xml.XSDTechnologyAdapter;
 import org.openflexo.test.OrderedRunner;
 import org.openflexo.test.TestOrder;
 
@@ -148,15 +147,5 @@ public class TestLoadAllTechnologyAdapters extends OpenflexoTestCase {
 		assertNotNull(taService.getTechnologyAdapter(XMLTechnologyAdapter.class));
 	}
 
-	/**
-	 * Check the presence of XSDTechnologyAdapter
-	 */
-	@Test
-	@TestOrder(9)
-	public void checkXSDTechnologyAdapter() {
-		log("XSDTechnologyAdapter()");
-
-		assertNotNull(taService.getTechnologyAdapter(XSDTechnologyAdapter.class));
-	}
 
 }

@@ -44,7 +44,6 @@ import org.openflexo.technologyadapter.excel.ExcelTechnologyAdapter;
 import org.openflexo.technologyadapter.owl.OWLTechnologyAdapter;
 import org.openflexo.technologyadapter.powerpoint.PowerpointTechnologyAdapter;
 import org.openflexo.technologyadapter.xml.XMLTechnologyAdapter;
-import org.openflexo.technologyadapter.xml.XSDTechnologyAdapter;
 import org.openflexo.test.OrderedRunner;
 import org.openflexo.test.TestOrder;
 
@@ -82,7 +81,6 @@ public class VirtualModelModelFactoryIntegrationTest extends OpenflexoTestCase {
 		assertNotNull(taService.getTechnologyAdapter(OWLTechnologyAdapter.class));
 		assertNotNull(taService.getTechnologyAdapter(PowerpointTechnologyAdapter.class));
 		assertNotNull(taService.getTechnologyAdapter(XMLTechnologyAdapter.class));
-		assertNotNull(taService.getTechnologyAdapter(XSDTechnologyAdapter.class));
 	}
 
 	private void testVirtualModelModelFactoryWithTechnologyAdapter(TechnologyAdapter ta) {
@@ -191,17 +189,6 @@ public class VirtualModelModelFactoryIntegrationTest extends OpenflexoTestCase {
 				XMLTechnologyAdapter.class));
 	}
 
-	/**
-	 * Check the presence of XSDTechnologyAdapter, instanciate VirtualModelModelFactory with this TA
-	 */
-	@Test
-	@TestOrder(9)
-	public void checkXSDTechnologyAdapter() {
-		log("XSDTechnologyAdapter()");
-
-		testVirtualModelModelFactoryWithTechnologyAdapter(serviceManager.getTechnologyAdapterService().getTechnologyAdapter(
-				XSDTechnologyAdapter.class));
-	}
 
 	/**
 	 * 
