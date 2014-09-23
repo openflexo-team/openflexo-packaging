@@ -109,7 +109,7 @@ public class TestViewPointValidationModelInIntegrationContext extends OpenflexoT
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.foundation.viewpoint.inspector.DataPropertyInspectorEntry.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
-				.getModelEntity(org.openflexo.foundation.viewpoint.TechnologySpecificEditionScheme.class) != null);
+				.getModelEntity(org.openflexo.foundation.viewpoint.TechnologySpecificFlexoBehaviour.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.foundation.viewpoint.inspector.IntegerInspectorEntry.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
@@ -305,7 +305,7 @@ public class TestViewPointValidationModelInIntegrationContext extends OpenflexoT
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.technologyadapter.powerpoint.viewpoint.editionaction.AddPowerpointSlide.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
-				.getModelEntity(org.openflexo.technologyadapter.diagram.fml.DiagramEditionScheme.class) != null);
+				.getModelEntity(org.openflexo.technologyadapter.diagram.fml.DiagramFlexoBehaviour.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.foundation.viewpoint.TechnologyObjectParameter.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
