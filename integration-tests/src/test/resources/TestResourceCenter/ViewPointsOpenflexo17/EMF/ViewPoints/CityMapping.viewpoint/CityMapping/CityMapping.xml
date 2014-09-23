@@ -208,7 +208,7 @@
               <MatchingCriteria id="120" patternRoleName="city" value="currentCity" userID="FLX" />
               <CreateFlexoConceptInstanceParameter id="121" paramName="houseInModel1" value="house1" userID="FLX" />
               <CreateFlexoConceptInstanceParameter id="122" paramName="mansionInModel2" value="null" userID="FLX" />
-              <CreateFlexoConceptInstanceParameter id="123" paramName="cityParameter" userID="FLX" />
+              <CreateFlexoConceptInstanceParameter id="123" paramName="cityParameter" value="currentCity" userID="FLX" />
             </MatchFlexoConceptInstance>
           </ConditionalAction>
           <ConditionalAction id="124" condition="(matchingMansionsInModel2.size = 1)" userID="FLX">
@@ -251,7 +251,7 @@
       </ConditionalAction>
     </FetchRequestIterationAction>
     <FetchRequestIterationAction id="148" iteratorName="city2" userID="FLX">
-      <FetchRequest_SelectEMFObjectIndividual id="149" ontologyClassURI="http://www.thalesgroup.com/openflexo/emf/model/city2/City" variableName="matchingCitiesInModel1" assignation="matchingCitiesInModel1" userID="FLX">
+      <FetchRequest_SelectEMFObjectIndividual id="149" ontologyClassURI="http://www.thalesgroup.com/openflexo/emf/model/city2/City" userID="FLX">
         <EMFModelSlot idref="7" userID="FLX" />
       </FetchRequest_SelectEMFObjectIndividual>
       <EMFModelSlot idref="7" userID="FLX" />

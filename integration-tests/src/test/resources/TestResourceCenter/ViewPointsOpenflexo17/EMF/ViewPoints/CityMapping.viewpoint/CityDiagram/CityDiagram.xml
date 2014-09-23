@@ -106,7 +106,7 @@
         <VirtualModelModelSlot idref="5" userID="FLX" />
       </FlexoConceptInstanceParameter>
       <DeclareFlexoRole id="70" object="parameters.mansionParam" assignation="mansion" userID="FLX" />
-      <AddShape id="71" container="flexoBehaviourInstance.cityGR.container" extendParentBoundsToHostThisShape="false" name="" assignation="shape" userID="FLX">
+      <AddShape id="71" container="virtualModelInstance.cityGR.container" extendParentBoundsToHostThisShape="false" name="" assignation="shape" userID="FLX">
         <TypedDiagramModelSlot idref="150" userID="FLX" />
       </AddShape>
     </CreationScheme>
@@ -149,7 +149,7 @@
         <VirtualModelModelSlot idref="5" userID="FLX" />
       </FlexoConceptInstanceParameter>
       <DeclareFlexoRole id="97" object="parameters.appartmentParam" assignation="appartment" userID="FLX" />
-      <AddShape id="98" container="flexoBehaviourInstance.cityGR.container" extendParentBoundsToHostThisShape="false" assignation="shape" userID="FLX">
+      <AddShape id="98" container="virtualModelInstance.cityGR.container" extendParentBoundsToHostThisShape="false" assignation="shape" userID="FLX">
         <TypedDiagramModelSlot idref="150" userID="FLX" />
       </AddShape>
     </CreationScheme>
