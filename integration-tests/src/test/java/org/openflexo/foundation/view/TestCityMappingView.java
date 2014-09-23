@@ -43,6 +43,7 @@ import org.openflexo.foundation.view.action.ModelSlotInstanceConfiguration.Defau
 import org.openflexo.foundation.view.rm.ViewResource;
 import org.openflexo.foundation.view.rm.VirtualModelInstanceResource;
 import org.openflexo.foundation.viewpoint.FlexoConcept;
+import org.openflexo.foundation.viewpoint.SynchronizationScheme;
 import org.openflexo.foundation.viewpoint.ViewPoint;
 import org.openflexo.foundation.viewpoint.VirtualModel;
 import org.openflexo.foundation.viewpoint.rm.ViewPointResource;
@@ -154,6 +155,7 @@ public class TestCityMappingView extends OpenflexoProjectAtRunTimeTestCase {
 		ViewPoint vp = vpRes.getViewPoint();
 		assertTrue(vpRes.isLoaded());
 		cityMappingVP = vp;
+
 	}
 
 	@Test
@@ -161,6 +163,13 @@ public class TestCityMappingView extends OpenflexoProjectAtRunTimeTestCase {
 	public void test2LoadCityMappingViewPoint() {
 		assertNotNull(cityMappingVP);
 		System.out.println("Found view point in " + ((ViewPointResource) cityMappingVP.getResource()).getFile());
+
+		VirtualModel cityMappingVM = cityMappingVP.getVirtualModelNamed("CityMapping");
+		assertNotNull(cityMappingVM);
+
+		SynchronizationScheme ss = cityMappingVM.getSynchronizationScheme();
+		assertNotNull(ss);
+
 	}
 
 	@Test
@@ -232,7 +241,8 @@ public class TestCityMappingView extends OpenflexoProjectAtRunTimeTestCase {
 		TypeAwareModelSlotInstanceConfiguration emfModelSlotConfiguration1 = (TypeAwareModelSlotInstanceConfiguration) createVirtualModelInstance
 				.getModelSlotInstanceConfiguration(emfModelSlot1);
 		emfModelSlotConfiguration1.setOption(DefaultModelSlotInstanceConfigurationOption.SelectExistingModel);
-		File modelFile1 = new File(((FileSystemBasedResourceCenter) resourceCenter).getRootDirectory(), "TestResourceCenter/ViewPointsOpenflexo17/EMF/Model/city1/my.city1");
+		File modelFile1 = new File(((FileSystemBasedResourceCenter) resourceCenter).getRootDirectory(),
+				"TestResourceCenter/ViewPointsOpenflexo17/EMF/Model/city1/my.city1");
 		System.out.println("Searching " + modelFile1.getAbsolutePath());
 		assertTrue(modelFile1.exists());
 		System.out.println("Searching " + modelFile1.toURI().toString());
@@ -246,7 +256,8 @@ public class TestCityMappingView extends OpenflexoProjectAtRunTimeTestCase {
 		TypeAwareModelSlotInstanceConfiguration emfModelSlotConfiguration2 = (TypeAwareModelSlotInstanceConfiguration) createVirtualModelInstance
 				.getModelSlotInstanceConfiguration(emfModelSlot2);
 		emfModelSlotConfiguration2.setOption(DefaultModelSlotInstanceConfigurationOption.SelectExistingModel);
-		File modelFile2 = new File(((FileSystemBasedResourceCenter) resourceCenter).getRootDirectory(), "TestResourceCenter/ViewPointsOpenflexo17/EMF/Model/city2/first.city2");
+		File modelFile2 = new File(((FileSystemBasedResourceCenter) resourceCenter).getRootDirectory(),
+				"TestResourceCenter/ViewPointsOpenflexo17/EMF/Model/city2/first.city2");
 		System.out.println("Searching " + modelFile2.getAbsolutePath());
 		assertTrue(modelFile2.exists());
 		System.out.println("Searching " + modelFile2.toURI().toString());
@@ -282,7 +293,16 @@ public class TestCityMappingView extends OpenflexoProjectAtRunTimeTestCase {
 		assertNotNull(mansionEP);
 		assertNotNull(residentEP);
 
-		
+		System.out.println("Les FCI: " + newVirtualModelInstance.getFlexoConceptInstances(cityEP));
+
+		for (FlexoConceptInstance fci : newVirtualModelInstance.getFlexoConceptInstances(cityEP)) {
+			System.out.println("> " + fci);
+		}
+
+		newVirtualModelInstance.synchronize(editor);
+
+		System.out.println("Les FCI2: " + newVirtualModelInstance.getFlexoConceptInstances(cityEP));
+
 		assertEquals(5, newVirtualModelInstance.getFlexoConceptInstances(cityEP).size());
 		assertEquals(3, newVirtualModelInstance.getFlexoConceptInstances(houseEP).size());
 		assertEquals(2, newVirtualModelInstance.getFlexoConceptInstances(appartmentEP).size());

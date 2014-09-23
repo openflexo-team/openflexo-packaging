@@ -19,7 +19,6 @@
  */
 package org.openflexo.foundation.viewpoint;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
@@ -29,9 +28,6 @@ import java.util.logging.Logger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openflexo.foundation.OpenflexoTestCase;
-import org.openflexo.foundation.validation.ValidationError;
-import org.openflexo.foundation.validation.ValidationReport;
-import org.openflexo.foundation.viewpoint.ViewPointObject.BindingIsRequiredAndMustBeValid;
 import org.openflexo.foundation.viewpoint.rm.ViewPointResource;
 import org.openflexo.test.OrderedRunner;
 import org.openflexo.test.TestOrder;
@@ -72,24 +68,6 @@ public class TestViewpointsOpenflexo17 extends OpenflexoTestCase {
 		assertTrue(vpRes.isLoaded());
 
 		return vp;
-
-	}
-
-	private void assertViewPointIsValid(ViewPoint vp) {
-
-		log("Testing ViewPoint" + vp.getURI());
-
-		ValidationReport report = vp.validate();
-
-		for (ValidationError error : report.getErrors()) {
-			System.out.println("Found error: " + error);
-			if (error.getValidationRule() instanceof BindingIsRequiredAndMustBeValid) {
-				BindingIsRequiredAndMustBeValid rule = (BindingIsRequiredAndMustBeValid) error.getValidationRule();
-				System.out.println("Details: " + rule.retrieveIssueDetails((ViewPointObject) error.getObject()));
-			}
-		}
-
-		assertEquals(0, report.getErrorNb());
 
 	}
 
@@ -153,14 +131,14 @@ public class TestViewpointsOpenflexo17 extends OpenflexoTestCase {
 		log("test6SKOS()");
 		assertViewPointIsValid(testLoadViewPoint("http://www.agilebirds.com/openflexo/ViewPoints/SKOS/SKOSThesaurusEditor.owl"));
 	}
-	
+
 	@Test
 	@TestOrder(8)
 	public void test7BasicOrganizationTreeEditor() {
 		log("test7BasicOrganizationTreeEditor()");
 		assertViewPointIsValid(testLoadViewPoint("http://www.agilebirds.com/openflexo/ViewPoints/Tests/BasicOrganizationTreeEditor.owl"));
 	}
-	
+
 	@Test
 	@TestOrder(9)
 	public void test8UMLPackageDiagram() {
