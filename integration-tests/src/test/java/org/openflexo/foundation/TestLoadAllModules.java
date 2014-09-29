@@ -17,6 +17,7 @@ import org.openflexo.module.FlexoModule;
 import org.openflexo.module.ModuleLoader;
 import org.openflexo.module.ModuleLoadingException;
 import org.openflexo.module.ProjectLoader;
+import org.openflexo.prefs.PreferencesService;
 import org.openflexo.test.OrderedRunner;
 import org.openflexo.test.TestOrder;
 import org.openflexo.ve.VEModule;
@@ -48,6 +49,7 @@ public class TestLoadAllModules extends OpenflexoTestCaseWithGUI {
 		assertNotNull(serviceManager.getService(FlexoResourceCenterService.class));
 		assertNotNull(serviceManager.getService(TechnologyAdapterService.class));
 		assertNotNull(serviceManager.getService(TechnologyAdapterControllerService.class));
+		assertNotNull(serviceManager.getService(PreferencesService.class));
 
 		moduleLoader = serviceManager.getModuleLoader();
 		assertEquals(moduleLoader, serviceManager.getService(ModuleLoader.class));
@@ -91,6 +93,7 @@ public class TestLoadAllModules extends OpenflexoTestCaseWithGUI {
 			}
 			// This module is not in the classpath, normal
 		} catch (ModuleLoadingException e) {
+			e.printStackTrace();
 			fail();
 		}
 
