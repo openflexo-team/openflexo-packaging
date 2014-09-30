@@ -1,6 +1,5 @@
 package org.openflexo.foundation.validation;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
@@ -10,6 +9,8 @@ import org.openflexo.fge.ShapeGraphicalRepresentation.ShapeBorder;
 import org.openflexo.foundation.OpenflexoTestCase;
 import org.openflexo.foundation.viewpoint.ViewPointValidationModel;
 import org.openflexo.model.exceptions.ModelDefinitionException;
+import org.openflexo.model.validation.ValidationRule;
+import org.openflexo.model.validation.ValidationRuleSet;
 import org.openflexo.technologyadapter.diagram.fml.OverridingGraphicalRepresentation.ConnectorOverridingGraphicalRepresentation;
 import org.openflexo.technologyadapter.diagram.fml.OverridingGraphicalRepresentation.ShapeOverridingGraphicalRepresentation;
 import org.openflexo.technologyadapter.diagram.fml.editionaction.AddConnector;
@@ -513,10 +514,8 @@ public class TestViewPointValidationModelInIntegrationContext extends OpenflexoT
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.technologyadapter.excel.viewpoint.ExcelSheetRole.class) != null);
 
-		assertEquals(validationModel.getSize(), validationModel.getSortedClasses().size());
-
-		for (int i = 0; i < validationModel.getSize(); i++) {
-			System.out.println("> " + validationModel.getElementAt(i));
+		for (int i = 0; i < validationModel.getSortedClasses().size(); i++) {
+			System.out.println("> " + validationModel.getSortedClasses().get(i));
 		}
 
 	}
@@ -526,7 +525,7 @@ public class TestViewPointValidationModelInIntegrationContext extends OpenflexoT
 	public void testAddShapeValidationRules() throws ModelDefinitionException {
 		ValidationRuleSet<?> ruleSet = validationModel.getRuleSet(AddShape.class);
 		assertNotNull(ruleSet);
-		System.out.println("ruleSet=" + ruleSet + " size=" + ruleSet.getSize());
+		System.out.println("ruleSet=" + ruleSet + " size=" + ruleSet.getRulesCount());
 		for (ValidationRule r : ruleSet.getRules()) {
 			System.out.println("> " + r);
 		}
@@ -539,7 +538,7 @@ public class TestViewPointValidationModelInIntegrationContext extends OpenflexoT
 	public void testAddConnectorValidationRules() throws ModelDefinitionException {
 		ValidationRuleSet<?> ruleSet = validationModel.getRuleSet(AddConnector.class);
 		assertNotNull(ruleSet);
-		System.out.println("ruleSet=" + ruleSet + " size=" + ruleSet.getSize());
+		System.out.println("ruleSet=" + ruleSet + " size=" + ruleSet.getRulesCount());
 		for (ValidationRule r : ruleSet.getRules()) {
 			System.out.println("> " + r);
 		}
@@ -553,7 +552,7 @@ public class TestViewPointValidationModelInIntegrationContext extends OpenflexoT
 	public void testGraphicalActionValidationRules() throws ModelDefinitionException {
 		ValidationRuleSet<?> ruleSet = validationModel.getRuleSet(GraphicalAction.class);
 		assertNotNull(ruleSet);
-		System.out.println("ruleSet=" + ruleSet + " size=" + ruleSet.getSize());
+		System.out.println("ruleSet=" + ruleSet + " size=" + ruleSet.getRulesCount());
 		for (ValidationRule r : ruleSet.getRules()) {
 			System.out.println("> " + r);
 		}
