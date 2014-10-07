@@ -48,7 +48,7 @@ public class TestViewpointsOpenflexo17 extends OpenflexoTestCase {
 
 		// TODO: create a project where all those tests don't need a manual import of projects
 		// TODO: copy all test VP in tmp dir and work with those VP instead of polling GIT workspace
-		instanciateTestServiceManager();
+		instanciateTestServiceManager(true);
 
 	}
 

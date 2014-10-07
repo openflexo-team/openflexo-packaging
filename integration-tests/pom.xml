@@ -88,6 +88,13 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<scope>test</scope>
-		</dependency>	
+		</dependency>
+		<dependency>
+			<groupId>org.openflexo</groupId>
+			<artifactId>owlconnector</artifactId>
+			<version>${project.version}</version>
+			<classifier>tests</classifier>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 </project>

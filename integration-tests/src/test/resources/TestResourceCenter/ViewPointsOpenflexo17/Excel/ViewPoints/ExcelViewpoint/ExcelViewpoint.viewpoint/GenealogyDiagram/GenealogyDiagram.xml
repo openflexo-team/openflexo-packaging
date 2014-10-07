@@ -1,611 +1,543 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<VirtualModel id="1" name="GenealogyDiagram" modelVersion="1.0" userID="FLX">
-  <FlexoConcept id="2" name="Man" userID="FLX">
-    <DropScheme id="3" target="top" name="dropManAtTopLevel" label="dropManAtTopLevel" skipConfirmationPanel="false" definePopupDefaultSize="false" width="800" height="600" userID="FLX">
-      <IntegerParameter id="4" name="rowIndex" label="rowIndex" defaultValue="1" usePaletteLabelAsDefaultValue="false" isRequired="false" userID="FLX" />
-      <TextFieldParameter id="5" name="name" label="name" usePaletteLabelAsDefaultValue="false" isRequired="false" userID="FLX" />
-      <IntegerParameter id="6" name="age" label="age" defaultValue="1" usePaletteLabelAsDefaultValue="false" isRequired="false" userID="FLX" />
-      <FlexoConceptInstanceParameter id="7" flexoConceptTypeURI="http://ExcelViewpoint/GenealogyDiagram#Genealogic" name="sheet" label="sheet" usePaletteLabelAsDefaultValue="false" isRequired="false" userID="FLX">
-        <ModelSlot_VirtualModelModelSlot idref="8" isRequired="true" isReadOnly="false" userID="FLX" />
-      </FlexoConceptInstanceParameter>
-      <AddShape id="9" container="topLevel" extendParentBoundsToHostThisShape="false" assignation="shape" userID="FLX">
-        <TypedDiagramModelSlot idref="436" userID="FLX" />
-      </AddShape>
-      <AddShape id="10" container="shape" extendParentBoundsToHostThisShape="false" assignation="shape2" userID="FLX">
-        <TypedDiagramModelSlot idref="436" userID="FLX" />
-      </AddShape>
-      <AddShape id="11" container="shape" extendParentBoundsToHostThisShape="false" assignation="shape3" userID="FLX">
-        <TypedDiagramModelSlot idref="436" userID="FLX" />
-      </AddShape>
-      <AddShape id="12" container="shape" extendParentBoundsToHostThisShape="false" assignation="shape4" userID="FLX">
-        <TypedDiagramModelSlot idref="436" userID="FLX" />
-      </AddShape>
-      <AddExcelCell id="13" isRowIndex="true" assignation="nameInListing" userID="FLX">
-        <value userID="FLX">parameters.name</value>
-        <columnIndex userID="FLX">(parameters.rowIndex + 1)</columnIndex>
-        <rowIndex userID="FLX">parameters.rowIndex</rowIndex>
-        <sheet userID="FLX">diagram.Gen.listSheet</sheet>
-        <BasicExcelModelSlot idref="14" userID="FLX" />
-      </AddExcelCell>
-      <AddExcelCell id="15" isRowIndex="true" assignation="nameInGen" userID="FLX">
-        <value userID="FLX">parameters.name</value>
-        <columnIndex userID="FLX">parameters.rowIndex</columnIndex>
-        <rowIndex userID="FLX">parameters.rowIndex</rowIndex>
-        <sheet userID="FLX">diagram.Gen.genSheet</sheet>
-        <BasicExcelModelSlot idref="16" userID="FLX" />
-      </AddExcelCell>
-      <AddExcelCell id="17" isRowIndex="true" assignation="age" userID="FLX">
-        <value userID="FLX">parameters.age.toString</value>
-        <columnIndex userID="FLX">(parameters.rowIndex + 1)</columnIndex>
-        <rowIndex userID="FLX">parameters.rowIndex</rowIndex>
-        <sheet userID="FLX">diagram.Gen.listSheet</sheet>
-        <BasicExcelModelSlot idref="14" userID="FLX" />
-      </AddExcelCell>
-    </DropScheme>
-    <CreationScheme id="18" name="creation" label="creation" skipConfirmationPanel="false" definePopupDefaultSize="false" width="800" height="600" userID="FLX">
-      <TechnologyObjectParameter id="19" name="nameInGen" label="nameInGen" usePaletteLabelAsDefaultValue="false" isRequired="false" userID="FLX" />
-      <TechnologyObjectParameter id="20" name="nameInListing" label="nameInListing" usePaletteLabelAsDefaultValue="false" isRequired="false" userID="FLX" />
-      <TechnologyObjectParameter id="21" name="age" label="age" usePaletteLabelAsDefaultValue="false" isRequired="false" userID="FLX" />
-      <AddShape id="22" container="virtualModelInstance.typedDiagramModelSlot" extendParentBoundsToHostThisShape="false" assignation="shape" userID="FLX">
-        <TypedDiagramModelSlot idref="436" userID="FLX" />
-      </AddShape>
-      <AddShape id="23" container="virtualModelInstance.typedDiagramModelSlot" extendParentBoundsToHostThisShape="false" assignation="shape2" userID="FLX">
-        <TypedDiagramModelSlot idref="436" userID="FLX" />
-      </AddShape>
-      <AddShape id="24" extendParentBoundsToHostThisShape="false" assignation="shape3" userID="FLX">
-        <TypedDiagramModelSlot idref="436" userID="FLX" />
-      </AddShape>
-      <AddShape id="25" extendParentBoundsToHostThisShape="false" assignation="shape4" userID="FLX">
-        <TypedDiagramModelSlot idref="436" userID="FLX" />
-      </AddShape>
-      <DeclareFlexoRole id="26" object="parameters.nameInGen" assignation="nameInGen" userID="FLX" />
-      <DeclareFlexoRole id="27" object="parameters.nameInListing" assignation="nameInListing" userID="FLX" />
-      <DeclareFlexoRole id="28" object="parameters.age" assignation="age" userID="FLX" />
-    </CreationScheme>
-    <DeletionScheme id="29" name="deletion" label="deletion" skipConfirmationPanel="false" definePopupDefaultSize="false" width="800" height="600" userID="FLX">
-      <DeleteAction id="30" object="shape2" userID="FLX" />
-      <DeleteAction id="31" object="shape3" userID="FLX" />
-      <DeleteAction id="32" object="shape4" userID="FLX" />
-      <DeleteAction id="33" object="shape" userID="FLX" />
-    </DeletionScheme>
-    <ShapeRole id="34" name="shape" exampleLabel="" userID="FLX">
-      <ShapeGraphicalRepresentation id="35" x="0.0" y="0.0" width="193.6355740837241" height="171.81926401001127" minimalWidth="0.0" minimalHeight="0.0" maximalWidth="Infinity" maximalHeight="Infinity" relativeTextX="0.5" relativeTextY="0.5" lineWrap="true" locationConstraints="FREELY_MOVABLE" dimensionConstraints="FREELY_RESIZABLE" adjustMinimalWidthToLabelWidth="true" adjustMinimalHeightToLabelHeight="true" adjustMaximalWidthToLabelWidth="false" adjustMaximalHeightToLabelHeight="false" hasSelectedForeground="false" hasSelectedBackground="false" hasFocusedForeground="false" hasFocusedBackground="false" isFloatingLabel="false" allowToLeaveBounds="false" identifier="object_0" layer="1" hasText="true" isMultilineAllowed="true" continuousTextEditing="true" absoluteTextX="0.0" absoluteTextY="0.0" paragraphAlignment="CENTER" horizontalTextAlignment="CENTER" verticalTextAlignment="MIDDLE" isSelectable="true" isFocusable="true" drawControlPointsWhenFocused="true" drawControlPointsWhenSelected="true" isReadOnly="false" isLabelEditable="true" isVisible="true" userID="FLX">
-        <ForegroundStyle id="36" noStroke="false" color="0,102,102" lineWidth="2.000000001490116" joinStyle="JOIN_ROUND" capStyle="CAP_SQUARE" dashStyle="SMALL_DASHES" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <NoneBackgroundStyle id="37" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <SelectedForegroundStyle id="38" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <SelectedColorBackgroundStyle id="39" color="254,247,217" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <FocusedForegroundStyle id="40" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <FocusedColorBackgroundStyle id="41" color="254,247,217" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <ShapeBorder id="42" top="20" bottom="20" left="20" right="20" userID="FLX" />
-        <RectangleShape id="43" isRounded="true" arcSize="30.0" userID="FLX" />
-        <ShadowStyle id="44" drawShadow="true" shadowDarkness="150" shadowDepth="2" shadowBlur="4" userID="FLX" />
-        <TextStyle id="45" font="Lucida Sans,0,11" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
+<VirtualModel id="0" userID="FLX" useSpecificDescriptions="false" flexoID="-1" name="GenealogyDiagram">
+  <FlexoConcept id="1" userID="FLX" useSpecificDescriptions="false" flexoID="54" name="Man">
+    <Inspector id="2" flexoID="31" userID="FLX" useSpecificDescriptions="false" inspectorTitle="Man" />
+    <ParentFlexoConcept id="3" userID="FLX" useSpecificDescriptions="false" flexoID="145" name="Human">
+      <Inspector id="4" flexoID="28" userID="FLX" useSpecificDescriptions="false" inspectorTitle="Human" />
+      <ShapeRole id="5" exampleLabel="label" useSpecificDescriptions="false" userID="FLX" cloningStratgey="Clone" flexoID="143" name="shape">
+        <ShapeGraphicalRepresentation id="6" minimalHeight="0.0" relativeTextX="0.5" transparency="1.0" drawControlPointsWhenFocused="true" height="50.0" hasFocusedBackground="false" verticalTextAlignment="MIDDLE" adjustMinimalWidthToLabelWidth="true" width="80.0" hasFocusedForeground="false" hasSelectedBackground="false" allowToLeaveBounds="true" isFocusable="true" drawControlPointsWhenSelected="true" isSelectable="true" isLabelEditable="true" relativeTextY="0.5" continuousTextEditing="true" minimalWidth="0.0" identifier="object_0" lineWrap="true" locationConstraints="FREELY_MOVABLE" adjustMinimalHeightToLabelHeight="true" horizontalTextAlignment="CENTER" adaptBoundsToContents="false" maximalHeight="Infinity" isVisible="true" dimensionConstraints="FREELY_RESIZABLE" isReadOnly="false" adjustMaximalHeightToLabelHeight="false" isFloatingLabel="false" hasSelectedForeground="false" paragraphAlignment="CENTER" absoluteTextX="0.0" layer="1" absoluteTextY="0.0" adjustMaximalWidthToLabelWidth="false" isMultilineAllowed="true" y="40.0" maximalWidth="Infinity" x="160.0">
+          <FocusedForegroundStyle id="7" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+          <SelectedColorBackgroundStyle id="8" color="192,192,192" transparencyLevel="0.5" useTransparency="false" />
+          <TextStyle id="9" orientation="0" color="0,0,0" backgroundColor="255,255,255" font="SansSerif,1,11" isBackgroundColored="false" />
+          <ShapeBorder id="10" bottom="20" left="20" right="20" top="20" />
+          <ForegroundStyle id="11" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+          <SelectedForegroundStyle id="12" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+          <FocusedColorBackgroundStyle id="13" color="192,192,192" transparencyLevel="0.5" useTransparency="false" />
+          <RectangleShape id="14" arcSize="30.0" isRounded="false" />
+          <ShadowStyle id="15" shadowBlur="4" shadowDepth="2" drawShadow="true" shadowDarkness="150" />
+          <ColorBackgroundStyle id="16" color="192,192,192" transparencyLevel="0.5" useTransparency="false" />
+        </ShapeGraphicalRepresentation>
+        <TypedDiagramModelSlot idref="17" />
+      </ShapeRole>
+      <ExcelCellRole id="45" cloningStratgey="Reference" flexoID="144" name="nameInGen" useSpecificDescriptions="false" userID="FLX">
+        <BasicExcelModelSlot idref="31" />
+      </ExcelCellRole>
+    </ParentFlexoConcept>
+    <ShapeRole id="46" exampleLabel="" useSpecificDescriptions="false" userID="FLX" cloningStratgey="Clone" flexoID="47" name="shape">
+      <ShapeGraphicalRepresentation id="47" minimalHeight="0.0" relativeTextX="0.5" transparency="1.0" drawControlPointsWhenFocused="true" height="171.81926401001127" hasFocusedBackground="false" verticalTextAlignment="MIDDLE" adjustMinimalWidthToLabelWidth="true" width="193.6355740837241" hasFocusedForeground="false" hasSelectedBackground="false" allowToLeaveBounds="false" isFocusable="true" drawControlPointsWhenSelected="true" isSelectable="true" isLabelEditable="true" relativeTextY="0.5" continuousTextEditing="true" minimalWidth="0.0" identifier="object_0" lineWrap="true" locationConstraints="FREELY_MOVABLE" adjustMinimalHeightToLabelHeight="true" horizontalTextAlignment="CENTER" adaptBoundsToContents="false" maximalHeight="Infinity" isVisible="true" dimensionConstraints="FREELY_RESIZABLE" isReadOnly="false" adjustMaximalHeightToLabelHeight="false" isFloatingLabel="false" hasSelectedForeground="false" paragraphAlignment="CENTER" absoluteTextX="0.0" layer="1" absoluteTextY="0.0" adjustMaximalWidthToLabelWidth="false" isMultilineAllowed="true" y="0.0" maximalWidth="Infinity" x="0.0">
+        <FocusedForegroundStyle id="48" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <SelectedColorBackgroundStyle id="49" color="254,247,217" transparencyLevel="0.5" useTransparency="false" />
+        <TextStyle id="50" orientation="0" color="0,0,0" backgroundColor="255,255,255" font="Lucida Sans,0,11" isBackgroundColored="false" />
+        <ShapeBorder id="51" bottom="20" left="20" right="20" top="20" />
+        <ForegroundStyle id="52" dashStyle="SMALL_DASHES" color="0,102,102" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="2.000000001490116" joinStyle="JOIN_ROUND" capStyle="CAP_SQUARE" />
+        <SelectedForegroundStyle id="53" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <FocusedColorBackgroundStyle id="54" color="254,247,217" transparencyLevel="0.5" useTransparency="false" />
+        <RectangleShape id="55" arcSize="30.0" isRounded="true" />
+        <ShadowStyle id="56" shadowBlur="4" shadowDepth="2" drawShadow="true" shadowDarkness="150" />
+        <NoneBackgroundStyle id="57" transparencyLevel="0.5" useTransparency="false" />
       </ShapeGraphicalRepresentation>
-      <TypedDiagramModelSlot idref="436" userID="FLX" />
+      <TypedDiagramModelSlot idref="17" />
     </ShapeRole>
-    <ShapeRole id="46" name="shape2" exampleLabel="" userID="FLX">
-      <ShapeGraphicalRepresentation id="47" x="13.0" y="13.0" width="119.97658879188413" height="100.27084680025857" minimalWidth="0.0" minimalHeight="0.0" maximalWidth="Infinity" maximalHeight="Infinity" relativeTextX="0.5" relativeTextY="0.5" lineWrap="true" locationConstraints="FREELY_MOVABLE" dimensionConstraints="FREELY_RESIZABLE" adjustMinimalWidthToLabelWidth="true" adjustMinimalHeightToLabelHeight="true" adjustMaximalWidthToLabelWidth="false" adjustMaximalHeightToLabelHeight="false" hasSelectedForeground="false" hasSelectedBackground="false" hasFocusedForeground="false" hasFocusedBackground="false" isFloatingLabel="false" allowToLeaveBounds="false" identifier="object_0_0" layer="2" hasText="true" isMultilineAllowed="true" continuousTextEditing="true" absoluteTextX="0.0" absoluteTextY="0.0" paragraphAlignment="CENTER" horizontalTextAlignment="CENTER" verticalTextAlignment="MIDDLE" isSelectable="true" isFocusable="true" drawControlPointsWhenFocused="true" drawControlPointsWhenSelected="true" isReadOnly="false" isLabelEditable="true" isVisible="true" userID="FLX">
-        <ForegroundStyle id="48" noStroke="true" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <ImageBackgroundStyle id="49" imageFile="../../../icons_excel/Crystal_Clear_kdm_user_male.png" scaleX="0.9373170999365947" scaleY="0.7833659906270201" deltaX="0.0" deltaY="0.0" imageBackgroundType="TRANSPARENT" imageBackgroundColor="255,255,255" fitToShape="true" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <SelectedForegroundStyle id="50" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <SelectedColorBackgroundStyle id="51" color="254,247,217" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <FocusedForegroundStyle id="52" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <FocusedColorBackgroundStyle id="53" color="254,247,217" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <ShapeBorder id="54" top="20" bottom="20" left="20" right="20" userID="FLX" />
-        <RectangleShape id="55" isRounded="false" arcSize="30.0" userID="FLX" />
-        <ShadowStyle id="56" drawShadow="false" shadowDarkness="150" shadowDepth="2" shadowBlur="4" userID="FLX" />
-        <TextStyle id="57" font="Lucida Sans,0,11" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
+    <ShapeRole id="58" exampleLabel="" useSpecificDescriptions="false" userID="FLX" cloningStratgey="Clone" flexoID="48" name="shape2">
+      <ShapeGraphicalRepresentation id="59" minimalHeight="0.0" relativeTextX="0.5" transparency="1.0" drawControlPointsWhenFocused="true" height="100.27084680025857" hasFocusedBackground="false" verticalTextAlignment="MIDDLE" adjustMinimalWidthToLabelWidth="true" width="119.97658879188413" hasFocusedForeground="false" hasSelectedBackground="false" allowToLeaveBounds="false" isFocusable="true" drawControlPointsWhenSelected="true" isSelectable="true" isLabelEditable="true" relativeTextY="0.5" continuousTextEditing="true" minimalWidth="0.0" identifier="object_0_0" lineWrap="true" locationConstraints="FREELY_MOVABLE" adjustMinimalHeightToLabelHeight="true" horizontalTextAlignment="CENTER" adaptBoundsToContents="false" maximalHeight="Infinity" isVisible="true" dimensionConstraints="FREELY_RESIZABLE" isReadOnly="false" adjustMaximalHeightToLabelHeight="false" isFloatingLabel="false" hasSelectedForeground="false" paragraphAlignment="CENTER" absoluteTextX="0.0" layer="2" absoluteTextY="0.0" adjustMaximalWidthToLabelWidth="false" isMultilineAllowed="true" y="13.0" maximalWidth="Infinity" x="13.0">
+        <FocusedForegroundStyle id="60" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <SelectedColorBackgroundStyle id="61" color="254,247,217" transparencyLevel="0.5" useTransparency="false" />
+        <TextStyle id="62" orientation="0" color="0,0,0" backgroundColor="255,255,255" font="Lucida Sans,0,11" isBackgroundColored="false" />
+        <ShapeBorder id="63" bottom="20" left="20" right="20" top="20" />
+        <ForegroundStyle id="64" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="true" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <SelectedForegroundStyle id="65" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <FocusedColorBackgroundStyle id="66" color="254,247,217" transparencyLevel="0.5" useTransparency="false" />
+        <RectangleShape idref="14" />
+        <ShadowStyle id="67" shadowBlur="4" shadowDepth="2" drawShadow="false" shadowDarkness="150" />
+        <ImageBackgroundStyle id="68" scaleX="0.9373170999365947" scaleY="0.7833659906270201" imageBackgroundColor="255,255,255" transparencyLevel="0.5" fitToShape="true" useTransparency="false" imageBackgroundType="TRANSPARENT" deltaX="0.0" deltaY="0.0" />
       </ShapeGraphicalRepresentation>
-      <ParentShapeRole idref="34" userID="FLX" />
-      <TypedDiagramModelSlot idref="436" userID="FLX" />
+      <ParentShapeRole idref="46" />
+      <TypedDiagramModelSlot idref="17" />
     </ShapeRole>
-    <ShapeRole id="58" name="shape3" exampleLabel="" userID="FLX">
-      <ShapeGraphicalRepresentation id="59" x="123.0" y="0.0" width="60.0" height="120.0" minimalWidth="0.0" minimalHeight="0.0" maximalWidth="Infinity" maximalHeight="Infinity" relativeTextX="0.5" relativeTextY="0.5" lineWrap="true" locationConstraints="FREELY_MOVABLE" dimensionConstraints="FREELY_RESIZABLE" adjustMinimalWidthToLabelWidth="true" adjustMinimalHeightToLabelHeight="true" adjustMaximalWidthToLabelWidth="false" adjustMaximalHeightToLabelHeight="false" hasSelectedForeground="false" hasSelectedBackground="false" hasFocusedForeground="false" hasFocusedBackground="false" isFloatingLabel="false" allowToLeaveBounds="false" identifier="object_0_1" layer="2" hasText="true" isMultilineAllowed="true" continuousTextEditing="true" absoluteTextX="0.0" absoluteTextY="0.0" paragraphAlignment="CENTER" horizontalTextAlignment="CENTER" verticalTextAlignment="MIDDLE" isSelectable="true" isFocusable="true" drawControlPointsWhenFocused="true" drawControlPointsWhenSelected="true" isReadOnly="false" isLabelEditable="true" isVisible="true" userID="FLX">
-        <ForegroundStyle id="60" noStroke="true" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <NoneBackgroundStyle id="61" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <SelectedForegroundStyle id="62" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <SelectedColorBackgroundStyle id="63" color="254,247,217" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <FocusedForegroundStyle id="64" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <FocusedColorBackgroundStyle id="65" color="254,247,217" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <ShapeBorder id="66" top="20" bottom="20" left="20" right="20" userID="FLX" />
-        <RectangleShape idref="55" userID="FLX" />
-        <ShadowStyle id="67" drawShadow="false" shadowDarkness="150" shadowDepth="2" shadowBlur="4" userID="FLX" />
-        <TextStyle id="68" font="Lucida Sans Regular,0,36" color="0,153,255" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
+    <ShapeRole id="69" exampleLabel="" useSpecificDescriptions="false" userID="FLX" cloningStratgey="Clone" flexoID="49" name="shape3">
+      <ShapeGraphicalRepresentation id="70" minimalHeight="0.0" relativeTextX="0.5" transparency="1.0" drawControlPointsWhenFocused="true" height="120.0" hasFocusedBackground="false" verticalTextAlignment="MIDDLE" adjustMinimalWidthToLabelWidth="true" width="60.0" hasFocusedForeground="false" hasSelectedBackground="false" allowToLeaveBounds="false" isFocusable="true" drawControlPointsWhenSelected="true" isSelectable="true" isLabelEditable="true" relativeTextY="0.5" continuousTextEditing="true" minimalWidth="0.0" identifier="object_0_1" lineWrap="true" locationConstraints="FREELY_MOVABLE" adjustMinimalHeightToLabelHeight="true" horizontalTextAlignment="CENTER" adaptBoundsToContents="false" maximalHeight="Infinity" isVisible="true" dimensionConstraints="FREELY_RESIZABLE" isReadOnly="false" adjustMaximalHeightToLabelHeight="false" isFloatingLabel="false" hasSelectedForeground="false" paragraphAlignment="CENTER" absoluteTextX="0.0" layer="2" absoluteTextY="0.0" adjustMaximalWidthToLabelWidth="false" isMultilineAllowed="true" y="0.0" maximalWidth="Infinity" x="123.0">
+        <FocusedForegroundStyle id="71" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <SelectedColorBackgroundStyle id="72" color="254,247,217" transparencyLevel="0.5" useTransparency="false" />
+        <TextStyle id="73" orientation="0" color="0,153,255" backgroundColor="255,255,255" font="Lucida Sans Regular,0,36" isBackgroundColored="false" />
+        <ShapeBorder id="74" bottom="20" left="20" right="20" top="20" />
+        <ForegroundStyle id="75" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="true" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <SelectedForegroundStyle id="76" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <FocusedColorBackgroundStyle id="77" color="254,247,217" transparencyLevel="0.5" useTransparency="false" />
+        <RectangleShape idref="14" />
+        <ShadowStyle id="78" shadowBlur="4" shadowDepth="2" drawShadow="false" shadowDarkness="150" />
+        <NoneBackgroundStyle id="79" transparencyLevel="0.5" useTransparency="false" />
       </ShapeGraphicalRepresentation>
-      <ParentShapeRole idref="34" userID="FLX" />
-      <TypedDiagramModelSlot idref="436" userID="FLX" />
-      <GRSpec id="69" featureName="label" value="age.cellValue.toString" readOnly="true" userID="FLX" />
+      <ParentShapeRole idref="46" />
+      <GRSpec id="80" featureName="label" flexoID="230" readOnly="true" userID="FLX" useSpecificDescriptions="false" value="age.cellValue.toString" />
+      <TypedDiagramModelSlot idref="17" />
     </ShapeRole>
-    <ShapeRole id="70" name="shape4" exampleLabel="NAME" userID="FLX">
-      <ShapeGraphicalRepresentation id="71" x="10.12446958981613" y="116.0" width="172.39745403111735" height="50.0" minimalWidth="0.0" minimalHeight="0.0" maximalWidth="Infinity" maximalHeight="Infinity" relativeTextX="0.5" relativeTextY="0.5" lineWrap="true" locationConstraints="FREELY_MOVABLE" dimensionConstraints="FREELY_RESIZABLE" adjustMinimalWidthToLabelWidth="true" adjustMinimalHeightToLabelHeight="true" adjustMaximalWidthToLabelWidth="false" adjustMaximalHeightToLabelHeight="false" hasSelectedForeground="false" hasSelectedBackground="false" hasFocusedForeground="false" hasFocusedBackground="false" isFloatingLabel="false" allowToLeaveBounds="false" identifier="object_0_2" layer="2" hasText="true" isMultilineAllowed="true" continuousTextEditing="true" absoluteTextX="0.0" absoluteTextY="0.0" paragraphAlignment="CENTER" horizontalTextAlignment="CENTER" verticalTextAlignment="MIDDLE" isSelectable="true" isFocusable="true" drawControlPointsWhenFocused="true" drawControlPointsWhenSelected="true" isReadOnly="false" isLabelEditable="true" isVisible="true" userID="FLX">
-        <ForegroundStyle id="72" noStroke="true" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <NoneBackgroundStyle id="73" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <SelectedForegroundStyle id="74" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <SelectedColorBackgroundStyle id="75" color="254,247,217" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <FocusedForegroundStyle id="76" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <FocusedColorBackgroundStyle id="77" color="254,247,217" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <ShapeBorder id="78" top="20" bottom="20" left="20" right="20" userID="FLX" />
-        <RectangleShape idref="55" userID="FLX" />
-        <ShadowStyle id="79" drawShadow="false" shadowDarkness="150" shadowDepth="2" shadowBlur="4" userID="FLX" />
-        <TextStyle id="80" font="Lucida Sans Regular,0,24" color="0,102,102" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
+    <ShapeRole id="81" exampleLabel="NAME" useSpecificDescriptions="false" userID="FLX" cloningStratgey="Clone" flexoID="50" name="shape4">
+      <ShapeGraphicalRepresentation id="82" minimalHeight="0.0" relativeTextX="0.5" transparency="1.0" drawControlPointsWhenFocused="true" height="50.0" hasFocusedBackground="false" verticalTextAlignment="MIDDLE" adjustMinimalWidthToLabelWidth="true" width="172.39745403111735" hasFocusedForeground="false" hasSelectedBackground="false" allowToLeaveBounds="false" isFocusable="true" drawControlPointsWhenSelected="true" isSelectable="true" isLabelEditable="true" relativeTextY="0.5" continuousTextEditing="true" minimalWidth="0.0" identifier="object_0_2" lineWrap="true" locationConstraints="FREELY_MOVABLE" adjustMinimalHeightToLabelHeight="true" horizontalTextAlignment="CENTER" adaptBoundsToContents="false" maximalHeight="Infinity" isVisible="true" dimensionConstraints="FREELY_RESIZABLE" isReadOnly="false" adjustMaximalHeightToLabelHeight="false" isFloatingLabel="false" hasSelectedForeground="false" paragraphAlignment="CENTER" absoluteTextX="0.0" layer="2" absoluteTextY="0.0" adjustMaximalWidthToLabelWidth="false" isMultilineAllowed="true" y="116.0" maximalWidth="Infinity" x="10.12446958981613">
+        <FocusedForegroundStyle id="83" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <SelectedColorBackgroundStyle id="84" color="254,247,217" transparencyLevel="0.5" useTransparency="false" />
+        <TextStyle id="85" orientation="0" color="0,102,102" backgroundColor="255,255,255" font="Lucida Sans Regular,0,24" isBackgroundColored="false" />
+        <ShapeBorder id="86" bottom="20" left="20" right="20" top="20" />
+        <ForegroundStyle id="87" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="true" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <SelectedForegroundStyle id="88" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <FocusedColorBackgroundStyle id="89" color="254,247,217" transparencyLevel="0.5" useTransparency="false" />
+        <RectangleShape idref="14" />
+        <ShadowStyle id="90" shadowBlur="4" shadowDepth="2" drawShadow="false" shadowDarkness="150" />
+        <NoneBackgroundStyle id="91" transparencyLevel="0.5" useTransparency="false" />
       </ShapeGraphicalRepresentation>
-      <ParentShapeRole idref="34" userID="FLX" />
-      <TypedDiagramModelSlot idref="436" userID="FLX" />
-      <GRSpec id="81" featureName="label" value="nameInGen.cellValue.toString" readOnly="true" userID="FLX" />
+      <ParentShapeRole idref="46" />
+      <GRSpec id="92" featureName="label" flexoID="231" readOnly="true" userID="FLX" useSpecificDescriptions="false" value="nameInGen.cellValue.toString" />
+      <TypedDiagramModelSlot idref="17" />
     </ShapeRole>
-    <ExcelCellRole id="82" name="nameInGen" userID="FLX">
-      <BasicExcelModelSlot id="16" isRequired="true" isReadOnly="false" name="genealogyMS" userID="FLX" />
+    <ExcelCellRole id="93" cloningStratgey="Reference" flexoID="51" name="nameInGen" useSpecificDescriptions="false" userID="FLX">
+      <BasicExcelModelSlot idref="31" />
     </ExcelCellRole>
-    <ExcelCellRole id="83" name="age" userID="FLX">
-      <BasicExcelModelSlot id="14" isRequired="true" isReadOnly="false" name="listingMS" userID="FLX" />
+    <ExcelCellRole id="94" cloningStratgey="Reference" flexoID="52" name="age" useSpecificDescriptions="false" userID="FLX">
+      <BasicExcelModelSlot idref="29" />
     </ExcelCellRole>
-    <ExcelCellRole id="84" name="nameInListing" userID="FLX">
-      <BasicExcelModelSlot idref="14" userID="FLX" />
+    <ExcelCellRole id="95" cloningStratgey="Reference" flexoID="53" name="nameInListing" useSpecificDescriptions="false" userID="FLX">
+      <BasicExcelModelSlot idref="29" />
     </ExcelCellRole>
-    <Inspector id="85" inspectorTitle="Man" userID="FLX" />
-    <ParentFlexoConcept idref="344" />
-  </FlexoConcept>
-  <FlexoConcept id="86" name="Woman" userID="FLX">
-    <DropScheme id="87" target="top" name="dropWomamAtTopLevel" label="dropWomamAtTopLevel" skipConfirmationPanel="false" definePopupDefaultSize="false" width="800" height="600" userID="FLX">
-      <TextFieldParameter id="88" name="name" label="name" usePaletteLabelAsDefaultValue="false" isRequired="false" userID="FLX" />
-      <IntegerParameter id="89" name="rowInde" label="rowInde" defaultValue="1" usePaletteLabelAsDefaultValue="false" isRequired="false" userID="FLX" />
-      <IntegerParameter id="90" name="age" label="age" defaultValue="1" usePaletteLabelAsDefaultValue="false" isRequired="false" userID="FLX" />
-      <AddShape id="91" container="topLevel" extendParentBoundsToHostThisShape="false" assignation="shape" userID="FLX">
-        <TypedDiagramModelSlot idref="436" userID="FLX" />
+    <DropScheme id="19" useSpecificDescriptions="false" width="800" userID="FLX" label="dropManAtTopLevel" definePopupDefaultSize="false" height="600" flexoID="34" skipConfirmationPanel="false" name="dropManAtTopLevel" target="top">
+      <IntegerParameter id="20" flexoID="220" isRequired="false" name="rowIndex" userID="FLX" useSpecificDescriptions="false" label="rowIndex" defaultValue="1" />
+      <TextFieldParameter id="21" flexoID="221" isRequired="false" name="name" userID="FLX" useSpecificDescriptions="false" label="name" />
+      <IntegerParameter id="22" flexoID="222" isRequired="false" name="age" userID="FLX" useSpecificDescriptions="false" label="age" defaultValue="1" />
+      <FlexoConceptInstanceParameter id="23" useSpecificDescriptions="false" userID="FLX" label="sheet" flexoID="223" isRequired="false" name="sheet" flexoConceptTypeURI="http://ExcelViewpoint/GenealogyDiagram#Genealogic" />
+      <AddShape id="24" flexoID="55" assignation="shape" container="topLevel" useSpecificDescriptions="false" userID="FLX" extendParentBoundsToHostThisShape="false">
+        <TypedDiagramModelSlot idref="17" />
       </AddShape>
-      <AddShape id="92" container="shape" extendParentBoundsToHostThisShape="false" assignation="shape2" userID="FLX">
-        <TypedDiagramModelSlot idref="436" userID="FLX" />
+      <AddShape id="25" flexoID="56" assignation="shape2" container="shape" useSpecificDescriptions="false" userID="FLX" extendParentBoundsToHostThisShape="false">
+        <TypedDiagramModelSlot idref="17" />
       </AddShape>
-      <AddShape id="93" container="shape" extendParentBoundsToHostThisShape="false" assignation="shape3" userID="FLX">
-        <TypedDiagramModelSlot idref="436" userID="FLX" />
+      <AddShape id="26" flexoID="57" assignation="shape3" container="shape" useSpecificDescriptions="false" userID="FLX" extendParentBoundsToHostThisShape="false">
+        <TypedDiagramModelSlot idref="17" />
       </AddShape>
-      <AddShape id="94" container="shape" extendParentBoundsToHostThisShape="false" assignation="shape4" userID="FLX">
-        <TypedDiagramModelSlot idref="436" userID="FLX" />
+      <AddShape id="27" flexoID="58" assignation="shape4" container="shape" useSpecificDescriptions="false" userID="FLX" extendParentBoundsToHostThisShape="false">
+        <TypedDiagramModelSlot idref="17" />
       </AddShape>
-      <AddExcelCell id="95" isRowIndex="true" assignation="nameInListing" userID="FLX">
-        <value userID="FLX">parameters.name</value>
-        <columnIndex userID="FLX">(parameters.rowInde + 1)</columnIndex>
-        <rowIndex userID="FLX">parameters.rowInde</rowIndex>
-        <sheet userID="FLX">diagram.Gen.listSheet</sheet>
-        <BasicExcelModelSlot idref="14" userID="FLX" />
+      <AddExcelCell id="28" useSpecificDescriptions="false" userID="FLX" isRowIndex="true" flexoID="59" assignation="nameInListing">
+        <BasicExcelModelSlot idref="29" />
       </AddExcelCell>
-      <AddExcelCell id="96" isRowIndex="true" assignation="nameInGen" userID="FLX">
-        <value userID="FLX">parameters.name</value>
-        <columnIndex userID="FLX">(parameters.rowInde + 1)</columnIndex>
-        <rowIndex userID="FLX">parameters.rowInde</rowIndex>
-        <sheet userID="FLX">diagram.Gen.genSheet</sheet>
-        <BasicExcelModelSlot idref="16" userID="FLX" />
+      <AddExcelCell id="30" useSpecificDescriptions="false" userID="FLX" isRowIndex="true" flexoID="60" assignation="nameInGen">
+        <BasicExcelModelSlot idref="31" />
       </AddExcelCell>
-      <AddExcelCell id="97" isRowIndex="true" assignation="age" userID="FLX">
-        <value userID="FLX">parameters.age.toString</value>
-        <columnIndex userID="FLX">(parameters.rowInde + 1)</columnIndex>
-        <rowIndex userID="FLX">parameters.rowInde</rowIndex>
-        <sheet userID="FLX">diagram.Gen.listSheet</sheet>
-        <BasicExcelModelSlot idref="14" userID="FLX" />
+      <AddExcelCell id="32" useSpecificDescriptions="false" userID="FLX" isRowIndex="true" flexoID="61" assignation="age">
+        <BasicExcelModelSlot idref="29" />
       </AddExcelCell>
     </DropScheme>
-    <DeletionScheme id="98" name="deletion" label="deletion" skipConfirmationPanel="false" definePopupDefaultSize="false" width="800" height="600" userID="FLX">
-      <DeleteAction id="99" object="shape2" userID="FLX" />
-      <DeleteAction id="100" object="shape3" userID="FLX" />
-      <DeleteAction id="101" object="shape4" userID="FLX" />
-      <DeleteAction id="102" object="shape" userID="FLX" />
-    </DeletionScheme>
-    <CreationScheme id="103" name="creation" label="creation" skipConfirmationPanel="false" definePopupDefaultSize="false" width="800" height="600" userID="FLX">
-      <TechnologyObjectParameter id="104" name="nameInGen" label="nameInGen" usePaletteLabelAsDefaultValue="false" isRequired="false" userID="FLX" />
-      <TechnologyObjectParameter id="105" name="nameInList" label="nameInList" usePaletteLabelAsDefaultValue="false" isRequired="false" userID="FLX" />
-      <TechnologyObjectParameter id="106" name="age" label="age" usePaletteLabelAsDefaultValue="false" isRequired="false" userID="FLX" />
-      <AddShape id="107" container="virtualModelInstance.typedDiagramModelSlot" extendParentBoundsToHostThisShape="false" assignation="shape" userID="FLX">
-        <TypedDiagramModelSlot idref="436" userID="FLX" />
+    <CreationScheme id="96" useSpecificDescriptions="false" width="800" userID="FLX" label="creation" definePopupDefaultSize="false" height="600" flexoID="35" skipConfirmationPanel="false" name="creation">
+      <TechnologyObjectParameter id="97" useSpecificDescriptions="false" userID="FLX" label="nameInGen" flexoID="232" isRequired="false" name="nameInGen" />
+      <TechnologyObjectParameter id="98" useSpecificDescriptions="false" userID="FLX" label="nameInListing" flexoID="233" isRequired="false" name="nameInListing" />
+      <TechnologyObjectParameter id="99" useSpecificDescriptions="false" userID="FLX" label="age" flexoID="234" isRequired="false" name="age" />
+      <AddShape id="100" flexoID="62" assignation="shape" container="virtualModelInstance.typedDiagramModelSlot" useSpecificDescriptions="false" userID="FLX" extendParentBoundsToHostThisShape="false">
+        <TypedDiagramModelSlot idref="17" />
       </AddShape>
-      <AddShape id="108" container="shape" extendParentBoundsToHostThisShape="false" assignation="shape2" userID="FLX">
-        <TypedDiagramModelSlot idref="436" userID="FLX" />
+      <AddShape id="101" flexoID="63" assignation="shape2" container="virtualModelInstance.typedDiagramModelSlot" useSpecificDescriptions="false" userID="FLX" extendParentBoundsToHostThisShape="false">
+        <TypedDiagramModelSlot idref="17" />
       </AddShape>
-      <AddShape id="109" container="shape" extendParentBoundsToHostThisShape="false" assignation="shape3" userID="FLX">
-        <TypedDiagramModelSlot idref="436" userID="FLX" />
+      <AddShape id="102" flexoID="64" assignation="shape3" useSpecificDescriptions="false" userID="FLX" extendParentBoundsToHostThisShape="false">
+        <TypedDiagramModelSlot idref="17" />
       </AddShape>
-      <AddShape id="110" container="shape" extendParentBoundsToHostThisShape="false" assignation="shape4" userID="FLX">
-        <TypedDiagramModelSlot idref="436" userID="FLX" />
+      <AddShape id="103" flexoID="65" assignation="shape4" useSpecificDescriptions="false" userID="FLX" extendParentBoundsToHostThisShape="false">
+        <TypedDiagramModelSlot idref="17" />
       </AddShape>
-      <DeclareFlexoRole id="111" object="parameters.nameInList" assignation="nameInListing" userID="FLX" />
-      <DeclareFlexoRole id="112" object="parameters.nameInGen" assignation="nameInGen" userID="FLX" />
-      <DeclareFlexoRole id="113" object="parameters.age" assignation="age" userID="FLX" />
+      <DeclareFlexoRole id="104" userID="FLX" useSpecificDescriptions="false" object="parameters.nameInGen" flexoID="66" assignation="nameInGen" />
+      <DeclareFlexoRole id="105" userID="FLX" useSpecificDescriptions="false" object="parameters.nameInListing" flexoID="67" assignation="nameInListing" />
+      <DeclareFlexoRole id="106" userID="FLX" useSpecificDescriptions="false" object="parameters.age" flexoID="68" assignation="age" />
     </CreationScheme>
-    <ShapeRole id="114" name="shape" exampleLabel="" userID="FLX">
-      <ShapeGraphicalRepresentation id="115" x="0.0" y="0.0" width="193.6355740837241" height="171.81926401001127" minimalWidth="0.0" minimalHeight="0.0" maximalWidth="Infinity" maximalHeight="Infinity" relativeTextX="0.5" relativeTextY="0.5" lineWrap="true" locationConstraints="FREELY_MOVABLE" dimensionConstraints="FREELY_RESIZABLE" adjustMinimalWidthToLabelWidth="true" adjustMinimalHeightToLabelHeight="true" adjustMaximalWidthToLabelWidth="false" adjustMaximalHeightToLabelHeight="false" hasSelectedForeground="false" hasSelectedBackground="false" hasFocusedForeground="false" hasFocusedBackground="false" isFloatingLabel="false" allowToLeaveBounds="false" identifier="object_0" layer="1" hasText="true" isMultilineAllowed="true" continuousTextEditing="true" absoluteTextX="0.0" absoluteTextY="0.0" paragraphAlignment="CENTER" horizontalTextAlignment="CENTER" verticalTextAlignment="MIDDLE" isSelectable="true" isFocusable="true" drawControlPointsWhenFocused="true" drawControlPointsWhenSelected="true" isReadOnly="false" isLabelEditable="true" isVisible="true" userID="FLX">
-        <ForegroundStyle id="116" noStroke="false" color="0,102,102" lineWidth="2.000000001490116" joinStyle="JOIN_ROUND" capStyle="CAP_SQUARE" dashStyle="SMALL_DASHES" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <NoneBackgroundStyle id="117" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <SelectedForegroundStyle id="118" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <SelectedColorBackgroundStyle id="119" color="254,247,217" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <FocusedForegroundStyle id="120" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <FocusedColorBackgroundStyle id="121" color="254,247,217" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <ShapeBorder id="122" top="20" bottom="20" left="20" right="20" userID="FLX" />
-        <RectangleShape idref="43" userID="FLX" />
-        <ShadowStyle id="123" drawShadow="true" shadowDarkness="150" shadowDepth="2" shadowBlur="4" userID="FLX" />
-        <TextStyle id="124" font="Lucida Sans,0,11" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
-      </ShapeGraphicalRepresentation>
-      <TypedDiagramModelSlot idref="436" userID="FLX" />
-    </ShapeRole>
-    <ShapeRole id="125" name="shape2" exampleLabel="" userID="FLX">
-      <ShapeGraphicalRepresentation id="126" x="12.0" y="12.0" width="119.97658879188413" height="100.27084680025857" minimalWidth="0.0" minimalHeight="0.0" maximalWidth="Infinity" maximalHeight="Infinity" relativeTextX="0.5" relativeTextY="0.5" lineWrap="true" locationConstraints="FREELY_MOVABLE" dimensionConstraints="FREELY_RESIZABLE" adjustMinimalWidthToLabelWidth="true" adjustMinimalHeightToLabelHeight="true" adjustMaximalWidthToLabelWidth="false" adjustMaximalHeightToLabelHeight="false" hasSelectedForeground="false" hasSelectedBackground="false" hasFocusedForeground="false" hasFocusedBackground="false" isFloatingLabel="false" allowToLeaveBounds="false" identifier="object_0_0" layer="2" hasText="true" isMultilineAllowed="true" continuousTextEditing="true" absoluteTextX="0.0" absoluteTextY="0.0" paragraphAlignment="CENTER" horizontalTextAlignment="CENTER" verticalTextAlignment="MIDDLE" isSelectable="true" isFocusable="true" drawControlPointsWhenFocused="true" drawControlPointsWhenSelected="true" isReadOnly="false" isLabelEditable="true" isVisible="true" userID="FLX">
-        <ForegroundStyle id="127" noStroke="true" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <ImageBackgroundStyle id="128" imageFile="../../../icons_excel/48px-Crystal_Clear_kdm_user_female.png" scaleX="0.9373170999365947" scaleY="0.7833659906270201" deltaX="0.0" deltaY="0.0" imageBackgroundType="TRANSPARENT" imageBackgroundColor="255,255,255" fitToShape="true" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <SelectedForegroundStyle id="129" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <SelectedColorBackgroundStyle id="130" color="254,247,217" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <FocusedForegroundStyle id="131" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <FocusedColorBackgroundStyle id="132" color="254,247,217" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <ShapeBorder id="133" top="20" bottom="20" left="20" right="20" userID="FLX" />
-        <RectangleShape idref="55" userID="FLX" />
-        <ShadowStyle id="134" drawShadow="false" shadowDarkness="150" shadowDepth="2" shadowBlur="4" userID="FLX" />
-        <TextStyle id="135" font="Lucida Sans,0,11" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
-      </ShapeGraphicalRepresentation>
-      <ParentShapeRole idref="114" userID="FLX" />
-      <TypedDiagramModelSlot idref="436" userID="FLX" />
-    </ShapeRole>
-    <ShapeRole id="136" name="shape3" exampleLabel="51" userID="FLX">
-      <ShapeGraphicalRepresentation id="137" x="123.0" y="0.0" width="60.0" height="120.0" minimalWidth="0.0" minimalHeight="0.0" maximalWidth="Infinity" maximalHeight="Infinity" relativeTextX="0.5" relativeTextY="0.5" lineWrap="true" locationConstraints="FREELY_MOVABLE" dimensionConstraints="FREELY_RESIZABLE" adjustMinimalWidthToLabelWidth="true" adjustMinimalHeightToLabelHeight="true" adjustMaximalWidthToLabelWidth="false" adjustMaximalHeightToLabelHeight="false" hasSelectedForeground="false" hasSelectedBackground="false" hasFocusedForeground="false" hasFocusedBackground="false" isFloatingLabel="false" allowToLeaveBounds="false" identifier="object_0_1" layer="2" hasText="true" isMultilineAllowed="true" continuousTextEditing="true" absoluteTextX="0.0" absoluteTextY="0.0" paragraphAlignment="CENTER" horizontalTextAlignment="CENTER" verticalTextAlignment="MIDDLE" isSelectable="true" isFocusable="true" drawControlPointsWhenFocused="true" drawControlPointsWhenSelected="true" isReadOnly="false" isLabelEditable="true" isVisible="true" userID="FLX">
-        <ForegroundStyle id="138" noStroke="true" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <NoneBackgroundStyle id="139" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <SelectedForegroundStyle id="140" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <SelectedColorBackgroundStyle id="141" color="254,247,217" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <FocusedForegroundStyle id="142" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <FocusedColorBackgroundStyle id="143" color="254,247,217" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <ShapeBorder id="144" top="20" bottom="20" left="20" right="20" userID="FLX" />
-        <RectangleShape idref="55" userID="FLX" />
-        <ShadowStyle id="145" drawShadow="false" shadowDarkness="150" shadowDepth="2" shadowBlur="4" userID="FLX" />
-        <TextStyle id="146" font="Lucida Sans Regular,0,36" color="0,153,255" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
-      </ShapeGraphicalRepresentation>
-      <ParentShapeRole idref="114" userID="FLX" />
-      <TypedDiagramModelSlot idref="436" userID="FLX" />
-      <GRSpec id="147" featureName="label" value="age.cellValue.toString" readOnly="true" userID="FLX" />
-    </ShapeRole>
-    <ShapeRole id="148" name="shape4" exampleLabel="NAME" userID="FLX">
-      <ShapeGraphicalRepresentation id="149" x="6.135785007072116" y="116.0" width="177.38330975954736" height="50.0" minimalWidth="0.0" minimalHeight="0.0" maximalWidth="Infinity" maximalHeight="Infinity" relativeTextX="0.5" relativeTextY="0.5" lineWrap="true" locationConstraints="FREELY_MOVABLE" dimensionConstraints="FREELY_RESIZABLE" adjustMinimalWidthToLabelWidth="true" adjustMinimalHeightToLabelHeight="true" adjustMaximalWidthToLabelWidth="false" adjustMaximalHeightToLabelHeight="false" hasSelectedForeground="false" hasSelectedBackground="false" hasFocusedForeground="false" hasFocusedBackground="false" isFloatingLabel="false" allowToLeaveBounds="false" identifier="object_0_2" layer="2" hasText="true" isMultilineAllowed="true" continuousTextEditing="true" absoluteTextX="0.0" absoluteTextY="0.0" paragraphAlignment="CENTER" horizontalTextAlignment="CENTER" verticalTextAlignment="MIDDLE" isSelectable="true" isFocusable="true" drawControlPointsWhenFocused="true" drawControlPointsWhenSelected="true" isReadOnly="false" isLabelEditable="true" isVisible="true" userID="FLX">
-        <ForegroundStyle id="150" noStroke="true" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <NoneBackgroundStyle id="151" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <SelectedForegroundStyle id="152" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <SelectedColorBackgroundStyle id="153" color="254,247,217" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <FocusedForegroundStyle id="154" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <FocusedColorBackgroundStyle id="155" color="254,247,217" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <ShapeBorder id="156" top="20" bottom="20" left="20" right="20" userID="FLX" />
-        <RectangleShape idref="55" userID="FLX" />
-        <ShadowStyle id="157" drawShadow="false" shadowDarkness="150" shadowDepth="2" shadowBlur="4" userID="FLX" />
-        <TextStyle id="158" font="Lucida Sans Regular,0,24" color="0,102,102" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
-      </ShapeGraphicalRepresentation>
-      <ParentShapeRole idref="114" userID="FLX" />
-      <TypedDiagramModelSlot idref="436" userID="FLX" />
-      <GRSpec id="159" featureName="label" value="nameInListing.cellValue.toString" readOnly="true" userID="FLX" />
-    </ShapeRole>
-    <ExcelCellRole id="160" name="nameInListing" userID="FLX">
-      <BasicExcelModelSlot idref="14" userID="FLX" />
-    </ExcelCellRole>
-    <ExcelCellRole id="161" name="nameInGen" userID="FLX">
-      <BasicExcelModelSlot idref="16" userID="FLX" />
-    </ExcelCellRole>
-    <ExcelCellRole id="162" name="age" userID="FLX">
-      <BasicExcelModelSlot idref="14" userID="FLX" />
-    </ExcelCellRole>
-    <Inspector id="163" inspectorTitle="Womam" userID="FLX" />
-    <ParentFlexoConcept idref="344" />
+    <DeletionScheme id="107" useSpecificDescriptions="false" width="800" userID="FLX" label="deletion" definePopupDefaultSize="false" height="600" flexoID="36" skipConfirmationPanel="false" name="deletion">
+      <DeleteAction id="108" flexoID="69" userID="FLX" useSpecificDescriptions="false" object="shape2" />
+      <DeleteAction id="109" flexoID="70" userID="FLX" useSpecificDescriptions="false" object="shape3" />
+      <DeleteAction id="110" flexoID="71" userID="FLX" useSpecificDescriptions="false" object="shape4" />
+      <DeleteAction id="111" flexoID="72" userID="FLX" useSpecificDescriptions="false" object="shape" />
+    </DeletionScheme>
   </FlexoConcept>
-  <FlexoConcept id="164" name="BrotherRelationship" userID="FLX">
-    <LinkScheme id="165" fromTarget="http://ExcelViewpoint/GenealogyDiagram#Human" toTarget="http://ExcelViewpoint/GenealogyDiagram#Human" isAvailableWithFloatingPalette="true" northDirectionSupported="true" eastDirectionSupported="true" southDirectionSupported="true" westDirectionSupported="true" name="linkManToMan" label="brother" skipConfirmationPanel="false" definePopupDefaultSize="false" width="800" height="600" userID="FLX">
-      <AddConnector id="166" fromShape="fromTarget.shape" toShape="toTarget.shape" assignation="connector" userID="FLX">
-        <TypedDiagramModelSlot idref="436" userID="FLX" />
+  <FlexoConcept id="112" userID="FLX" useSpecificDescriptions="false" flexoID="80" name="Woman">
+    <Inspector id="113" flexoID="39" userID="FLX" useSpecificDescriptions="false" inspectorTitle="Womam" />
+    <ParentFlexoConcept idref="3" />
+    <ShapeRole id="114" exampleLabel="" useSpecificDescriptions="false" userID="FLX" cloningStratgey="Clone" flexoID="73" name="shape">
+      <ShapeGraphicalRepresentation id="115" minimalHeight="0.0" relativeTextX="0.5" transparency="1.0" drawControlPointsWhenFocused="true" height="171.81926401001127" hasFocusedBackground="false" verticalTextAlignment="MIDDLE" adjustMinimalWidthToLabelWidth="true" width="193.6355740837241" hasFocusedForeground="false" hasSelectedBackground="false" allowToLeaveBounds="false" isFocusable="true" drawControlPointsWhenSelected="true" isSelectable="true" isLabelEditable="true" relativeTextY="0.5" continuousTextEditing="true" minimalWidth="0.0" identifier="object_0" lineWrap="true" locationConstraints="FREELY_MOVABLE" adjustMinimalHeightToLabelHeight="true" horizontalTextAlignment="CENTER" adaptBoundsToContents="false" maximalHeight="Infinity" isVisible="true" dimensionConstraints="FREELY_RESIZABLE" isReadOnly="false" adjustMaximalHeightToLabelHeight="false" isFloatingLabel="false" hasSelectedForeground="false" paragraphAlignment="CENTER" absoluteTextX="0.0" layer="1" absoluteTextY="0.0" adjustMaximalWidthToLabelWidth="false" isMultilineAllowed="true" y="0.0" maximalWidth="Infinity" x="0.0">
+        <FocusedForegroundStyle id="116" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <SelectedColorBackgroundStyle id="117" color="254,247,217" transparencyLevel="0.5" useTransparency="false" />
+        <TextStyle id="118" orientation="0" color="0,0,0" backgroundColor="255,255,255" font="Lucida Sans,0,11" isBackgroundColored="false" />
+        <ShapeBorder id="119" bottom="20" left="20" right="20" top="20" />
+        <ForegroundStyle id="120" dashStyle="SMALL_DASHES" color="0,102,102" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="2.000000001490116" joinStyle="JOIN_ROUND" capStyle="CAP_SQUARE" />
+        <SelectedForegroundStyle id="121" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <FocusedColorBackgroundStyle id="122" color="254,247,217" transparencyLevel="0.5" useTransparency="false" />
+        <RectangleShape idref="55" />
+        <ShadowStyle id="123" shadowBlur="4" shadowDepth="2" drawShadow="true" shadowDarkness="150" />
+        <NoneBackgroundStyle id="124" transparencyLevel="0.5" useTransparency="false" />
+      </ShapeGraphicalRepresentation>
+      <TypedDiagramModelSlot idref="17" />
+    </ShapeRole>
+    <ShapeRole id="125" exampleLabel="" useSpecificDescriptions="false" userID="FLX" cloningStratgey="Clone" flexoID="74" name="shape2">
+      <ShapeGraphicalRepresentation id="126" minimalHeight="0.0" relativeTextX="0.5" transparency="1.0" drawControlPointsWhenFocused="true" height="100.27084680025857" hasFocusedBackground="false" verticalTextAlignment="MIDDLE" adjustMinimalWidthToLabelWidth="true" width="119.97658879188413" hasFocusedForeground="false" hasSelectedBackground="false" allowToLeaveBounds="false" isFocusable="true" drawControlPointsWhenSelected="true" isSelectable="true" isLabelEditable="true" relativeTextY="0.5" continuousTextEditing="true" minimalWidth="0.0" identifier="object_0_0" lineWrap="true" locationConstraints="FREELY_MOVABLE" adjustMinimalHeightToLabelHeight="true" horizontalTextAlignment="CENTER" adaptBoundsToContents="false" maximalHeight="Infinity" isVisible="true" dimensionConstraints="FREELY_RESIZABLE" isReadOnly="false" adjustMaximalHeightToLabelHeight="false" isFloatingLabel="false" hasSelectedForeground="false" paragraphAlignment="CENTER" absoluteTextX="0.0" layer="2" absoluteTextY="0.0" adjustMaximalWidthToLabelWidth="false" isMultilineAllowed="true" y="12.0" maximalWidth="Infinity" x="12.0">
+        <FocusedForegroundStyle id="127" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <SelectedColorBackgroundStyle id="128" color="254,247,217" transparencyLevel="0.5" useTransparency="false" />
+        <TextStyle id="129" orientation="0" color="0,0,0" backgroundColor="255,255,255" font="Lucida Sans,0,11" isBackgroundColored="false" />
+        <ShapeBorder id="130" bottom="20" left="20" right="20" top="20" />
+        <ForegroundStyle id="131" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="true" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <SelectedForegroundStyle id="132" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <FocusedColorBackgroundStyle id="133" color="254,247,217" transparencyLevel="0.5" useTransparency="false" />
+        <RectangleShape idref="14" />
+        <ShadowStyle id="134" shadowBlur="4" shadowDepth="2" drawShadow="false" shadowDarkness="150" />
+        <ImageBackgroundStyle id="135" scaleX="0.9373170999365947" scaleY="0.7833659906270201" imageBackgroundColor="255,255,255" transparencyLevel="0.5" fitToShape="true" useTransparency="false" imageBackgroundType="TRANSPARENT" deltaX="0.0" deltaY="0.0" />
+      </ShapeGraphicalRepresentation>
+      <ParentShapeRole idref="114" />
+      <TypedDiagramModelSlot idref="17" />
+    </ShapeRole>
+    <ShapeRole id="136" exampleLabel="51" useSpecificDescriptions="false" userID="FLX" cloningStratgey="Clone" flexoID="75" name="shape3">
+      <ShapeGraphicalRepresentation id="137" minimalHeight="0.0" relativeTextX="0.5" transparency="1.0" drawControlPointsWhenFocused="true" height="120.0" hasFocusedBackground="false" verticalTextAlignment="MIDDLE" adjustMinimalWidthToLabelWidth="true" width="60.0" hasFocusedForeground="false" hasSelectedBackground="false" allowToLeaveBounds="false" isFocusable="true" drawControlPointsWhenSelected="true" isSelectable="true" isLabelEditable="true" relativeTextY="0.5" continuousTextEditing="true" minimalWidth="0.0" identifier="object_0_1" lineWrap="true" locationConstraints="FREELY_MOVABLE" adjustMinimalHeightToLabelHeight="true" horizontalTextAlignment="CENTER" adaptBoundsToContents="false" maximalHeight="Infinity" isVisible="true" dimensionConstraints="FREELY_RESIZABLE" isReadOnly="false" adjustMaximalHeightToLabelHeight="false" isFloatingLabel="false" hasSelectedForeground="false" paragraphAlignment="CENTER" absoluteTextX="0.0" layer="2" absoluteTextY="0.0" adjustMaximalWidthToLabelWidth="false" isMultilineAllowed="true" y="0.0" maximalWidth="Infinity" x="123.0">
+        <FocusedForegroundStyle id="138" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <SelectedColorBackgroundStyle id="139" color="254,247,217" transparencyLevel="0.5" useTransparency="false" />
+        <TextStyle id="140" orientation="0" color="0,153,255" backgroundColor="255,255,255" font="Lucida Sans Regular,0,36" isBackgroundColored="false" />
+        <ShapeBorder id="141" bottom="20" left="20" right="20" top="20" />
+        <ForegroundStyle id="142" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="true" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <SelectedForegroundStyle id="143" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <FocusedColorBackgroundStyle id="144" color="254,247,217" transparencyLevel="0.5" useTransparency="false" />
+        <RectangleShape idref="14" />
+        <ShadowStyle id="145" shadowBlur="4" shadowDepth="2" drawShadow="false" shadowDarkness="150" />
+        <NoneBackgroundStyle id="146" transparencyLevel="0.5" useTransparency="false" />
+      </ShapeGraphicalRepresentation>
+      <ParentShapeRole idref="114" />
+      <GRSpec id="147" featureName="label" flexoID="235" readOnly="true" userID="FLX" useSpecificDescriptions="false" value="age.cellValue.toString" />
+      <TypedDiagramModelSlot idref="17" />
+    </ShapeRole>
+    <ShapeRole id="148" exampleLabel="NAME" useSpecificDescriptions="false" userID="FLX" cloningStratgey="Clone" flexoID="76" name="shape4">
+      <ShapeGraphicalRepresentation id="149" minimalHeight="0.0" relativeTextX="0.5" transparency="1.0" drawControlPointsWhenFocused="true" height="50.0" hasFocusedBackground="false" verticalTextAlignment="MIDDLE" adjustMinimalWidthToLabelWidth="true" width="177.38330975954736" hasFocusedForeground="false" hasSelectedBackground="false" allowToLeaveBounds="false" isFocusable="true" drawControlPointsWhenSelected="true" isSelectable="true" isLabelEditable="true" relativeTextY="0.5" continuousTextEditing="true" minimalWidth="0.0" identifier="object_0_2" lineWrap="true" locationConstraints="FREELY_MOVABLE" adjustMinimalHeightToLabelHeight="true" horizontalTextAlignment="CENTER" adaptBoundsToContents="false" maximalHeight="Infinity" isVisible="true" dimensionConstraints="FREELY_RESIZABLE" isReadOnly="false" adjustMaximalHeightToLabelHeight="false" isFloatingLabel="false" hasSelectedForeground="false" paragraphAlignment="CENTER" absoluteTextX="0.0" layer="2" absoluteTextY="0.0" adjustMaximalWidthToLabelWidth="false" isMultilineAllowed="true" y="116.0" maximalWidth="Infinity" x="6.135785007072116">
+        <FocusedForegroundStyle id="150" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <SelectedColorBackgroundStyle id="151" color="254,247,217" transparencyLevel="0.5" useTransparency="false" />
+        <TextStyle id="152" orientation="0" color="0,102,102" backgroundColor="255,255,255" font="Lucida Sans Regular,0,24" isBackgroundColored="false" />
+        <ShapeBorder id="153" bottom="20" left="20" right="20" top="20" />
+        <ForegroundStyle id="154" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="true" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <SelectedForegroundStyle id="155" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <FocusedColorBackgroundStyle id="156" color="254,247,217" transparencyLevel="0.5" useTransparency="false" />
+        <RectangleShape idref="14" />
+        <ShadowStyle id="157" shadowBlur="4" shadowDepth="2" drawShadow="false" shadowDarkness="150" />
+        <NoneBackgroundStyle id="158" transparencyLevel="0.5" useTransparency="false" />
+      </ShapeGraphicalRepresentation>
+      <ParentShapeRole idref="114" />
+      <GRSpec id="159" featureName="label" flexoID="236" readOnly="true" userID="FLX" useSpecificDescriptions="false" value="nameInListing.cellValue.toString" />
+      <TypedDiagramModelSlot idref="17" />
+    </ShapeRole>
+    <ExcelCellRole id="160" cloningStratgey="Reference" flexoID="77" name="nameInListing" useSpecificDescriptions="false" userID="FLX">
+      <BasicExcelModelSlot idref="29" />
+    </ExcelCellRole>
+    <ExcelCellRole id="161" cloningStratgey="Reference" flexoID="78" name="nameInGen" useSpecificDescriptions="false" userID="FLX">
+      <BasicExcelModelSlot idref="31" />
+    </ExcelCellRole>
+    <ExcelCellRole id="162" cloningStratgey="Reference" flexoID="79" name="age" useSpecificDescriptions="false" userID="FLX">
+      <BasicExcelModelSlot idref="29" />
+    </ExcelCellRole>
+    <DropScheme id="34" useSpecificDescriptions="false" width="800" userID="FLX" label="dropWomamAtTopLevel" definePopupDefaultSize="false" height="600" flexoID="42" skipConfirmationPanel="false" name="dropWomamAtTopLevel" target="top">
+      <TextFieldParameter id="35" flexoID="226" isRequired="false" name="name" userID="FLX" useSpecificDescriptions="false" label="name" />
+      <IntegerParameter id="36" flexoID="227" isRequired="false" name="rowInde" userID="FLX" useSpecificDescriptions="false" label="rowInde" defaultValue="1" />
+      <IntegerParameter id="37" flexoID="228" isRequired="false" name="age" userID="FLX" useSpecificDescriptions="false" label="age" defaultValue="1" />
+      <AddShape id="38" flexoID="81" assignation="shape" container="topLevel" useSpecificDescriptions="false" userID="FLX" extendParentBoundsToHostThisShape="false">
+        <TypedDiagramModelSlot idref="17" />
+      </AddShape>
+      <AddShape id="39" flexoID="82" assignation="shape2" container="shape" useSpecificDescriptions="false" userID="FLX" extendParentBoundsToHostThisShape="false">
+        <TypedDiagramModelSlot idref="17" />
+      </AddShape>
+      <AddShape id="40" flexoID="83" assignation="shape3" container="shape" useSpecificDescriptions="false" userID="FLX" extendParentBoundsToHostThisShape="false">
+        <TypedDiagramModelSlot idref="17" />
+      </AddShape>
+      <AddShape id="41" flexoID="84" assignation="shape4" container="shape" useSpecificDescriptions="false" userID="FLX" extendParentBoundsToHostThisShape="false">
+        <TypedDiagramModelSlot idref="17" />
+      </AddShape>
+      <AddExcelCell id="42" useSpecificDescriptions="false" userID="FLX" isRowIndex="true" flexoID="85" assignation="nameInListing">
+        <BasicExcelModelSlot idref="29" />
+      </AddExcelCell>
+      <AddExcelCell id="43" useSpecificDescriptions="false" userID="FLX" isRowIndex="true" flexoID="86" assignation="nameInGen">
+        <BasicExcelModelSlot idref="31" />
+      </AddExcelCell>
+      <AddExcelCell id="44" useSpecificDescriptions="false" userID="FLX" isRowIndex="true" flexoID="87" assignation="age">
+        <BasicExcelModelSlot idref="29" />
+      </AddExcelCell>
+    </DropScheme>
+    <DeletionScheme id="163" useSpecificDescriptions="false" width="800" userID="FLX" label="deletion" definePopupDefaultSize="false" height="600" flexoID="43" skipConfirmationPanel="false" name="deletion">
+      <DeleteAction id="164" flexoID="88" userID="FLX" useSpecificDescriptions="false" object="shape2" />
+      <DeleteAction id="165" flexoID="89" userID="FLX" useSpecificDescriptions="false" object="shape3" />
+      <DeleteAction id="166" flexoID="90" userID="FLX" useSpecificDescriptions="false" object="shape4" />
+      <DeleteAction id="167" flexoID="91" userID="FLX" useSpecificDescriptions="false" object="shape" />
+    </DeletionScheme>
+    <CreationScheme id="168" useSpecificDescriptions="false" width="800" userID="FLX" label="creation" definePopupDefaultSize="false" height="600" flexoID="44" skipConfirmationPanel="false" name="creation">
+      <TechnologyObjectParameter id="169" useSpecificDescriptions="false" userID="FLX" label="nameInGen" flexoID="237" isRequired="false" name="nameInGen" />
+      <TechnologyObjectParameter id="170" useSpecificDescriptions="false" userID="FLX" label="nameInList" flexoID="238" isRequired="false" name="nameInList" />
+      <TechnologyObjectParameter id="171" useSpecificDescriptions="false" userID="FLX" label="age" flexoID="239" isRequired="false" name="age" />
+      <AddShape id="172" flexoID="92" assignation="shape" container="virtualModelInstance.typedDiagramModelSlot" useSpecificDescriptions="false" userID="FLX" extendParentBoundsToHostThisShape="false">
+        <TypedDiagramModelSlot idref="17" />
+      </AddShape>
+      <AddShape id="173" flexoID="93" assignation="shape2" container="shape" useSpecificDescriptions="false" userID="FLX" extendParentBoundsToHostThisShape="false">
+        <TypedDiagramModelSlot idref="17" />
+      </AddShape>
+      <AddShape id="174" flexoID="94" assignation="shape3" container="shape" useSpecificDescriptions="false" userID="FLX" extendParentBoundsToHostThisShape="false">
+        <TypedDiagramModelSlot idref="17" />
+      </AddShape>
+      <AddShape id="175" flexoID="95" assignation="shape4" container="shape" useSpecificDescriptions="false" userID="FLX" extendParentBoundsToHostThisShape="false">
+        <TypedDiagramModelSlot idref="17" />
+      </AddShape>
+      <DeclareFlexoRole id="176" userID="FLX" useSpecificDescriptions="false" object="parameters.nameInList" flexoID="96" assignation="nameInListing" />
+      <DeclareFlexoRole id="177" userID="FLX" useSpecificDescriptions="false" object="parameters.nameInGen" flexoID="97" assignation="nameInGen" />
+      <DeclareFlexoRole id="178" userID="FLX" useSpecificDescriptions="false" object="parameters.age" flexoID="98" assignation="age" />
+    </CreationScheme>
+  </FlexoConcept>
+  <FlexoConcept id="179" userID="FLX" useSpecificDescriptions="false" flexoID="103" name="BrotherRelationship">
+    <Inspector id="180" flexoID="1" userID="FLX" useSpecificDescriptions="false" inspectorTitle="BrotherRelationship" />
+    <ExcelCellRole id="181" cloningStratgey="Reference" flexoID="99" name="cell" useSpecificDescriptions="false" userID="FLX">
+      <BasicExcelModelSlot idref="31" />
+    </ExcelCellRole>
+    <FlexoConceptInstanceRole id="182" cloningStratgey="Reference" flexoID="100" name="source" useSpecificDescriptions="false" userID="FLX" flexoConceptTypeURI="http://ExcelViewpoint/GenealogyDiagram#Human" />
+    <FlexoConceptInstanceRole id="183" cloningStratgey="Reference" flexoID="101" name="target" useSpecificDescriptions="false" userID="FLX" flexoConceptTypeURI="http://ExcelViewpoint/GenealogyDiagram#Human" />
+    <ConnectorRole id="184" exampleLabel="label" userID="FLX" useSpecificDescriptions="false" cloningStratgey="Clone" flexoID="102" name="connector">
+      <ConnectorGraphicalRepresentation id="185" lineWrap="false" horizontalTextAlignment="CENTER" transparency="1.0" drawControlPointsWhenFocused="true" isVisible="true" isReadOnly="false" paragraphAlignment="CENTER" hasSelectedForeground="false" verticalTextAlignment="MIDDLE" hasFocusedForeground="false" applyForegroundToSymbols="true" layer="64" absoluteTextX="0.0" absoluteTextY="0.0" isFocusable="true" drawControlPointsWhenSelected="true" isSelectable="true" isLabelEditable="true" continuousTextEditing="true" isMultilineAllowed="true" identifier="object_2">
+        <SelectedForegroundStyle id="186" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <FocusedForegroundStyle id="187" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <LineConnectorSpecification id="188" relativeMiddleSymbolLocation="0.5" startSymbolSize="10.0" middleSymbol="NONE" cp1RelativeToStartObject="1.0,0.5000000000000002" lineConnectorType="ADJUSTABLE" middleSymbolSize="10.0" endSymbolSize="10.0" cp2RelativeToEndObject="1.7763568394002505E-15,0.5" startSymbol="NONE" endSymbol="NONE" />
+        <TextStyle id="189" orientation="0" color="0,0,0" backgroundColor="255,255,255" font="Lucida Sans,0,11" isBackgroundColored="false" />
+        <ForegroundStyle id="190" dashStyle="PLAIN_STROKE" color="0,153,153" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="2.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+      </ConnectorGraphicalRepresentation>
+      <GRSpec id="191" featureName="label" flexoID="240" readOnly="true" userID="FLX" useSpecificDescriptions="false" value="cell.cellValue.toString" />
+      <TypedDiagramModelSlot idref="17" />
+    </ConnectorRole>
+    <LinkScheme id="192" northDirectionSupported="true" fromTarget="http://ExcelViewpoint/GenealogyDiagram#Human" toTarget="http://ExcelViewpoint/GenealogyDiagram#Human" useSpecificDescriptions="false" width="800" userID="FLX" label="brother" definePopupDefaultSize="false" southDirectionSupported="true" westDirectionSupported="true" isAvailableWithFloatingPalette="true" flexoID="4" height="600" skipConfirmationPanel="false" name="linkManToMan" eastDirectionSupported="true">
+      <AddConnector id="193" userID="FLX" useSpecificDescriptions="false" flexoID="104" assignation="connector" fromShape="fromTarget.shape" toShape="toTarget.shape">
+        <TypedDiagramModelSlot idref="17" />
       </AddConnector>
-      <DeclareFlexoRole id="167" object="toTarget" assignation="source" userID="FLX" />
-      <DeclareFlexoRole id="168" object="fromTarget" assignation="target" userID="FLX" />
-      <AddExcelCell id="169" isRowIndex="true" assignation="cell" userID="FLX">
-        <value userID="FLX">"Brother"</value>
-        <columnIndex userID="FLX">target.nameInGen.columnIndex</columnIndex>
-        <rowIndex userID="FLX">source.nameInGen.rowIndex</rowIndex>
-        <sheet userID="FLX">diagram.Gen.genSheet</sheet>
-        <BasicExcelModelSlot idref="16" userID="FLX" />
+      <DeclareFlexoRole id="194" userID="FLX" useSpecificDescriptions="false" object="toTarget" flexoID="105" assignation="source" />
+      <DeclareFlexoRole id="195" userID="FLX" useSpecificDescriptions="false" object="fromTarget" flexoID="106" assignation="target" />
+      <AddExcelCell id="196" useSpecificDescriptions="false" userID="FLX" isRowIndex="true" flexoID="107" assignation="cell">
+        <BasicExcelModelSlot idref="31" />
       </AddExcelCell>
     </LinkScheme>
-    <CreationScheme id="170" name="creation" label="creation" skipConfirmationPanel="false" definePopupDefaultSize="false" width="800" height="600" userID="FLX">
-      <FlexoConceptInstanceParameter id="171" flexoConceptTypeURI="http://ExcelViewpoint/GenealogyDiagram#Human" name="source" label="source" usePaletteLabelAsDefaultValue="false" isRequired="false" userID="FLX">
-        <ModelSlot_VirtualModelModelSlot idref="8" userID="FLX" />
-      </FlexoConceptInstanceParameter>
-      <FlexoConceptInstanceParameter id="172" flexoConceptTypeURI="http://ExcelViewpoint/GenealogyDiagram#Human" name="target" label="target" usePaletteLabelAsDefaultValue="false" isRequired="false" userID="FLX">
-        <ModelSlot_VirtualModelModelSlot idref="8" userID="FLX" />
-      </FlexoConceptInstanceParameter>
-      <TechnologyObjectParameter id="173" name="cell" label="cell" usePaletteLabelAsDefaultValue="false" isRequired="false" userID="FLX" />
-      <DeclareFlexoRole id="174" object="parameters.source" assignation="source" userID="FLX" />
-      <DeclareFlexoRole id="175" object="parameters.target" assignation="target" userID="FLX" />
-      <DeclareFlexoRole id="176" object="parameters.technologyObject" assignation="cell" userID="FLX" />
-      <AddConnector id="177" fromShape="source.shape" toShape="target.shape" assignation="connector" userID="FLX">
-        <TypedDiagramModelSlot idref="436" userID="FLX" />
+    <CreationScheme id="197" useSpecificDescriptions="false" width="800" userID="FLX" label="creation" definePopupDefaultSize="false" height="600" flexoID="5" skipConfirmationPanel="false" name="creation">
+      <FlexoConceptInstanceParameter id="198" useSpecificDescriptions="false" userID="FLX" label="source" flexoID="241" isRequired="false" name="source" flexoConceptTypeURI="http://ExcelViewpoint/GenealogyDiagram#Human" />
+      <FlexoConceptInstanceParameter id="199" useSpecificDescriptions="false" userID="FLX" label="target" flexoID="242" isRequired="false" name="target" flexoConceptTypeURI="http://ExcelViewpoint/GenealogyDiagram#Human" />
+      <TechnologyObjectParameter id="200" useSpecificDescriptions="false" userID="FLX" label="cell" flexoID="243" isRequired="false" name="cell" />
+      <DeclareFlexoRole id="201" userID="FLX" useSpecificDescriptions="false" object="parameters.source" flexoID="108" assignation="source" />
+      <DeclareFlexoRole id="202" userID="FLX" useSpecificDescriptions="false" object="parameters.target" flexoID="109" assignation="target" />
+      <DeclareFlexoRole id="203" userID="FLX" useSpecificDescriptions="false" object="parameters.technologyObject" flexoID="110" assignation="cell" />
+      <AddConnector id="204" userID="FLX" useSpecificDescriptions="false" flexoID="111" assignation="connector" fromShape="source.shape" toShape="target.shape">
+        <TypedDiagramModelSlot idref="17" />
       </AddConnector>
     </CreationScheme>
-    <DeletionScheme id="178" name="deletion" label="deletion" skipConfirmationPanel="false" definePopupDefaultSize="false" width="800" height="600" userID="FLX">
-      <DeleteAction id="179" object="connector" userID="FLX" />
+    <DeletionScheme id="205" useSpecificDescriptions="false" width="800" userID="FLX" label="deletion" definePopupDefaultSize="false" height="600" flexoID="6" skipConfirmationPanel="false" name="deletion">
+      <DeleteAction id="206" flexoID="112" userID="FLX" useSpecificDescriptions="false" object="connector" />
     </DeletionScheme>
-    <ExcelCellRole id="180" name="cell" userID="FLX">
-      <BasicExcelModelSlot idref="16" userID="FLX" />
-    </ExcelCellRole>
-    <FlexoConceptInstanceRole id="181" flexoConceptTypeURI="http://ExcelViewpoint/GenealogyDiagram#Human" name="source" userID="FLX">
-      <ModelSlot_VirtualModelModelSlot idref="8" userID="FLX" />
-    </FlexoConceptInstanceRole>
-    <FlexoConceptInstanceRole id="182" flexoConceptTypeURI="http://ExcelViewpoint/GenealogyDiagram#Human" name="target" userID="FLX">
-      <ModelSlot_VirtualModelModelSlot idref="8" userID="FLX" />
-    </FlexoConceptInstanceRole>
-    <ConnectorRole id="183" name="connector" exampleLabel="label" userID="FLX">
-      <ConnectorGraphicalRepresentation id="184" hasSelectedForeground="false" hasFocusedForeground="false" startSymbol="NONE" endSymbol="NONE" middleSymbol="NONE" startSymbolSize="10.0" endSymbolSize="10.0" middleSymbolSize="10.0" relativeMiddleSymbolLocation="0.5" applyForegroundToSymbols="true" identifier="object_2" layer="64" hasText="true" isMultilineAllowed="true" continuousTextEditing="true" absoluteTextX="0.0" absoluteTextY="0.0" paragraphAlignment="CENTER" horizontalTextAlignment="CENTER" verticalTextAlignment="MIDDLE" isSelectable="true" isFocusable="true" drawControlPointsWhenFocused="true" drawControlPointsWhenSelected="true" isReadOnly="false" isLabelEditable="true" isVisible="true" userID="FLX">
-        <ForegroundStyle id="185" noStroke="false" color="0,153,153" lineWidth="2.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <SelectedForegroundStyle id="186" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <FocusedForegroundStyle id="187" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <LineConnectorSpecification id="188" lineConnectorType="ADJUSTABLE" cp1RelativeToStartObject="1.0,0.5000000000000002" cp2RelativeToEndObject="1.7763568394002505E-15,0.5" userID="FLX" />
-        <TextStyle id="189" font="Lucida Sans,0,11" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
-      </ConnectorGraphicalRepresentation>
-      <TypedDiagramModelSlot idref="436" userID="FLX" />
-      <GRSpec id="211" featureName="label" value="cell.cellValue.toString" readOnly="true" userID="FLX" />
-    </ConnectorRole>
-    <Inspector id="240" inspectorTitle="BrotherRelationship" userID="FLX" />
   </FlexoConcept>
-  <FlexoConcept id="241" name="MarriageRelationship" userID="FLX">
-    <LinkScheme id="242" fromTarget="http://ExcelViewpoint/GenealogyDiagram#Human" toTarget="http://ExcelViewpoint/GenealogyDiagram#Human" isAvailableWithFloatingPalette="true" northDirectionSupported="true" eastDirectionSupported="true" southDirectionSupported="true" westDirectionSupported="true" name="linkManToWoman" label="marriage" skipConfirmationPanel="false" definePopupDefaultSize="false" width="800" height="600" userID="FLX">
-      <DeclareFlexoRole id="243" object="fromTarget" assignation="source" userID="FLX" />
-      <DeclareFlexoRole id="244" object="toTarget" assignation="target" userID="FLX" />
-      <AddConnector id="245" fromShape="fromTarget.shape" toShape="toTarget.shape" assignation="connector" userID="FLX">
-        <TypedDiagramModelSlot idref="436" userID="FLX" />
+  <FlexoConcept id="207" userID="FLX" useSpecificDescriptions="false" flexoID="117" name="MarriageRelationship">
+    <Inspector id="208" flexoID="8" userID="FLX" useSpecificDescriptions="false" inspectorTitle="MarriageRelationship" />
+    <ConnectorRole id="209" exampleLabel="label" userID="FLX" useSpecificDescriptions="false" cloningStratgey="Clone" flexoID="113" name="connector">
+      <ConnectorGraphicalRepresentation id="210" lineWrap="false" horizontalTextAlignment="CENTER" transparency="1.0" drawControlPointsWhenFocused="true" isVisible="true" isReadOnly="false" paragraphAlignment="CENTER" hasSelectedForeground="false" verticalTextAlignment="MIDDLE" hasFocusedForeground="false" applyForegroundToSymbols="true" layer="64" absoluteTextX="0.0" absoluteTextY="0.0" isFocusable="true" drawControlPointsWhenSelected="true" isSelectable="true" isLabelEditable="true" continuousTextEditing="true" isMultilineAllowed="true" identifier="object_2">
+        <SelectedForegroundStyle id="211" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <FocusedForegroundStyle id="212" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <LineConnectorSpecification id="213" relativeMiddleSymbolLocation="0.5" startSymbolSize="10.0" middleSymbol="NONE" cp1RelativeToStartObject="0.9999719746373534,0.49470617555773383" lineConnectorType="ADJUSTABLE" middleSymbolSize="10.0" endSymbolSize="10.0" cp2RelativeToEndObject="2.8025362646733054E-5,0.4947061755577128" startSymbol="NONE" endSymbol="NONE" />
+        <TextStyle id="214" orientation="0" color="0,0,0" backgroundColor="255,255,255" font="Lucida Sans,0,11" isBackgroundColored="false" />
+        <ForegroundStyle id="215" dashStyle="MEDIUM_DASHES" color="0,204,153" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="2.000000001490116" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+      </ConnectorGraphicalRepresentation>
+      <GRSpec id="216" featureName="label" flexoID="244" readOnly="true" userID="FLX" useSpecificDescriptions="false" value="cell.cellValue.toString" />
+      <TypedDiagramModelSlot idref="17" />
+    </ConnectorRole>
+    <ExcelCellRole id="217" cloningStratgey="Reference" flexoID="114" name="cell" useSpecificDescriptions="false" userID="FLX">
+      <BasicExcelModelSlot idref="31" />
+    </ExcelCellRole>
+    <FlexoConceptInstanceRole id="218" cloningStratgey="Reference" flexoID="115" name="source" useSpecificDescriptions="false" userID="FLX" flexoConceptTypeURI="http://ExcelViewpoint/GenealogyDiagram#Human" />
+    <FlexoConceptInstanceRole id="219" cloningStratgey="Reference" flexoID="116" name="target" useSpecificDescriptions="false" userID="FLX" flexoConceptTypeURI="http://ExcelViewpoint/GenealogyDiagram#Human" />
+    <LinkScheme id="220" northDirectionSupported="true" fromTarget="http://ExcelViewpoint/GenealogyDiagram#Human" toTarget="http://ExcelViewpoint/GenealogyDiagram#Human" useSpecificDescriptions="false" width="800" userID="FLX" label="marriage" definePopupDefaultSize="false" southDirectionSupported="true" westDirectionSupported="true" isAvailableWithFloatingPalette="true" flexoID="11" height="600" skipConfirmationPanel="false" name="linkManToWoman" eastDirectionSupported="true">
+      <DeclareFlexoRole id="221" userID="FLX" useSpecificDescriptions="false" object="fromTarget" flexoID="118" assignation="source" />
+      <DeclareFlexoRole id="222" userID="FLX" useSpecificDescriptions="false" object="toTarget" flexoID="119" assignation="target" />
+      <AddConnector id="223" userID="FLX" useSpecificDescriptions="false" flexoID="120" assignation="connector" fromShape="fromTarget.shape" toShape="toTarget.shape">
+        <TypedDiagramModelSlot idref="17" />
       </AddConnector>
-      <AddExcelCell id="246" isRowIndex="true" assignation="cell" userID="FLX">
-        <value userID="FLX">"Husband"</value>
-        <columnIndex userID="FLX">target.nameInGen.rowIndex</columnIndex>
-        <rowIndex userID="FLX">source.nameInGen.columnIndex</rowIndex>
-        <sheet userID="FLX">diagram.Gen.genSheet</sheet>
-        <BasicExcelModelSlot idref="16" userID="FLX" />
+      <AddExcelCell id="224" useSpecificDescriptions="false" userID="FLX" isRowIndex="true" flexoID="121" assignation="cell">
+        <BasicExcelModelSlot idref="31" />
       </AddExcelCell>
     </LinkScheme>
-    <DeletionScheme id="247" name="deletion" label="deletion" skipConfirmationPanel="false" definePopupDefaultSize="false" width="800" height="600" userID="FLX">
-      <DeleteAction id="248" object="connector" userID="FLX" />
+    <DeletionScheme id="225" useSpecificDescriptions="false" width="800" userID="FLX" label="deletion" definePopupDefaultSize="false" height="600" flexoID="12" skipConfirmationPanel="false" name="deletion">
+      <DeleteAction id="226" flexoID="122" userID="FLX" useSpecificDescriptions="false" object="connector" />
     </DeletionScheme>
-    <CreationScheme id="249" name="creation" label="creation" skipConfirmationPanel="false" definePopupDefaultSize="false" width="800" height="600" userID="FLX">
-      <FlexoConceptInstanceParameter id="250" flexoConceptTypeURI="http://ExcelViewpoint/GenealogyDiagram#Human" name="source" label="source" usePaletteLabelAsDefaultValue="false" isRequired="false" userID="FLX">
-        <ModelSlot_VirtualModelModelSlot idref="8" userID="FLX" />
-      </FlexoConceptInstanceParameter>
-      <FlexoConceptInstanceParameter id="251" flexoConceptTypeURI="http://ExcelViewpoint/GenealogyDiagram#Human" name="target" label="target" usePaletteLabelAsDefaultValue="false" isRequired="false" userID="FLX">
-        <ModelSlot_VirtualModelModelSlot idref="8" userID="FLX" />
-      </FlexoConceptInstanceParameter>
-      <TechnologyObjectParameter id="252" name="cell" label="cell" usePaletteLabelAsDefaultValue="false" isRequired="false" userID="FLX" />
-      <DeclareFlexoRole id="253" object="parameters.source" assignation="source" userID="FLX" />
-      <DeclareFlexoRole id="254" object="parameters.target" assignation="target" userID="FLX" />
-      <DeclareFlexoRole id="255" object="parameters.cell" assignation="cell" userID="FLX" />
-      <AddConnector id="256" fromShape="source.shape" toShape="target.shape" assignation="connector" userID="FLX">
-        <TypedDiagramModelSlot idref="436" userID="FLX" />
+    <CreationScheme id="227" useSpecificDescriptions="false" width="800" userID="FLX" label="creation" definePopupDefaultSize="false" height="600" flexoID="13" skipConfirmationPanel="false" name="creation">
+      <FlexoConceptInstanceParameter id="228" useSpecificDescriptions="false" userID="FLX" label="source" flexoID="245" isRequired="false" name="source" flexoConceptTypeURI="http://ExcelViewpoint/GenealogyDiagram#Human" />
+      <FlexoConceptInstanceParameter id="229" useSpecificDescriptions="false" userID="FLX" label="target" flexoID="246" isRequired="false" name="target" flexoConceptTypeURI="http://ExcelViewpoint/GenealogyDiagram#Human" />
+      <TechnologyObjectParameter id="230" useSpecificDescriptions="false" userID="FLX" label="cell" flexoID="247" isRequired="false" name="cell" />
+      <DeclareFlexoRole id="231" userID="FLX" useSpecificDescriptions="false" object="parameters.source" flexoID="123" assignation="source" />
+      <DeclareFlexoRole id="232" userID="FLX" useSpecificDescriptions="false" object="parameters.target" flexoID="124" assignation="target" />
+      <DeclareFlexoRole id="233" userID="FLX" useSpecificDescriptions="false" object="parameters.cell" flexoID="125" assignation="cell" />
+      <AddConnector id="234" userID="FLX" useSpecificDescriptions="false" flexoID="126" assignation="connector" fromShape="source.shape" toShape="target.shape">
+        <TypedDiagramModelSlot idref="17" />
       </AddConnector>
     </CreationScheme>
-    <ConnectorRole id="257" name="connector" exampleLabel="label" userID="FLX">
-      <ConnectorGraphicalRepresentation id="258" hasSelectedForeground="false" hasFocusedForeground="false" startSymbol="PLAIN_CIRCLE" endSymbol="PLAIN_CIRCLE" middleSymbol="NONE" startSymbolSize="10.0" endSymbolSize="10.0" middleSymbolSize="10.0" relativeMiddleSymbolLocation="0.5" applyForegroundToSymbols="true" identifier="object_2" layer="64" hasText="true" isMultilineAllowed="true" continuousTextEditing="true" absoluteTextX="0.0" absoluteTextY="0.0" paragraphAlignment="CENTER" horizontalTextAlignment="CENTER" verticalTextAlignment="MIDDLE" isSelectable="true" isFocusable="true" drawControlPointsWhenFocused="true" drawControlPointsWhenSelected="true" isReadOnly="false" isLabelEditable="true" isVisible="true" userID="FLX">
-        <ForegroundStyle id="259" noStroke="false" color="0,204,153" lineWidth="2.000000001490116" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="MEDIUM_DASHES" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <SelectedForegroundStyle id="260" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <FocusedForegroundStyle id="261" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <LineConnectorSpecification id="262" lineConnectorType="ADJUSTABLE" cp1RelativeToStartObject="0.9999719746373534,0.49470617555773383" cp2RelativeToEndObject="2.8025362646733054E-5,0.4947061755577128" userID="FLX" />
-        <TextStyle id="263" font="Lucida Sans,0,11" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
-      </ConnectorGraphicalRepresentation>
-      <TypedDiagramModelSlot idref="436" userID="FLX" />
-      <GRSpec id="284" featureName="label" value="cell.cellValue.toString" readOnly="true" userID="FLX" />
-    </ConnectorRole>
-    <ExcelCellRole id="285" name="cell" userID="FLX">
-      <BasicExcelModelSlot idref="16" userID="FLX" />
-    </ExcelCellRole>
-    <FlexoConceptInstanceRole id="286" flexoConceptTypeURI="http://ExcelViewpoint/GenealogyDiagram#Human" name="source" userID="FLX">
-      <ModelSlot_VirtualModelModelSlot idref="8" userID="FLX" />
-    </FlexoConceptInstanceRole>
-    <FlexoConceptInstanceRole id="287" flexoConceptTypeURI="http://ExcelViewpoint/GenealogyDiagram#Human" name="target" userID="FLX">
-      <ModelSlot_VirtualModelModelSlot idref="8" userID="FLX" />
-    </FlexoConceptInstanceRole>
-    <Inspector id="288" inspectorTitle="MarriageRelationship" userID="FLX" />
   </FlexoConcept>
-  <FlexoConcept id="289" name="ParentRelationship" userID="FLX">
-    <LinkScheme id="290" fromTarget="http://ExcelViewpoint/GenealogyDiagram#Man" toTarget="http://ExcelViewpoint/GenealogyDiagram#Man" isAvailableWithFloatingPalette="true" northDirectionSupported="true" eastDirectionSupported="true" southDirectionSupported="true" westDirectionSupported="true" name="linkManToMan" label="linkManToMan" skipConfirmationPanel="false" definePopupDefaultSize="false" width="800" height="600" userID="FLX">
-      <AddConnector id="291" fromShape="fromTarget.shape" toShape="toTarget.shape" assignation="connector" userID="FLX">
-        <TypedDiagramModelSlot idref="436" userID="FLX" />
+  <FlexoConcept id="235" userID="FLX" useSpecificDescriptions="false" flexoID="131" name="ParentRelationship">
+    <Inspector id="236" flexoID="15" userID="FLX" useSpecificDescriptions="false" inspectorTitle="FatherRelationship" />
+    <ConnectorRole id="237" exampleLabel="label" userID="FLX" useSpecificDescriptions="false" cloningStratgey="Clone" flexoID="127" name="connector">
+      <ConnectorGraphicalRepresentation id="238" lineWrap="false" horizontalTextAlignment="CENTER" transparency="1.0" drawControlPointsWhenFocused="true" isVisible="true" isReadOnly="false" paragraphAlignment="CENTER" hasSelectedForeground="false" verticalTextAlignment="MIDDLE" hasFocusedForeground="false" applyForegroundToSymbols="true" layer="64" absoluteTextX="0.0" absoluteTextY="0.0" isFocusable="true" drawControlPointsWhenSelected="true" isSelectable="true" isLabelEditable="true" continuousTextEditing="true" isMultilineAllowed="true" identifier="object_2">
+        <SelectedForegroundStyle id="239" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <FocusedForegroundStyle id="240" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <RectPolylinConnectorSpecification id="241" isEndingLocationFixed="true" endOrientation="NORTH" relativeMiddleSymbolLocation="0.5" isStartingLocationDraggable="true" fixedStartLocation="0.7063200067468858,0.0" middleSymbolSize="10.0" adjustability="AUTO_LAYOUT" straightLineWhenPossible="true" fixedEndLocation="0.26090765024494544,1.0000000000000002" startSymbol="NONE" endSymbol="NONE" rectPolylinConstraints="NONE" startOrientation="EAST" pixelOverlap="20" arcSize="5" startSymbolSize="10.0" middleSymbol="NONE" isEndingLocationDraggable="true" endSymbolSize="10.0" isRounded="false" isStartingLocationFixed="true" />
+        <TextStyle id="242" orientation="0" color="0,0,0" backgroundColor="255,255,255" font="Lucida Sans,0,11" isBackgroundColored="false" />
+        <ForegroundStyle id="243" dashStyle="PLAIN_STROKE" color="255,0,51" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="2.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+      </ConnectorGraphicalRepresentation>
+      <GRSpec id="244" featureName="label" flexoID="248" readOnly="true" userID="FLX" useSpecificDescriptions="false" value="cell.cellValue.toString" />
+      <TypedDiagramModelSlot idref="17" />
+    </ConnectorRole>
+    <ExcelCellRole id="245" cloningStratgey="Reference" flexoID="128" name="cell" useSpecificDescriptions="false" userID="FLX">
+      <BasicExcelModelSlot idref="31" />
+    </ExcelCellRole>
+    <FlexoConceptInstanceRole id="246" cloningStratgey="Reference" flexoID="129" name="source" useSpecificDescriptions="false" userID="FLX" flexoConceptTypeURI="http://ExcelViewpoint/GenealogyDiagram#Human" />
+    <FlexoConceptInstanceRole id="247" cloningStratgey="Reference" flexoID="130" name="target" useSpecificDescriptions="false" userID="FLX" flexoConceptTypeURI="http://ExcelViewpoint/GenealogyDiagram#Human" />
+    <LinkScheme id="248" northDirectionSupported="true" fromTarget="http://ExcelViewpoint/GenealogyDiagram#Man" toTarget="http://ExcelViewpoint/GenealogyDiagram#Man" useSpecificDescriptions="false" width="800" userID="FLX" label="linkManToMan" definePopupDefaultSize="false" southDirectionSupported="true" westDirectionSupported="true" isAvailableWithFloatingPalette="true" flexoID="18" height="600" skipConfirmationPanel="false" name="linkManToMan" eastDirectionSupported="true">
+      <AddConnector id="249" userID="FLX" useSpecificDescriptions="false" flexoID="132" assignation="connector" fromShape="fromTarget.shape" toShape="toTarget.shape">
+        <TypedDiagramModelSlot idref="17" />
       </AddConnector>
     </LinkScheme>
-    <DeletionScheme id="292" name="deletion" label="deletion" skipConfirmationPanel="false" definePopupDefaultSize="false" width="800" height="600" userID="FLX">
-      <DeleteAction id="293" object="connector" userID="FLX" />
+    <DeletionScheme id="250" useSpecificDescriptions="false" width="800" userID="FLX" label="deletion" definePopupDefaultSize="false" height="600" flexoID="19" skipConfirmationPanel="false" name="deletion">
+      <DeleteAction id="251" flexoID="133" userID="FLX" useSpecificDescriptions="false" object="connector" />
     </DeletionScheme>
-    <CreationScheme id="294" name="creation" label="creation" skipConfirmationPanel="false" definePopupDefaultSize="false" width="800" height="600" userID="FLX">
-      <FlexoConceptInstanceParameter id="295" flexoConceptTypeURI="http://ExcelViewpoint/GenealogyDiagram#Human" name="source" label="source" usePaletteLabelAsDefaultValue="false" isRequired="false" userID="FLX">
-        <ModelSlot_VirtualModelModelSlot idref="8" userID="FLX" />
-      </FlexoConceptInstanceParameter>
-      <FlexoConceptInstanceParameter id="296" flexoConceptTypeURI="http://ExcelViewpoint/GenealogyDiagram#Human" name="target" label="target" usePaletteLabelAsDefaultValue="false" isRequired="false" userID="FLX">
-        <ModelSlot_VirtualModelModelSlot idref="8" userID="FLX" />
-      </FlexoConceptInstanceParameter>
-      <TechnologyObjectParameter id="297" name="cell" label="cell" usePaletteLabelAsDefaultValue="false" isRequired="false" userID="FLX" />
-      <DeclareFlexoRole id="298" object="parameters.source" assignation="source" userID="FLX" />
-      <DeclareFlexoRole id="299" object="parameters.target" assignation="target" userID="FLX" />
-      <DeclareFlexoRole id="300" object="parameters.cell" assignation="cell" userID="FLX" />
-      <AddConnector id="301" fromShape="source.shape" toShape="target.shape" assignation="connector" userID="FLX">
-        <TypedDiagramModelSlot idref="436" userID="FLX" />
+    <CreationScheme id="252" useSpecificDescriptions="false" width="800" userID="FLX" label="creation" definePopupDefaultSize="false" height="600" flexoID="20" skipConfirmationPanel="false" name="creation">
+      <FlexoConceptInstanceParameter id="253" useSpecificDescriptions="false" userID="FLX" label="source" flexoID="249" isRequired="false" name="source" flexoConceptTypeURI="http://ExcelViewpoint/GenealogyDiagram#Human" />
+      <FlexoConceptInstanceParameter id="254" useSpecificDescriptions="false" userID="FLX" label="target" flexoID="250" isRequired="false" name="target" flexoConceptTypeURI="http://ExcelViewpoint/GenealogyDiagram#Human" />
+      <TechnologyObjectParameter id="255" useSpecificDescriptions="false" userID="FLX" label="cell" flexoID="251" isRequired="false" name="cell" />
+      <DeclareFlexoRole id="256" userID="FLX" useSpecificDescriptions="false" object="parameters.source" flexoID="134" assignation="source" />
+      <DeclareFlexoRole id="257" userID="FLX" useSpecificDescriptions="false" object="parameters.target" flexoID="135" assignation="target" />
+      <DeclareFlexoRole id="258" userID="FLX" useSpecificDescriptions="false" object="parameters.cell" flexoID="136" assignation="cell" />
+      <AddConnector id="259" userID="FLX" useSpecificDescriptions="false" flexoID="137" assignation="connector" fromShape="source.shape" toShape="target.shape">
+        <TypedDiagramModelSlot idref="17" />
       </AddConnector>
     </CreationScheme>
-    <ConnectorRole id="302" name="connector" exampleLabel="label" userID="FLX">
-      <ConnectorGraphicalRepresentation id="303" hasSelectedForeground="false" hasFocusedForeground="false" startSymbol="NONE" endSymbol="PLAIN_ARROW" middleSymbol="NONE" startSymbolSize="10.0" endSymbolSize="20.0" middleSymbolSize="10.0" relativeMiddleSymbolLocation="0.5" applyForegroundToSymbols="true" identifier="object_2" layer="64" hasText="true" isMultilineAllowed="true" continuousTextEditing="true" absoluteTextX="0.0" absoluteTextY="0.0" paragraphAlignment="CENTER" horizontalTextAlignment="CENTER" verticalTextAlignment="MIDDLE" isSelectable="true" isFocusable="true" drawControlPointsWhenFocused="true" drawControlPointsWhenSelected="true" isReadOnly="false" isLabelEditable="true" isVisible="true" userID="FLX">
-        <ForegroundStyle id="304" noStroke="false" color="255,0,51" lineWidth="2.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <SelectedForegroundStyle id="305" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <FocusedForegroundStyle id="306" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <RectPolylinConnectorSpecification id="307" rectPolylinConstraints="NONE" straightLineWhenPossible="true" adjustability="AUTO_LAYOUT" startOrientation="EAST" endOrientation="NORTH" isRounded="false" arcSize="5" isStartingLocationFixed="true" isEndingLocationFixed="true" isStartingLocationDraggable="true" isEndingLocationDraggable="true" fixedStartLocation="0.7063200067468858,0.0" fixedEndLocation="0.26090765024494544,1.0000000000000002" userID="FLX" />
-        <TextStyle id="308" font="Lucida Sans,0,11" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
-      </ConnectorGraphicalRepresentation>
-      <TypedDiagramModelSlot idref="436" userID="FLX" />
-      <GRSpec id="329" featureName="label" value="cell.cellValue.toString" readOnly="true" userID="FLX" />
-    </ConnectorRole>
-    <ExcelCellRole id="330" name="cell" userID="FLX">
-      <BasicExcelModelSlot idref="16" userID="FLX" />
-    </ExcelCellRole>
-    <FlexoConceptInstanceRole id="331" flexoConceptTypeURI="http://ExcelViewpoint/GenealogyDiagram#Human" name="source" userID="FLX">
-      <ModelSlot_VirtualModelModelSlot idref="8" userID="FLX" />
-    </FlexoConceptInstanceRole>
-    <FlexoConceptInstanceRole id="332" flexoConceptTypeURI="http://ExcelViewpoint/GenealogyDiagram#Human" name="target" userID="FLX">
-      <ModelSlot_VirtualModelModelSlot idref="8" userID="FLX" />
-    </FlexoConceptInstanceRole>
-    <Inspector id="333" inspectorTitle="FatherRelationship" userID="FLX" />
   </FlexoConcept>
-  <FlexoConcept id="334" name="Genealogic" userID="FLX">
-    <CreationScheme id="335" name="creation" label="creation" skipConfirmationPanel="false" definePopupDefaultSize="false" width="800" height="600" userID="FLX">
-      <TechnologyObjectParameter id="336" name="list" label="technologyObject" usePaletteLabelAsDefaultValue="false" isRequired="false" userID="FLX">
-        <BasicExcelModelSlot idref="14" userID="FLX" />
+  <FlexoConcept id="260" userID="FLX" useSpecificDescriptions="false" flexoID="140" name="Genealogic">
+    <Inspector id="261" flexoID="22" userID="FLX" useSpecificDescriptions="false" inspectorTitle="Genealogic" />
+    <ExcelSheetRole id="262" cloningStratgey="Reference" flexoID="138" name="genSheet" useSpecificDescriptions="false" userID="FLX">
+      <BasicExcelModelSlot idref="31" />
+    </ExcelSheetRole>
+    <ExcelSheetRole id="263" cloningStratgey="Reference" flexoID="139" name="listSheet" useSpecificDescriptions="false" userID="FLX">
+      <BasicExcelModelSlot idref="29" />
+    </ExcelSheetRole>
+    <CreationScheme id="264" useSpecificDescriptions="false" width="800" userID="FLX" label="creation" definePopupDefaultSize="false" height="600" flexoID="25" skipConfirmationPanel="false" name="creation">
+      <TechnologyObjectParameter id="265" useSpecificDescriptions="false" userID="FLX" label="technologyObject" flexoID="252" isRequired="false" name="list">
+        <BasicExcelModelSlot idref="29" />
       </TechnologyObjectParameter>
-      <TechnologyObjectParameter id="337" name="gen" label="gen" usePaletteLabelAsDefaultValue="false" isRequired="false" userID="FLX">
-        <BasicExcelModelSlot idref="16" userID="FLX" />
+      <TechnologyObjectParameter id="266" useSpecificDescriptions="false" userID="FLX" label="gen" flexoID="253" isRequired="false" name="gen">
+        <BasicExcelModelSlot idref="31" />
       </TechnologyObjectParameter>
-      <DeclareFlexoRole id="338" object="parameters.gen" assignation="genSheet" userID="FLX" />
-      <DeclareFlexoRole id="339" object="parameters.list" assignation="listSheet" userID="FLX" />
+      <DeclareFlexoRole id="267" userID="FLX" useSpecificDescriptions="false" object="parameters.gen" flexoID="141" assignation="genSheet" />
+      <DeclareFlexoRole id="268" userID="FLX" useSpecificDescriptions="false" object="parameters.list" flexoID="142" assignation="listSheet" />
     </CreationScheme>
-    <DeletionScheme id="340" name="deletion" label="deletion" skipConfirmationPanel="false" definePopupDefaultSize="false" width="800" height="600" userID="FLX" />
-    <ExcelSheetRole id="341" name="genSheet" userID="FLX">
-      <BasicExcelModelSlot idref="16" userID="FLX" />
-    </ExcelSheetRole>
-    <ExcelSheetRole id="342" name="listSheet" userID="FLX">
-      <BasicExcelModelSlot idref="14" userID="FLX" />
-    </ExcelSheetRole>
-    <Inspector id="343" inspectorTitle="Genealogic" userID="FLX" />
+    <DeletionScheme id="269" useSpecificDescriptions="false" width="800" userID="FLX" label="deletion" definePopupDefaultSize="false" height="600" flexoID="26" skipConfirmationPanel="false" name="deletion" />
   </FlexoConcept>
-  <FlexoConcept id="344" name="Human" userID="FLX">
-    <ShapeRole id="345" name="shape" exampleLabel="label" userID="FLX">
-      <ShapeGraphicalRepresentation id="346" x="160.0" y="40.0" width="80.0" height="50.0" minimalWidth="0.0" minimalHeight="0.0" maximalWidth="Infinity" maximalHeight="Infinity" relativeTextX="0.5" relativeTextY="0.5" lineWrap="true" locationConstraints="FREELY_MOVABLE" dimensionConstraints="FREELY_RESIZABLE" adjustMinimalWidthToLabelWidth="true" adjustMinimalHeightToLabelHeight="true" adjustMaximalWidthToLabelWidth="false" adjustMaximalHeightToLabelHeight="false" hasSelectedForeground="false" hasSelectedBackground="false" hasFocusedForeground="false" hasFocusedBackground="false" isFloatingLabel="false" allowToLeaveBounds="true" identifier="object_0" layer="1" hasText="true" isMultilineAllowed="true" continuousTextEditing="true" absoluteTextX="0.0" absoluteTextY="0.0" paragraphAlignment="CENTER" horizontalTextAlignment="CENTER" verticalTextAlignment="MIDDLE" isSelectable="true" isFocusable="true" drawControlPointsWhenFocused="true" drawControlPointsWhenSelected="true" isReadOnly="false" isLabelEditable="true" isVisible="true" userID="FLX">
-        <ForegroundStyle id="347" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <ColorBackgroundStyle id="348" color="192,192,192" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <SelectedForegroundStyle id="349" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <SelectedColorBackgroundStyle id="350" color="192,192,192" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <FocusedForegroundStyle id="351" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <FocusedColorBackgroundStyle id="352" color="192,192,192" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <ShapeBorder id="353" top="20" bottom="20" left="20" right="20" userID="FLX" />
-        <RectangleShape idref="55" userID="FLX" />
-        <ShadowStyle id="354" drawShadow="true" shadowDarkness="150" shadowDepth="2" shadowBlur="4" userID="FLX" />
-        <TextStyle id="355" font="SansSerif,1,11" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
-      </ShapeGraphicalRepresentation>
-      <TypedDiagramModelSlot idref="436" userID="FLX" />
-    </ShapeRole>
-    <ExcelCellRole id="356" name="nameInGen" userID="FLX">
-      <BasicExcelModelSlot idref="16" userID="FLX" />
-    </ExcelCellRole>
-    <Inspector id="357" inspectorTitle="Human" userID="FLX" />
-  </FlexoConcept>
-  <LocalizedDictionary id="358" userID="FLX" />
-  <ModelSlot_VirtualModelModelSlot virtualModelURI="http://ExcelViewpoint/GenealogyDiagram" name="virtualModelInstance" id="8" userID="FLX" />
-  <ModelSlot_BasicExcelModelSlot idref="14" userID="FLX" />
-  <ModelSlot_BasicExcelModelSlot idref="16" userID="FLX" />
-  <SynchronizationScheme id="359" name="synchronization" label="synchronization" skipConfirmationPanel="false" definePopupDefaultSize="false" width="800" height="600" userID="FLX">
-    <MatchFlexoConceptInstance id="360" virtualModelInstance="virtualModelInstance" creationSchemeURI="http://ExcelViewpoint/GenealogyDiagram#Genealogic.creation" assignation="Gen" userID="FLX">
-      <MatchingCriteria id="361" patternRoleName="genSheet" value="flexoBehaviourInstance.genealogyMS.excelSheets.get(0)" userID="FLX" />
-      <MatchingCriteria id="362" patternRoleName="listSheet" value="flexoBehaviourInstance.listingMS.excelSheets.get(0)" userID="FLX" />
-      <CreateFlexoConceptInstanceParameter id="363" paramName="list" value="flexoBehaviourInstance.listingMS.excelSheets.get(0)" userID="FLX" />
-      <CreateFlexoConceptInstanceParameter id="364" paramName="gen" value="flexoBehaviourInstance.genealogyMS.excelSheets.get(0)" userID="FLX" />
+  <FlexoConcept idref="3" />
+  <Inspector id="270" flexoID="-1" userID="FLX" useSpecificDescriptions="false" inspectorTitle="GenealogyDiagram" />
+  <FlexoConceptInstanceRole id="271" cloningStratgey="Reference" flexoID="146" name="Gen" useSpecificDescriptions="false" userID="FLX" flexoConceptTypeURI="http://ExcelViewpoint/GenealogyDiagram#Genealogic" />
+  <FlexoConceptInstanceRole id="272" cloningStratgey="Reference" flexoID="147" name="sourceEPtemp" useSpecificDescriptions="false" userID="FLX" flexoConceptTypeURI="http://ExcelViewpoint/GenealogyDiagram#Human" />
+  <FlexoConceptInstanceRole id="273" cloningStratgey="Reference" flexoID="148" name="targetEPtemp" useSpecificDescriptions="false" userID="FLX" flexoConceptTypeURI="http://ExcelViewpoint/GenealogyDiagram#Human" />
+  <ModelSlot_BasicExcelModelSlot id="29" cloningStratgey="Reference" flexoID="224" isRequired="true" name="listingMS" useSpecificDescriptions="false" userID="FLX" isReadOnly="false" />
+  <ModelSlot_BasicExcelModelSlot id="31" cloningStratgey="Reference" flexoID="225" isRequired="true" name="genealogyMS" useSpecificDescriptions="false" userID="FLX" isReadOnly="false" />
+  <ModelSlot_TypedDiagramModelSlot id="17" userID="FLX" useSpecificDescriptions="false" cloningStratgey="Reference" flexoID="229" isRequired="true" name="typedDiagramModelSlot" metaModelURI="http://ExcelViewpoint/GenealogyDiagram/GenealogyDiagram.diagramspecification" isReadOnly="false">
+    <FMLDiagramPaletteElementBinding id="18" paletteElementId="http://ExcelViewpoint/GenealogyDiagram/GenealogyDiagram.diagramspecification/GenealogyPalette.palette#Man" userID="FLX" useSpecificDescriptions="false" flexoID="6">
+      <DropScheme idref="19" />
+    </FMLDiagramPaletteElementBinding>
+    <FMLDiagramPaletteElementBinding id="33" paletteElementId="http://ExcelViewpoint/GenealogyDiagram/GenealogyDiagram.diagramspecification/GenealogyPalette.palette#Woman" userID="FLX" useSpecificDescriptions="false" flexoID="7">
+      <DropScheme idref="34" />
+    </FMLDiagramPaletteElementBinding>
+  </ModelSlot_TypedDiagramModelSlot>
+  <SynchronizationScheme id="274" useSpecificDescriptions="false" width="800" userID="FLX" label="synchronization" definePopupDefaultSize="false" height="600" flexoID="149" skipConfirmationPanel="false" name="synchronization">
+    <MatchFlexoConceptInstance id="275" useSpecificDescriptions="false" userID="FLX" virtualModelInstance="virtualModelInstance" flexoID="152" creationSchemeURI="http://ExcelViewpoint/GenealogyDiagram#Genealogic.creation" assignation="Gen">
+      <MatchingCriteria id="276" flexoID="150" useSpecificDescriptions="false" userID="FLX" value="flexoBehaviourInstance.genealogyMS.excelSheets.get(0)" patternRoleName="genSheet" />
+      <MatchingCriteria id="277" flexoID="151" useSpecificDescriptions="false" userID="FLX" value="flexoBehaviourInstance.listingMS.excelSheets.get(0)" patternRoleName="listSheet" />
+      <CreateFlexoConceptInstanceParameter id="278" flexoID="153" useSpecificDescriptions="false" userID="FLX" value="flexoBehaviourInstance.listingMS.excelSheets.get(0)" paramName="list" />
+      <CreateFlexoConceptInstanceParameter id="279" flexoID="154" useSpecificDescriptions="false" userID="FLX" value="flexoBehaviourInstance.genealogyMS.excelSheets.get(0)" paramName="gen" />
     </MatchFlexoConceptInstance>
-    <FetchRequestIterationAction id="365" iteratorName="listRow" userID="FLX">
-      <FetchRequest_SelectExcelRow id="366" excelSheet="Gen.listSheet" userID="FLX">
-        <BasicExcelModelSlot idref="14" userID="FLX" />
-        <Condition id="367" condition="(selected.row.physicalNumberOfCells &gt; 2)" userID="FLX" />
+    <FetchRequestIterationAction id="280" flexoID="155" iteratorName="listRow" useSpecificDescriptions="false" userID="FLX">
+      <BasicExcelModelSlot idref="29" />
+      <FetchRequest_SelectExcelRow id="281" flexoID="156" excelSheet="Gen.listSheet" userID="FLX" useSpecificDescriptions="false">
+        <Condition id="282" flexoID="-1" condition="(selected.row.physicalNumberOfCells &gt; 2)" userID="FLX" useSpecificDescriptions="false" />
+        <BasicExcelModelSlot idref="29" />
       </FetchRequest_SelectExcelRow>
-      <BasicExcelModelSlot idref="14" userID="FLX" />
-      <FetchRequestIterationAction id="368" iteratorName="genRow" userID="FLX">
-        <FetchRequest_SelectExcelRow id="369" excelSheet="Gen.genSheet" userID="FLX">
-          <BasicExcelModelSlot idref="16" userID="FLX" />
-          <Condition id="370" condition="(selected.row.physicalNumberOfCells &gt; 2)" userID="FLX" />
+      <FetchRequestIterationAction id="283" flexoID="157" iteratorName="genRow" useSpecificDescriptions="false" userID="FLX">
+        <BasicExcelModelSlot idref="31" />
+        <FetchRequest_SelectExcelRow id="284" flexoID="158" excelSheet="Gen.genSheet" userID="FLX" useSpecificDescriptions="false">
+          <Condition id="285" flexoID="-1" condition="(selected.row.physicalNumberOfCells &gt; 2)" userID="FLX" useSpecificDescriptions="false" />
+          <BasicExcelModelSlot idref="31" />
         </FetchRequest_SelectExcelRow>
-        <BasicExcelModelSlot idref="16" userID="FLX" />
-        <IterationAction id="371" iteration="listRow.excelCells" iteratorName="listCell" userID="FLX">
-          <IterationAction id="372" iteration="genRow.excelCells" iteratorName="genCell" userID="FLX">
-            <ConditionalAction id="373" condition="(((listCell.cellValue.toString = genCell.cellValue.toString) &amp; (listCell.columnIndex = 1)) &amp; (genCell.columnIndex = 0))" userID="FLX">
-              <MatchFlexoConceptInstance id="374" virtualModelInstance="virtualModelInstance" creationSchemeURI="http://ExcelViewpoint/GenealogyDiagram#Man.creation" conditional="(listCell.previousCell.cellValue = &quot;MR&quot;)" userID="FLX">
-                <MatchingCriteria id="375" patternRoleName="shape" userID="FLX" />
-                <MatchingCriteria id="376" patternRoleName="shape2" userID="FLX" />
-                <MatchingCriteria id="377" patternRoleName="shape3" userID="FLX" />
-                <MatchingCriteria id="378" patternRoleName="shape4" userID="FLX" />
-                <MatchingCriteria id="379" patternRoleName="nameInGen" value="genCell" userID="FLX" />
-                <MatchingCriteria id="380" patternRoleName="age" value="listCell.nextCell.nextCell" userID="FLX" />
-                <MatchingCriteria id="381" patternRoleName="nameInListing" value="listCell" userID="FLX" />
-                <CreateFlexoConceptInstanceParameter id="382" paramName="nameInGen" value="genCell" userID="FLX" />
-                <CreateFlexoConceptInstanceParameter id="383" paramName="nameInListing" value="listCell" userID="FLX" />
-                <CreateFlexoConceptInstanceParameter id="384" paramName="age" value="listCell.nextCell.nextCell" userID="FLX" />
+        <IterationAction id="286" flexoID="159" iteratorName="listCell" useSpecificDescriptions="false" userID="FLX" iteration="listRow.excelCells">
+          <IterationAction id="287" flexoID="160" iteratorName="genCell" useSpecificDescriptions="false" userID="FLX" iteration="genRow.excelCells">
+            <ConditionalAction id="288" flexoID="161" condition="(((listCell.cellValue.toString = genCell.cellValue.toString) &amp; (listCell.columnIndex = 1)) &amp; (genCell.columnIndex = 0))" useSpecificDescriptions="false" userID="FLX">
+              <MatchFlexoConceptInstance id="289" useSpecificDescriptions="false" userID="FLX" virtualModelInstance="virtualModelInstance" flexoID="169" creationSchemeURI="http://ExcelViewpoint/GenealogyDiagram#Man.creation" conditional="(listCell.previousCell.cellValue = &quot;MR&quot;)">
+                <MatchingCriteria id="290" flexoID="162" useSpecificDescriptions="false" userID="FLX" patternRoleName="shape" />
+                <MatchingCriteria id="291" flexoID="163" useSpecificDescriptions="false" userID="FLX" patternRoleName="shape2" />
+                <MatchingCriteria id="292" flexoID="164" useSpecificDescriptions="false" userID="FLX" patternRoleName="shape3" />
+                <MatchingCriteria id="293" flexoID="165" useSpecificDescriptions="false" userID="FLX" patternRoleName="shape4" />
+                <MatchingCriteria id="294" flexoID="166" useSpecificDescriptions="false" userID="FLX" value="genCell" patternRoleName="nameInGen" />
+                <MatchingCriteria id="295" flexoID="167" useSpecificDescriptions="false" userID="FLX" value="listCell.nextCell.nextCell" patternRoleName="age" />
+                <MatchingCriteria id="296" flexoID="168" useSpecificDescriptions="false" userID="FLX" value="listCell" patternRoleName="nameInListing" />
+                <CreateFlexoConceptInstanceParameter id="297" flexoID="170" useSpecificDescriptions="false" userID="FLX" value="genCell" paramName="nameInGen" />
+                <CreateFlexoConceptInstanceParameter id="298" flexoID="171" useSpecificDescriptions="false" userID="FLX" value="listCell" paramName="nameInListing" />
+                <CreateFlexoConceptInstanceParameter id="299" flexoID="172" useSpecificDescriptions="false" userID="FLX" value="listCell.nextCell.nextCell" paramName="age" />
               </MatchFlexoConceptInstance>
-              <MatchFlexoConceptInstance id="385" virtualModelInstance="virtualModelInstance" creationSchemeURI="http://ExcelViewpoint/GenealogyDiagram#Woman.creation" conditional="(listCell.previousCell.cellValue = &quot;MS&quot;)" userID="FLX">
-                <MatchingCriteria id="386" patternRoleName="shape" userID="FLX" />
-                <MatchingCriteria id="387" patternRoleName="shape2" userID="FLX" />
-                <MatchingCriteria id="388" patternRoleName="shape3" userID="FLX" />
-                <MatchingCriteria id="389" patternRoleName="shape4" userID="FLX" />
-                <MatchingCriteria id="390" patternRoleName="nameInListing" value="listCell" userID="FLX" />
-                <MatchingCriteria id="391" patternRoleName="nameInGen" value="genCell" userID="FLX" />
-                <MatchingCriteria id="392" patternRoleName="age" value="listCell.nextCell.nextCell" userID="FLX" />
-                <CreateFlexoConceptInstanceParameter id="393" paramName="nameInGen" value="genCell" userID="FLX" />
-                <CreateFlexoConceptInstanceParameter id="394" paramName="nameInList" value="listCell" userID="FLX" />
-                <CreateFlexoConceptInstanceParameter id="395" paramName="age" value="listCell.nextCell.nextCell" userID="FLX" />
+              <MatchFlexoConceptInstance id="300" useSpecificDescriptions="false" userID="FLX" virtualModelInstance="virtualModelInstance" flexoID="180" creationSchemeURI="http://ExcelViewpoint/GenealogyDiagram#Woman.creation" conditional="(listCell.previousCell.cellValue = &quot;MS&quot;)">
+                <MatchingCriteria id="301" flexoID="173" useSpecificDescriptions="false" userID="FLX" patternRoleName="shape" />
+                <MatchingCriteria id="302" flexoID="174" useSpecificDescriptions="false" userID="FLX" patternRoleName="shape2" />
+                <MatchingCriteria id="303" flexoID="175" useSpecificDescriptions="false" userID="FLX" patternRoleName="shape3" />
+                <MatchingCriteria id="304" flexoID="176" useSpecificDescriptions="false" userID="FLX" patternRoleName="shape4" />
+                <MatchingCriteria id="305" flexoID="177" useSpecificDescriptions="false" userID="FLX" value="listCell" patternRoleName="nameInListing" />
+                <MatchingCriteria id="306" flexoID="178" useSpecificDescriptions="false" userID="FLX" value="genCell" patternRoleName="nameInGen" />
+                <MatchingCriteria id="307" flexoID="179" useSpecificDescriptions="false" userID="FLX" value="listCell.nextCell.nextCell" patternRoleName="age" />
+                <CreateFlexoConceptInstanceParameter id="308" flexoID="181" useSpecificDescriptions="false" userID="FLX" value="genCell" paramName="nameInGen" />
+                <CreateFlexoConceptInstanceParameter id="309" flexoID="182" useSpecificDescriptions="false" userID="FLX" value="listCell" paramName="nameInList" />
+                <CreateFlexoConceptInstanceParameter id="310" flexoID="183" useSpecificDescriptions="false" userID="FLX" value="listCell.nextCell.nextCell" paramName="age" />
               </MatchFlexoConceptInstance>
             </ConditionalAction>
           </IterationAction>
         </IterationAction>
       </FetchRequestIterationAction>
     </FetchRequestIterationAction>
-    <SelectFlexoConceptInstance id="396" flexoConceptTypeURI="http://ExcelViewpoint/GenealogyDiagram#Human" variableName="existingHuman" assignation="existingHuman" userID="FLX">
-      <ModelSlot_VirtualModelModelSlot idref="8" userID="FLX" />
-    </SelectFlexoConceptInstance>
-    <SelectExcelRow id="397" excelSheet="Gen.genSheet" variableName="genRows" assignation="genRows" userID="FLX">
-      <BasicExcelModelSlot idref="16" userID="FLX" />
+    <SelectFlexoConceptInstance id="311" flexoID="184" variableName="existingHuman" assignation="existingHuman" userID="FLX" useSpecificDescriptions="false" flexoConceptTypeURI="http://ExcelViewpoint/GenealogyDiagram#Human" />
+    <SelectExcelRow id="312" flexoID="185" variableName="genRows" excelSheet="Gen.genSheet" assignation="genRows" userID="FLX" useSpecificDescriptions="false">
+      <BasicExcelModelSlot idref="31" />
     </SelectExcelRow>
-    <AssignationAction id="398" value="genRows.get(0)" variableName="firstRow" assignation="firstRow" userID="FLX" />
-    <IterationAction id="399" iteration="genRows" iteratorName="row" userID="FLX">
-      <IterationAction id="400" iteration="row.excelCells" iteratorName="cell" userID="FLX">
-        <ConditionalAction id="401" condition="(cell.columnIndex &gt; 0)" userID="FLX">
-          <IterationAction id="402" iteration="existingHuman" iteratorName="humans" userID="FLX">
-            <AssignationAction id="403" value="humans" conditional="(humans.nameInGen.cellValue = row.excelCells.get(0).cellValue)" assignation="sourceEPtemp" userID="FLX" />
-            <AssignationAction id="404" value="humans" conditional="(firstRow.excelCells.get(cell.columnIndex).cellValue = humans.nameInGen.cellValue)" assignation="targetEPtemp" userID="FLX" />
+    <AssignationAction id="313" flexoID="186" variableName="firstRow" assignation="firstRow" useSpecificDescriptions="false" userID="FLX" value="genRows.get(0)" />
+    <IterationAction id="314" flexoID="187" iteratorName="row" useSpecificDescriptions="false" userID="FLX" iteration="genRows">
+      <IterationAction id="315" flexoID="188" iteratorName="cell" useSpecificDescriptions="false" userID="FLX" iteration="row.excelCells">
+        <ConditionalAction id="316" flexoID="189" condition="(cell.columnIndex &gt; 0)" useSpecificDescriptions="false" userID="FLX">
+          <IterationAction id="317" flexoID="190" iteratorName="humans" useSpecificDescriptions="false" userID="FLX" iteration="existingHuman">
+            <AssignationAction id="318" flexoID="191" assignation="sourceEPtemp" useSpecificDescriptions="false" userID="FLX" value="humans" conditional="(humans.nameInGen.cellValue = row.excelCells.get(0).cellValue)" />
+            <AssignationAction id="319" flexoID="192" assignation="targetEPtemp" useSpecificDescriptions="false" userID="FLX" value="humans" conditional="(firstRow.excelCells.get(cell.columnIndex).cellValue = humans.nameInGen.cellValue)" />
           </IterationAction>
-          <ConditionalAction id="405" condition="((cell.cellValue = &quot;Brother&quot;) | (cell.cellValue = &quot;Sister&quot;))" userID="FLX">
-            <MatchFlexoConceptInstance id="406" virtualModelInstance="virtualModelInstance" creationSchemeURI="http://ExcelViewpoint/GenealogyDiagram#BrotherRelationship.creation" userID="FLX">
-              <MatchingCriteria id="407" patternRoleName="cell" value="cell" userID="FLX" />
-              <MatchingCriteria id="408" patternRoleName="source" value="sourceEPtemp" userID="FLX" />
-              <MatchingCriteria id="409" patternRoleName="target" value="targetEPtemp" userID="FLX" />
-              <MatchingCriteria id="410" patternRoleName="connector" userID="FLX" />
-              <CreateFlexoConceptInstanceParameter id="411" paramName="source" value="sourceEPtemp" userID="FLX" />
-              <CreateFlexoConceptInstanceParameter id="412" paramName="target" value="targetEPtemp" userID="FLX" />
-              <CreateFlexoConceptInstanceParameter id="413" paramName="cell" value="cell" userID="FLX" />
+          <ConditionalAction id="320" flexoID="193" condition="((cell.cellValue = &quot;Brother&quot;) | (cell.cellValue = &quot;Sister&quot;))" useSpecificDescriptions="false" userID="FLX">
+            <MatchFlexoConceptInstance id="321" useSpecificDescriptions="false" userID="FLX" virtualModelInstance="virtualModelInstance" flexoID="198" creationSchemeURI="http://ExcelViewpoint/GenealogyDiagram#BrotherRelationship.creation">
+              <MatchingCriteria id="322" flexoID="194" useSpecificDescriptions="false" userID="FLX" value="cell" patternRoleName="cell" />
+              <MatchingCriteria id="323" flexoID="195" useSpecificDescriptions="false" userID="FLX" value="sourceEPtemp" patternRoleName="source" />
+              <MatchingCriteria id="324" flexoID="196" useSpecificDescriptions="false" userID="FLX" value="targetEPtemp" patternRoleName="target" />
+              <MatchingCriteria id="325" flexoID="197" useSpecificDescriptions="false" userID="FLX" patternRoleName="connector" />
+              <CreateFlexoConceptInstanceParameter id="326" flexoID="199" useSpecificDescriptions="false" userID="FLX" value="sourceEPtemp" paramName="source" />
+              <CreateFlexoConceptInstanceParameter id="327" flexoID="200" useSpecificDescriptions="false" userID="FLX" value="targetEPtemp" paramName="target" />
+              <CreateFlexoConceptInstanceParameter id="328" flexoID="201" useSpecificDescriptions="false" userID="FLX" value="cell" paramName="cell" />
             </MatchFlexoConceptInstance>
           </ConditionalAction>
-          <ConditionalAction id="414" condition="((cell.cellValue = &quot;Wife&quot;) | (cell.cellValue = &quot;Husband&quot;))" userID="FLX">
-            <MatchFlexoConceptInstance id="415" virtualModelInstance="virtualModelInstance" creationSchemeURI="http://ExcelViewpoint/GenealogyDiagram#MarriageRelationship.creation" userID="FLX">
-              <MatchingCriteria id="416" patternRoleName="connector" userID="FLX" />
-              <MatchingCriteria id="417" patternRoleName="cell" value="cell" userID="FLX" />
-              <MatchingCriteria id="418" patternRoleName="source" value="sourceEPtemp" userID="FLX" />
-              <MatchingCriteria id="419" patternRoleName="target" value="targetEPtemp" userID="FLX" />
-              <CreateFlexoConceptInstanceParameter id="420" paramName="source" value="sourceEPtemp" userID="FLX" />
-              <CreateFlexoConceptInstanceParameter id="421" paramName="target" value="targetEPtemp" userID="FLX" />
-              <CreateFlexoConceptInstanceParameter id="422" paramName="cell" value="cell" userID="FLX" />
+          <ConditionalAction id="329" flexoID="202" condition="((cell.cellValue = &quot;Wife&quot;) | (cell.cellValue = &quot;Husband&quot;))" useSpecificDescriptions="false" userID="FLX">
+            <MatchFlexoConceptInstance id="330" useSpecificDescriptions="false" userID="FLX" virtualModelInstance="virtualModelInstance" flexoID="207" creationSchemeURI="http://ExcelViewpoint/GenealogyDiagram#MarriageRelationship.creation">
+              <MatchingCriteria id="331" flexoID="203" useSpecificDescriptions="false" userID="FLX" patternRoleName="connector" />
+              <MatchingCriteria id="332" flexoID="204" useSpecificDescriptions="false" userID="FLX" value="cell" patternRoleName="cell" />
+              <MatchingCriteria id="333" flexoID="205" useSpecificDescriptions="false" userID="FLX" value="sourceEPtemp" patternRoleName="source" />
+              <MatchingCriteria id="334" flexoID="206" useSpecificDescriptions="false" userID="FLX" value="targetEPtemp" patternRoleName="target" />
+              <CreateFlexoConceptInstanceParameter id="335" flexoID="208" useSpecificDescriptions="false" userID="FLX" value="sourceEPtemp" paramName="source" />
+              <CreateFlexoConceptInstanceParameter id="336" flexoID="209" useSpecificDescriptions="false" userID="FLX" value="targetEPtemp" paramName="target" />
+              <CreateFlexoConceptInstanceParameter id="337" flexoID="210" useSpecificDescriptions="false" userID="FLX" value="cell" paramName="cell" />
             </MatchFlexoConceptInstance>
           </ConditionalAction>
-          <ConditionalAction id="423" condition="((cell.cellValue = &quot;Father&quot;) | (cell.cellValue = &quot;Mother&quot;))" userID="FLX">
-            <MatchFlexoConceptInstance id="424" virtualModelInstance="virtualModelInstance" creationSchemeURI="http://ExcelViewpoint/GenealogyDiagram#ParentRelationship.creation" userID="FLX">
-              <MatchingCriteria id="425" patternRoleName="connector" userID="FLX" />
-              <MatchingCriteria id="426" patternRoleName="cell" value="cell" userID="FLX" />
-              <MatchingCriteria id="427" patternRoleName="source" value="targetEPtemp" userID="FLX" />
-              <MatchingCriteria id="428" patternRoleName="target" value="sourceEPtemp" userID="FLX" />
-              <CreateFlexoConceptInstanceParameter id="429" paramName="source" value="targetEPtemp" userID="FLX" />
-              <CreateFlexoConceptInstanceParameter id="430" paramName="target" value="sourceEPtemp" userID="FLX" />
-              <CreateFlexoConceptInstanceParameter id="431" paramName="cell" value="cell" userID="FLX" />
+          <ConditionalAction id="338" flexoID="211" condition="((cell.cellValue = &quot;Father&quot;) | (cell.cellValue = &quot;Mother&quot;))" useSpecificDescriptions="false" userID="FLX">
+            <MatchFlexoConceptInstance id="339" useSpecificDescriptions="false" userID="FLX" virtualModelInstance="virtualModelInstance" flexoID="216" creationSchemeURI="http://ExcelViewpoint/GenealogyDiagram#ParentRelationship.creation">
+              <MatchingCriteria id="340" flexoID="212" useSpecificDescriptions="false" userID="FLX" patternRoleName="connector" />
+              <MatchingCriteria id="341" flexoID="213" useSpecificDescriptions="false" userID="FLX" value="cell" patternRoleName="cell" />
+              <MatchingCriteria id="342" flexoID="214" useSpecificDescriptions="false" userID="FLX" value="targetEPtemp" patternRoleName="source" />
+              <MatchingCriteria id="343" flexoID="215" useSpecificDescriptions="false" userID="FLX" value="sourceEPtemp" patternRoleName="target" />
+              <CreateFlexoConceptInstanceParameter id="344" flexoID="217" useSpecificDescriptions="false" userID="FLX" value="targetEPtemp" paramName="source" />
+              <CreateFlexoConceptInstanceParameter id="345" flexoID="218" useSpecificDescriptions="false" userID="FLX" value="sourceEPtemp" paramName="target" />
+              <CreateFlexoConceptInstanceParameter id="346" flexoID="219" useSpecificDescriptions="false" userID="FLX" value="cell" paramName="cell" />
             </MatchFlexoConceptInstance>
           </ConditionalAction>
         </ConditionalAction>
       </IterationAction>
     </IterationAction>
   </SynchronizationScheme>
-  <FlexoConceptInstanceRole id="432" flexoConceptTypeURI="http://ExcelViewpoint/GenealogyDiagram#Genealogic" name="Gen" userID="FLX">
-    <ModelSlot_VirtualModelModelSlot idref="8" userID="FLX" />
-  </FlexoConceptInstanceRole>
-  <FlexoConceptInstanceRole id="433" flexoConceptTypeURI="http://ExcelViewpoint/GenealogyDiagram#Human" name="sourceEPtemp" userID="FLX">
-    <ModelSlot_VirtualModelModelSlot idref="8" userID="FLX" />
-  </FlexoConceptInstanceRole>
-  <FlexoConceptInstanceRole id="434" flexoConceptTypeURI="http://ExcelViewpoint/GenealogyDiagram#Human" name="targetEPtemp" userID="FLX">
-    <ModelSlot_VirtualModelModelSlot idref="8" userID="FLX" />
-  </FlexoConceptInstanceRole>
-  <Inspector id="435" inspectorTitle="GenealogyDiagram" userID="FLX" />
-  <ModelSlot_TypedDiagramModelSlot metaModelURI="http://ExcelViewpoint/GenealogyDiagram/GenealogyDiagram.diagramspecification" name="typedDiagramModelSlot" id="436" userID="FLX">
-    <FMLDiagramPaletteElementBinding paletteElementId="http://ExcelViewpoint/GenealogyDiagram/GenealogyDiagram.diagramspecification/GenealogyPalette.palette#Man" userID="FLX">
-      <DropScheme idref="3" userID="FLX" />
-    </FMLDiagramPaletteElementBinding>
-    <FMLDiagramPaletteElementBinding paletteElementId="http://ExcelViewpoint/GenealogyDiagram/GenealogyDiagram.diagramspecification/GenealogyPalette.palette#Woman" userID="FLX">
-      <DropScheme idref="87" userID="FLX" />
-    </FMLDiagramPaletteElementBinding>
-  </ModelSlot_TypedDiagramModelSlot>
 </VirtualModel>
