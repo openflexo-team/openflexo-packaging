@@ -66,7 +66,7 @@ public class TestViewPointValidationModelInIntegrationContext extends OpenflexoT
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.foundation.viewpoint.IntegerParameter.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
-				.getModelEntity(org.openflexo.foundation.viewpoint.LocalizedEntry.class) != null);
+				.getModelEntity(org.openflexo.foundation.viewpoint.ViewPointLocalizedEntry.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.fge.ContainerGraphicalRepresentation.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
@@ -76,7 +76,7 @@ public class TestViewPointValidationModelInIntegrationContext extends OpenflexoT
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.foundation.viewpoint.AbstractCreationScheme.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
-				.getModelEntity(org.openflexo.foundation.viewpoint.LocalizedDictionary.class) != null);
+				.getModelEntity(org.openflexo.foundation.viewpoint.ViewPointLocalizedDictionary.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.foundation.viewpoint.TextAreaParameter.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext().getModelEntity(org.openflexo.fge.FGEStyle.class) != null);
