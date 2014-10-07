@@ -26,8 +26,13 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.openflexo.antar.binding.BindingModel;
+import org.openflexo.antar.binding.BindingVariable;
 import org.openflexo.foundation.FlexoEditor;
 import org.openflexo.foundation.OpenflexoProjectAtRunTimeTestCase;
+import org.openflexo.foundation.ontology.IFlexoOntologyClass;
+import org.openflexo.foundation.viewpoint.FlexoConcept;
+import org.openflexo.foundation.viewpoint.FlexoRole;
 import org.openflexo.foundation.viewpoint.SynchronizationScheme;
 import org.openflexo.foundation.viewpoint.ViewPoint;
 import org.openflexo.foundation.viewpoint.ViewType;
@@ -44,6 +49,7 @@ import org.openflexo.foundation.viewpoint.editionaction.MatchFlexoConceptInstanc
 import org.openflexo.foundation.viewpoint.editionaction.MatchingCriteria;
 import org.openflexo.foundation.viewpoint.rm.ViewPointResource;
 import org.openflexo.technologyadapter.emf.model.EMFModel;
+import org.openflexo.technologyadapter.emf.viewpoint.EMFObjectIndividualRole;
 import org.openflexo.technologyadapter.emf.viewpoint.editionaction.SelectEMFObjectIndividual;
 import org.openflexo.test.OrderedRunner;
 import org.openflexo.test.TestOrder;
@@ -170,6 +176,40 @@ public class TestCityMappingBindingModel extends OpenflexoProjectAtRunTimeTestCa
 			assertEquals(12, criteria.getBindingModel().getBindingVariablesCount());
 			assertTrue(criteria.getValue().isValid());
 			assertNotNull(criteria.getBindingModel().bindingVariableNamed("matchingCitiesInModel2"));
+		}
+
+	}
+
+	@Test
+	@TestOrder(5)
+	public void checkConceptAndRolesBindingModel() {
+
+		VirtualModel cityMapping = cityMappingVP.getVirtualModelNamed("CityMapping");
+
+		FlexoConcept fc = cityMapping.getFlexoConcept("City");
+
+		FlexoRole<?> fcRole = fc.getFlexoRole("cityInModel1");
+
+		BindingModel fcRoleBindingModel = fcRole.getBindingModel();
+		int nbBindVar = fcRoleBindingModel.getBindingVariablesCount();
+
+		System.out.println(" \n\n***********************************");
+
+		System.out.println(" \n****Binding Model");
+
+		System.out.println(fcRoleBindingModel);
+
+		System.out.println(" \n****Binding variables");
+
+		for (int i = 0; i < nbBindVar; i++) {
+			BindingVariable v = fcRoleBindingModel.getBindingVariableAt(i);
+			System.out.println("BVar : " + v.getVariableName() + "[ " + v.getType().toString() + "]");
+		}
+
+		if (fcRole instanceof EMFObjectIndividualRole) {
+			EMFObjectIndividualRole emfRole = (EMFObjectIndividualRole) fcRole;
+
+			IFlexoOntologyClass aType = emfRole.getOntologicType();
 		}
 
 	}

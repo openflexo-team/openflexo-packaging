@@ -8,18 +8,18 @@
     </Inspector>
     <ShapeRole id="4" exampleLabel="label" useSpecificDescriptions="false" userID="FLX" cloningStratgey="Clone" flexoID="24" name="shape">
       <ShapeGraphicalRepresentation id="5" minimalHeight="0.0" relativeTextX="0.5" transparency="1.0" drawControlPointsWhenFocused="true" height="36.22950819672131" hasFocusedBackground="false" text="label" verticalTextAlignment="MIDDLE" adjustMinimalWidthToLabelWidth="true" width="99.0" hasFocusedForeground="false" hasSelectedBackground="false" allowToLeaveBounds="true" isFocusable="true" drawControlPointsWhenSelected="true" isSelectable="true" isLabelEditable="true" relativeTextY="0.5" continuousTextEditing="true" minimalWidth="0.0" identifier="object_0" lineWrap="false" locationConstraints="FREELY_MOVABLE" adjustMinimalHeightToLabelHeight="true" horizontalTextAlignment="CENTER" adaptBoundsToContents="false" maximalHeight="Infinity" isVisible="true" dimensionConstraints="FREELY_RESIZABLE" isReadOnly="false" adjustMaximalHeightToLabelHeight="false" isFloatingLabel="false" hasSelectedForeground="false" paragraphAlignment="CENTER" absoluteTextX="0.0" layer="1" absoluteTextY="0.0" adjustMaximalWidthToLabelWidth="false" isMultilineAllowed="false" y="34.0" maximalWidth="Infinity" x="158.0">
-        <FocusedForegroundStyle id="6" dashStyle="PLAIN_STROKE" color="0,51,255" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.6" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <FocusedForegroundStyle id="6" dashStyle="PLAIN_STROKE" color="0,51,255" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.6" capStyle="CAP_SQUARE" joinStyle="JOIN_MITER" />
         <SelectedColorBackgroundStyle id="7" color="204,255,255" transparencyLevel="0.5" useTransparency="true" />
         <TextStyle id="8" orientation="0" color="0,51,102" backgroundColor="255,255,255" font="Lucida Sans,0,11" isBackgroundColored="false" />
         <ShapeBorder id="9" bottom="5" left="5" right="5" top="5" />
-        <ForegroundStyle id="10" dashStyle="PLAIN_STROKE" color="0,51,255" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.6" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
-        <SelectedForegroundStyle id="11" dashStyle="PLAIN_STROKE" color="0,51,255" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.6" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <ForegroundStyle id="10" dashStyle="PLAIN_STROKE" color="0,51,255" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.6" capStyle="CAP_SQUARE" joinStyle="JOIN_MITER" />
+        <SelectedForegroundStyle id="11" dashStyle="PLAIN_STROKE" color="0,51,255" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.6" capStyle="CAP_SQUARE" joinStyle="JOIN_MITER" />
         <FocusedColorBackgroundStyle id="12" color="204,255,255" transparencyLevel="0.5" useTransparency="true" />
         <RectangleShape id="13" arcSize="20.0" isRounded="true" />
-        <ShadowStyle id="14" shadowDepth="2" shadowBlur="4" drawShadow="true" shadowDarkness="150" />
+        <ShadowStyle id="14" shadowBlur="4" shadowDepth="2" drawShadow="true" shadowDarkness="150" />
         <ColorBackgroundStyle id="15" color="204,255,255" transparencyLevel="0.5" useTransparency="true" />
       </ShapeGraphicalRepresentation>
-      <GRSpec id="16" featureName="label" flexoID="53" readOnly="false" userID="FLX" useSpecificDescriptions="false" value="individual.name" />
+      <GRSpec id="16" featureName="label" flexoID="78" readOnly="false" userID="FLX" useSpecificDescriptions="false" value="individual.name" />
       <TypedDiagramModelSlot idref="17" />
     </ShapeRole>
     <OWLIndividualRole id="27" cloningStratgey="Clone" flexoID="25" name="individual" useSpecificDescriptions="false" userID="FLX" ontologicType="http://www.agilebirds.com/openflexo/ViewPoints/BasicOntology.owl#Concept">
@@ -40,22 +40,22 @@
   </FlexoConcept>
   <FlexoConcept id="28" userID="FLX" useSpecificDescriptions="false" flexoID="31" name="IsARelationship">
     <Inspector id="29" flexoID="7" userID="FLX" useSpecificDescriptions="false" inspectorTitle="&quot;Is A&quot; relationship">
-      <TextField id="30" flexoID="10" description="" name="childConcept" useSpecificDescriptions="false" userID="FLX" readOnly="false" data="isA" label="child_concept">
+      <TextField id="30" flexoID="10" description="" name="childConcept" useSpecificDescriptions="false" userID="FLX" readOnly="false" data="" label="child_concept">
         <Inspector idref="29" />
       </TextField>
-      <TextField id="31" flexoID="11" name="parentConcept" useSpecificDescriptions="false" userID="FLX" readOnly="true" data="isA.parent.uriName" label="parent_concept">
+      <TextField id="31" flexoID="11" description="" name="parentConcept" useSpecificDescriptions="false" userID="FLX" readOnly="true" data="isA.countObservers" label="parent_concept">
         <Inspector idref="29" />
       </TextField>
     </Inspector>
     <ConnectorRole id="32" exampleLabel="label" userID="FLX" useSpecificDescriptions="false" cloningStratgey="Clone" flexoID="29" name="connector">
-      <ConnectorGraphicalRepresentation id="33" lineWrap="false" horizontalTextAlignment="CENTER" transparency="1.0" isVisible="true" drawControlPointsWhenFocused="true" isReadOnly="false" paragraphAlignment="CENTER" hasSelectedForeground="false" verticalTextAlignment="MIDDLE" text="label" hasFocusedForeground="false" applyForegroundToSymbols="true" layer="64" absoluteTextX="2.0" absoluteTextY="-13.0" isFocusable="true" drawControlPointsWhenSelected="true" isSelectable="true" isLabelEditable="true" continuousTextEditing="true" isMultilineAllowed="false" identifier="object_2">
-        <SelectedForegroundStyle id="34" dashStyle="PLAIN_STROKE" color="0,102,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.2" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
-        <FocusedForegroundStyle id="35" dashStyle="PLAIN_STROKE" color="0,102,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.2" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+      <ConnectorGraphicalRepresentation id="33" lineWrap="false" horizontalTextAlignment="CENTER" transparency="1.0" drawControlPointsWhenFocused="true" isVisible="true" isReadOnly="false" paragraphAlignment="CENTER" hasSelectedForeground="false" verticalTextAlignment="MIDDLE" text="label" hasFocusedForeground="false" applyForegroundToSymbols="true" layer="64" absoluteTextX="2.0" absoluteTextY="-13.0" isFocusable="true" drawControlPointsWhenSelected="true" isSelectable="true" isLabelEditable="true" continuousTextEditing="true" isMultilineAllowed="false" identifier="object_2">
+        <SelectedForegroundStyle id="34" dashStyle="PLAIN_STROKE" color="0,102,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.2" capStyle="CAP_SQUARE" joinStyle="JOIN_MITER" />
+        <FocusedForegroundStyle id="35" dashStyle="PLAIN_STROKE" color="0,102,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.2" capStyle="CAP_SQUARE" joinStyle="JOIN_MITER" />
         <LineConnectorSpecification id="36" relativeMiddleSymbolLocation="0.5" startSymbolSize="10.0" middleSymbol="NONE" lineConnectorType="MINIMAL_LENGTH" middleSymbolSize="10.0" endSymbolSize="10.0" startSymbol="NONE" endSymbol="NONE" />
         <TextStyle id="37" orientation="0" color="0,153,51" backgroundColor="255,255,255" font="Lucida Sans,0,10" isBackgroundColored="false" />
-        <ForegroundStyle id="38" dashStyle="PLAIN_STROKE" color="0,102,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.2" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <ForegroundStyle id="38" dashStyle="PLAIN_STROKE" color="0,102,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.2" capStyle="CAP_SQUARE" joinStyle="JOIN_MITER" />
       </ConnectorGraphicalRepresentation>
-      <GRSpec id="39" featureName="label" flexoID="54" readOnly="true" userID="FLX" useSpecificDescriptions="false" value="&quot;is a&quot;" />
+      <GRSpec id="39" featureName="label" flexoID="75" readOnly="true" userID="FLX" useSpecificDescriptions="false" value="&quot;is a&quot;" />
       <TypedDiagramModelSlot idref="17" />
     </ConnectorRole>
     <ObjectPropertyStatementRole id="40" cloningStratgey="Clone" flexoID="30" name="isA" useSpecificDescriptions="false" userID="FLX" objectProperty="http://www.agilebirds.com/openflexo/ViewPoints/BasicOntology.owl#semanticRelation">
@@ -89,14 +89,14 @@
       </TextField>
     </Inspector>
     <ConnectorRole id="51" exampleLabel="label" userID="FLX" useSpecificDescriptions="false" cloningStratgey="Clone" flexoID="33" name="connector">
-      <ConnectorGraphicalRepresentation id="52" lineWrap="false" horizontalTextAlignment="CENTER" transparency="1.0" isVisible="true" drawControlPointsWhenFocused="true" isReadOnly="false" paragraphAlignment="CENTER" hasSelectedForeground="false" verticalTextAlignment="MIDDLE" text="label" hasFocusedForeground="false" applyForegroundToSymbols="true" layer="64" absoluteTextX="2.0" absoluteTextY="-11.0" isFocusable="true" drawControlPointsWhenSelected="true" isSelectable="true" isLabelEditable="true" continuousTextEditing="true" isMultilineAllowed="false" identifier="object_2">
-        <SelectedForegroundStyle id="53" dashStyle="PLAIN_STROKE" color="204,102,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.2000000000000002" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
-        <FocusedForegroundStyle id="54" dashStyle="PLAIN_STROKE" color="204,102,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.2000000000000002" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+      <ConnectorGraphicalRepresentation id="52" lineWrap="false" horizontalTextAlignment="CENTER" transparency="1.0" drawControlPointsWhenFocused="true" isVisible="true" isReadOnly="false" paragraphAlignment="CENTER" hasSelectedForeground="false" verticalTextAlignment="MIDDLE" text="label" hasFocusedForeground="false" applyForegroundToSymbols="true" layer="64" absoluteTextX="2.0" absoluteTextY="-11.0" isFocusable="true" drawControlPointsWhenSelected="true" isSelectable="true" isLabelEditable="true" continuousTextEditing="true" isMultilineAllowed="false" identifier="object_2">
+        <SelectedForegroundStyle id="53" dashStyle="PLAIN_STROKE" color="204,102,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.2000000000000002" capStyle="CAP_SQUARE" joinStyle="JOIN_MITER" />
+        <FocusedForegroundStyle id="54" dashStyle="PLAIN_STROKE" color="204,102,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.2000000000000002" capStyle="CAP_SQUARE" joinStyle="JOIN_MITER" />
         <LineConnectorSpecification id="55" relativeMiddleSymbolLocation="0.5" startSymbolSize="10.0" middleSymbol="NONE" lineConnectorType="MINIMAL_LENGTH" middleSymbolSize="10.0" endSymbolSize="10.0" startSymbol="NONE" endSymbol="NONE" />
         <TextStyle id="56" orientation="0" color="204,102,0" backgroundColor="255,255,255" font="Lucida Sans,0,10" isBackgroundColored="false" />
-        <ForegroundStyle id="57" dashStyle="PLAIN_STROKE" color="204,102,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.2000000000000002" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <ForegroundStyle id="57" dashStyle="PLAIN_STROKE" color="204,102,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.2000000000000002" capStyle="CAP_SQUARE" joinStyle="JOIN_MITER" />
       </ConnectorGraphicalRepresentation>
-      <GRSpec id="58" featureName="label" flexoID="55" readOnly="true" userID="FLX" useSpecificDescriptions="false" value="&quot;has&quot;" />
+      <GRSpec id="58" featureName="label" flexoID="80" readOnly="true" userID="FLX" useSpecificDescriptions="false" value="&quot;has&quot;" />
       <TypedDiagramModelSlot idref="17" />
     </ConnectorRole>
     <LinkScheme id="59" northDirectionSupported="true" fromTarget="http://www.agilebirds.com/openflexo/ViewPoints/Basic/BasicOntology.owl#Concept" toTarget="http://www.agilebirds.com/openflexo/ViewPoints/Basic/BasicOntology.owl#Concept" useSpecificDescriptions="false" width="800" userID="FLX" label="LinkTwoConceptByHasRelationShip" definePopupDefaultSize="false" southDirectionSupported="true" westDirectionSupported="true" isAvailableWithFloatingPalette="true" flexoID="22" height="600" skipConfirmationPanel="false" name="LinkTwoConceptByHasRelationShip" eastDirectionSupported="true">
