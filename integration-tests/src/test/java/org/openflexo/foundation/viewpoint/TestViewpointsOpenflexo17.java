@@ -78,7 +78,7 @@ public class TestViewpointsOpenflexo17 extends OpenflexoTestCase {
 
 		ViewPoint basicOntologyEditor = testLoadViewPoint("http://www.agilebirds.com/openflexo/ViewPoints/Basic/BasicOntology.owl");
 		assertNotNull(basicOntologyEditor);
-		System.out.println("Read resource " + ((ViewPointResource) basicOntologyEditor.getResource()).getFile().getAbsolutePath());
+		System.out.println("Read resource " + ((ViewPointResource) basicOntologyEditor.getResource()).getFlexoIODelegate().toString());
 
 		// TODO: rewrite this
 

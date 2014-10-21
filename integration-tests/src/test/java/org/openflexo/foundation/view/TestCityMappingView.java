@@ -162,7 +162,7 @@ public class TestCityMappingView extends OpenflexoProjectAtRunTimeTestCase {
 	@TestOrder(4)
 	public void test2LoadCityMappingViewPoint() {
 		assertNotNull(cityMappingVP);
-		System.out.println("Found view point in " + ((ViewPointResource) cityMappingVP.getResource()).getFile());
+		System.out.println("Found view point in " + ((ViewPointResource) cityMappingVP.getResource()).getFlexoIODelegate().toString());
 
 		VirtualModel cityMappingVM = cityMappingVP.getVirtualModelNamed("CityMapping");
 		assertNotNull(cityMappingVM);
@@ -194,12 +194,12 @@ public class TestCityMappingView extends OpenflexoProjectAtRunTimeTestCase {
 		addView.doAction();
 		assertTrue(addView.hasActionExecutionSucceeded());
 		View newView = addView.getNewView();
-		System.out.println("New view " + newView + " created in " + ((ViewResource) newView.getResource()).getFile());
+		System.out.println("New view " + newView + " created in " + ((ViewResource) newView.getResource()).getFlexoIODelegate().toString());
 		assertNotNull(newView);
 		assertEquals(addView.getNewViewName(), newView.getName());
 		assertEquals(addView.getNewViewTitle(), newView.getTitle());
 		assertEquals(addView.getViewpointResource().getViewPoint(), cityMappingVP);
-		assertTrue(((ViewResource) newView.getResource()).getFile().exists());
+		assertTrue(((ViewResource) newView.getResource()).getFlexoIODelegate().exists());
 	}
 
 	@Test
@@ -272,12 +272,12 @@ public class TestCityMappingView extends OpenflexoProjectAtRunTimeTestCase {
 		assertTrue(createVirtualModelInstance.hasActionExecutionSucceeded());
 		VirtualModelInstance newVirtualModelInstance = createVirtualModelInstance.getNewVirtualModelInstance();
 		System.out.println("New VirtualModelInstance " + newVirtualModelInstance + " created in "
-				+ ((VirtualModelInstanceResource) newVirtualModelInstance.getResource()).getFile());
+				+ ((VirtualModelInstanceResource) newVirtualModelInstance.getResource()).getFlexoIODelegate().toString());
 		assertNotNull(newVirtualModelInstance);
 		assertEquals(createVirtualModelInstance.getNewVirtualModelInstanceName(), newVirtualModelInstance.getName());
 		assertEquals(createVirtualModelInstance.getNewVirtualModelInstanceTitle(), newVirtualModelInstance.getTitle());
 		assertEquals(createVirtualModelInstance.getVirtualModel(), cityMappingVM);
-		assertTrue(((VirtualModelInstanceResource) newVirtualModelInstance.getResource()).getFile().exists());
+		assertTrue(((VirtualModelInstanceResource) newVirtualModelInstance.getResource()).getFlexoIODelegate().exists());
 		assertEquals(project, ((VirtualModelInstanceResource) newVirtualModelInstance.getResource()).getProject());
 		assertEquals(project, newVirtualModelInstance.getProject());
 

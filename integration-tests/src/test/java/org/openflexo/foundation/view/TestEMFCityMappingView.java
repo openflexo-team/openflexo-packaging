@@ -84,7 +84,7 @@ public class TestEMFCityMappingView extends OpenflexoProjectAtRunTimeTestCase {
 		// Load CityMapping ViewPoint
 		ViewPoint cityMappingViewPoint = loadViewPoint("http://www.thalesgroup.com/openflexo/emf/CityMapping");
 		assertNotNull(cityMappingViewPoint);
-		System.out.println("Found view point in " + ((ViewPointResource) cityMappingViewPoint.getResource()).getFile());
+		System.out.println("Found view point in " + ((ViewPointResource) cityMappingViewPoint.getResource()).getFlexoIODelegate().toString());
 
 		// Create View Folder
 		AddRepositoryFolder addRepositoryFolder = AddRepositoryFolder.actionType.makeNewAction(project.getViewLibrary().getRootFolder(),
@@ -103,12 +103,12 @@ public class TestEMFCityMappingView extends OpenflexoProjectAtRunTimeTestCase {
 		addView.doAction();
 		assertTrue(addView.hasActionExecutionSucceeded());
 		View newView = addView.getNewView();
-		System.out.println("New view " + newView + " created in " + ((ViewResource) newView.getResource()).getFile());
+		System.out.println("New view " + newView + " created in " + ((ViewResource) newView.getResource()).getFlexoIODelegate().toString());
 		assertNotNull(newView);
 		assertEquals(addView.getNewViewName(), newView.getName());
 		assertEquals(addView.getNewViewTitle(), newView.getTitle());
 		assertEquals(addView.getViewpointResource().getViewPoint(), cityMappingViewPoint);
-		assertTrue(((ViewResource) newView.getResource()).getFile().exists());
+		assertTrue(((ViewResource) newView.getResource()).getFlexoIODelegate().exists());
 
 		// Reload Project
 		editor = reloadProject(project.getProjectDirectory());

@@ -97,7 +97,7 @@ public class TestBasicOntologyEditorView extends OpenflexoProjectAtRunTimeTestCa
 	public void test2LoadBasicOntologyEditorViewPoint() {
 		basicOntologyEditor = loadViewPoint("http://www.agilebirds.com/openflexo/ViewPoints/Basic/BasicOntology.owl");
 		assertNotNull(basicOntologyEditor);
-		System.out.println("Found view point in " + ((ViewPointResource) basicOntologyEditor.getResource()).getFile());
+		System.out.println("Found view point in " + ((ViewPointResource) basicOntologyEditor.getResource()).getFlexoIODelegate().toString());
 	}
 
 	@Test
@@ -122,12 +122,12 @@ public class TestBasicOntologyEditorView extends OpenflexoProjectAtRunTimeTestCa
 		addView.doAction();
 		assertTrue(addView.hasActionExecutionSucceeded());
 		View newView = addView.getNewView();
-		System.out.println("New view " + newView + " created in " + ((ViewResource) newView.getResource()).getFile());
+		System.out.println("New view " + newView + " created in " + ((ViewResource) newView.getResource()).getFlexoIODelegate().toString());
 		assertNotNull(newView);
 		assertEquals(addView.getNewViewName(), newView.getName());
 		assertEquals(addView.getNewViewTitle(), newView.getTitle());
 		assertEquals(addView.getViewpointResource().getViewPoint(), basicOntologyEditor);
-		assertTrue(((ViewResource) newView.getResource()).getFile().exists());
+		assertTrue(((ViewResource) newView.getResource()).getFlexoIODelegate().exists());
 	}
 
 	public void test5ReloadProject() {
@@ -177,11 +177,11 @@ public class TestBasicOntologyEditorView extends OpenflexoProjectAtRunTimeTestCa
 		// createDiagram.getThrownException().printStackTrace();
 		assertTrue(createDiagram.hasActionExecutionSucceeded());
 		Diagram newDiagram = createDiagram.getNewDiagram();
-		System.out.println("New diagram " + newDiagram + " created in " + ((DiagramResource) newDiagram.getResource()).getFile());
+		System.out.println("New diagram " + newDiagram + " created in " + ((DiagramResource) newDiagram.getResource()).getFlexoIODelegate().toString());
 		assertNotNull(newDiagram);
 		assertEquals(createDiagram.getDiagramName(), newDiagram.getName());
 		assertEquals(createDiagram.getDiagramTitle(), newDiagram.getTitle());
 		// assertEquals(createDiagram.getDiagramSpecification(), basicOntologyEditor.getDefaultDiagramSpecification());
-		assertTrue(((DiagramResource) newDiagram.getResource()).getFile().exists());
+		assertTrue(((DiagramResource) newDiagram.getResource()).getFlexoIODelegate().exists());
 	}
 }
