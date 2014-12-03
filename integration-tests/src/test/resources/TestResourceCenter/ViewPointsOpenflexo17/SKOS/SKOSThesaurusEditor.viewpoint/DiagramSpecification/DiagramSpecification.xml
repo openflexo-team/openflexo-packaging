@@ -1,305 +1,309 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<VirtualModel id="1" name="DiagramSpecification" modelVersion="1.0" userID="FLX">
-  <description userID="FLX">This calc is intented to be used as a Basic Thesaurus editor, whose underlying used language is SKOS (Simple Knowlege Organization System) and which is an RDF vocabulary for describing the basic structure and content of concept schemes such as thesauri, classification schemes, subject heading lists, taxonomies, 'folksonomies', other types of controlled vocabulary, and also concept schemes embedded in glossaries and terminologies.</description>
-  <FlexoConcept id="2" name="ConceptScheme" userID="FLX">
-    <description userID="FLX">Allows to define concept scheme</description>
-    <DropScheme id="3" target="top" name="DropConceptSchemeAtTopLevel" label="DropConceptSchemeAtTopLevel" skipConfirmationPanel="true" definePopupDefaultSize="false" width="800" height="600" userID="FLX">
-      <TextFieldParameter id="4" name="conceptSchemeName" label="concept_scheme_name" defaultValue="" usePaletteLabelAsDefaultValue="true" conditional="" isRequired="false" userID="FLX">
-        <description userID="FLX">Allow to enter concept scheme name while dropping concept scheme</description>
-      </TextFieldParameter>
-      <URIParameter id="5" base="parameters.conceptSchemeName" name="conceptSchemeURI" label="uri" defaultValue="" usePaletteLabelAsDefaultValue="false" conditional="" isRequired="true" userID="FLX">
-        <description userID="FLX">Allow to enter (unique) name used in Ontology</description>
+<VirtualModel id="0" useSpecificDescriptions="false" userID="FLX" flexoID="-1" name="DiagramSpecification">
+  <FlexoConcept id="1" useSpecificDescriptions="false" userID="FLX" flexoID="45" name="ConceptScheme">
+    <Inspector id="2" flexoID="1" userID="FLX" useSpecificDescriptions="false" inspectorTitle="Concept Scheme">
+      <TextField id="3" flexoID="4" name="uri" useSpecificDescriptions="false" userID="FLX" readOnly="false" data="conceptScheme.uriName" label="uri">
+        <Inspector idref="2" />
+      </TextField>
+      <TextField id="4" flexoID="5" name="label" useSpecificDescriptions="false" userID="FLX" readOnly="true" data="conceptScheme.label.toString" label="label">
+        <Inspector idref="2" />
+      </TextField>
+    </Inspector>
+    <OWLIndividualRole id="5" cloningStratgey="Clone" flexoID="43" name="conceptScheme" useSpecificDescriptions="false" userID="FLX" ontologicType="http://www.w3.org/2004/02/skos/core#ConceptScheme">
+      <OWLModelSlot idref="6" />
+    </OWLIndividualRole>
+    <ShapeRole id="7" exampleLabel="label" userID="FLX" useSpecificDescriptions="false" cloningStratgey="Clone" flexoID="44" name="shape">
+      <ShapeGraphicalRepresentation id="8" minimalHeight="0.0" relativeTextX="0.5" transparency="1.0" height="41.14754098360656" drawControlPointsWhenFocused="true" hasFocusedBackground="false" text="label" verticalTextAlignment="MIDDLE" adjustMinimalWidthToLabelWidth="true" width="143.0" hasFocusedForeground="false" hasSelectedBackground="false" allowToLeaveBounds="true" isFocusable="true" drawControlPointsWhenSelected="true" isSelectable="true" isLabelEditable="true" relativeTextY="0.5" continuousTextEditing="true" minimalWidth="0.0" identifier="object_0" lineWrap="false" locationConstraints="FREELY_MOVABLE" adjustMinimalHeightToLabelHeight="true" horizontalTextAlignment="CENTER" adaptBoundsToContents="false" maximalHeight="Infinity" isVisible="true" dimensionConstraints="FREELY_RESIZABLE" isReadOnly="false" adjustMaximalHeightToLabelHeight="false" isFloatingLabel="false" hasSelectedForeground="false" paragraphAlignment="CENTER" layer="1" absoluteTextX="0.0" absoluteTextY="0.0" adjustMaximalWidthToLabelWidth="false" isMultilineAllowed="false" y="40.0" maximalWidth="Infinity" x="175.0">
+        <FocusedForegroundStyle id="9" dashStyle="PLAIN_STROKE" color="204,0,51" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.6" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <SelectedColorGradientBackgroundStyle id="10" direction="SOUTH_EAST_NORTH_WEST" transparencyLevel="0.5" useTransparency="false" color2="255,255,255" color1="255,102,102" />
+        <TextStyle id="11" orientation="0" color="102,0,0" backgroundColor="255,255,255" font="Lucida Sans,1,11" isBackgroundColored="false" />
+        <ShapeBorder id="12" bottom="5" left="5" right="5" top="5" />
+        <ForegroundStyle id="13" dashStyle="PLAIN_STROKE" color="204,0,51" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.6" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <SelectedForegroundStyle id="14" dashStyle="PLAIN_STROKE" color="204,0,51" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.6" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <FocusedColorGradientBackgroundStyle id="15" direction="SOUTH_EAST_NORTH_WEST" transparencyLevel="0.5" useTransparency="false" color2="255,255,255" color1="255,102,102" />
+        <RectangleShape id="16" arcSize="20.0" isRounded="true" />
+        <ShadowStyle id="17" shadowDepth="2" shadowBlur="4" drawShadow="true" shadowDarkness="150" />
+        <ColorGradientBackgroundStyle id="18" direction="SOUTH_EAST_NORTH_WEST" transparencyLevel="0.5" useTransparency="false" color2="255,255,255" color1="255,102,102" />
+      </ShapeGraphicalRepresentation>
+      <GRSpec id="19" featureName="label" flexoID="107" readOnly="false" userID="FLX" useSpecificDescriptions="false" value="conceptScheme.uriName" />
+      <TypedDiagramModelSlot idref="20" />
+    </ShapeRole>
+    <DropScheme id="21" width="800" userID="FLX" useSpecificDescriptions="false" label="DropConceptSchemeAtTopLevel" definePopupDefaultSize="false" height="600" flexoID="6" skipConfirmationPanel="true" name="DropConceptSchemeAtTopLevel" target="top">
+      <TextFieldParameter id="22" flexoID="109" isRequired="false" name="conceptSchemeName" userID="FLX" useSpecificDescriptions="false" label="concept_scheme_name" />
+      <URIParameter id="23" useSpecificDescriptions="false" userID="FLX" label="uri" base="parameters.conceptSchemeName" flexoID="110" isRequired="true" name="conceptSchemeURI">
+        <OWLModelSlot idref="6" />
       </URIParameter>
-      <TextFieldParameter id="6" name="preferedLabel" label="preferred_label" defaultValue="" usePaletteLabelAsDefaultValue="false" conditional="" isRequired="false" userID="FLX">
-        <description userID="FLX">Allow to enter prefered label</description>
-      </TextFieldParameter>
-      <TextFieldParameter id="7" name="alternativeLabel" label="alternative_label" defaultValue="" usePaletteLabelAsDefaultValue="false" conditional="" isRequired="false" userID="FLX">
-        <description userID="FLX">Allow to enter alternative label</description>
-      </TextFieldParameter>
-      <AddOWLIndividual id="8" conditional="" assignation="conceptScheme" individualName="parameters.conceptSchemeURI" userID="FLX">
-        <DataPropertyAssertion id="9" dataPropertyURI="http://www.w3.org/2000/01/rdf-schema#label" value="parameters.conceptSchemeName" conditional="" userID="FLX" />
-        <DataPropertyAssertion id="10" dataPropertyURI="http://www.w3.org/2004/02/skos/core#prefLabel" value="parameters.preferedLabel" conditional="" userID="FLX" />
-        <DataPropertyAssertion id="11" dataPropertyURI="http://www.w3.org/2004/02/skos/core#altLabel" value="parameters.alternativeLabel" conditional="" userID="FLX" />
-        <OWLModelSlot id="12" isRequired="false" isReadOnly="false" metaModelURI="http://www.w3.org/2004/02/skos/core" name="owl" userID="FLX" />
+      <TextFieldParameter id="24" flexoID="111" isRequired="false" name="preferedLabel" userID="FLX" useSpecificDescriptions="false" label="preferred_label" />
+      <TextFieldParameter id="25" flexoID="112" isRequired="false" name="alternativeLabel" userID="FLX" useSpecificDescriptions="false" label="alternative_label" />
+      <AddOWLIndividual id="26" useSpecificDescriptions="false" userID="FLX" individualName="parameters.conceptSchemeURI" flexoID="46" assignation="conceptScheme">
+        <OWLModelSlot idref="6" />
+        <DataPropertyAssertion id="27" flexoID="47" dataPropertyURI="http://www.w3.org/2000/01/rdf-schema#label" userID="FLX" useSpecificDescriptions="false" value="parameters.conceptSchemeName" />
+        <DataPropertyAssertion id="28" flexoID="48" dataPropertyURI="http://www.w3.org/2004/02/skos/core#prefLabel" userID="FLX" useSpecificDescriptions="false" value="parameters.preferedLabel" />
+        <DataPropertyAssertion id="29" flexoID="49" dataPropertyURI="http://www.w3.org/2004/02/skos/core#altLabel" userID="FLX" useSpecificDescriptions="false" value="parameters.alternativeLabel" />
       </AddOWLIndividual>
-      <AddShape id="13" container="topLevel" extendParentBoundsToHostThisShape="false" conditional="" assignation="shape" userID="FLX">
-        <TypedDiagramModelSlot idref="348" userID="FLX" />
+      <AddShape id="30" extendParentBoundsToHostThisShape="false" userID="FLX" useSpecificDescriptions="false" flexoID="50" container="topLevel" assignation="shape">
+        <TypedDiagramModelSlot idref="20" />
       </AddShape>
     </DropScheme>
-    <OWLIndividualRole id="14" name="conceptScheme" ontologicType="http://www.w3.org/2004/02/skos/core#ConceptScheme" userID="FLX" />
-    <ShapeRole id="15" name="shape" exampleLabel="label" userID="FLX">
-      <ShapeGraphicalRepresentation id="16" x="175.0" y="40.0" width="143.0" height="41.14754098360656" minimalWidth="0.0" minimalHeight="0.0" maximalWidth="Infinity" maximalHeight="Infinity" relativeTextX="0.5" relativeTextY="0.5" lineWrap="false" locationConstraints="FREELY_MOVABLE" dimensionConstraints="FREELY_RESIZABLE" adjustMinimalWidthToLabelWidth="true" adjustMinimalHeightToLabelHeight="true" adjustMaximalWidthToLabelWidth="false" adjustMaximalHeightToLabelHeight="false" hasSelectedForeground="false" hasSelectedBackground="false" hasFocusedForeground="false" hasFocusedBackground="false" isFloatingLabel="false" allowToLeaveBounds="true" xConstraints="" yConstraints="" widthConstraints="" heightConstraints="" identifier="object_0" layer="1" hasText="true" text="label" isMultilineAllowed="false" continuousTextEditing="true" absoluteTextX="0.0" absoluteTextY="0.0" paragraphAlignment="CENTER" horizontalTextAlignment="CENTER" verticalTextAlignment="MIDDLE" isSelectable="true" isFocusable="true" drawControlPointsWhenFocused="true" drawControlPointsWhenSelected="true" isReadOnly="false" isLabelEditable="true" isVisible="true" userID="FLX">
-        <ForegroundStyle id="17" noStroke="false" color="204,0,51" lineWidth="1.6" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <ColorGradientBackgroundStyle id="18" color1="255,102,102" color2="255,255,255" direction="SOUTH_EAST_NORTH_WEST" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <SelectedForegroundStyle id="19" noStroke="false" color="204,0,51" lineWidth="1.6" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <SelectedColorGradientBackgroundStyle id="20" color1="255,102,102" color2="255,255,255" direction="SOUTH_EAST_NORTH_WEST" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <FocusedForegroundStyle id="21" noStroke="false" color="204,0,51" lineWidth="1.6" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <FocusedColorGradientBackgroundStyle id="22" color1="255,102,102" color2="255,255,255" direction="SOUTH_EAST_NORTH_WEST" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <ShapeBorder id="23" top="5" bottom="5" left="5" right="5" userID="FLX" />
-        <RectangleShape id="24" isRounded="true" arcSize="20.0" userID="FLX" />
-        <ShadowStyle id="25" drawShadow="true" shadowDarkness="150" shadowDepth="2" shadowBlur="4" userID="FLX" />
-        <TextStyle id="26" font="Lucida Sans,1,11" color="102,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
-      </ShapeGraphicalRepresentation>
-      <GRSpec id="27" featureName="label" value="conceptScheme.uriName" readOnly="false" userID="FLX" />
-    </ShapeRole>
-    <Inspector id="28" inspectorTitle="Concept Scheme" userID="FLX">
-      <TextField id="29" label="uri" name="uri" readOnly="false" data="conceptScheme.uriName" conditional="" userID="FLX" />
-      <TextField id="30" label="label" name="label" readOnly="false" data="conceptScheme.label.asString" conditional="" userID="FLX" />
-    </Inspector>
   </FlexoConcept>
-  <FlexoConcept id="31" name="Concept" userID="FLX">
-    <description userID="FLX">Allows to define concept</description>
-    <DropScheme id="32" target="top" name="DropConceptAtTopLevel" label="DropConceptAtTopLevel" skipConfirmationPanel="true" definePopupDefaultSize="false" width="800" height="600" userID="FLX">
-      <TextFieldParameter id="33" name="conceptName" label="concept_name" defaultValue="" usePaletteLabelAsDefaultValue="true" conditional="" isRequired="false" userID="FLX">
-        <description userID="FLX">Allow to enter concept scheme name while dropping concept scheme</description>
-      </TextFieldParameter>
-      <URIParameter id="34" base="parameters.conceptName" name="conceptURI" label="uri" defaultValue="" usePaletteLabelAsDefaultValue="false" conditional="" isRequired="true" userID="FLX">
-        <description userID="FLX">Allow to enter (unique) name used in Ontology</description>
+  <FlexoConcept id="31" useSpecificDescriptions="false" userID="FLX" flexoID="53" name="Concept">
+    <Inspector id="32" flexoID="8" userID="FLX" useSpecificDescriptions="false" inspectorTitle="Concept">
+      <TextField id="33" flexoID="11" name="uri" useSpecificDescriptions="false" userID="FLX" readOnly="false" data="concept.uriName" label="uri">
+        <Inspector idref="32" />
+      </TextField>
+      <TextField id="34" flexoID="12" name="label" useSpecificDescriptions="false" userID="FLX" readOnly="true" data="concept.label.toString" label="label">
+        <Inspector idref="32" />
+      </TextField>
+    </Inspector>
+    <OWLIndividualRole id="35" cloningStratgey="Clone" flexoID="51" name="concept" useSpecificDescriptions="false" userID="FLX" ontologicType="http://www.w3.org/2004/02/skos/core#Concept">
+      <OWLModelSlot idref="6" />
+    </OWLIndividualRole>
+    <ShapeRole id="36" exampleLabel="label" userID="FLX" useSpecificDescriptions="false" cloningStratgey="Clone" flexoID="52" name="shape">
+      <ShapeGraphicalRepresentation id="37" minimalHeight="0.0" relativeTextX="0.5" transparency="1.0" height="34.26229508196721" drawControlPointsWhenFocused="true" hasFocusedBackground="false" verticalTextAlignment="MIDDLE" adjustMinimalWidthToLabelWidth="true" width="99.0" hasFocusedForeground="false" hasSelectedBackground="false" allowToLeaveBounds="true" isFocusable="true" drawControlPointsWhenSelected="true" isSelectable="true" isLabelEditable="true" relativeTextY="0.5" continuousTextEditing="true" minimalWidth="0.0" identifier="object_0" lineWrap="false" locationConstraints="FREELY_MOVABLE" adjustMinimalHeightToLabelHeight="true" horizontalTextAlignment="CENTER" adaptBoundsToContents="false" maximalHeight="Infinity" isVisible="true" dimensionConstraints="FREELY_RESIZABLE" isReadOnly="false" adjustMaximalHeightToLabelHeight="false" isFloatingLabel="false" hasSelectedForeground="false" paragraphAlignment="CENTER" layer="1" absoluteTextX="0.0" absoluteTextY="0.0" adjustMaximalWidthToLabelWidth="false" isMultilineAllowed="false" y="39.73770491803279" maximalWidth="Infinity" x="161.0">
+        <FocusedForegroundStyle id="38" dashStyle="PLAIN_STROKE" color="102,102,255" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <SelectedColorGradientBackgroundStyle id="39" direction="SOUTH_EAST_NORTH_WEST" transparencyLevel="0.5" useTransparency="false" color2="255,255,255" color1="204,204,255" />
+        <TextStyle id="40" orientation="0" color="0,0,102" backgroundColor="255,255,255" font="Lucida Sans,0,11" isBackgroundColored="false" />
+        <ShapeBorder id="41" bottom="5" left="5" right="5" top="5" />
+        <ForegroundStyle id="42" dashStyle="PLAIN_STROKE" color="102,102,255" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <SelectedForegroundStyle id="43" dashStyle="PLAIN_STROKE" color="102,102,255" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <FocusedColorGradientBackgroundStyle id="44" direction="SOUTH_EAST_NORTH_WEST" transparencyLevel="0.5" useTransparency="false" color2="255,255,255" color1="204,204,255" />
+        <RectangleShape id="45" arcSize="20.0" isRounded="true" />
+        <ShadowStyle id="46" shadowDepth="2" shadowBlur="4" drawShadow="true" shadowDarkness="150" />
+        <ColorGradientBackgroundStyle id="47" direction="SOUTH_EAST_NORTH_WEST" transparencyLevel="0.5" useTransparency="false" color2="255,255,255" color1="204,204,255" />
+      </ShapeGraphicalRepresentation>
+      <GRSpec id="48" featureName="label" flexoID="113" readOnly="false" userID="FLX" useSpecificDescriptions="false" value="concept.uriName" />
+      <TypedDiagramModelSlot idref="20" />
+    </ShapeRole>
+    <DropScheme id="49" width="800" userID="FLX" useSpecificDescriptions="false" label="DropConceptAtTopLevel" definePopupDefaultSize="false" height="600" flexoID="13" skipConfirmationPanel="true" name="DropConceptAtTopLevel" target="top">
+      <TextFieldParameter id="50" flexoID="114" isRequired="false" name="conceptName" userID="FLX" useSpecificDescriptions="false" label="concept_name" />
+      <URIParameter id="51" useSpecificDescriptions="false" userID="FLX" label="uri" base="parameters.conceptName" flexoID="115" isRequired="true" name="conceptURI">
+        <OWLModelSlot idref="6" />
       </URIParameter>
-      <IndividualParameter id="35" conceptURI="http://www.w3.org/2004/02/skos/core#ConceptScheme" conceptValue="" name="conceptScheme" label="concept_scheme" defaultValue="" usePaletteLabelAsDefaultValue="false" conditional="" isRequired="false" userID="FLX">
-        <description userID="FLX">Allow to specify concept scheme</description>
-      </IndividualParameter>
-      <TextFieldParameter id="36" name="preferedLabel" label="preferred_label" defaultValue="" usePaletteLabelAsDefaultValue="false" conditional="" isRequired="false" userID="FLX">
-        <description userID="FLX">Allow to enter prefered label</description>
-      </TextFieldParameter>
-      <TextFieldParameter id="37" name="alternativeLabel" label="alternative_label" defaultValue="" usePaletteLabelAsDefaultValue="false" conditional="" isRequired="false" userID="FLX">
-        <description userID="FLX">Allow to enter alternative label</description>
-      </TextFieldParameter>
-      <AddOWLIndividual id="38" conditional="" assignation="concept" individualName="parameters.conceptURI" userID="FLX">
-        <DataPropertyAssertion id="39" dataPropertyURI="http://www.w3.org/2000/01/rdf-schema#label" value="parameters.conceptName" conditional="" userID="FLX" />
-        <DataPropertyAssertion id="40" dataPropertyURI="http://www.w3.org/2004/02/skos/core#prefLabel" value="parameters.preferedLabel" conditional="" userID="FLX" />
-        <DataPropertyAssertion id="41" dataPropertyURI="http://www.w3.org/2004/02/skos/core#altLabel" value="parameters.alternativeLabel" conditional="" userID="FLX" />
-        <ObjectPropertyAssertion id="42" objectPropertyURI="http://www.w3.org/2004/02/skos/core#inScheme" object="conceptScheme" conditional="" userID="FLX" />
-        <OWLModelSlot idref="12" userID="FLX" />
+      <IndividualParameter id="52" useSpecificDescriptions="false" userID="FLX" label="concept_scheme" conceptURI="http://www.w3.org/2004/02/skos/core#ConceptScheme" flexoID="116" isRequired="false" name="conceptScheme" />
+      <TextFieldParameter id="53" flexoID="117" isRequired="false" name="preferedLabel" userID="FLX" useSpecificDescriptions="false" label="preferred_label" />
+      <TextFieldParameter id="54" flexoID="118" isRequired="false" name="alternativeLabel" userID="FLX" useSpecificDescriptions="false" label="alternative_label" />
+      <AddOWLIndividual id="55" useSpecificDescriptions="false" userID="FLX" individualName="parameters.conceptURI" flexoID="55" assignation="concept">
+        <ObjectPropertyAssertion id="56" flexoID="54" userID="FLX" useSpecificDescriptions="false" object="parameters.conceptScheme" objectPropertyURI="http://www.w3.org/2004/02/skos/core#inScheme" />
+        <OWLModelSlot idref="6" />
+        <DataPropertyAssertion id="57" flexoID="56" dataPropertyURI="http://www.w3.org/2000/01/rdf-schema#label" userID="FLX" useSpecificDescriptions="false" value="parameters.conceptName" />
+        <DataPropertyAssertion id="58" flexoID="57" dataPropertyURI="http://www.w3.org/2004/02/skos/core#prefLabel" userID="FLX" useSpecificDescriptions="false" value="parameters.preferedLabel" />
+        <DataPropertyAssertion id="59" flexoID="58" dataPropertyURI="http://www.w3.org/2004/02/skos/core#altLabel" userID="FLX" useSpecificDescriptions="false" value="parameters.alternativeLabel" />
       </AddOWLIndividual>
-      <AddShape id="43" container="topLevel" extendParentBoundsToHostThisShape="false" conditional="" assignation="shape" userID="FLX">
-        <TypedDiagramModelSlot idref="348" userID="FLX" />
+      <AddShape id="60" extendParentBoundsToHostThisShape="false" userID="FLX" useSpecificDescriptions="false" flexoID="59" container="topLevel" assignation="shape">
+        <TypedDiagramModelSlot idref="20" />
       </AddShape>
     </DropScheme>
-    <OWLIndividualRole id="44" name="concept" ontologicType="http://www.w3.org/2004/02/skos/core#Concept" userID="FLX" />
-    <ShapeRole id="45" name="shape" exampleLabel="label" userID="FLX">
-      <ShapeGraphicalRepresentation id="46" x="161.0" y="39.73770491803279" width="99.0" height="34.26229508196721" minimalWidth="0.0" minimalHeight="0.0" maximalWidth="Infinity" maximalHeight="Infinity" relativeTextX="0.5" relativeTextY="0.5" lineWrap="false" locationConstraints="FREELY_MOVABLE" dimensionConstraints="FREELY_RESIZABLE" adjustMinimalWidthToLabelWidth="true" adjustMinimalHeightToLabelHeight="true" adjustMaximalWidthToLabelWidth="false" adjustMaximalHeightToLabelHeight="false" hasSelectedForeground="false" hasSelectedBackground="false" hasFocusedForeground="false" hasFocusedBackground="false" isFloatingLabel="false" allowToLeaveBounds="true" xConstraints="" yConstraints="" widthConstraints="" heightConstraints="" identifier="object_0" layer="1" hasText="true" isMultilineAllowed="false" continuousTextEditing="true" absoluteTextX="0.0" absoluteTextY="0.0" paragraphAlignment="CENTER" horizontalTextAlignment="CENTER" verticalTextAlignment="MIDDLE" isSelectable="true" isFocusable="true" drawControlPointsWhenFocused="true" drawControlPointsWhenSelected="true" isReadOnly="false" isLabelEditable="true" isVisible="true" userID="FLX">
-        <ForegroundStyle id="47" noStroke="false" color="102,102,255" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <ColorGradientBackgroundStyle id="48" color1="204,204,255" color2="255,255,255" direction="SOUTH_EAST_NORTH_WEST" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <SelectedForegroundStyle id="49" noStroke="false" color="102,102,255" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <SelectedColorGradientBackgroundStyle id="50" color1="204,204,255" color2="255,255,255" direction="SOUTH_EAST_NORTH_WEST" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <FocusedForegroundStyle id="51" noStroke="false" color="102,102,255" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <FocusedColorGradientBackgroundStyle id="52" color1="204,204,255" color2="255,255,255" direction="SOUTH_EAST_NORTH_WEST" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <ShapeBorder id="53" top="5" bottom="5" left="5" right="5" userID="FLX" />
-        <RectangleShape id="54" isRounded="true" arcSize="20.0" userID="FLX" />
-        <ShadowStyle id="55" drawShadow="true" shadowDarkness="150" shadowDepth="2" shadowBlur="4" userID="FLX" />
-        <TextStyle id="56" font="Lucida Sans,0,11" color="0,0,102" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
-      </ShapeGraphicalRepresentation>
-      <GRSpec id="57" featureName="label" value="concept.uriName" readOnly="false" userID="FLX" />
-    </ShapeRole>
-    <Inspector id="58" inspectorTitle="Concept" userID="FLX">
-      <TextField id="59" label="uri" name="uri" readOnly="false" data="concept.uriName" conditional="" userID="FLX" />
-      <TextField id="60" label="label" name="label" readOnly="false" data="concept.label.asString" conditional="" userID="FLX" />
-    </Inspector>
   </FlexoConcept>
-  <FlexoConcept id="61" name="ConceptToConceptSchemeRelationship" userID="FLX">
-    <description userID="FLX">Allows to define link between a concept and a concept scheme</description>
-    <LinkScheme id="62" fromTarget="http://www.agilebirds.com/openflexo/ViewPoints/SKOS/SKOSThesaurusEditor.owl#Concept" toTarget="http://www.agilebirds.com/openflexo/ViewPoints/SKOS/SKOSThesaurusEditor.owl#ConceptScheme" isAvailableWithFloatingPalette="true" northDirectionSupported="true" eastDirectionSupported="true" southDirectionSupported="true" westDirectionSupported="true" name="LinkAConceptToAConceptScheme" label="LinkAConceptToAConceptScheme" skipConfirmationPanel="true" definePopupDefaultSize="false" width="800" height="600" userID="FLX">
-      <CheckBoxParameter id="63" name="makeInverseRelationship" label="make_inverse_relationship" defaultValue="true" usePaletteLabelAsDefaultValue="false" conditional="" isRequired="false" userID="FLX">
-        <description userID="FLX">When set to true, indicates that inverse relationship must be defined</description>
-      </CheckBoxParameter>
-      <AddObjectPropertyStatement id="64" object="toTarget.conceptScheme" conditional="" assignation="topConceptOf" subject="fromTarget.concept" userID="FLX" />
-      <AddObjectPropertyStatement id="65" object="fromTarget.concept" conditional="(parameters.makeInverseRelationship = true)" assignation="hasTopConcept" subject="toTarget.conceptScheme" userID="FLX" />
-      <AddConnector id="66" fromShape="fromTarget.shape" toShape="toTarget.shape" conditional="" assignation="connector" userID="FLX">
-        <TypedDiagramModelSlot idref="348" userID="FLX" />
+  <FlexoConcept id="61" useSpecificDescriptions="false" userID="FLX" flexoID="63" name="ConceptToConceptSchemeRelationship">
+    <Inspector id="62" flexoID="15" userID="FLX" useSpecificDescriptions="false" inspectorTitle="Top Concept Relationship">
+      <TextField id="63" flexoID="18" name="concept_scheme" useSpecificDescriptions="false" userID="FLX" readOnly="true" data="topConceptOf.object.uriName" label="concept_scheme">
+        <Inspector idref="62" />
+      </TextField>
+      <TextField id="64" flexoID="19" name="concept" useSpecificDescriptions="false" userID="FLX" readOnly="true" data="topConceptOf.subject.uriName" label="concept">
+        <Inspector idref="62" />
+      </TextField>
+    </Inspector>
+    <ObjectPropertyStatementRole id="65" cloningStratgey="Clone" flexoID="60" name="topConceptOf" useSpecificDescriptions="false" userID="FLX" objectProperty="http://www.w3.org/2004/02/skos/core#topConceptOf">
+      <OWLModelSlot idref="6" />
+    </ObjectPropertyStatementRole>
+    <ObjectPropertyStatementRole id="66" cloningStratgey="Clone" flexoID="61" name="hasTopConcept" useSpecificDescriptions="false" userID="FLX" objectProperty="http://www.w3.org/2004/02/skos/core#hasTopConcept">
+      <OWLModelSlot idref="6" />
+    </ObjectPropertyStatementRole>
+    <ConnectorRole id="67" exampleLabel="label" userID="FLX" useSpecificDescriptions="false" cloningStratgey="Clone" flexoID="62" name="connector">
+      <ConnectorGraphicalRepresentation id="68" lineWrap="false" horizontalTextAlignment="CENTER" transparency="1.0" drawControlPointsWhenFocused="true" isVisible="true" isReadOnly="false" paragraphAlignment="CENTER" hasSelectedForeground="false" verticalTextAlignment="MIDDLE" hasFocusedForeground="false" applyForegroundToSymbols="true" layer="64" absoluteTextX="1.0" absoluteTextY="-13.0" isFocusable="true" drawControlPointsWhenSelected="true" isSelectable="true" isLabelEditable="true" continuousTextEditing="true" isMultilineAllowed="false" identifier="object_2">
+        <SelectedForegroundStyle id="69" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <FocusedForegroundStyle id="70" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <LineConnectorSpecification id="71" relativeMiddleSymbolLocation="0.5" startSymbolSize="10.0" middleSymbol="NONE" lineConnectorType="MINIMAL_LENGTH" middleSymbolSize="10.0" endSymbolSize="10.0" startSymbol="NONE" endSymbol="NONE" />
+        <TextStyle id="72" orientation="0" color="0,0,0" backgroundColor="255,255,255" font="Lucida Sans,0,9" isBackgroundColored="false" />
+        <ForegroundStyle id="73" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+      </ConnectorGraphicalRepresentation>
+      <GRSpec id="74" featureName="label" flexoID="119" readOnly="true" userID="FLX" useSpecificDescriptions="false" value="&quot;top concept of&quot;" />
+      <TypedDiagramModelSlot idref="20" />
+    </ConnectorRole>
+    <LinkScheme id="75" northDirectionSupported="true" fromTarget="http://www.agilebirds.com/openflexo/ViewPoints/SKOS/SKOSThesaurusEditor.owl#Concept" toTarget="http://www.agilebirds.com/openflexo/ViewPoints/SKOS/SKOSThesaurusEditor.owl#ConceptScheme" width="800" userID="FLX" useSpecificDescriptions="false" label="LinkAConceptToAConceptScheme" definePopupDefaultSize="false" southDirectionSupported="true" westDirectionSupported="true" isAvailableWithFloatingPalette="true" flexoID="20" height="600" skipConfirmationPanel="true" name="LinkAConceptToAConceptScheme" eastDirectionSupported="true">
+      <CheckBoxParameter id="76" flexoID="120" isRequired="false" name="makeInverseRelationship" userID="FLX" useSpecificDescriptions="false" label="make_inverse_relationship" defaultValue="true" />
+      <AddObjectPropertyStatement id="77" subject="fromTarget.concept" userID="FLX" useSpecificDescriptions="false" object="toTarget.conceptScheme" flexoID="64" assignation="topConceptOf" />
+      <AddObjectPropertyStatement id="78" subject="toTarget.conceptScheme" userID="FLX" useSpecificDescriptions="false" object="fromTarget.concept" flexoID="65" assignation="hasTopConcept" conditional="(parameters.makeInverseRelationship = true)" />
+      <AddConnector id="79" userID="FLX" useSpecificDescriptions="false" flexoID="66" assignation="connector" fromShape="fromTarget.shape" toShape="toTarget.shape">
+        <TypedDiagramModelSlot idref="20" />
       </AddConnector>
     </LinkScheme>
-    <ObjectPropertyStatementRole id="67" objectProperty="http://www.w3.org/2004/02/skos/core#topConceptOf" name="topConceptOf" userID="FLX" />
-    <ObjectPropertyStatementRole id="68" objectProperty="http://www.w3.org/2004/02/skos/core#hasTopConcept" name="hasTopConcept" userID="FLX" />
-    <ConnectorRole id="69" name="connector" exampleLabel="label" userID="FLX">
-      <ConnectorGraphicalRepresentation id="70" hasSelectedForeground="false" hasFocusedForeground="false" startSymbol="NONE" endSymbol="ARROW" middleSymbol="NONE" startSymbolSize="10.0" endSymbolSize="10.0" middleSymbolSize="10.0" relativeMiddleSymbolLocation="0.5" applyForegroundToSymbols="true" identifier="object_2" layer="64" hasText="true" isMultilineAllowed="false" continuousTextEditing="true" absoluteTextX="1.0" absoluteTextY="-13.0" paragraphAlignment="CENTER" horizontalTextAlignment="CENTER" verticalTextAlignment="MIDDLE" isSelectable="true" isFocusable="true" drawControlPointsWhenFocused="true" drawControlPointsWhenSelected="true" isReadOnly="false" isLabelEditable="true" isVisible="true" userID="FLX">
-        <ForegroundStyle id="71" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <SelectedForegroundStyle id="72" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <FocusedForegroundStyle id="73" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <LineConnectorSpecification id="74" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
-        <TextStyle id="75" font="Lucida Sans,0,9" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
-      </ConnectorGraphicalRepresentation>
-      <GRSpec id="97" featureName="label" value="&quot;top concept of&quot;" readOnly="true" userID="FLX" />
-    </ConnectorRole>
-    <Inspector id="98" inspectorTitle="Top Concept Relationship" userID="FLX">
-      <TextField id="99" label="concept_scheme" name="concept_scheme" readOnly="true" data="topConceptOf.object.uriName" conditional="" userID="FLX" />
-      <TextField id="100" label="concept" name="concept" readOnly="true" data="topConceptOf.subject.uriName" conditional="" userID="FLX" />
-    </Inspector>
   </FlexoConcept>
-  <FlexoConcept id="101" name="ConceptSpecialization" userID="FLX">
-    <description userID="FLX">Allows to define link between a concept and a other concept with a specialization semantic</description>
-    <LinkScheme id="102" fromTarget="http://www.agilebirds.com/openflexo/ViewPoints/SKOS/SKOSThesaurusEditor.owl#Concept" toTarget="http://www.agilebirds.com/openflexo/ViewPoints/SKOS/SKOSThesaurusEditor.owl#Concept" isAvailableWithFloatingPalette="true" northDirectionSupported="true" eastDirectionSupported="true" southDirectionSupported="true" westDirectionSupported="true" name="SpecializeAConcept" label="SpecializeAConcept" skipConfirmationPanel="true" definePopupDefaultSize="false" width="800" height="600" userID="FLX">
-      <CheckBoxParameter id="103" name="match" label="match" defaultValue="false" usePaletteLabelAsDefaultValue="false" conditional="" isRequired="false" userID="FLX">
-        <description userID="FLX">When set to true, indicates that broadMatch property should be used</description>
-      </CheckBoxParameter>
-      <CheckBoxParameter id="104" name="makeInverseRelationship" label="make_inverse_relationship" defaultValue="true" usePaletteLabelAsDefaultValue="false" conditional="" isRequired="false" userID="FLX">
-        <description userID="FLX">When set to true, indicates that inverse relationship must be defined</description>
-      </CheckBoxParameter>
-      <AddObjectPropertyStatement id="105" object="toTarget.concept" conditional="(parameters.match = false)" assignation="broader" subject="fromTarget.concept" userID="FLX" />
-      <AddObjectPropertyStatement id="106" object="toTarget.concept" conditional="(parameters.match = true)" assignation="broadMatch" subject="fromTarget.concept" userID="FLX" />
-      <AddObjectPropertyStatement id="107" object="fromTarget.concept" conditional="((parameters.match = false) &amp; (parameters.makeInverseRelationship = true))" assignation="narrower" subject="toTarget.concept" userID="FLX" />
-      <AddObjectPropertyStatement id="108" object="fromTarget.concept" conditional="((parameters.match = true) &amp; (parameters.makeInverseRelationship = true))" assignation="narrowMatch" subject="toTarget.concept" userID="FLX" />
-      <AddConnector id="109" fromShape="fromTarget.shape" toShape="toTarget.shape" conditional="(parameters.match = false)" assignation="broaderConnector" userID="FLX">
-        <TypedDiagramModelSlot idref="348" userID="FLX" />
+  <FlexoConcept id="80" useSpecificDescriptions="false" userID="FLX" flexoID="73" name="ConceptSpecialization">
+    <Inspector id="81" flexoID="22" userID="FLX" useSpecificDescriptions="false" inspectorTitle="Concept specialization">
+      <TextField id="82" flexoID="25" name="general" useSpecificDescriptions="false" userID="FLX" readOnly="false" data="broader.object.uriName" label="general_concept">
+        <Inspector idref="81" />
+      </TextField>
+      <TextField id="83" flexoID="26" name="specialized" useSpecificDescriptions="false" userID="FLX" readOnly="false" data="broader.subject.uriName" label="specialized_concept">
+        <Inspector idref="81" />
+      </TextField>
+    </Inspector>
+    <ObjectPropertyStatementRole id="84" cloningStratgey="Clone" flexoID="67" name="broader" useSpecificDescriptions="false" userID="FLX" objectProperty="http://www.w3.org/2004/02/skos/core#broader">
+      <OWLModelSlot idref="6" />
+    </ObjectPropertyStatementRole>
+    <ObjectPropertyStatementRole id="85" cloningStratgey="Clone" flexoID="68" name="broadMatch" useSpecificDescriptions="false" userID="FLX" objectProperty="http://www.w3.org/2004/02/skos/core#broadMatch">
+      <OWLModelSlot idref="6" />
+    </ObjectPropertyStatementRole>
+    <ObjectPropertyStatementRole id="86" cloningStratgey="Clone" flexoID="69" name="narrower" useSpecificDescriptions="false" userID="FLX" objectProperty="http://www.w3.org/2004/02/skos/core#narrower">
+      <OWLModelSlot idref="6" />
+    </ObjectPropertyStatementRole>
+    <ObjectPropertyStatementRole id="87" cloningStratgey="Clone" flexoID="70" name="narrowMatch" useSpecificDescriptions="false" userID="FLX" objectProperty="http://www.w3.org/2004/02/skos/core#narrowMatch">
+      <OWLModelSlot idref="6" />
+    </ObjectPropertyStatementRole>
+    <ConnectorRole id="88" exampleLabel="label" userID="FLX" useSpecificDescriptions="false" cloningStratgey="Clone" flexoID="71" name="broaderConnector">
+      <ConnectorGraphicalRepresentation id="89" lineWrap="false" horizontalTextAlignment="CENTER" transparency="1.0" drawControlPointsWhenFocused="true" isVisible="true" isReadOnly="false" paragraphAlignment="CENTER" hasSelectedForeground="false" verticalTextAlignment="MIDDLE" hasFocusedForeground="false" applyForegroundToSymbols="true" layer="64" absoluteTextX="-4.0" absoluteTextY="-13.0" isFocusable="true" drawControlPointsWhenSelected="true" isSelectable="true" isLabelEditable="true" continuousTextEditing="true" isMultilineAllowed="false" identifier="object_2">
+        <SelectedForegroundStyle id="90" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <FocusedForegroundStyle id="91" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <LineConnectorSpecification id="92" relativeMiddleSymbolLocation="0.5" startSymbolSize="10.0" middleSymbol="NONE" lineConnectorType="MINIMAL_LENGTH" middleSymbolSize="10.0" endSymbolSize="10.0" startSymbol="NONE" endSymbol="NONE" />
+        <TextStyle id="93" orientation="0" color="0,0,0" backgroundColor="255,255,255" font="Lucida Sans,0,9" isBackgroundColored="false" />
+        <ForegroundStyle id="94" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+      </ConnectorGraphicalRepresentation>
+      <GRSpec id="95" featureName="label" flexoID="121" readOnly="true" userID="FLX" useSpecificDescriptions="false" value="&quot;broader&quot;" />
+      <TypedDiagramModelSlot idref="20" />
+    </ConnectorRole>
+    <ConnectorRole id="96" exampleLabel="label" userID="FLX" useSpecificDescriptions="false" cloningStratgey="Clone" flexoID="72" name="broadMatchConnector">
+      <ConnectorGraphicalRepresentation id="97" lineWrap="false" horizontalTextAlignment="CENTER" transparency="1.0" drawControlPointsWhenFocused="true" isVisible="true" isReadOnly="false" paragraphAlignment="CENTER" hasSelectedForeground="false" verticalTextAlignment="MIDDLE" hasFocusedForeground="false" applyForegroundToSymbols="true" layer="64" absoluteTextX="-5.0" absoluteTextY="-13.0" isFocusable="true" drawControlPointsWhenSelected="true" isSelectable="true" isLabelEditable="true" continuousTextEditing="true" isMultilineAllowed="false" identifier="object_5">
+        <SelectedForegroundStyle id="98" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <FocusedForegroundStyle id="99" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <LineConnectorSpecification id="100" relativeMiddleSymbolLocation="0.5" startSymbolSize="10.0" middleSymbol="NONE" lineConnectorType="MINIMAL_LENGTH" middleSymbolSize="10.0" endSymbolSize="10.0" startSymbol="NONE" endSymbol="NONE" />
+        <TextStyle id="101" orientation="0" color="0,0,0" backgroundColor="255,255,255" font="Lucida Sans,0,9" isBackgroundColored="false" />
+        <ForegroundStyle id="102" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+      </ConnectorGraphicalRepresentation>
+      <GRSpec id="103" featureName="label" flexoID="122" readOnly="true" userID="FLX" useSpecificDescriptions="false" value="&quot;broader match&quot;" />
+      <TypedDiagramModelSlot idref="20" />
+    </ConnectorRole>
+    <LinkScheme id="104" northDirectionSupported="true" fromTarget="http://www.agilebirds.com/openflexo/ViewPoints/SKOS/SKOSThesaurusEditor.owl#Concept" toTarget="http://www.agilebirds.com/openflexo/ViewPoints/SKOS/SKOSThesaurusEditor.owl#Concept" width="800" userID="FLX" useSpecificDescriptions="false" label="SpecializeAConcept" definePopupDefaultSize="false" southDirectionSupported="true" westDirectionSupported="true" isAvailableWithFloatingPalette="true" flexoID="27" height="600" skipConfirmationPanel="true" name="SpecializeAConcept" eastDirectionSupported="true">
+      <CheckBoxParameter id="105" flexoID="123" isRequired="false" name="match" userID="FLX" useSpecificDescriptions="false" label="match" defaultValue="false" />
+      <CheckBoxParameter id="106" flexoID="124" isRequired="false" name="makeInverseRelationship" userID="FLX" useSpecificDescriptions="false" label="make_inverse_relationship" defaultValue="true" />
+      <AddObjectPropertyStatement id="107" subject="fromTarget.concept" userID="FLX" useSpecificDescriptions="false" object="toTarget.concept" flexoID="74" assignation="broader" conditional="(parameters.match = false)" />
+      <AddObjectPropertyStatement id="108" subject="fromTarget.concept" userID="FLX" useSpecificDescriptions="false" object="toTarget.concept" flexoID="75" assignation="broadMatch" conditional="(parameters.match = true)" />
+      <AddObjectPropertyStatement id="109" subject="toTarget.concept" userID="FLX" useSpecificDescriptions="false" object="fromTarget.concept" flexoID="76" assignation="narrower" conditional="((parameters.match = false) &amp; (parameters.makeInverseRelationship = true))" />
+      <AddObjectPropertyStatement id="110" subject="toTarget.concept" userID="FLX" useSpecificDescriptions="false" object="fromTarget.concept" flexoID="77" assignation="narrowMatch" conditional="((parameters.match = true) &amp; (parameters.makeInverseRelationship = true))" />
+      <AddConnector id="111" userID="FLX" useSpecificDescriptions="false" flexoID="78" assignation="broaderConnector" fromShape="fromTarget.shape" conditional="(parameters.match = false)" toShape="toTarget.shape">
+        <TypedDiagramModelSlot idref="20" />
       </AddConnector>
-      <AddConnector id="110" fromShape="fromTarget.shape" toShape="toTarget.shape" conditional="(parameters.match = true)" assignation="broadMatchConnector" userID="FLX">
-        <TypedDiagramModelSlot idref="348" userID="FLX" />
+      <AddConnector id="112" userID="FLX" useSpecificDescriptions="false" flexoID="79" assignation="broadMatchConnector" fromShape="fromTarget.shape" conditional="(parameters.match = true)" toShape="toTarget.shape">
+        <TypedDiagramModelSlot idref="20" />
       </AddConnector>
     </LinkScheme>
-    <ObjectPropertyStatementRole id="111" objectProperty="http://www.w3.org/2004/02/skos/core#broader" name="broader" userID="FLX" />
-    <ObjectPropertyStatementRole id="112" objectProperty="http://www.w3.org/2004/02/skos/core#broadMatch" name="broadMatch" userID="FLX" />
-    <ObjectPropertyStatementRole id="113" objectProperty="http://www.w3.org/2004/02/skos/core#narrower" name="narrower" userID="FLX" />
-    <ObjectPropertyStatementRole id="114" objectProperty="http://www.w3.org/2004/02/skos/core#narrowMatch" name="narrowMatch" userID="FLX" />
-    <ConnectorRole id="115" name="broaderConnector" exampleLabel="label" userID="FLX">
-      <ConnectorGraphicalRepresentation id="116" hasSelectedForeground="false" hasFocusedForeground="false" startSymbol="NONE" endSymbol="ARROW" middleSymbol="NONE" startSymbolSize="10.0" endSymbolSize="10.0" middleSymbolSize="10.0" relativeMiddleSymbolLocation="0.5" applyForegroundToSymbols="true" identifier="object_2" layer="64" hasText="true" isMultilineAllowed="false" continuousTextEditing="true" absoluteTextX="-4.0" absoluteTextY="-13.0" paragraphAlignment="CENTER" horizontalTextAlignment="CENTER" verticalTextAlignment="MIDDLE" isSelectable="true" isFocusable="true" drawControlPointsWhenFocused="true" drawControlPointsWhenSelected="true" isReadOnly="false" isLabelEditable="true" isVisible="true" userID="FLX">
-        <ForegroundStyle id="117" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <SelectedForegroundStyle id="118" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <FocusedForegroundStyle id="119" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <LineConnectorSpecification id="120" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
-        <TextStyle id="121" font="Lucida Sans,0,9" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
-      </ConnectorGraphicalRepresentation>
-      <GRSpec id="142" featureName="label" value="&quot;broader&quot;" readOnly="true" userID="FLX" />
-    </ConnectorRole>
-    <ConnectorRole id="143" name="broadMatchConnector" exampleLabel="label" userID="FLX">
-      <ConnectorGraphicalRepresentation id="144" hasSelectedForeground="false" hasFocusedForeground="false" startSymbol="NONE" endSymbol="ARROW" middleSymbol="NONE" startSymbolSize="10.0" endSymbolSize="10.0" middleSymbolSize="10.0" relativeMiddleSymbolLocation="0.5" applyForegroundToSymbols="true" identifier="object_5" layer="64" hasText="true" isMultilineAllowed="false" continuousTextEditing="true" absoluteTextX="-5.0" absoluteTextY="-13.0" paragraphAlignment="CENTER" horizontalTextAlignment="CENTER" verticalTextAlignment="MIDDLE" isSelectable="true" isFocusable="true" drawControlPointsWhenFocused="true" drawControlPointsWhenSelected="true" isReadOnly="false" isLabelEditable="true" isVisible="true" userID="FLX">
-        <ForegroundStyle id="145" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <SelectedForegroundStyle id="146" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <FocusedForegroundStyle id="147" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <LineConnectorSpecification id="148" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
-        <TextStyle id="149" font="Lucida Sans,0,9" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
-      </ConnectorGraphicalRepresentation>
-      <GRSpec id="170" featureName="label" value="&quot;broader match&quot;" readOnly="true" userID="FLX" />
-    </ConnectorRole>
-    <Inspector id="171" inspectorTitle="Concept specialization" userID="FLX">
-      <TextField id="172" label="general_concept" name="general" readOnly="false" data="broader.object.uriName" conditional="" userID="FLX" />
-      <TextField id="173" label="specialized_concept" name="specialized" readOnly="false" data="broader.subject.uriName" conditional="" userID="FLX" />
-    </Inspector>
   </FlexoConcept>
-  <FlexoConcept id="174" name="ConceptGeneralization" userID="FLX">
-    <description userID="FLX">Allows to define link between a concept and a other concept with a specialization semantic</description>
-    <LinkScheme id="175" fromTarget="http://www.agilebirds.com/openflexo/ViewPoints/SKOS/SKOSThesaurusEditor.owl#Concept" toTarget="http://www.agilebirds.com/openflexo/ViewPoints/SKOS/SKOSThesaurusEditor.owl#Concept" isAvailableWithFloatingPalette="true" northDirectionSupported="true" eastDirectionSupported="true" southDirectionSupported="true" westDirectionSupported="true" name="GeneralizeAConcept" label="GeneralizeAConcept" skipConfirmationPanel="true" definePopupDefaultSize="false" width="800" height="600" userID="FLX">
-      <CheckBoxParameter id="176" name="match" label="match" defaultValue="false" usePaletteLabelAsDefaultValue="false" conditional="" isRequired="false" userID="FLX">
-        <description userID="FLX">When set to true, indicates that broadMatch property should be used</description>
-      </CheckBoxParameter>
-      <CheckBoxParameter id="177" name="makeInverseRelationship" label="make_inverse_relationship" defaultValue="true" usePaletteLabelAsDefaultValue="false" conditional="" isRequired="false" userID="FLX">
-        <description userID="FLX">When set to true, indicates that inverse relationship must be defined</description>
-      </CheckBoxParameter>
-      <AddObjectPropertyStatement id="178" object="toTarget.concept" conditional="(parameters.match = false)" assignation="narrower" subject="fromTarget.concept" userID="FLX" />
-      <AddObjectPropertyStatement id="179" object="toTarget.concept" conditional="(parameters.match = true)" assignation="narrowMatch" subject="fromTarget.concept" userID="FLX" />
-      <AddObjectPropertyStatement id="180" object="fromTarget.concept" conditional="((parameters.match = false) &amp; (parameters.makeInverseRelationship = true))" assignation="broader" subject="toTarget.concept" userID="FLX" />
-      <AddObjectPropertyStatement id="181" object="fromTarget.concept" conditional="((parameters.match = true) &amp; (parameters.makeInverseRelationship = true))" assignation="broadMatch" subject="toTarget.concept" userID="FLX" />
-      <AddConnector id="182" fromShape="fromTarget.shape" toShape="toTarget.shape" conditional="(parameters.match = false)" assignation="narrowerConnector" userID="FLX">
-        <TypedDiagramModelSlot idref="348" userID="FLX" />
+  <FlexoConcept id="113" useSpecificDescriptions="false" userID="FLX" flexoID="86" name="ConceptGeneralization">
+    <Inspector id="114" flexoID="29" userID="FLX" useSpecificDescriptions="false" inspectorTitle="Concept generalization">
+      <TextField id="115" flexoID="32" name="specialized" useSpecificDescriptions="false" userID="FLX" readOnly="false" data="narrower.object.uriName" label="specialized_concept">
+        <Inspector idref="114" />
+      </TextField>
+      <TextField id="116" flexoID="33" name="general" useSpecificDescriptions="false" userID="FLX" readOnly="false" data="narrower.subject.uriName" label="general_concept">
+        <Inspector idref="114" />
+      </TextField>
+    </Inspector>
+    <ObjectPropertyStatementRole id="117" cloningStratgey="Clone" flexoID="80" name="narrower" useSpecificDescriptions="false" userID="FLX" objectProperty="http://www.w3.org/2004/02/skos/core#narrower">
+      <OWLModelSlot idref="6" />
+    </ObjectPropertyStatementRole>
+    <ObjectPropertyStatementRole id="118" cloningStratgey="Clone" flexoID="81" name="narrowMatch" useSpecificDescriptions="false" userID="FLX" objectProperty="http://www.w3.org/2004/02/skos/core#narrowMatch">
+      <OWLModelSlot idref="6" />
+    </ObjectPropertyStatementRole>
+    <ObjectPropertyStatementRole id="119" cloningStratgey="Clone" flexoID="82" name="broader" useSpecificDescriptions="false" userID="FLX" objectProperty="http://www.w3.org/2004/02/skos/core#broader">
+      <OWLModelSlot idref="6" />
+    </ObjectPropertyStatementRole>
+    <ObjectPropertyStatementRole id="120" cloningStratgey="Clone" flexoID="83" name="broadMatch" useSpecificDescriptions="false" userID="FLX" objectProperty="http://www.w3.org/2004/02/skos/core#broadMatch">
+      <OWLModelSlot idref="6" />
+    </ObjectPropertyStatementRole>
+    <ConnectorRole id="121" exampleLabel="label" userID="FLX" useSpecificDescriptions="false" cloningStratgey="Clone" flexoID="84" name="narrowerConnector">
+      <ConnectorGraphicalRepresentation id="122" lineWrap="false" horizontalTextAlignment="CENTER" transparency="1.0" drawControlPointsWhenFocused="true" isVisible="true" isReadOnly="false" paragraphAlignment="CENTER" hasSelectedForeground="false" verticalTextAlignment="MIDDLE" hasFocusedForeground="false" applyForegroundToSymbols="true" layer="64" absoluteTextX="-4.0" absoluteTextY="-12.0" isFocusable="true" drawControlPointsWhenSelected="true" isSelectable="true" isLabelEditable="true" continuousTextEditing="true" isMultilineAllowed="false" identifier="object_2">
+        <SelectedForegroundStyle id="123" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <FocusedForegroundStyle id="124" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <LineConnectorSpecification id="125" relativeMiddleSymbolLocation="0.5" startSymbolSize="10.0" middleSymbol="NONE" lineConnectorType="MINIMAL_LENGTH" middleSymbolSize="10.0" endSymbolSize="10.0" startSymbol="NONE" endSymbol="NONE" />
+        <TextStyle id="126" orientation="0" color="0,0,0" backgroundColor="255,255,255" font="Lucida Sans,0,9" isBackgroundColored="false" />
+        <ForegroundStyle id="127" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+      </ConnectorGraphicalRepresentation>
+      <GRSpec id="128" featureName="label" flexoID="125" readOnly="true" userID="FLX" useSpecificDescriptions="false" value="&quot;narrower&quot;" />
+      <TypedDiagramModelSlot idref="20" />
+    </ConnectorRole>
+    <ConnectorRole id="129" exampleLabel="label" userID="FLX" useSpecificDescriptions="false" cloningStratgey="Clone" flexoID="85" name="narrowMatchConnector">
+      <ConnectorGraphicalRepresentation id="130" lineWrap="false" horizontalTextAlignment="CENTER" transparency="1.0" drawControlPointsWhenFocused="true" isVisible="true" isReadOnly="false" paragraphAlignment="CENTER" hasSelectedForeground="false" verticalTextAlignment="MIDDLE" hasFocusedForeground="false" applyForegroundToSymbols="true" layer="64" absoluteTextX="-2.0" absoluteTextY="-12.0" isFocusable="true" drawControlPointsWhenSelected="true" isSelectable="true" isLabelEditable="true" continuousTextEditing="true" isMultilineAllowed="false" identifier="object_5">
+        <SelectedForegroundStyle id="131" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <FocusedForegroundStyle id="132" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <LineConnectorSpecification id="133" relativeMiddleSymbolLocation="0.5" startSymbolSize="10.0" middleSymbol="NONE" lineConnectorType="MINIMAL_LENGTH" middleSymbolSize="10.0" endSymbolSize="10.0" startSymbol="NONE" endSymbol="NONE" />
+        <TextStyle id="134" orientation="0" color="0,0,0" backgroundColor="255,255,255" font="Lucida Sans,0,9" isBackgroundColored="false" />
+        <ForegroundStyle id="135" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+      </ConnectorGraphicalRepresentation>
+      <GRSpec id="136" featureName="label" flexoID="126" readOnly="true" userID="FLX" useSpecificDescriptions="false" value="&quot;narrow match&quot;" />
+      <TypedDiagramModelSlot idref="20" />
+    </ConnectorRole>
+    <LinkScheme id="137" northDirectionSupported="true" fromTarget="http://www.agilebirds.com/openflexo/ViewPoints/SKOS/SKOSThesaurusEditor.owl#Concept" toTarget="http://www.agilebirds.com/openflexo/ViewPoints/SKOS/SKOSThesaurusEditor.owl#Concept" width="800" userID="FLX" useSpecificDescriptions="false" label="GeneralizeAConcept" definePopupDefaultSize="false" southDirectionSupported="true" westDirectionSupported="true" isAvailableWithFloatingPalette="true" flexoID="34" height="600" skipConfirmationPanel="true" name="GeneralizeAConcept" eastDirectionSupported="true">
+      <CheckBoxParameter id="138" flexoID="127" isRequired="false" name="match" userID="FLX" useSpecificDescriptions="false" label="match" defaultValue="false" />
+      <CheckBoxParameter id="139" flexoID="128" isRequired="false" name="makeInverseRelationship" userID="FLX" useSpecificDescriptions="false" label="make_inverse_relationship" defaultValue="true" />
+      <AddObjectPropertyStatement id="140" subject="fromTarget.concept" userID="FLX" useSpecificDescriptions="false" object="toTarget.concept" flexoID="87" assignation="narrower" conditional="(parameters.match = false)" />
+      <AddObjectPropertyStatement id="141" subject="fromTarget.concept" userID="FLX" useSpecificDescriptions="false" object="toTarget.concept" flexoID="88" assignation="narrowMatch" conditional="(parameters.match = true)" />
+      <AddObjectPropertyStatement id="142" subject="toTarget.concept" userID="FLX" useSpecificDescriptions="false" object="fromTarget.concept" flexoID="89" assignation="broader" conditional="((parameters.match = false) &amp; (parameters.makeInverseRelationship = true))" />
+      <AddObjectPropertyStatement id="143" subject="toTarget.concept" userID="FLX" useSpecificDescriptions="false" object="fromTarget.concept" flexoID="90" assignation="broadMatch" conditional="((parameters.match = true) &amp; (parameters.makeInverseRelationship = true))" />
+      <AddConnector id="144" userID="FLX" useSpecificDescriptions="false" flexoID="91" assignation="narrowerConnector" fromShape="fromTarget.shape" conditional="(parameters.match = false)" toShape="toTarget.shape">
+        <TypedDiagramModelSlot idref="20" />
       </AddConnector>
-      <AddConnector id="183" fromShape="fromTarget.shape" toShape="toTarget.shape" conditional="(parameters.match = true)" assignation="narrowMatchConnector" userID="FLX">
-        <TypedDiagramModelSlot idref="348" userID="FLX" />
+      <AddConnector id="145" userID="FLX" useSpecificDescriptions="false" flexoID="92" assignation="narrowMatchConnector" fromShape="fromTarget.shape" conditional="(parameters.match = true)" toShape="toTarget.shape">
+        <TypedDiagramModelSlot idref="20" />
       </AddConnector>
     </LinkScheme>
-    <ObjectPropertyStatementRole id="184" objectProperty="http://www.w3.org/2004/02/skos/core#narrower" name="narrower" userID="FLX" />
-    <ObjectPropertyStatementRole id="185" objectProperty="http://www.w3.org/2004/02/skos/core#narrowMatch" name="narrowMatch" userID="FLX" />
-    <ObjectPropertyStatementRole id="186" objectProperty="http://www.w3.org/2004/02/skos/core#broader" name="broader" userID="FLX" />
-    <ObjectPropertyStatementRole id="187" objectProperty="http://www.w3.org/2004/02/skos/core#broadMatch" name="broadMatch" userID="FLX" />
-    <ConnectorRole id="188" name="narrowerConnector" exampleLabel="label" userID="FLX">
-      <ConnectorGraphicalRepresentation id="189" hasSelectedForeground="false" hasFocusedForeground="false" startSymbol="NONE" endSymbol="ARROW" middleSymbol="NONE" startSymbolSize="10.0" endSymbolSize="10.0" middleSymbolSize="10.0" relativeMiddleSymbolLocation="0.5" applyForegroundToSymbols="true" identifier="object_2" layer="64" hasText="true" isMultilineAllowed="false" continuousTextEditing="true" absoluteTextX="-4.0" absoluteTextY="-12.0" paragraphAlignment="CENTER" horizontalTextAlignment="CENTER" verticalTextAlignment="MIDDLE" isSelectable="true" isFocusable="true" drawControlPointsWhenFocused="true" drawControlPointsWhenSelected="true" isReadOnly="false" isLabelEditable="true" isVisible="true" userID="FLX">
-        <ForegroundStyle id="190" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <SelectedForegroundStyle id="191" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <FocusedForegroundStyle id="192" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <LineConnectorSpecification id="193" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
-        <TextStyle id="194" font="Lucida Sans,0,9" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
-      </ConnectorGraphicalRepresentation>
-      <GRSpec id="215" featureName="label" value="&quot;narrower&quot;" readOnly="true" userID="FLX" />
-    </ConnectorRole>
-    <ConnectorRole id="216" name="narrowMatchConnector" exampleLabel="label" userID="FLX">
-      <ConnectorGraphicalRepresentation id="217" hasSelectedForeground="false" hasFocusedForeground="false" startSymbol="NONE" endSymbol="ARROW" middleSymbol="NONE" startSymbolSize="10.0" endSymbolSize="10.0" middleSymbolSize="10.0" relativeMiddleSymbolLocation="0.5" applyForegroundToSymbols="true" identifier="object_5" layer="64" hasText="true" isMultilineAllowed="false" continuousTextEditing="true" absoluteTextX="-2.0" absoluteTextY="-12.0" paragraphAlignment="CENTER" horizontalTextAlignment="CENTER" verticalTextAlignment="MIDDLE" isSelectable="true" isFocusable="true" drawControlPointsWhenFocused="true" drawControlPointsWhenSelected="true" isReadOnly="false" isLabelEditable="true" isVisible="true" userID="FLX">
-        <ForegroundStyle id="218" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <SelectedForegroundStyle id="219" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <FocusedForegroundStyle id="220" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <LineConnectorSpecification id="221" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
-        <TextStyle id="222" font="Lucida Sans,0,9" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
-      </ConnectorGraphicalRepresentation>
-      <GRSpec id="243" featureName="label" value="&quot;narrow match&quot;" readOnly="true" userID="FLX" />
-    </ConnectorRole>
-    <Inspector id="244" inspectorTitle="Concept generalization" userID="FLX">
-      <TextField id="245" label="specialized_concept" name="specialized" readOnly="false" data="narrower.object.uriName" conditional="" userID="FLX" />
-      <TextField id="246" label="general_concept" name="general" readOnly="false" data="narrower.subject.uriName" conditional="" userID="FLX" />
-    </Inspector>
   </FlexoConcept>
-  <FlexoConcept id="247" name="ConceptRelatedRelationship" userID="FLX">
-    <description userID="FLX">Allows to define link between a concept and a other concept with a "related-to" semantic</description>
-    <LinkScheme id="248" fromTarget="http://www.agilebirds.com/openflexo/ViewPoints/SKOS/SKOSThesaurusEditor.owl#Concept" toTarget="http://www.agilebirds.com/openflexo/ViewPoints/SKOS/SKOSThesaurusEditor.owl#Concept" isAvailableWithFloatingPalette="true" northDirectionSupported="true" eastDirectionSupported="true" southDirectionSupported="true" westDirectionSupported="true" name="MakeTwoConceptRelatedToEachOther" label="MakeTwoConceptRelatedToEachOther" skipConfirmationPanel="true" definePopupDefaultSize="false" width="800" height="600" userID="FLX">
-      <CheckBoxParameter id="249" name="match" label="match" defaultValue="false" usePaletteLabelAsDefaultValue="false" conditional="" isRequired="false" userID="FLX">
-        <description userID="FLX">When set to true, indicates that relatedMatch property should be used</description>
-      </CheckBoxParameter>
-      <AddObjectPropertyStatement id="250" object="toTarget.concept" conditional="(parameters.match = false)" assignation="related1" subject="fromTarget.concept" userID="FLX" />
-      <AddObjectPropertyStatement id="251" object="fromTarget.concept" conditional="(parameters.match = false)" assignation="related2" subject="toTarget.concept" userID="FLX" />
-      <AddObjectPropertyStatement id="252" object="toTarget.concept" conditional="(parameters.match = true)" assignation="relatedMatch1" subject="fromTarget.concept" userID="FLX" />
-      <AddObjectPropertyStatement id="253" object="fromTarget.concept" conditional="(parameters.match = true)" assignation="relatedMatch2" subject="toTarget.concept" userID="FLX" />
-      <AddConnector id="254" fromShape="fromTarget.shape" toShape="toTarget.shape" conditional="(parameters.match = false)" assignation="relatedConnector" userID="FLX">
-        <TypedDiagramModelSlot idref="348" userID="FLX" />
+  <FlexoConcept id="146" useSpecificDescriptions="false" userID="FLX" flexoID="99" name="ConceptRelatedRelationship">
+    <Inspector id="147" flexoID="36" userID="FLX" useSpecificDescriptions="false" inspectorTitle="Related concepts">
+      <TextField id="148" flexoID="39" name="concept1" useSpecificDescriptions="false" userID="FLX" readOnly="false" data="related1.subject.uriName" label="concept1">
+        <Inspector idref="147" />
+      </TextField>
+      <TextField id="149" flexoID="40" name="concept2" useSpecificDescriptions="false" userID="FLX" readOnly="false" data="related1.object.uriName" label="concept2">
+        <Inspector idref="147" />
+      </TextField>
+    </Inspector>
+    <ObjectPropertyStatementRole id="150" cloningStratgey="Clone" flexoID="93" name="related1" useSpecificDescriptions="false" userID="FLX" objectProperty="http://www.w3.org/2004/02/skos/core#related">
+      <OWLModelSlot idref="6" />
+    </ObjectPropertyStatementRole>
+    <ObjectPropertyStatementRole id="151" cloningStratgey="Clone" flexoID="94" name="related2" useSpecificDescriptions="false" userID="FLX" objectProperty="http://www.w3.org/2004/02/skos/core#related">
+      <OWLModelSlot idref="6" />
+    </ObjectPropertyStatementRole>
+    <ObjectPropertyStatementRole id="152" cloningStratgey="Clone" flexoID="95" name="relatedMatch1" useSpecificDescriptions="false" userID="FLX" objectProperty="http://www.w3.org/2004/02/skos/core#relatedMatch">
+      <OWLModelSlot idref="6" />
+    </ObjectPropertyStatementRole>
+    <ObjectPropertyStatementRole id="153" cloningStratgey="Clone" flexoID="96" name="relatedMatch2" useSpecificDescriptions="false" userID="FLX" objectProperty="http://www.w3.org/2004/02/skos/core#relatedMatch">
+      <OWLModelSlot idref="6" />
+    </ObjectPropertyStatementRole>
+    <ConnectorRole id="154" exampleLabel="label" userID="FLX" useSpecificDescriptions="false" cloningStratgey="Clone" flexoID="97" name="relatedConnector">
+      <ConnectorGraphicalRepresentation id="155" lineWrap="false" horizontalTextAlignment="CENTER" transparency="1.0" drawControlPointsWhenFocused="true" isVisible="true" isReadOnly="false" paragraphAlignment="CENTER" hasSelectedForeground="false" verticalTextAlignment="MIDDLE" hasFocusedForeground="false" applyForegroundToSymbols="true" layer="64" absoluteTextX="1.0" absoluteTextY="-12.0" isFocusable="true" drawControlPointsWhenSelected="true" isSelectable="true" isLabelEditable="true" continuousTextEditing="true" isMultilineAllowed="false" identifier="object_2">
+        <SelectedForegroundStyle id="156" dashStyle="MEDIUM_SPACED_DASHES" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <FocusedForegroundStyle id="157" dashStyle="MEDIUM_SPACED_DASHES" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <LineConnectorSpecification id="158" relativeMiddleSymbolLocation="0.5" startSymbolSize="10.0" middleSymbol="NONE" lineConnectorType="MINIMAL_LENGTH" middleSymbolSize="10.0" endSymbolSize="10.0" startSymbol="NONE" endSymbol="NONE" />
+        <TextStyle id="159" orientation="0" color="0,0,0" backgroundColor="255,255,255" font="Lucida Sans,0,9" isBackgroundColored="false" />
+        <ForegroundStyle id="160" dashStyle="MEDIUM_SPACED_DASHES" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+      </ConnectorGraphicalRepresentation>
+      <GRSpec id="161" featureName="label" flexoID="129" readOnly="true" userID="FLX" useSpecificDescriptions="false" value="&quot;related&quot;" />
+      <TypedDiagramModelSlot idref="20" />
+    </ConnectorRole>
+    <ConnectorRole id="162" exampleLabel="label" userID="FLX" useSpecificDescriptions="false" cloningStratgey="Clone" flexoID="98" name="relatedMatchConnector">
+      <ConnectorGraphicalRepresentation id="163" lineWrap="false" horizontalTextAlignment="CENTER" transparency="1.0" drawControlPointsWhenFocused="true" isVisible="true" isReadOnly="false" paragraphAlignment="CENTER" hasSelectedForeground="false" verticalTextAlignment="MIDDLE" hasFocusedForeground="false" applyForegroundToSymbols="true" layer="64" absoluteTextX="1.0" absoluteTextY="-12.0" isFocusable="true" drawControlPointsWhenSelected="true" isSelectable="true" isLabelEditable="true" continuousTextEditing="true" isMultilineAllowed="false" identifier="object_5">
+        <SelectedForegroundStyle id="164" dashStyle="MEDIUM_SPACED_DASHES" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <FocusedForegroundStyle id="165" dashStyle="MEDIUM_SPACED_DASHES" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+        <LineConnectorSpecification id="166" relativeMiddleSymbolLocation="0.5" startSymbolSize="10.0" middleSymbol="NONE" lineConnectorType="MINIMAL_LENGTH" middleSymbolSize="10.0" endSymbolSize="10.0" startSymbol="NONE" endSymbol="NONE" />
+        <TextStyle id="167" orientation="0" color="0,0,0" backgroundColor="255,255,255" font="Lucida Sans,0,9" isBackgroundColored="false" />
+        <ForegroundStyle id="168" dashStyle="MEDIUM_SPACED_DASHES" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
+      </ConnectorGraphicalRepresentation>
+      <GRSpec id="169" featureName="label" flexoID="130" readOnly="true" userID="FLX" useSpecificDescriptions="false" value="&quot;related match&quot;" />
+      <TypedDiagramModelSlot idref="20" />
+    </ConnectorRole>
+    <LinkScheme id="170" northDirectionSupported="true" fromTarget="http://www.agilebirds.com/openflexo/ViewPoints/SKOS/SKOSThesaurusEditor.owl#Concept" toTarget="http://www.agilebirds.com/openflexo/ViewPoints/SKOS/SKOSThesaurusEditor.owl#Concept" width="800" userID="FLX" useSpecificDescriptions="false" label="MakeTwoConceptRelatedToEachOther" definePopupDefaultSize="false" southDirectionSupported="true" westDirectionSupported="true" isAvailableWithFloatingPalette="true" flexoID="41" height="600" skipConfirmationPanel="true" name="MakeTwoConceptRelatedToEachOther" eastDirectionSupported="true">
+      <CheckBoxParameter id="171" flexoID="131" isRequired="false" name="match" userID="FLX" useSpecificDescriptions="false" label="match" defaultValue="false" />
+      <AddObjectPropertyStatement id="172" subject="fromTarget.concept" userID="FLX" useSpecificDescriptions="false" object="toTarget.concept" flexoID="100" assignation="related1" conditional="(parameters.match = false)" />
+      <AddObjectPropertyStatement id="173" subject="toTarget.concept" userID="FLX" useSpecificDescriptions="false" object="fromTarget.concept" flexoID="101" assignation="related2" conditional="(parameters.match = false)" />
+      <AddObjectPropertyStatement id="174" subject="fromTarget.concept" userID="FLX" useSpecificDescriptions="false" object="toTarget.concept" flexoID="102" assignation="relatedMatch1" conditional="(parameters.match = true)" />
+      <AddObjectPropertyStatement id="175" subject="toTarget.concept" userID="FLX" useSpecificDescriptions="false" object="fromTarget.concept" flexoID="103" assignation="relatedMatch2" conditional="(parameters.match = true)" />
+      <AddConnector id="176" userID="FLX" useSpecificDescriptions="false" flexoID="104" assignation="relatedConnector" fromShape="fromTarget.shape" conditional="(parameters.match = false)" toShape="toTarget.shape">
+        <TypedDiagramModelSlot idref="20" />
       </AddConnector>
-      <AddConnector id="255" fromShape="fromTarget.shape" toShape="toTarget.shape" conditional="(parameters.match = true)" assignation="relatedMatchConnector" userID="FLX">
-        <TypedDiagramModelSlot idref="348" userID="FLX" />
+      <AddConnector id="177" userID="FLX" useSpecificDescriptions="false" flexoID="105" assignation="relatedMatchConnector" fromShape="fromTarget.shape" conditional="(parameters.match = true)" toShape="toTarget.shape">
+        <TypedDiagramModelSlot idref="20" />
       </AddConnector>
     </LinkScheme>
-    <ObjectPropertyStatementRole id="256" objectProperty="http://www.w3.org/2004/02/skos/core#related" name="related1" userID="FLX" />
-    <ObjectPropertyStatementRole id="257" objectProperty="http://www.w3.org/2004/02/skos/core#related" name="related2" userID="FLX" />
-    <ObjectPropertyStatementRole id="258" objectProperty="http://www.w3.org/2004/02/skos/core#relatedMatch" name="relatedMatch1" userID="FLX" />
-    <ObjectPropertyStatementRole id="259" objectProperty="http://www.w3.org/2004/02/skos/core#relatedMatch" name="relatedMatch2" userID="FLX" />
-    <ConnectorRole id="260" name="relatedConnector" exampleLabel="label" userID="FLX">
-      <ConnectorGraphicalRepresentation id="261" hasSelectedForeground="false" hasFocusedForeground="false" startSymbol="ARROW" endSymbol="ARROW" middleSymbol="NONE" startSymbolSize="10.0" endSymbolSize="10.0" middleSymbolSize="10.0" relativeMiddleSymbolLocation="0.5" applyForegroundToSymbols="true" identifier="object_2" layer="64" hasText="true" isMultilineAllowed="false" continuousTextEditing="true" absoluteTextX="1.0" absoluteTextY="-12.0" paragraphAlignment="CENTER" horizontalTextAlignment="CENTER" verticalTextAlignment="MIDDLE" isSelectable="true" isFocusable="true" drawControlPointsWhenFocused="true" drawControlPointsWhenSelected="true" isReadOnly="false" isLabelEditable="true" isVisible="true" userID="FLX">
-        <ForegroundStyle id="262" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="MEDIUM_SPACED_DASHES" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <SelectedForegroundStyle id="263" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="MEDIUM_SPACED_DASHES" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <FocusedForegroundStyle id="264" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="MEDIUM_SPACED_DASHES" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <LineConnectorSpecification id="265" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
-        <TextStyle id="266" font="Lucida Sans,0,9" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
-      </ConnectorGraphicalRepresentation>
-      <GRSpec id="287" featureName="label" value="&quot;related&quot;" readOnly="true" userID="FLX" />
-    </ConnectorRole>
-    <ConnectorRole id="288" name="relatedMatchConnector" exampleLabel="label" userID="FLX">
-      <ConnectorGraphicalRepresentation id="289" hasSelectedForeground="false" hasFocusedForeground="false" startSymbol="ARROW" endSymbol="ARROW" middleSymbol="NONE" startSymbolSize="10.0" endSymbolSize="10.0" middleSymbolSize="10.0" relativeMiddleSymbolLocation="0.5" applyForegroundToSymbols="true" identifier="object_5" layer="64" hasText="true" isMultilineAllowed="false" continuousTextEditing="true" absoluteTextX="1.0" absoluteTextY="-12.0" paragraphAlignment="CENTER" horizontalTextAlignment="CENTER" verticalTextAlignment="MIDDLE" isSelectable="true" isFocusable="true" drawControlPointsWhenFocused="true" drawControlPointsWhenSelected="true" isReadOnly="false" isLabelEditable="true" isVisible="true" userID="FLX">
-        <ForegroundStyle id="290" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="MEDIUM_SPACED_DASHES" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <SelectedForegroundStyle id="291" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="MEDIUM_SPACED_DASHES" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <FocusedForegroundStyle id="292" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="MEDIUM_SPACED_DASHES" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-        <LineConnectorSpecification id="293" lineConnectorType="MINIMAL_LENGTH" userID="FLX" />
-        <TextStyle id="294" font="Lucida Sans,0,9" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
-      </ConnectorGraphicalRepresentation>
-      <GRSpec id="315" featureName="label" value="&quot;related match&quot;" readOnly="true" userID="FLX" />
-    </ConnectorRole>
-    <Inspector id="316" inspectorTitle="Related concepts" userID="FLX">
-      <TextField id="317" label="concept1" name="concept1" readOnly="false" data="related1.subject.uriName" conditional="" userID="FLX" />
-      <TextField id="318" label="concept2" name="concept2" readOnly="false" data="related1.object.uriName" conditional="" userID="FLX" />
-    </Inspector>
   </FlexoConcept>
-  <LocalizedDictionary id="319" userID="FLX">
-    <Localized id="320" key="preferred_label" lang="en" userID="FLX">Preferred label</Localized>
-    <Localized id="321" key="alternative_label" lang="en" userID="FLX">Alternative label</Localized>
-    <Localized id="322" key="new_preferred_label" lang="en" userID="FLX">Preferred label</Localized>
-    <Localized id="323" key="new_alternative_label" lang="en" userID="FLX">Alternative label</Localized>
-    <Localized id="324" key="new_hidden_label" lang="en" userID="FLX">Hidden label</Localized>
-    <Localized id="325" key="new_note" lang="en" userID="FLX">Note</Localized>
-    <Localized id="326" key="new_change_note" lang="en" userID="FLX">Change note</Localized>
-    <Localized id="327" key="new_definition" lang="en" userID="FLX">Definition</Localized>
-    <Localized id="328" key="new_editorial_note" lang="en" userID="FLX">Editorial note</Localized>
-    <Localized id="329" key="new_example" lang="en" userID="FLX">Example</Localized>
-    <Localized id="330" key="new_history_note" lang="en" userID="FLX">History Note</Localized>
-    <Localized id="331" key="new_scope_note" lang="en" userID="FLX">Scope note</Localized>
-    <Localized id="332" key="concept_scheme" lang="en" userID="FLX">Concept scheme</Localized>
-    <Localized id="333" key="concept_name" lang="en" userID="FLX">Concept name</Localized>
-    <Localized id="334" key="concept_scheme_name" lang="en" userID="FLX">Concept scheme name</Localized>
-    <Localized id="335" key="SKOS_annotations" lang="en" userID="FLX">SKOS annotations</Localized>
-    <Localized id="336" key="LinkAConceptToAConceptScheme" lang="en" userID="FLX">Is top concept of</Localized>
-    <Localized id="337" key="MakeTwoConceptRelatedToEachOther" lang="en" userID="FLX">Make both concepts related to each other</Localized>
-    <Localized id="338" key="GeneralizeAConcept" lang="en" userID="FLX">Generalize concept</Localized>
-    <Localized id="339" key="SpecializeAConcept" lang="en" userID="FLX">Specialize concept</Localized>
-    <Localized id="340" key="ConceptScheme" lang="en" userID="FLX">Concept scheme</Localized>
-    <Localized id="341" key="Concept" lang="en" userID="FLX">Concept</Localized>
-    <Localized id="342" key="ConceptRelatedRelationship" lang="en" userID="FLX">'Related to' relationship</Localized>
-    <Localized id="343" key="ConceptGeneralization" lang="en" userID="FLX">Concept Generalization</Localized>
-    <Localized id="344" key="ConceptSpecialization" lang="en" userID="FLX">Concept Specialization</Localized>
-    <Localized id="345" key="ConceptToConceptSchemeRelationship" lang="en" userID="FLX">'Top concept' relationship</Localized>
-  </LocalizedDictionary>
-  <ModelSlot_OWLModelSlot idref="12" userID="FLX" />
-  <ModelSlot_VirtualModelModelSlot isRequired="true" isReadOnly="false" virtualModelURI="http://www.agilebirds.com/openflexo/ViewPoints/SKOS/SKOSThesaurusEditor.owl" name="virtualModelInstance" id="346" userID="FLX" />
-  <Inspector id="347" inspectorTitle="DiagramSpecification" userID="FLX" />
-  <ModelSlot_TypedDiagramModelSlot metaModelURI="http://www.agilebirds.com/openflexo/ViewPoints/SKOS/SKOSThesaurusEditor.owl/DiagramSpecification/DiagramSpecification.diagramspecification" name="typedDiagramModelSlot" id="348" userID="FLX" />
+  <Inspector id="178" flexoID="-1" userID="FLX" useSpecificDescriptions="false" inspectorTitle="DiagramSpecification" />
+  <ModelSlot_OWLModelSlot id="6" userID="FLX" useSpecificDescriptions="false" cloningStratgey="Reference" flexoID="106" isRequired="false" name="owl" metaModelURI="http://www.w3.org/2004/02/skos/core" isReadOnly="false" />
+  <ModelSlot_VirtualModelModelSlot id="179" userID="FLX" useSpecificDescriptions="false" cloningStratgey="Reference" flexoID="132" isRequired="true" name="virtualModelInstance" isReadOnly="false" virtualModelURI="http://www.agilebirds.com/openflexo/ViewPoints/SKOS/SKOSThesaurusEditor.owl" />
+  <ModelSlot_TypedDiagramModelSlot id="20" userID="FLX" useSpecificDescriptions="false" cloningStratgey="Reference" flexoID="108" isRequired="true" name="typedDiagramModelSlot" metaModelURI="http://www.agilebirds.com/openflexo/ViewPoints/SKOS/SKOSThesaurusEditor.owl/DiagramSpecification/DiagramSpecification.diagramspecification" isReadOnly="false" />
 </VirtualModel>
