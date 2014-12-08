@@ -136,7 +136,7 @@ public class TestViewpointsOpenflexo17 extends OpenflexoTestCase {
 	@TestOrder(8)
 	public void test7BasicOrganizationTreeEditor() {
 		log("test7BasicOrganizationTreeEditor()");
-		assertViewPointIsValid(testLoadViewPoint("http://www.agilebirds.com/openflexo/ViewPoints/Tests/BasicOrganizationTreeEditor.owl"));
+		assertViewPointIsValid(testLoadViewPoint("http://www.agilebirds.com/openflexo/ViewPoints/Tests/BasicOrganizationTreeEditor"));
 	}
 
 	@Test
