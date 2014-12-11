@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<VirtualModel id="1" name="Description" modelVersion="1.0" userID="FLX">
-  <LocalizedDictionary id="2" userID="FLX" />
-  <ModelSlot_VirtualModelModelSlot isRequired="true" isReadOnly="false" virtualModelURI="http://www.thalesgroup.com/openflexo/emf/CityMapping/Description" name="virtualModelInstance" id="3" userID="FLX" />
-  <Inspector id="4" inspectorTitle="Description" userID="FLX" />
-  <ModelSlot_TypedDiagramModelSlot metaModelURI="http://www.thalesgroup.com/openflexo/emf/CityMapping/Description/Description.diagramspecification" name="typedDiagramModelSlot" id="6" userID="FLX" />
+<VirtualModel id="0" userID="FLX" useSpecificDescriptions="false" flexoID="-1" name="Description">
+  <Inspector id="1" flexoID="-1" userID="FLX" useSpecificDescriptions="false" inspectorTitle="Description" />
+  <ModelSlot_TypedDiagramModelSlot id="2" userID="FLX" useSpecificDescriptions="false" cloningStratgey="Reference" flexoID="1" isRequired="true" name="typedDiagramModelSlot" metaModelURI="http://www.thalesgroup.com/openflexo/emf/CityMapping/Description/Description.diagramspecification" isReadOnly="false" />
 </VirtualModel>
