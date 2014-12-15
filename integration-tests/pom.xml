@@ -92,7 +92,7 @@
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>owlconnector</artifactId>
-			<version>${project.version}</version>
+			<version>${ta.version}</version>
 			<classifier>tests</classifier>
 			<scope>test</scope>
 		</dependency>
