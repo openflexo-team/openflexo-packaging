@@ -28,7 +28,7 @@
         <FocusedColorBackgroundStyle id="34" color="254,247,217" transparencyLevel="0.5" useTransparency="false" />
         <CircleShape id="35" />
         <ShadowStyle id="36" shadowDepth="2" shadowBlur="4" drawShadow="true" shadowDarkness="150" />
-        <ImageBackgroundStyle id="37" scaleX="0.625" scaleY="0.625" imageBackgroundColor="255,255,255" transparencyLevel="0.5" fitToShape="true" useTransparency="false" imageBackgroundType="OPAQUE" deltaX="0.0" deltaY="0.0" />
+        <ImageBackgroundStyle id="37" scaleX="0.625" scaleY="0.625" imageBackgroundColor="255,255,255" transparencyLevel="0.5" fitToShape="true" useTransparency="false" deltaX="0.0" imageBackgroundType="OPAQUE" deltaY="0.0" />
       </ShapeGraphicalRepresentation>
       <ParentShapeRole idref="3" />
       <TypedDiagramModelSlot idref="15" />
@@ -47,7 +47,7 @@
         <NoneBackgroundStyle id="49" transparencyLevel="0.5" useTransparency="false" />
       </ShapeGraphicalRepresentation>
       <ParentShapeRole idref="3" />
-      <GRSpec id="50" featureName="label" flexoID="90" readOnly="true" userID="FLX" useSpecificDescriptions="false" value="city.render" />
+      <GRSpec id="50" featureName="label" flexoID="110" readOnly="true" userID="FLX" useSpecificDescriptions="false" value="city.render" />
       <TypedDiagramModelSlot idref="15" />
     </ShapeRole>
     <FlexoConceptInstanceRole id="51" cloningStratgey="Reference" flexoID="29" name="city" useSpecificDescriptions="false" userID="FLX" flexoConceptTypeURI="http://www.thalesgroup.com/openflexo/emf/CityMapping/CityMapping#City">
@@ -72,10 +72,10 @@
       <FlexoConceptInstanceParameter id="53" useSpecificDescriptions="false" userID="FLX" label="city" flexoID="91" isRequired="false" name="cityParameter" flexoConceptTypeURI="http://www.thalesgroup.com/openflexo/emf/CityMapping/CityMapping#City">
         <VirtualModelModelSlot idref="19" />
       </FlexoConceptInstanceParameter>
-      <AddShape id="54" flexoID="35" assignation="container" container="virtualModelInstance" useSpecificDescriptions="false" userID="FLX" extendParentBoundsToHostThisShape="false">
+      <AddShape id="54" flexoID="35" assignation="container" container="typedDiagramModelSlot" useSpecificDescriptions="false" userID="FLX" extendParentBoundsToHostThisShape="false">
         <TypedDiagramModelSlot idref="15" />
       </AddShape>
-      <AddShape id="55" flexoID="36" assignation="label" container="virtualModelInstance.typedDiagramModelSlot" useSpecificDescriptions="false" userID="FLX" extendParentBoundsToHostThisShape="false">
+      <AddShape id="55" flexoID="36" assignation="label" container="typedDiagramModelSlot" useSpecificDescriptions="false" userID="FLX" extendParentBoundsToHostThisShape="false">
         <TypedDiagramModelSlot idref="15" />
       </AddShape>
       <AddShape id="56" flexoID="37" assignation="icon" useSpecificDescriptions="false" userID="FLX" extendParentBoundsToHostThisShape="false">
@@ -108,9 +108,9 @@
         <FocusedColorBackgroundStyle id="77" color="254,247,217" transparencyLevel="0.5" useTransparency="false" />
         <RectangleShape idref="47" />
         <ShadowStyle id="78" shadowDepth="2" shadowBlur="4" drawShadow="false" shadowDarkness="150" />
-        <ImageBackgroundStyle id="79" scaleX="1.4562706270627064" scaleY="1.350732600732601" imageBackgroundColor="255,255,255" transparencyLevel="0.5" fitToShape="true" useTransparency="false" imageBackgroundType="TRANSPARENT" deltaX="0.0" deltaY="0.0" />
+        <ImageBackgroundStyle id="79" scaleX="1.4562706270627064" scaleY="1.350732600732601" imageBackgroundColor="255,255,255" transparencyLevel="0.5" fitToShape="true" useTransparency="false" deltaX="0.0" imageBackgroundType="TRANSPARENT" deltaY="0.0" />
       </ShapeGraphicalRepresentation>
-      <GRSpec id="80" featureName="label" flexoID="92" readOnly="true" userID="FLX" useSpecificDescriptions="false" value="mansion.render" />
+      <GRSpec id="80" featureName="label" flexoID="111" readOnly="true" userID="FLX" useSpecificDescriptions="false" value="mansion.render" />
       <TypedDiagramModelSlot idref="15" />
     </ShapeRole>
     <FlexoConceptInstanceRole id="81" cloningStratgey="Reference" flexoID="47" name="mansion" useSpecificDescriptions="false" userID="FLX" flexoConceptTypeURI="http://www.thalesgroup.com/openflexo/emf/CityMapping/CityMapping#Mansion">
@@ -126,7 +126,7 @@
         <VirtualModelModelSlot idref="19" />
       </FlexoConceptInstanceParameter>
       <DeclareFlexoRole id="86" userID="FLX" useSpecificDescriptions="false" object="parameters.mansionParam" flexoID="50" assignation="mansion" />
-      <AddShape id="87" flexoID="51" assignation="shape" container="virtualModelInstance" name="" useSpecificDescriptions="false" userID="FLX" extendParentBoundsToHostThisShape="false">
+      <AddShape id="87" flexoID="51" assignation="shape" container="typedDiagramModelSlot" name="" useSpecificDescriptions="false" userID="FLX" extendParentBoundsToHostThisShape="false">
         <TypedDiagramModelSlot idref="15" />
       </AddShape>
     </CreationScheme>
@@ -151,9 +151,9 @@
         <FocusedColorBackgroundStyle id="103" color="254,247,217" transparencyLevel="0.5" useTransparency="false" />
         <RectangleShape idref="47" />
         <ShadowStyle id="104" shadowDepth="2" shadowBlur="4" drawShadow="false" shadowDarkness="150" />
-        <ImageBackgroundStyle id="105" scaleX="1.0906321401370909" scaleY="1.0735418427726122" imageBackgroundColor="255,255,255" transparencyLevel="0.5" fitToShape="true" useTransparency="false" imageBackgroundType="TRANSPARENT" deltaX="0.0" deltaY="0.0" />
+        <ImageBackgroundStyle id="105" scaleX="1.0906321401370909" scaleY="1.0735418427726122" imageBackgroundColor="255,255,255" transparencyLevel="0.5" fitToShape="true" useTransparency="false" deltaX="0.0" imageBackgroundType="TRANSPARENT" deltaY="0.0" />
       </ShapeGraphicalRepresentation>
-      <GRSpec id="106" featureName="label" flexoID="94" readOnly="true" userID="FLX" useSpecificDescriptions="false" value="appartment.render" />
+      <GRSpec id="106" featureName="label" flexoID="112" readOnly="true" userID="FLX" useSpecificDescriptions="false" value="appartment.render" />
       <TypedDiagramModelSlot idref="15" />
     </ShapeRole>
     <FlexoConceptInstanceRole id="107" cloningStratgey="Reference" flexoID="56" name="appartment" useSpecificDescriptions="false" userID="FLX" flexoConceptTypeURI="http://www.thalesgroup.com/openflexo/emf/CityMapping/CityMapping#Appartment">
@@ -169,7 +169,7 @@
         <VirtualModelModelSlot idref="19" />
       </FlexoConceptInstanceParameter>
       <DeclareFlexoRole id="112" userID="FLX" useSpecificDescriptions="false" object="parameters.appartmentParam" flexoID="59" assignation="appartment" />
-      <AddShape id="113" flexoID="60" assignation="shape" container="virtualModelInstance" useSpecificDescriptions="false" userID="FLX" extendParentBoundsToHostThisShape="false">
+      <AddShape id="113" flexoID="60" assignation="shape" description="" container="typedDiagramModelSlot" useSpecificDescriptions="false" userID="FLX" extendParentBoundsToHostThisShape="false">
         <TypedDiagramModelSlot idref="15" />
       </AddShape>
     </CreationScheme>
