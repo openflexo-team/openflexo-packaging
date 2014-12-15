@@ -90,13 +90,13 @@
 		<dependency>
 			<groupId>org.openflexo.technologyadapter</groupId>
             <artifactId>freeplaneconnector</artifactId>
-            <version>1.7.0-SNAPSHOT</version>
+            <version>${ta.version}</version>
             <scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo.technologyadapter</groupId>
             <artifactId>freeplaneconnector-ui</artifactId>
-            <version>1.7.0-SNAPSHOT</version>
+            <version>${ta.version}</version>
             <scope>runtime</scope>
 		</dependency>
  	
