@@ -12,10 +12,10 @@
         <SelectedForegroundStyle id="10" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" />
         <FocusedColorBackgroundStyle id="11" color="254,247,217" transparencyLevel="0.5" useTransparency="false" />
         <CircleShape id="12" />
-        <ShadowStyle id="13" shadowDepth="2" shadowBlur="4" drawShadow="true" shadowDarkness="150" />
-        <ImageBackgroundStyle id="14" scaleX="0.46875" scaleY="0.46875" imageBackgroundColor="255,255,255" transparencyLevel="0.5" fitToShape="true" useTransparency="false" deltaX="0.0" imageBackgroundType="TRANSPARENT" deltaY="0.0" />
+        <ShadowStyle id="13" shadowBlur="4" shadowDepth="2" drawShadow="true" shadowDarkness="150" />
+        <ImageBackgroundStyle id="14" scaleX="0.46875" scaleY="0.46875" imageBackgroundColor="255,255,255" transparencyLevel="0.5" fitToShape="true" useTransparency="false" imageFile="City.png" imageBackgroundType="TRANSPARENT" deltaX="0.0" deltaY="0.0" />
       </ShapeGraphicalRepresentation>
-      <GRSpec id="15" featureName="label" flexoID="35" readOnly="true" userID="FLX" useSpecificDescriptions="false" value="city.render" />
+      <GRSpec id="15" featureName="label" flexoID="39" readOnly="true" userID="FLX" useSpecificDescriptions="false" value="city.render" />
       <TypedDiagramModelSlot idref="16" />
     </ShapeRole>
     <FlexoConceptInstanceRole id="17" cloningStratgey="Reference" flexoID="9" name="city" useSpecificDescriptions="false" userID="FLX" flexoConceptTypeURI="http://www.thalesgroup.com/openflexo/emf/CityMapping/CityMapping#City">
