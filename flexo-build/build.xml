@@ -6,7 +6,7 @@
 	<target name="defineProperties">
 		<property environment="env"/>
 		<!-- Remove '-' if any : -SNAPSHOT or -beta will still be identified -->
-		<propertyregex property="flexo_version" input="${project.version}" regexp="-" replace="" />
+		<propertyregex property="flexo_version" input="${project.version}" regexp="(-*)" replace="" />
 		<!-- Set a 3 digit version in normalized_version -->
 		<propertyregex property="normalized_version" input="${flexo_version}" regexp="([0-9]+)\.([0-9]+)\.([0-9]+)" select="\0" defaultvalue="${flexo_version}.0"/>
 		<!-- ./target/../Icons -->
