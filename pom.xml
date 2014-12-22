@@ -17,9 +17,9 @@
           <module>integration-tests</module>
      </modules>
      <properties>
-          <flexocore.version>1.7.0</flexocore.version>
-          <ta.version>1.7.0</ta.version>
-          <modules.version>1.7.0</modules.version>
+          <flexocore.version>1.7.1-SNAPSHOT</flexocore.version>
+          <ta.version>1.7.1-SNAPSHOT</ta.version>
+          <modules.version>1.7.1-SNAPSHOT</modules.version>
           <connie.version>1.1</connie.version>
      </properties>
      <scm>
