@@ -26,7 +26,7 @@ import java.util.logging.Logger;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.openflexo.foundation.fml.VirtualModelTechnologyAdapter;
+import org.openflexo.foundation.fml.FMLTechnologyAdapter;
 import org.openflexo.foundation.resource.FlexoResourceCenterService;
 import org.openflexo.foundation.technologyadapter.TechnologyAdapterService;
 import org.openflexo.logging.FlexoLogger;
@@ -71,14 +71,14 @@ public class TestLoadAllTechnologyAdapters extends OpenflexoTestCase {
 	}
 
 	/**
-	 * Check the presence of VirtualModelTechnologyAdapter
+	 * Check the presence of FMLTechnologyAdapter
 	 */
 	@Test
 	@TestOrder(2)
 	public void checkVirtualModelTechnologyAdapter() {
 		log("checkVirtualModelTechnologyAdapter()");
 
-		assertNotNull(taService.getTechnologyAdapter(VirtualModelTechnologyAdapter.class));
+		assertNotNull(taService.getTechnologyAdapter(FMLTechnologyAdapter.class));
 	}
 
 	/**

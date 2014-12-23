@@ -37,14 +37,14 @@ import org.openflexo.foundation.fml.SynchronizationScheme;
 import org.openflexo.foundation.fml.ViewPoint;
 import org.openflexo.foundation.fml.VirtualModel;
 import org.openflexo.foundation.fml.rm.ViewPointResource;
-import org.openflexo.foundation.fmlrt.FlexoConceptInstance;
-import org.openflexo.foundation.fmlrt.View;
-import org.openflexo.foundation.fmlrt.VirtualModelInstance;
-import org.openflexo.foundation.fmlrt.action.CreateBasicVirtualModelInstance;
-import org.openflexo.foundation.fmlrt.action.CreateView;
-import org.openflexo.foundation.fmlrt.action.ModelSlotInstanceConfiguration.DefaultModelSlotInstanceConfigurationOption;
-import org.openflexo.foundation.fmlrt.rm.ViewResource;
-import org.openflexo.foundation.fmlrt.rm.VirtualModelInstanceResource;
+import org.openflexo.foundation.fml.rt.FlexoConceptInstance;
+import org.openflexo.foundation.fml.rt.View;
+import org.openflexo.foundation.fml.rt.VirtualModelInstance;
+import org.openflexo.foundation.fml.rt.action.CreateBasicVirtualModelInstance;
+import org.openflexo.foundation.fml.rt.action.CreateView;
+import org.openflexo.foundation.fml.rt.action.ModelSlotInstanceConfiguration.DefaultModelSlotInstanceConfigurationOption;
+import org.openflexo.foundation.fml.rt.rm.ViewResource;
+import org.openflexo.foundation.fml.rt.rm.VirtualModelInstanceResource;
 import org.openflexo.foundation.resource.FileSystemBasedResourceCenter;
 import org.openflexo.foundation.resource.RepositoryFolder;
 import org.openflexo.foundation.technologyadapter.FlexoModelResource;
@@ -249,7 +249,7 @@ public class TestCityMappingView extends OpenflexoProjectAtRunTimeTestCase {
 		System.out.println("Searching " + modelFile1.getAbsolutePath());
 		assertTrue(modelFile1.exists());
 		System.out.println("Searching " + modelFile1.toURI().toString());
-		FlexoModelResource<?, ?, ?> modelResource1 = project.getServiceManager().getInformationSpace()
+		FlexoModelResource<?, ?, ?, ?> modelResource1 = project.getServiceManager().getInformationSpace()
 				.getModelWithURI(modelFile1.toURI().toString());
 		assertNotNull(modelResource1);
 		emfModelSlotConfiguration1.setModelResource(modelResource1);
@@ -264,7 +264,7 @@ public class TestCityMappingView extends OpenflexoProjectAtRunTimeTestCase {
 		System.out.println("Searching " + modelFile2.getAbsolutePath());
 		assertTrue(modelFile2.exists());
 		System.out.println("Searching " + modelFile2.toURI().toString());
-		FlexoModelResource<?, ?, ?> modelResource2 = project.getServiceManager().getInformationSpace()
+		FlexoModelResource<?, ?, ?, ?> modelResource2 = project.getServiceManager().getInformationSpace()
 				.getModelWithURI(modelFile2.toURI().toString());
 		assertNotNull(modelResource2);
 		emfModelSlotConfiguration2.setModelResource(modelResource2);

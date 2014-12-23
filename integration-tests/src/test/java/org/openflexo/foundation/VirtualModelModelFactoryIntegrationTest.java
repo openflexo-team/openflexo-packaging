@@ -29,7 +29,7 @@ import java.util.logging.Logger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openflexo.foundation.fml.VirtualModelModelFactory;
-import org.openflexo.foundation.fml.VirtualModelTechnologyAdapter;
+import org.openflexo.foundation.fml.FMLTechnologyAdapter;
 import org.openflexo.foundation.resource.FlexoResourceCenterService;
 import org.openflexo.foundation.technologyadapter.DefaultTechnologyAdapterService;
 import org.openflexo.foundation.technologyadapter.TechnologyAdapter;
@@ -74,7 +74,7 @@ public class VirtualModelModelFactoryIntegrationTest extends OpenflexoTestCase {
 		TechnologyAdapterService taService = serviceManager.getTechnologyAdapterService();
 		assertEquals(taService, serviceManager.getService(TechnologyAdapterService.class));
 
-		assertNotNull(taService.getTechnologyAdapter(VirtualModelTechnologyAdapter.class));
+		assertNotNull(taService.getTechnologyAdapter(FMLTechnologyAdapter.class));
 		assertNotNull(taService.getTechnologyAdapter(DiagramTechnologyAdapter.class));
 		assertNotNull(taService.getTechnologyAdapter(EMFTechnologyAdapter.class));
 		assertNotNull(taService.getTechnologyAdapter(ExcelTechnologyAdapter.class));
@@ -106,7 +106,7 @@ public class VirtualModelModelFactoryIntegrationTest extends OpenflexoTestCase {
 	}
 
 	/**
-	 * Check the presence of VirtualModelTechnologyAdapter, instanciate VirtualModelModelFactory with this TA
+	 * Check the presence of FMLTechnologyAdapter, instanciate VirtualModelModelFactory with this TA
 	 */
 	@Test
 	@TestOrder(2)
@@ -114,7 +114,7 @@ public class VirtualModelModelFactoryIntegrationTest extends OpenflexoTestCase {
 		log("checkVirtualModelTechnologyAdapter()");
 
 		testVirtualModelModelFactoryWithTechnologyAdapter(serviceManager.getTechnologyAdapterService().getTechnologyAdapter(
-				VirtualModelTechnologyAdapter.class));
+				FMLTechnologyAdapter.class));
 	}
 
 	/**

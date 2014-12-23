@@ -46,9 +46,9 @@ public class TestViewPointValidationModelInIntegrationContext extends OpenflexoT
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.technologyadapter.emf.fml.editionaction.SelectEMFObjectIndividual.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
-				.getModelEntity(org.openflexo.foundation.fml.editionaction.AddFlexoConceptInstance.class) != null);
+				.getModelEntity(org.openflexo.foundation.fml.rt.editionaction.AddFlexoConceptInstance.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
-				.getModelEntity(org.openflexo.foundation.fml.editionaction.SelectFlexoConceptInstance.class) != null);
+				.getModelEntity(org.openflexo.foundation.fml.rt.editionaction.SelectFlexoConceptInstance.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.foundation.fml.editionaction.SelectIndividual.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
@@ -56,7 +56,7 @@ public class TestViewPointValidationModelInIntegrationContext extends OpenflexoT
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.technologyadapter.diagram.metamodel.DiagramPaletteObject.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
-				.getModelEntity(org.openflexo.foundation.fml.editionaction.DeleteFlexoConceptInstance.class) != null);
+				.getModelEntity(org.openflexo.foundation.fml.rt.editionaction.DeleteFlexoConceptInstance.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext().getModelEntity(org.openflexo.fge.shapes.Star.class) != null);
 		assertTrue(validationModel
 				.getValidationModelFactory()
@@ -87,11 +87,11 @@ public class TestViewPointValidationModelInIntegrationContext extends OpenflexoT
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.foundation.fml.inspector.ClassInspectorEntry.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
-				.getModelEntity(org.openflexo.foundation.fml.editionaction.AddFlexoConceptInstanceParameter.class) != null);
+				.getModelEntity(org.openflexo.foundation.fml.rt.editionaction.AddFlexoConceptInstanceParameter.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.foundation.fml.VirtualModel.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
-				.getModelEntity(org.openflexo.foundation.fmlrt.PrimitiveActorReference.class) != null);
+				.getModelEntity(org.openflexo.foundation.fml.rt.PrimitiveActorReference.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.technologyadapter.diagram.fml.editionaction.AddDiagramElementAction.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
@@ -145,13 +145,13 @@ public class TestViewPointValidationModelInIntegrationContext extends OpenflexoT
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.technologyadapter.diagram.fml.FMLDiagramPaletteElementBinding.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
-				.getModelEntity(org.openflexo.foundation.fml.editionaction.MatchingCriteria.class) != null);
+				.getModelEntity(org.openflexo.foundation.fml.rt.editionaction.MatchingCriteria.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.foundation.fml.FlexoBehaviourParameter.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.fge.GraphicalRepresentation.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
-				.getModelEntity(org.openflexo.foundation.fml.editionaction.DeleteFlexoConceptInstanceParameter.class) != null);
+				.getModelEntity(org.openflexo.foundation.fml.rt.editionaction.DeleteFlexoConceptInstanceParameter.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.foundation.fml.editionaction.RemoveFromListAction.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
@@ -232,13 +232,13 @@ public class TestViewPointValidationModelInIntegrationContext extends OpenflexoT
 				.getModelEntity(org.openflexo.foundation.fml.editionaction.FetchRequestCondition.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext().getModelEntity(org.openflexo.fge.shapes.Chevron.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
-				.getModelEntity(org.openflexo.foundation.fmlrt.FlexoConceptInstance.class) != null);
+				.getModelEntity(org.openflexo.foundation.fml.rt.FlexoConceptInstance.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.fge.connectors.RectPolylinConnectorSpecification.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.foundation.fml.InnerModelSlotParameter.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
-				.getModelEntity(org.openflexo.foundation.fmlrt.VirtualModelModelSlotInstance.class) != null);
+				.getModelEntity(org.openflexo.foundation.fml.rt.VirtualModelModelSlotInstance.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.technologyadapter.xml.XMLMetaModelSlot.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
@@ -253,7 +253,7 @@ public class TestViewPointValidationModelInIntegrationContext extends OpenflexoT
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.fge.shapes.RegularPolygon.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
-				.getModelEntity(org.openflexo.foundation.fml.VirtualModelModelSlot.class) != null);
+				.getModelEntity(org.openflexo.foundation.fml.rt.FMLRTModelSlot.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.technologyadapter.diagram.fml.GraphicalElementRole.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext().getModelEntity(org.openflexo.fge.TextStyle.class) != null);
@@ -264,7 +264,7 @@ public class TestViewPointValidationModelInIntegrationContext extends OpenflexoT
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.technologyadapter.xml.XMLModelSlot.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
-				.getModelEntity(org.openflexo.foundation.fml.editionaction.CreateFlexoConceptInstanceParameter.class) != null);
+				.getModelEntity(org.openflexo.foundation.fml.rt.editionaction.CreateFlexoConceptInstanceParameter.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.foundation.fml.editionaction.ControlStructureAction.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
@@ -276,7 +276,7 @@ public class TestViewPointValidationModelInIntegrationContext extends OpenflexoT
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.technologyadapter.owl.fml.editionaction.AddRestrictionStatement.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
-				.getModelEntity(org.openflexo.foundation.fmlrt.ViewObject.class) != null);
+				.getModelEntity(org.openflexo.foundation.fml.rt.ViewObject.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.technologyadapter.emf.fml.editionaction.AddEMFObjectIndividual.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
@@ -292,7 +292,7 @@ public class TestViewPointValidationModelInIntegrationContext extends OpenflexoT
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.foundation.fml.PropertyRole.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
-				.getModelEntity(org.openflexo.foundation.fml.editionaction.MatchFlexoConceptInstance.class) != null);
+				.getModelEntity(org.openflexo.foundation.fml.rt.editionaction.MatchFlexoConceptInstance.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext().getModelEntity(org.openflexo.fge.shapes.Losange.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.technologyadapter.owl.fml.OWLIndividualRole.class) != null);
@@ -314,7 +314,7 @@ public class TestViewPointValidationModelInIntegrationContext extends OpenflexoT
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.technologyadapter.diagram.fml.editionaction.DiagramAction.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
-				.getModelEntity(org.openflexo.foundation.fmlrt.VirtualModelInstance.class) != null);
+				.getModelEntity(org.openflexo.foundation.fml.rt.VirtualModelInstance.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.foundation.fml.editionaction.AddConcept.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
@@ -331,7 +331,7 @@ public class TestViewPointValidationModelInIntegrationContext extends OpenflexoT
 				.getModelEntity(org.openflexo.foundation.fml.editionaction.DeclareFlexoRole.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.foundation.fml.ActionContainer.class) != null);
-		assertTrue(validationModel.getValidationModelFactory().getModelContext().getModelEntity(org.openflexo.foundation.fmlrt.View.class) != null);
+		assertTrue(validationModel.getValidationModelFactory().getModelContext().getModelEntity(org.openflexo.foundation.fml.rt.View.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.technologyadapter.xml.metamodel.XMLProperty.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
@@ -370,13 +370,13 @@ public class TestViewPointValidationModelInIntegrationContext extends OpenflexoT
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.foundation.fml.TextFieldParameter.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
-				.getModelEntity(org.openflexo.foundation.fmlrt.ActorReference.class) != null);
+				.getModelEntity(org.openflexo.foundation.fml.rt.ActorReference.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.technologyadapter.diagram.fml.GraphicalElementAction.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.foundation.fml.FlexoBehaviour.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
-				.getModelEntity(org.openflexo.foundation.fmlrt.FreeModelSlotInstance.class) != null);
+				.getModelEntity(org.openflexo.foundation.fml.rt.FreeModelSlotInstance.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(ShapeOverridingGraphicalRepresentation.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
@@ -408,7 +408,7 @@ public class TestViewPointValidationModelInIntegrationContext extends OpenflexoT
 		assertTrue(validationModel.getValidationModelFactory().getModelContext().getModelEntity(org.openflexo.fge.shapes.Circle.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext().getModelEntity(org.openflexo.fge.shapes.Plus.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
-				.getModelEntity(org.openflexo.foundation.fmlrt.ConceptActorReference.class) != null);
+				.getModelEntity(org.openflexo.foundation.fml.rt.ConceptActorReference.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext().getModelEntity(org.openflexo.fge.shapes.Rectangle.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.technologyadapter.xml.fml.XMLIndividualRole.class) != null);
@@ -419,11 +419,11 @@ public class TestViewPointValidationModelInIntegrationContext extends OpenflexoT
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.technologyadapter.excel.fml.editionaction.AddBusinessConceptInstance.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
-				.getModelEntity(org.openflexo.foundation.fmlrt.TypeAwareModelSlotInstance.class) != null);
+				.getModelEntity(org.openflexo.foundation.fml.rt.TypeAwareModelSlotInstance.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.foundation.fml.editionaction.AssignableAction.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
-				.getModelEntity(org.openflexo.foundation.fmlrt.ModelSlotInstance.class) != null);
+				.getModelEntity(org.openflexo.foundation.fml.rt.ModelSlotInstance.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.technologyadapter.owl.fml.SubClassStatementRole.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
@@ -438,7 +438,7 @@ public class TestViewPointValidationModelInIntegrationContext extends OpenflexoT
 				.getModelEntity(org.openflexo.foundation.fml.editionaction.AbstractAssertion.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext().getModelEntity(org.openflexo.fge.shapes.Oval.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
-				.getModelEntity(org.openflexo.foundation.fmlrt.VirtualModelInstanceObject.class) != null);
+				.getModelEntity(org.openflexo.foundation.fml.rt.VirtualModelInstanceObject.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.fge.connectors.CurvedPolylinConnectorSpecification.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
@@ -464,7 +464,7 @@ public class TestViewPointValidationModelInIntegrationContext extends OpenflexoT
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.foundation.fml.PropertyParameter.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
-				.getModelEntity(org.openflexo.foundation.fmlrt.ModelObjectActorReference.class) != null);
+				.getModelEntity(org.openflexo.foundation.fml.rt.ModelObjectActorReference.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.technologyadapter.xml.XMLURIProcessor.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
