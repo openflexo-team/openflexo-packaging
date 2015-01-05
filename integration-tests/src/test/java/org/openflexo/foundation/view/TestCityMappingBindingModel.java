@@ -41,9 +41,9 @@ import org.openflexo.foundation.fml.binding.EditionActionBindingModel;
 import org.openflexo.foundation.fml.binding.FlexoBehaviourBindingModel;
 import org.openflexo.foundation.fml.binding.ViewPointBindingModel;
 import org.openflexo.foundation.fml.binding.VirtualModelBindingModel;
-import org.openflexo.foundation.fml.editionaction.ConditionalAction;
+import org.openflexo.foundation.fml.controlgraph.ConditionalAction;
+import org.openflexo.foundation.fml.controlgraph.FetchRequestIterationAction;
 import org.openflexo.foundation.fml.editionaction.FetchRequestCondition;
-import org.openflexo.foundation.fml.editionaction.FetchRequestIterationAction;
 import org.openflexo.foundation.fml.rm.ViewPointResource;
 import org.openflexo.foundation.fml.rt.editionaction.MatchFlexoConceptInstance;
 import org.openflexo.foundation.fml.rt.editionaction.MatchingCriteria;
@@ -134,11 +134,11 @@ public class TestCityMappingBindingModel extends OpenflexoProjectAtRunTimeTestCa
 
 		assertEquals(8, frIterationAction.getBindingModel().getBindingVariablesCount());
 
-		assertEquals(12, frIterationAction.getControlGraphBindingModel().getBindingVariablesCount());
-		assertNotNull(frIterationAction.getControlGraphBindingModel().bindingVariableNamed("city1"));
-		assertNotNull(frIterationAction.getControlGraphBindingModel().bindingVariableNamed("matchingCitiesInModel2"));
-		assertNotNull(frIterationAction.getControlGraphBindingModel().bindingVariableNamed("tempList"));
-		assertNotNull(frIterationAction.getControlGraphBindingModel().bindingVariableNamed("currentCity"));
+		assertEquals(12, frIterationAction.getInferedBindingModel().getBindingVariablesCount());
+		assertNotNull(frIterationAction.getInferedBindingModel().bindingVariableNamed("city1"));
+		assertNotNull(frIterationAction.getInferedBindingModel().bindingVariableNamed("matchingCitiesInModel2"));
+		assertNotNull(frIterationAction.getInferedBindingModel().bindingVariableNamed("tempList"));
+		assertNotNull(frIterationAction.getInferedBindingModel().bindingVariableNamed("currentCity"));
 
 		SelectEMFObjectIndividual fetchRequest1 = (SelectEMFObjectIndividual) frIterationAction.getFetchRequest();
 		assertNotNull(fetchRequest1);
