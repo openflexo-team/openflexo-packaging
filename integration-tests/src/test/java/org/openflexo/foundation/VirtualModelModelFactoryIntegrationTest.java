@@ -28,7 +28,7 @@ import java.util.logging.Logger;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.openflexo.foundation.fml.VirtualModelModelFactory;
+import org.openflexo.foundation.fml.FMLModelFactory;
 import org.openflexo.foundation.fml.FMLTechnologyAdapter;
 import org.openflexo.foundation.resource.FlexoResourceCenterService;
 import org.openflexo.foundation.technologyadapter.DefaultTechnologyAdapterService;
@@ -48,7 +48,7 @@ import org.openflexo.test.OrderedRunner;
 import org.openflexo.test.TestOrder;
 
 /**
- * Test instanciation of VirtualModelModelFactory<br>
+ * Test instanciation of FMLModelFactory<br>
  * Here the model factory is instanciated with all known technology adapters
  * 
  */
@@ -89,7 +89,7 @@ public class VirtualModelModelFactoryIntegrationTest extends OpenflexoTestCase {
 			System.out.println("Instanciating ViewPointModelFactory");
 			TechnologyAdapterService taService = DefaultTechnologyAdapterService.getNewInstance(null);
 			taService.addToTechnologyAdapters(ta);
-			VirtualModelModelFactory factory = new VirtualModelModelFactory(null, null, taService);
+			FMLModelFactory factory = new FMLModelFactory(null, null, taService);
 			ModelContext modelContext = factory.getModelContext();
 			for (Iterator<ModelEntity> it = modelContext.getEntities(); it.hasNext();) {
 				ModelEntity e = it.next();
@@ -106,7 +106,7 @@ public class VirtualModelModelFactoryIntegrationTest extends OpenflexoTestCase {
 	}
 
 	/**
-	 * Check the presence of FMLTechnologyAdapter, instanciate VirtualModelModelFactory with this TA
+	 * Check the presence of FMLTechnologyAdapter, instanciate FMLModelFactory with this TA
 	 */
 	@Test
 	@TestOrder(2)
@@ -118,7 +118,7 @@ public class VirtualModelModelFactoryIntegrationTest extends OpenflexoTestCase {
 	}
 
 	/**
-	 * Check the presence of DiagramTechnologyAdapter, instanciate VirtualModelModelFactory with this TA
+	 * Check the presence of DiagramTechnologyAdapter, instanciate FMLModelFactory with this TA
 	 */
 	@Test
 	@TestOrder(3)
@@ -130,7 +130,7 @@ public class VirtualModelModelFactoryIntegrationTest extends OpenflexoTestCase {
 	}
 
 	/**
-	 * Check the presence of EMFTechnologyAdapter, instanciate VirtualModelModelFactory with this TA
+	 * Check the presence of EMFTechnologyAdapter, instanciate FMLModelFactory with this TA
 	 */
 	@Test
 	@TestOrder(4)
@@ -142,7 +142,7 @@ public class VirtualModelModelFactoryIntegrationTest extends OpenflexoTestCase {
 	}
 
 	/**
-	 * Check the presence of ExcelTechnologyAdapter, instanciate VirtualModelModelFactory with this TA
+	 * Check the presence of ExcelTechnologyAdapter, instanciate FMLModelFactory with this TA
 	 */
 	@Test
 	@TestOrder(5)
@@ -154,7 +154,7 @@ public class VirtualModelModelFactoryIntegrationTest extends OpenflexoTestCase {
 	}
 
 	/**
-	 * Check the presence of OWLTechnologyAdapter, instanciate VirtualModelModelFactory with this TA
+	 * Check the presence of OWLTechnologyAdapter, instanciate FMLModelFactory with this TA
 	 */
 	@Test
 	@TestOrder(6)
@@ -166,7 +166,7 @@ public class VirtualModelModelFactoryIntegrationTest extends OpenflexoTestCase {
 	}
 
 	/**
-	 * Check the presence of PowerpointTechnologyAdapter, instanciate VirtualModelModelFactory with this TA
+	 * Check the presence of PowerpointTechnologyAdapter, instanciate FMLModelFactory with this TA
 	 */
 	@Test
 	@TestOrder(7)
@@ -178,7 +178,7 @@ public class VirtualModelModelFactoryIntegrationTest extends OpenflexoTestCase {
 	}
 
 	/**
-	 * Check the presence of XMLTechnologyAdapter, instanciate VirtualModelModelFactory with this TA
+	 * Check the presence of XMLTechnologyAdapter, instanciate FMLModelFactory with this TA
 	 */
 	@Test
 	@TestOrder(8)
@@ -198,7 +198,7 @@ public class VirtualModelModelFactoryIntegrationTest extends OpenflexoTestCase {
 	public void testInstantiateVirtualModelModelFactoryForAllTechnologyAdapters() {
 		try {
 			System.out.println("Instanciating ViewPointModelFactory");
-			VirtualModelModelFactory factory = new VirtualModelModelFactory(null, null, serviceManager.getTechnologyAdapterService());
+			FMLModelFactory factory = new FMLModelFactory(null, null, serviceManager.getTechnologyAdapterService());
 			ModelContext modelContext = factory.getModelContext();
 			for (Iterator<ModelEntity> it = modelContext.getEntities(); it.hasNext();) {
 				ModelEntity e = it.next();

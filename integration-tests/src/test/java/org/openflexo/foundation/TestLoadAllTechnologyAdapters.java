@@ -40,7 +40,7 @@ import org.openflexo.test.OrderedRunner;
 import org.openflexo.test.TestOrder;
 
 /**
- * Test instanciation of VirtualModelModelFactory<br>
+ * Test instanciation of FMLModelFactory<br>
  * Here the model factory is instanciated with all known technology adapters
  * 
  */
