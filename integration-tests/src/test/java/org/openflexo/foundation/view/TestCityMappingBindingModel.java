@@ -62,6 +62,8 @@ import org.openflexo.foundation.fml.binding.ViewPointBindingModel;
 import org.openflexo.foundation.fml.binding.VirtualModelBindingModel;
 import org.openflexo.foundation.fml.controlgraph.ConditionalAction;
 import org.openflexo.foundation.fml.controlgraph.FetchRequestIterationAction;
+import org.openflexo.foundation.fml.controlgraph.IterationAction;
+import org.openflexo.foundation.fml.controlgraph.Sequence;
 import org.openflexo.foundation.fml.editionaction.FetchRequestCondition;
 import org.openflexo.foundation.fml.rm.ViewPointResource;
 import org.openflexo.foundation.fml.rt.editionaction.MatchFlexoConceptInstance;
@@ -148,21 +150,27 @@ public class TestCityMappingBindingModel extends OpenflexoProjectAtRunTimeTestCa
 	@TestOrder(4)
 	public void checkFetchRequestIteration() {
 
-		FetchRequestIterationAction frIterationAction = (FetchRequestIterationAction) syncScheme.getActions().get(0);
-		assertNotNull(frIterationAction);
+		assertTrue(syncScheme.getFlexoBehaviour().getControlGraph() instanceof Sequence);
+		IterationAction iterationAction = (IterationAction) (((Sequence) syncScheme.getFlexoBehaviour().getControlGraph())
+				.getControlGraph1());
 
-		assertEquals(8, frIterationAction.getBindingModel().getBindingVariablesCount());
+		System.out.println("IterationAction: " + iterationAction.getFMLRepresentation());
 
-		assertEquals(12, frIterationAction.getInferedBindingModel().getBindingVariablesCount());
-		assertNotNull(frIterationAction.getInferedBindingModel().bindingVariableNamed("city1"));
-		assertNotNull(frIterationAction.getInferedBindingModel().bindingVariableNamed("matchingCitiesInModel2"));
-		assertNotNull(frIterationAction.getInferedBindingModel().bindingVariableNamed("tempList"));
-		assertNotNull(frIterationAction.getInferedBindingModel().bindingVariableNamed("currentCity"));
+		assertEquals(8, iterationAction.getBindingModel().getBindingVariablesCount());
 
-		SelectEMFObjectIndividual fetchRequest1 = (SelectEMFObjectIndividual) frIterationAction.getFetchRequest();
+		System.out.println("iteratorName=" + iterationAction.getIteratorName());
+
+		assertEquals(9, iterationAction.getInferedBindingModel().getBindingVariablesCount());
+		assertNotNull(iterationAction.getInferedBindingModel().bindingVariableNamed("city1"));
+		// assertNotNull(iterationAction.getInferedBindingModel().bindingVariableNamed("matchingCitiesInModel2"));
+		// assertNotNull(iterationAction.getInferedBindingModel().bindingVariableNamed("tempList"));
+		// assertNotNull(iterationAction.getInferedBindingModel().bindingVariableNamed("currentCity"));
+
+		SelectEMFObjectIndividual fetchRequest1 = (SelectEMFObjectIndividual) iterationAction.getIterationAction();
 		assertNotNull(fetchRequest1);
 
-		SelectEMFObjectIndividual fetchRequest2 = (SelectEMFObjectIndividual) frIterationAction.getActions().get(0);
+		SelectEMFObjectIndividual fetchRequest2 = (SelectEMFObjectIndividual) ((Sequence) iterationAction.getControlGraph())
+				.getControlGraph1();
 		assertNotNull(fetchRequest2);
 
 		assertEquals(12, fetchRequest2.getBindingModel().getBindingVariablesCount());
