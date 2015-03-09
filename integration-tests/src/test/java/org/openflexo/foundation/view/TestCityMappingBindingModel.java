@@ -49,6 +49,7 @@ import org.openflexo.connie.BindingModel;
 import org.openflexo.connie.BindingVariable;
 import org.openflexo.foundation.FlexoEditor;
 import org.openflexo.foundation.OpenflexoProjectAtRunTimeTestCase;
+import org.openflexo.foundation.fml.ActionScheme;
 import org.openflexo.foundation.fml.FlexoConcept;
 import org.openflexo.foundation.fml.FlexoRole;
 import org.openflexo.foundation.fml.SynchronizationScheme;
@@ -61,9 +62,10 @@ import org.openflexo.foundation.fml.binding.FlexoBehaviourBindingModel;
 import org.openflexo.foundation.fml.binding.ViewPointBindingModel;
 import org.openflexo.foundation.fml.binding.VirtualModelBindingModel;
 import org.openflexo.foundation.fml.controlgraph.ConditionalAction;
-import org.openflexo.foundation.fml.controlgraph.FetchRequestIterationAction;
 import org.openflexo.foundation.fml.controlgraph.IterationAction;
 import org.openflexo.foundation.fml.controlgraph.Sequence;
+import org.openflexo.foundation.fml.editionaction.DeclarationAction;
+import org.openflexo.foundation.fml.editionaction.ExpressionAction;
 import org.openflexo.foundation.fml.editionaction.FetchRequestCondition;
 import org.openflexo.foundation.fml.rm.ViewPointResource;
 import org.openflexo.foundation.fml.rt.editionaction.MatchFlexoConceptInstance;
@@ -100,8 +102,8 @@ public class TestCityMappingBindingModel extends OpenflexoProjectAtRunTimeTestCa
 		String viewPointURI = "http://www.thalesgroup.com/openflexo/emf/CityMapping";
 		log("Testing ViewPoint loading: " + viewPointURI);
 
-		System.out.println("resourceCenter=" + resourceCenter);
-		System.out.println("resourceCenter.getViewPointRepository()=" + resourceCenter.getViewPointRepository());
+		// System.out.println("resourceCenter=" + resourceCenter);
+		// System.out.println("resourceCenter.getViewPointRepository()=" + resourceCenter.getViewPointRepository());
 
 		ViewPointResource vpRes = resourceCenter.getViewPointRepository().getResource(viewPointURI);
 
@@ -154,30 +156,37 @@ public class TestCityMappingBindingModel extends OpenflexoProjectAtRunTimeTestCa
 		IterationAction iterationAction = (IterationAction) (((Sequence) syncScheme.getFlexoBehaviour().getControlGraph())
 				.getControlGraph1());
 
-		System.out.println("IterationAction: " + iterationAction.getFMLRepresentation());
+		// System.out.println("IterationAction: " + iterationAction.getFMLRepresentation());
 
 		assertEquals(8, iterationAction.getBindingModel().getBindingVariablesCount());
-
-		System.out.println("iteratorName=" + iterationAction.getIteratorName());
-
 		assertEquals(9, iterationAction.getInferedBindingModel().getBindingVariablesCount());
-		assertNotNull(iterationAction.getInferedBindingModel().bindingVariableNamed("city1"));
-		// assertNotNull(iterationAction.getInferedBindingModel().bindingVariableNamed("matchingCitiesInModel2"));
-		// assertNotNull(iterationAction.getInferedBindingModel().bindingVariableNamed("tempList"));
-		// assertNotNull(iterationAction.getInferedBindingModel().bindingVariableNamed("currentCity"));
 
 		SelectEMFObjectIndividual fetchRequest1 = (SelectEMFObjectIndividual) iterationAction.getIterationAction();
 		assertNotNull(fetchRequest1);
 
-		SelectEMFObjectIndividual fetchRequest2 = (SelectEMFObjectIndividual) ((Sequence) iterationAction.getControlGraph())
+		/*SelectEMFObjectIndividual fetchRequest2 = (SelectEMFObjectIndividual) ((Sequence) iterationAction.getControlGraph())
 				.getControlGraph1();
-		assertNotNull(fetchRequest2);
+		assertNotNull(fetchRequest2);*/
 
-		assertEquals(12, fetchRequest2.getBindingModel().getBindingVariablesCount());
+		// assertSame(fetchRequest1, fetchRequest2);
+
+		System.out.println("FML=" + syncScheme.getFlexoBehaviour().getFMLRepresentation());
+
+		// System.out.println("fetchRequest1=" + fetchRequest1.getFMLRepresentation());
+
+		assertEquals(8, fetchRequest1.getBindingModel().getBindingVariablesCount());
+
+		// System.out.println("fetchRequest2=" + fetchRequest2.getFMLRepresentation());
+
+		DeclarationAction<?> declaration = (DeclarationAction<?>) ((Sequence) iterationAction.getControlGraph()).getControlGraph1();
+		SelectEMFObjectIndividual fetchRequest2 = (SelectEMFObjectIndividual) declaration.getAssignableAction();
+
+		assertEquals(9, fetchRequest2.getBindingModel().getBindingVariablesCount());
+		assertNotNull(fetchRequest2.getBindingModel().bindingVariableNamed("city1"));
 
 		for (FetchRequestCondition c : fetchRequest2.getConditions()) {
 			System.out.println("condition: " + c.getCondition() + " bm=" + c.getBindingModel());
-			assertEquals(13, c.getBindingModel().getBindingVariablesCount());
+			assertEquals(10, c.getBindingModel().getBindingVariablesCount());
 			assertNotNull(c.getBindingModel().bindingVariableNamed(FetchRequestCondition.SELECTED));
 			assertTrue(c.getCondition().isValid());
 		}
@@ -188,21 +197,38 @@ public class TestCityMappingBindingModel extends OpenflexoProjectAtRunTimeTestCa
 	@TestOrder(4)
 	public void checkMatchFlexoConceptInstance() {
 
-		FetchRequestIterationAction frIterationAction = (FetchRequestIterationAction) syncScheme.getActions().get(0);
-		assertNotNull(frIterationAction);
+		System.out.println("FML=" + syncScheme.getFlexoBehaviour().getFMLRepresentation());
 
-		ConditionalAction conditional = (ConditionalAction) frIterationAction.getActions().get(2);
+		assertTrue(syncScheme.getFlexoBehaviour().getControlGraph() instanceof Sequence);
+		IterationAction iterationAction = (IterationAction) (((Sequence) syncScheme.getFlexoBehaviour().getControlGraph())
+				.getControlGraph1());
+
+		// System.out.println("IterationAction: " + iterationAction.getFMLRepresentation());
+
+		assertEquals(8, iterationAction.getBindingModel().getBindingVariablesCount());
+		assertEquals(9, iterationAction.getInferedBindingModel().getBindingVariablesCount());
+
+		/*for (int i = 0; i < iterationAction.getInferedBindingModel().getBindingVariablesCount(); i++) {
+			System.out.println("1 / Variable at " + i + " = " + iterationAction.getInferedBindingModel().getBindingVariableAt(i));
+		}*/
+
+		Sequence seq = (Sequence) (((Sequence) iterationAction.getControlGraph()).getControlGraph2());
+
+		ConditionalAction conditional = (ConditionalAction) seq.getControlGraph1();
 		assertNotNull(conditional);
 
-		MatchFlexoConceptInstance matchAction = (MatchFlexoConceptInstance) conditional.getActions().get(0);
+		MatchFlexoConceptInstance matchAction = (MatchFlexoConceptInstance) conditional.getThenControlGraph();
 		assertNotNull(matchAction);
 		assertTrue(matchAction.getBindingModel() instanceof EditionActionBindingModel);
 
 		for (MatchingCriteria criteria : matchAction.getMatchingCriterias()) {
 			// System.out.println("> Criteria: " + criteria.getValue());
-			assertEquals(12, criteria.getBindingModel().getBindingVariablesCount());
-			assertTrue(criteria.getValue().isValid());
+			/*for (int i = 0; i < criteria.getBindingModel().getBindingVariablesCount(); i++) {
+				System.out.println("2 / Variable at " + i + " = " + criteria.getBindingModel().getBindingVariableAt(i));
+			}*/
+			assertEquals(10, criteria.getBindingModel().getBindingVariablesCount());
 			assertNotNull(criteria.getBindingModel().bindingVariableNamed("matchingCitiesInModel2"));
+			assertTrue(criteria.getValue().isValid());
 		}
 
 	}
@@ -239,6 +265,52 @@ public class TestCityMappingBindingModel extends OpenflexoProjectAtRunTimeTestCa
 			IFlexoOntologyClass aType = emfRole.getOntologicType();
 		}
 
+	}
+
+	@Test
+	@TestOrder(6)
+	public void checkSynchronizeModel1FromModel2() {
+
+		VirtualModel cityMapping = cityMappingVP.getVirtualModelNamed("CityMapping");
+		assertNotNull(cityMapping);
+
+		ActionScheme actionScheme = (ActionScheme) cityMapping.getFlexoBehaviour("synchronizeModel1FromModel2");
+		assertNotNull(actionScheme);
+
+		System.out.println("FML=" + actionScheme.getFMLRepresentation());
+
+		assertTrue(actionScheme.getControlGraph() instanceof Sequence);
+
+		Sequence seq = (Sequence) actionScheme.getControlGraph();
+		assertTrue(seq.getControlGraph1() instanceof DeclarationAction);
+		assertTrue(seq.getControlGraph2() instanceof IterationAction);
+
+		IterationAction iteration = (IterationAction) seq.getControlGraph2();
+
+		assertTrue(iteration.getControlGraph() instanceof ExpressionAction);
+	}
+
+	@Test
+	@TestOrder(7)
+	public void checkSynchronizeModel2FromModel1() {
+
+		VirtualModel cityMapping = cityMappingVP.getVirtualModelNamed("CityMapping");
+		assertNotNull(cityMapping);
+
+		ActionScheme actionScheme = (ActionScheme) cityMapping.getFlexoBehaviour("synchronizeModel2FromModel1");
+		assertNotNull(actionScheme);
+
+		System.out.println("FML=" + actionScheme.getFMLRepresentation());
+
+		assertTrue(actionScheme.getControlGraph() instanceof Sequence);
+
+		Sequence seq = (Sequence) actionScheme.getControlGraph();
+		assertTrue(seq.getControlGraph1() instanceof DeclarationAction);
+		assertTrue(seq.getControlGraph2() instanceof IterationAction);
+
+		IterationAction iteration = (IterationAction) seq.getControlGraph2();
+
+		assertTrue(iteration.getControlGraph() instanceof ExpressionAction);
 	}
 
 	@Test
