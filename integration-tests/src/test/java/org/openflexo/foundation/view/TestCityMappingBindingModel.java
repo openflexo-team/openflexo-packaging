@@ -50,6 +50,7 @@ import org.openflexo.connie.BindingVariable;
 import org.openflexo.foundation.FlexoEditor;
 import org.openflexo.foundation.OpenflexoProjectAtRunTimeTestCase;
 import org.openflexo.foundation.fml.ActionScheme;
+import org.openflexo.foundation.fml.CreationScheme;
 import org.openflexo.foundation.fml.FlexoConcept;
 import org.openflexo.foundation.fml.FlexoRole;
 import org.openflexo.foundation.fml.SynchronizationScheme;
@@ -64,6 +65,7 @@ import org.openflexo.foundation.fml.binding.VirtualModelBindingModel;
 import org.openflexo.foundation.fml.controlgraph.ConditionalAction;
 import org.openflexo.foundation.fml.controlgraph.IterationAction;
 import org.openflexo.foundation.fml.controlgraph.Sequence;
+import org.openflexo.foundation.fml.editionaction.AssignationAction;
 import org.openflexo.foundation.fml.editionaction.DeclarationAction;
 import org.openflexo.foundation.fml.editionaction.ExpressionAction;
 import org.openflexo.foundation.fml.editionaction.FetchRequestCondition;
@@ -311,6 +313,34 @@ public class TestCityMappingBindingModel extends OpenflexoProjectAtRunTimeTestCa
 		IterationAction iteration = (IterationAction) seq.getControlGraph2();
 
 		assertTrue(iteration.getControlGraph() instanceof ExpressionAction);
+	}
+
+	@Test
+	@TestOrder(8)
+	public void checkCityCreationScheme() {
+
+		VirtualModel cityMapping = cityMappingVP.getVirtualModelNamed("CityMapping");
+		assertNotNull(cityMapping);
+
+		FlexoConcept city = cityMapping.getFlexoConcept("City");
+		assertNotNull(city);
+
+		CreationScheme creationScheme = (CreationScheme) city.getFlexoBehaviour("creation");
+		assertNotNull(creationScheme);
+
+		System.out.println("FML=" + creationScheme.getFMLRepresentation());
+
+		assertTrue(creationScheme.getControlGraph() instanceof Sequence);
+
+		Sequence seq = (Sequence) creationScheme.getControlGraph();
+		assertTrue(seq.getControlGraph1() instanceof AssignationAction);
+		assertTrue(seq.getControlGraph2() instanceof AssignationAction);
+
+		AssignationAction assignation1 = (AssignationAction) seq.getControlGraph1();
+		AssignationAction assignation2 = (AssignationAction) seq.getControlGraph2();
+
+		assertEquals("cityInModel1", assignation1.getAssignation().toString());
+		assertEquals("cityInModel2", assignation2.getAssignation().toString());
 	}
 
 	@Test

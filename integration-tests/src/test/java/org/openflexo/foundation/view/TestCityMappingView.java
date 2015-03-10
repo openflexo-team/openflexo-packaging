@@ -316,7 +316,7 @@ public class TestCityMappingView extends OpenflexoProjectAtRunTimeTestCase {
 		assertNotNull(mansionEP);
 		assertNotNull(residentEP);
 
-		System.out.println("Les FCI: " + newVirtualModelInstance.getFlexoConceptInstances(cityEP));
+		System.out.println("FCI: " + newVirtualModelInstance.getFlexoConceptInstances(cityEP));
 
 		for (FlexoConceptInstance fci : newVirtualModelInstance.getFlexoConceptInstances(cityEP)) {
 			System.out.println("> " + fci);
