@@ -1,52 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<DiagramPalette id="1" index="0" name="CityOne View" diagramSpecificationURI="http://www.openflexo.org/cityviews/City1_View/City1_View.diagramspecification" userID="FLX">
-  <DiagramPaletteElement id="2" name="New City" flexoConcept="CityGR" dropSchemeName="dropAtTopLevel" boundLabelToElementName="true" userID="FLX">
-    <Parameter id="3" name="Name" value="" userID="FLX" />
-    <ShapeGraphicalRepresentation id="4" x="28.0" y="-10.0" width="60.0" height="60.0" minimalWidth="0.0" minimalHeight="0.0" maximalWidth="Infinity" maximalHeight="Infinity" relativeTextX="0.0" relativeTextY="1.0" lineWrap="false" locationConstraints="FREELY_MOVABLE" dimensionConstraints="FREELY_RESIZABLE" adjustMinimalWidthToLabelWidth="true" adjustMinimalHeightToLabelHeight="true" adjustMaximalWidthToLabelWidth="false" adjustMaximalHeightToLabelHeight="false" hasSelectedForeground="false" hasSelectedBackground="false" hasFocusedForeground="false" hasFocusedBackground="false" isFloatingLabel="true" allowToLeaveBounds="true" identifier="object_0" layer="1" hasText="true" text="New City" isMultilineAllowed="true" continuousTextEditing="true" absoluteTextX="50.0" absoluteTextY="88.0" paragraphAlignment="JUSTIFY" horizontalTextAlignment="CENTER" verticalTextAlignment="MIDDLE" isSelectable="true" isFocusable="true" drawControlPointsWhenFocused="true" drawControlPointsWhenSelected="true" isReadOnly="false" isLabelEditable="true" isVisible="true" userID="FLX">
-      <ForegroundStyle id="5" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-      <ImageBackgroundStyle id="6" imageFile="../icons/City.png" scaleX="0.46875" scaleY="0.46875" deltaX="0.0" deltaY="0.0" imageBackgroundType="OPAQUE" imageBackgroundColor="255,255,255" fitToShape="true" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-      <SelectedForegroundStyle id="7" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-      <SelectedColorBackgroundStyle id="8" color="255,255,255" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-      <FocusedForegroundStyle id="9" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-      <FocusedColorBackgroundStyle id="10" color="255,255,255" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-      <ShapeBorder id="11" top="20" bottom="20" left="20" right="20" userID="FLX" />
-      <RectangleShape id="12" isRounded="true" arcSize="30.0" userID="FLX" />
-      <ShadowStyle id="13" drawShadow="true" shadowDarkness="150" shadowDepth="2" shadowBlur="4" userID="FLX" />
-      <TextStyle id="14" font="Lucida Sans,0,11" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
-    </ShapeGraphicalRepresentation>
-  </DiagramPaletteElement>
-  <DiagramPaletteElement id="15" name="New House (in City)" flexoConcept="HouseGR" dropSchemeName="dropHouseInCity" boundLabelToElementName="true" userID="FLX">
-    <Parameter id="16" name="Information" value="" userID="FLX" />
-    <Parameter id="17" name="Owner" value="" userID="FLX" />
-    <ShapeGraphicalRepresentation id="18" x="29.0" y="78.0" width="60.0" height="60.0" minimalWidth="0.0" minimalHeight="0.0" maximalWidth="Infinity" maximalHeight="Infinity" relativeTextX="0.5" relativeTextY="0.5" lineWrap="true" locationConstraints="FREELY_MOVABLE" dimensionConstraints="FREELY_RESIZABLE" adjustMinimalWidthToLabelWidth="true" adjustMinimalHeightToLabelHeight="true" adjustMaximalWidthToLabelWidth="false" adjustMaximalHeightToLabelHeight="false" hasSelectedForeground="false" hasSelectedBackground="false" hasFocusedForeground="false" hasFocusedBackground="false" isFloatingLabel="true" allowToLeaveBounds="true" identifier="object_1" layer="1" hasText="true" text="New House (in City)" isMultilineAllowed="false" continuousTextEditing="true" absoluteTextX="51.0" absoluteTextY="107.0" paragraphAlignment="CENTER" horizontalTextAlignment="CENTER" verticalTextAlignment="MIDDLE" isSelectable="true" isFocusable="true" drawControlPointsWhenFocused="true" drawControlPointsWhenSelected="true" isReadOnly="false" isLabelEditable="true" isVisible="true" userID="FLX">
-      <ForegroundStyle id="19" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-      <ImageBackgroundStyle id="20" imageFile="../icons/Mansion.png" scaleX="1.25" scaleY="1.25" deltaX="0.0" deltaY="0.0" imageBackgroundType="TRANSPARENT" imageBackgroundColor="255,255,255" fitToShape="true" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-      <SelectedForegroundStyle id="21" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-      <SelectedColorBackgroundStyle id="22" color="255,255,255" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-      <FocusedForegroundStyle id="23" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-      <FocusedColorBackgroundStyle id="24" color="255,255,255" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-      <ShapeBorder id="25" top="20" bottom="20" left="20" right="20" userID="FLX" />
-      <RectangleShape idref="12" userID="FLX" />
-      <ShadowStyle id="26" drawShadow="true" shadowDarkness="150" shadowDepth="2" shadowBlur="4" userID="FLX" />
-      <TextStyle id="27" font="Lucida Sans,0,11" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
-    </ShapeGraphicalRepresentation>
-  </DiagramPaletteElement>
-  <DiagramPaletteElement id="28" name="New Resident (in City)" flexoConcept="ResidentGR" dropSchemeName="dropResident" boundLabelToElementName="true" userID="FLX">
-    <Parameter id="29" name="Name" value="" userID="FLX" />
-    <ShapeGraphicalRepresentation id="30" x="28.0" y="197.0" width="60.0" height="60.0" minimalWidth="0.0" minimalHeight="0.0" maximalWidth="Infinity" maximalHeight="Infinity" relativeTextX="0.5" relativeTextY="0.5" lineWrap="true" locationConstraints="FREELY_MOVABLE" dimensionConstraints="FREELY_RESIZABLE" adjustMinimalWidthToLabelWidth="true" adjustMinimalHeightToLabelHeight="true" adjustMaximalWidthToLabelWidth="false" adjustMaximalHeightToLabelHeight="false" hasSelectedForeground="false" hasSelectedBackground="false" hasFocusedForeground="false" hasFocusedBackground="false" isFloatingLabel="true" allowToLeaveBounds="true" identifier="object_2" layer="1" hasText="true" text="New Resident (in City)" isMultilineAllowed="true" continuousTextEditing="true" absoluteTextX="49.0" absoluteTextY="104.0" paragraphAlignment="CENTER" horizontalTextAlignment="CENTER" verticalTextAlignment="MIDDLE" isSelectable="true" isFocusable="true" drawControlPointsWhenFocused="true" drawControlPointsWhenSelected="true" isReadOnly="false" isLabelEditable="true" isVisible="true" userID="FLX">
-      <ForegroundStyle id="31" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-      <ImageBackgroundStyle id="32" imageFile="../icons/Actor.gif" scaleX="1.6666666666666667" scaleY="1.2765957446808511" deltaX="0.0" deltaY="0.0" imageBackgroundType="OPAQUE" imageBackgroundColor="255,255,255" fitToShape="true" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-      <SelectedForegroundStyle id="33" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-      <SelectedColorBackgroundStyle id="34" color="255,255,255" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-      <FocusedForegroundStyle id="35" noStroke="false" color="0,0,0" lineWidth="1.0" joinStyle="JOIN_MITER" capStyle="CAP_SQUARE" dashStyle="PLAIN_STROKE" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-      <FocusedColorBackgroundStyle id="36" color="255,255,255" useTransparency="false" transparencyLevel="0.5" userID="FLX" />
-      <ShapeBorder id="37" top="20" bottom="20" left="20" right="20" userID="FLX" />
-      <RectangleShape idref="12" userID="FLX" />
-      <ShadowStyle id="38" drawShadow="true" shadowDarkness="150" shadowDepth="2" shadowBlur="4" userID="FLX" />
-      <TextStyle id="39" font="Lucida Sans,0,11" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
-    </ShapeGraphicalRepresentation>
-  </DiagramPaletteElement>
-  <DrawingGraphicalRepresentation id="40" width="260.0" height="327.0" drawWorkingArea="true" selectionColor="0,0,255" focusColor="255,0,0" backgroundColor="255,255,255" identifier="root" layer="0" hasText="true" isMultilineAllowed="true" continuousTextEditing="true" absoluteTextX="0.0" absoluteTextY="0.0" paragraphAlignment="CENTER" horizontalTextAlignment="CENTER" verticalTextAlignment="MIDDLE" isSelectable="true" isFocusable="true" drawControlPointsWhenFocused="true" drawControlPointsWhenSelected="true" isReadOnly="false" isLabelEditable="true" isVisible="true" userID="FLX">
-    <TextStyle id="41" font="Lucida Sans,0,11" color="0,0,0" orientation="0" isBackgroundColored="false" backgroundColor="255,255,255" userID="FLX" />
+<DiagramPalette id="0" name="CityOne View">
+  <DrawingGraphicalRepresentation id="1" lineWrap="false" minimalHeight="0.0" adjustMinimalHeightToLabelHeight="true" backgroundColor="255,255,255" horizontalTextAlignment="CENTER" maximalHeight="Infinity" transparency="1.0" height="327.0" drawControlPointsWhenFocused="true" isVisible="true" dimensionConstraints="FREELY_RESIZABLE" isReadOnly="false" adjustMaximalHeightToLabelHeight="false" paragraphAlignment="CENTER" verticalTextAlignment="MIDDLE" adjustMinimalWidthToLabelWidth="true" width="260.0" absoluteTextX="0.0" layer="0" rectangleSelectingSelectionColor="0,0,255" absoluteTextY="0.0" isResizable="false" selectionColor="0,0,255" isFocusable="true" drawControlPointsWhenSelected="true" isSelectable="true" isLabelEditable="true" focusColor="255,0,0" adjustMaximalWidthToLabelWidth="false" continuousTextEditing="true" isMultilineAllowed="true" drawWorkingArea="true" minimalWidth="0.0" identifier="root" maximalWidth="Infinity">
+    <TextStyle id="2" orientation="0" color="0,0,0" backgroundColor="255,255,255" font="Lucida Sans,0,11" isBackgroundColored="false" />
   </DrawingGraphicalRepresentation>
+  <DiagramPaletteElement id="3" name="New City">
+    <ShapeGraphicalRepresentation id="4" minimalHeight="0.0" relativeTextX="0.0" transparency="1.0" drawControlPointsWhenFocused="true" height="60.0" hasFocusedBackground="false" text="New City" verticalTextAlignment="MIDDLE" adjustMinimalWidthToLabelWidth="true" width="60.0" hasSelectedBackground="false" hasFocusedForeground="false" allowToLeaveBounds="true" isFocusable="false" drawControlPointsWhenSelected="true" isSelectable="false" isLabelEditable="true" relativeTextY="1.0" continuousTextEditing="true" minimalWidth="0.0" identifier="object_0" lineWrap="false" locationConstraints="UNMOVABLE" adjustMinimalHeightToLabelHeight="true" horizontalTextAlignment="CENTER" adaptBoundsToContents="false" maximalHeight="Infinity" isVisible="true" dimensionConstraints="FREELY_RESIZABLE" isReadOnly="true" adjustMaximalHeightToLabelHeight="false" isFloatingLabel="true" hasSelectedForeground="false" paragraphAlignment="JUSTIFY" absoluteTextX="50.0" layer="1" absoluteTextY="88.0" adjustMaximalWidthToLabelWidth="false" isMultilineAllowed="true" y="-10.0" maximalWidth="Infinity" x="28.0">
+      <FocusedForegroundStyle id="5" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" capStyle="CAP_SQUARE" joinStyle="JOIN_MITER" />
+      <SelectedColorBackgroundStyle id="6" color="255,255,255" transparencyLevel="0.5" useTransparency="false" />
+      <TextStyle id="7" orientation="0" color="0,0,0" backgroundColor="255,255,255" font="Lucida Sans,0,11" isBackgroundColored="false" />
+      <ShapeBorder id="8" bottom="20" left="20" right="20" top="20" />
+      <ForegroundStyle id="9" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" capStyle="CAP_SQUARE" joinStyle="JOIN_MITER" />
+      <SelectedForegroundStyle id="10" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" capStyle="CAP_SQUARE" joinStyle="JOIN_MITER" />
+      <FocusedColorBackgroundStyle id="11" color="255,255,255" transparencyLevel="0.5" useTransparency="false" />
+      <RectangleShape id="12" arcSize="30.0" isRounded="true" />
+      <ShadowStyle id="13" shadowBlur="4" shadowDepth="2" drawShadow="true" shadowDarkness="150" />
+      <ImageBackgroundStyle id="14" scaleX="0.46875" scaleY="0.46875" imageBackgroundColor="255,255,255" transparencyLevel="0.5" fitToShape="true" useTransparency="false" imageFile="../../icons/City.png" deltaX="0.0" imageBackgroundType="OPAQUE" deltaY="0.0" />
+    </ShapeGraphicalRepresentation>
+  </DiagramPaletteElement>
+  <DiagramPaletteElement id="15" name="New House (in City)">
+    <ShapeGraphicalRepresentation id="16" minimalHeight="0.0" relativeTextX="0.5" transparency="1.0" drawControlPointsWhenFocused="true" height="60.0" hasFocusedBackground="false" text="New House (in City)" verticalTextAlignment="MIDDLE" adjustMinimalWidthToLabelWidth="true" width="60.0" hasSelectedBackground="false" hasFocusedForeground="false" allowToLeaveBounds="true" isFocusable="false" drawControlPointsWhenSelected="true" isSelectable="false" isLabelEditable="true" relativeTextY="0.5" continuousTextEditing="true" minimalWidth="0.0" identifier="object_1" lineWrap="true" locationConstraints="UNMOVABLE" adjustMinimalHeightToLabelHeight="true" horizontalTextAlignment="CENTER" adaptBoundsToContents="false" maximalHeight="Infinity" isVisible="true" dimensionConstraints="FREELY_RESIZABLE" isReadOnly="true" adjustMaximalHeightToLabelHeight="false" isFloatingLabel="true" hasSelectedForeground="false" paragraphAlignment="CENTER" absoluteTextX="51.0" layer="1" absoluteTextY="107.0" adjustMaximalWidthToLabelWidth="false" isMultilineAllowed="false" y="78.0" maximalWidth="Infinity" x="29.0">
+      <FocusedForegroundStyle id="17" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" capStyle="CAP_SQUARE" joinStyle="JOIN_MITER" />
+      <SelectedColorBackgroundStyle id="18" color="255,255,255" transparencyLevel="0.5" useTransparency="false" />
+      <TextStyle id="19" orientation="0" color="0,0,0" backgroundColor="255,255,255" font="Lucida Sans,0,11" isBackgroundColored="false" />
+      <ShapeBorder id="20" bottom="20" left="20" right="20" top="20" />
+      <ForegroundStyle id="21" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" capStyle="CAP_SQUARE" joinStyle="JOIN_MITER" />
+      <SelectedForegroundStyle id="22" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" capStyle="CAP_SQUARE" joinStyle="JOIN_MITER" />
+      <FocusedColorBackgroundStyle id="23" color="255,255,255" transparencyLevel="0.5" useTransparency="false" />
+      <RectangleShape idref="12" />
+      <ShadowStyle id="24" shadowBlur="4" shadowDepth="2" drawShadow="true" shadowDarkness="150" />
+      <ImageBackgroundStyle id="25" scaleX="0.9230769230769231" scaleY="0.9230769230769231" imageBackgroundColor="255,255,255" transparencyLevel="0.5" fitToShape="true" useTransparency="false" imageFile="../../icons/Apartment.png" deltaX="0.0" imageBackgroundType="TRANSPARENT" deltaY="0.0" />
+    </ShapeGraphicalRepresentation>
+  </DiagramPaletteElement>
+  <DiagramPaletteElement id="26" name="New Resident (in City)">
+    <ShapeGraphicalRepresentation id="27" minimalHeight="0.0" relativeTextX="0.5" transparency="1.0" drawControlPointsWhenFocused="true" height="60.0" hasFocusedBackground="false" text="New Resident (in City)" verticalTextAlignment="MIDDLE" adjustMinimalWidthToLabelWidth="true" width="60.0" hasSelectedBackground="false" hasFocusedForeground="false" allowToLeaveBounds="true" isFocusable="false" drawControlPointsWhenSelected="true" isSelectable="false" isLabelEditable="true" relativeTextY="0.5" continuousTextEditing="true" minimalWidth="0.0" identifier="object_2" lineWrap="true" locationConstraints="UNMOVABLE" adjustMinimalHeightToLabelHeight="true" horizontalTextAlignment="CENTER" adaptBoundsToContents="false" maximalHeight="Infinity" isVisible="true" dimensionConstraints="FREELY_RESIZABLE" isReadOnly="true" adjustMaximalHeightToLabelHeight="false" isFloatingLabel="true" hasSelectedForeground="false" paragraphAlignment="CENTER" absoluteTextX="49.0" layer="1" absoluteTextY="104.0" adjustMaximalWidthToLabelWidth="false" isMultilineAllowed="true" y="197.0" maximalWidth="Infinity" x="29.0">
+      <FocusedForegroundStyle id="28" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" capStyle="CAP_SQUARE" joinStyle="JOIN_MITER" />
+      <SelectedColorBackgroundStyle id="29" color="255,255,255" transparencyLevel="0.5" useTransparency="false" />
+      <TextStyle id="30" orientation="0" color="0,0,0" backgroundColor="255,255,255" font="Lucida Sans,0,11" isBackgroundColored="false" />
+      <ShapeBorder id="31" bottom="20" left="20" right="20" top="20" />
+      <ForegroundStyle id="32" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" capStyle="CAP_SQUARE" joinStyle="JOIN_MITER" />
+      <SelectedForegroundStyle id="33" dashStyle="PLAIN_STROKE" color="0,0,0" noStroke="false" transparencyLevel="0.5" useTransparency="false" lineWidth="1.0" capStyle="CAP_SQUARE" joinStyle="JOIN_MITER" />
+      <FocusedColorBackgroundStyle id="34" color="255,255,255" transparencyLevel="0.5" useTransparency="false" />
+      <RectangleShape idref="12" />
+      <ShadowStyle id="35" shadowBlur="4" shadowDepth="2" drawShadow="true" shadowDarkness="150" />
+      <ImageBackgroundStyle id="36" scaleX="1.6666666666666667" scaleY="1.2765957446808511" imageBackgroundColor="255,255,255" transparencyLevel="0.5" fitToShape="true" useTransparency="false" imageFile="../../icons/Actor.gif" deltaX="0.0" imageBackgroundType="OPAQUE" deltaY="0.0" />
+    </ShapeGraphicalRepresentation>
+  </DiagramPaletteElement>
 </DiagramPalette>

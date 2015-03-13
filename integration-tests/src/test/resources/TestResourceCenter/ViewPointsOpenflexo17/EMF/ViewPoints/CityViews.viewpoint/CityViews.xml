@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ViewPoint id="1" uri="http://www.openflexo.org/cityviews" version="0.1" modelVersion="1.0" name="CityViews">
-  <LocalizedDictionary id="2" />
-  <description>Sample diagrams to manipulate EMF models conformant to city1&amp;2 metamodels</description>
+<ViewPoint id="0" userID="FLX" useSpecificDescriptions="false" modelVersion="1.0" version="0.1" flexoID="5" name="CityViews" uri="http://www.openflexo.org/cityviews">
+  <Inspector id="1" flexoID="-1" userID="FLX" useSpecificDescriptions="false" inspectorTitle="CityViews" />
 </ViewPoint>
