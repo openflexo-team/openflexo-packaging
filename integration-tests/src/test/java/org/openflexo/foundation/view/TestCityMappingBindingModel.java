@@ -325,8 +325,7 @@ public class TestCityMappingBindingModel extends OpenflexoProjectAtRunTimeTestCa
 		FlexoConcept city = cityMapping.getFlexoConcept("City");
 		assertNotNull(city);
 
-		CreationScheme creationScheme = (CreationScheme) city.getFlexoBehaviour("creation");
-		assertNotNull(creationScheme);
+		CreationScheme creationScheme = (CreationScheme) city.getFlexoBehaviour("createANewOne");
 
 		System.out.println("FML=" + creationScheme.getFMLRepresentation());
 
