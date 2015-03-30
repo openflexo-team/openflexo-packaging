@@ -243,7 +243,7 @@ public class TestCityMappingBindingModel extends OpenflexoProjectAtRunTimeTestCa
 
 		FlexoConcept fc = cityMapping.getFlexoConcept("City");
 
-		FlexoRole<?> fcRole = fc.getFlexoRole("cityInModel1");
+		FlexoRole<?> fcRole = (FlexoRole<?>) fc.getAccessibleProperty("cityInModel1");
 
 		BindingModel fcRoleBindingModel = fcRole.getBindingModel();
 		int nbBindVar = fcRoleBindingModel.getBindingVariablesCount();
