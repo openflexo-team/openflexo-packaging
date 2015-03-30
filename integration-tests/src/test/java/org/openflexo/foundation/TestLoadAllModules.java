@@ -51,6 +51,7 @@ import org.openflexo.fme.FMEModule;
 import org.openflexo.fme.FreeModellingEditor;
 import org.openflexo.foundation.resource.FlexoResourceCenterService;
 import org.openflexo.foundation.technologyadapter.TechnologyAdapterService;
+import org.openflexo.icon.FMLIconLibrary;
 import org.openflexo.module.FlexoModule;
 import org.openflexo.module.ModuleLoader;
 import org.openflexo.module.ModuleLoadingException;
@@ -79,6 +80,7 @@ public class TestLoadAllModules extends OpenflexoTestCaseWithGUI {
 	public void test0UseTestApplicationContext() {
 		log("test0UseTestApplicationContext()");
 		instanciateTestServiceManager();
+
 
 		logger.info("services: " + serviceManager.getRegisteredServices());
 
