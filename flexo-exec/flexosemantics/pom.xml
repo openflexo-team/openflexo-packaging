@@ -22,6 +22,11 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.openflexo</groupId>
+			<artifactId>informationspacemodule</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.openflexo</groupId>
 			<artifactId>flexovieweditor</artifactId>
 			<scope>runtime</scope>
 		</dependency>

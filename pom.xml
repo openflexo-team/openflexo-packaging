@@ -121,6 +121,12 @@
                     <version>${modules.version}</version>
                     <scope>runtime</scope>
                </dependency>
+               <dependency>
+                    <groupId>org.openflexo</groupId>
+                    <artifactId>informationspacemodule</artifactId>
+                    <version>${modules.version}</version>
+                    <scope>runtime</scope>
+               </dependency>
                <!-- Now, we list here all available technology adapters -->
                <dependency>
                     <groupId>org.openflexo</groupId>
