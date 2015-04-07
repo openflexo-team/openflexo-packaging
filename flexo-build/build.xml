@@ -229,7 +229,9 @@
 		        identifier="${product.name}"
 		        shortversion="${flexo_version}"
 		        applicationCategory="public.app-category.developer-tools"
-		        mainclassname="${main.class}">
+			    icon="${icons.dir}/${icon_mac_name}"
+		        mainclassname="${main.class}"
+			    copyright="(c) ${organization.name} ${current.year}">
 		        <!--<runtime dir="${env.JAVA_HOME}"/>-->
 		        <!--<classpath file="${user.home}/bin/javafx-samples-2.2.0/SwingInterop.jar"/>-->
 	            <!--<classpath file="${dist.dir}/lib/*.jar"/>-->
@@ -237,6 +239,9 @@
 				<option value="-Dapple.laf.useScreenMenuBar=true"/>
 	      		<option value="-Dapple.awt.antialiasing=true"/>
 	            <option value="-Dapple.awt.antialiasedtext=true"/>
+                <option value="-Xmx512M -XX:MaxPermSize=128M"/>
+                <argument value="-userType ${userType}"/>
+			
 			<!--<classpath>
 			    <fileset dir="${dist.dir}/lib">
 				    <include name="*.jar" />
