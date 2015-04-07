@@ -232,7 +232,7 @@
 		        mainclassname="${main.class}">
 		        <runtime dir="${env.JAVA_HOME}"/>
 		        <!--<classpath file="${user.home}/bin/javafx-samples-2.2.0/SwingInterop.jar"/>-->
-	            <classpath file="${dist.dir}/lib/*.jar"/>
+	            <!--<classpath file="${dist.dir}/lib/*.jar"/>-->
 		        <option value="-Dapple.laf.useScreenMenuBar=true"/>
 	      		<option value="-Dapple.awt.antialiasing=true"/>
 	            <option value="-Dapple.awt.antialiasedtext=true"/>
