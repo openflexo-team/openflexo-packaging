@@ -223,7 +223,7 @@
 		<tstamp>
 			<format property="current.year" pattern="yyyy" />
 		</tstamp>
-		<bundleapp outputdirectory="."
+		<bundleapp outputdirectory="${mac.app.dir.versioned}"
 		        name="${qualified_and_versioned_app_name}"
 		        displayname="${product.name}"
 		        identifier="${product.name}"
