@@ -230,7 +230,7 @@
 		        shortversion="${flexo_version}"
 		        applicationCategory="public.app-category.developer-tools"
 		        mainclassname="${main.class}">
-		        <runtime dir="${env.JAVA_HOME}"/>
+		        <!--<runtime dir="${env.JAVA_HOME}"/>-->
 		        <!--<classpath file="${user.home}/bin/javafx-samples-2.2.0/SwingInterop.jar"/>-->
 	            <!--<classpath file="${dist.dir}/lib/*.jar"/>-->
 			    <classpath dir="${dist.dir}"><include name="**/*.jar"/></classpath>
