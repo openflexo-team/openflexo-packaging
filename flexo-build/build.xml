@@ -217,6 +217,7 @@
 		<property name="java.stubfile" value="MacOS/JavaApplicationStub"/>
 		<chmod perm="a+x" file="${java.stubfile}"/>
 		<property name="relative_res_path" value="${qualified_and_versioned_app_name}.app/Contents/Resources" />
+		<!-- jarbundler is no more compatible with Java 1.7, we use bundleapp instead -->
 		<taskdef name="bundleapp" classpath="lib/appbundler-1.0.jar" classname="com.oracle.appbundler.AppBundlerTask"/>
 		<!--<taskdef name="jarbundler" classpath="lib/jarbundler-1.9.jar" classname="net.sourceforge.jarbundler.JarBundler" />-->
 		<mkdir dir="${mac.app.dir.versioned}" />
@@ -233,8 +234,6 @@
 		        mainclassname="${main.class}"
 			    copyright="(c) ${organization.name} ${current.year}">
 		        <!--<runtime dir="${env.JAVA_HOME}"/>-->
-		        <!--<classpath file="${user.home}/bin/javafx-samples-2.2.0/SwingInterop.jar"/>-->
-	            <!--<classpath file="${dist.dir}/lib/*.jar"/>-->
 			    <classpath dir="${dist.dir}"><include name="**/*.jar"/></classpath>
 				<option value="-Dapple.laf.useScreenMenuBar=true"/>
 	      		<option value="-Dapple.awt.antialiasing=true"/>
@@ -242,15 +241,6 @@
                 <option value="-Xmx512M"/>
                 <option value="-XX:MaxPermSize=128M"/>
                 <argument value="-userType ${userType}"/>
-			
-			<!--<classpath>
-			    <fileset dir="${dist.dir}/lib">
-				    <include name="*.jar" />
-			    </fileset>
-			    <fileset dir="${dist.dir}/deps">
-				    <include name="*.jar" />
-			    </fileset>
-				</classpath>-->
 		    </bundleapp>
 		<!--<jarbundler stubfile="${java.stubfile}" dir="${mac.app.dir.versioned}" name="${qualified_and_versioned_app_name}" mainclass="${main.class}" bundleid="${project.groupId}" signature="FLXO" version="${flexo_version}" jvmversion="1.7+" shortname="${product.name}" icon="${icons.dir}/${icon_mac_name}" arguments="${program.args}" infostring="${product.name} ${flexo_version}, (c) ${organization.name} ${current.year}" vmoptions="${vm.args}">
 			<javaproperty name="apple.awt.antialiasing" value="true" />
