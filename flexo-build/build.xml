@@ -217,12 +217,34 @@
 		<property name="java.stubfile" value="MacOS/JavaApplicationStub"/>
 		<chmod perm="a+x" file="${java.stubfile}"/>
 		<property name="relative_res_path" value="${qualified_and_versioned_app_name}.app/Contents/Resources" />
-		<taskdef name="jarbundler" classpath="lib/jarbundler-1.9.jar" classname="net.sourceforge.jarbundler.JarBundler" />
+		<taskdef name="bundleapp" classpath="lib/appbundler-1.0.jar" classname="com.oracle.appbundler.AppBundlerTask"/>
+		<!--<taskdef name="jarbundler" classpath="lib/jarbundler-1.9.jar" classname="net.sourceforge.jarbundler.JarBundler" />-->
 		<mkdir dir="${mac.app.dir.versioned}" />
 		<tstamp>
 			<format property="current.year" pattern="yyyy" />
 		</tstamp>
-		<jarbundler stubfile="${java.stubfile}" dir="${mac.app.dir.versioned}" name="${qualified_and_versioned_app_name}" mainclass="${main.class}" bundleid="${project.groupId}" signature="FLXO" version="${flexo_version}" jvmversion="1.7+" shortname="${product.name}" icon="${icons.dir}/${icon_mac_name}" arguments="${program.args}" infostring="${product.name} ${flexo_version}, (c) ${organization.name} ${current.year}" vmoptions="${vm.args}">
+		<bundleapp outputdirectory="."
+		        name="${qualified_and_versioned_app_name}"
+		        displayname="${product.name}"
+		        identifier="${product.name}"
+		        shortversion="${flexo_version}"
+		        applicationCategory="public.app-category.developer-tools"
+		        mainclassname="${main.class}">
+		        <runtime dir="${env.JAVA_HOME}"/>
+		        <!--<classpath file="${user.home}/bin/javafx-samples-2.2.0/SwingInterop.jar"/>-->
+		        <option value="-Dapple.laf.useScreenMenuBar=true"/>
+	      		<option value="-Dapple.awt.antialiasing=true"/>
+	            <option value="-Dapple.awt.antialiasedtext=true"/>
+			<classpath>
+			    <fileset dir="${dist.dir}/lib">
+				    <include name="*.jar" />
+			    </fileset>
+			    <fileset dir="${dist.dir}/deps">
+				    <include name="*.jar" />
+			    </fileset>
+				</classpath>
+		    </bundleapp>
+		<!--<jarbundler stubfile="${java.stubfile}" dir="${mac.app.dir.versioned}" name="${qualified_and_versioned_app_name}" mainclass="${main.class}" bundleid="${project.groupId}" signature="FLXO" version="${flexo_version}" jvmversion="1.7+" shortname="${product.name}" icon="${icons.dir}/${icon_mac_name}" arguments="${program.args}" infostring="${product.name} ${flexo_version}, (c) ${organization.name} ${current.year}" vmoptions="${vm.args}">
 			<javaproperty name="apple.awt.antialiasing" value="true" />
 			<javaproperty name="apple.awt.antialiasedtext" value="true" />
 			<javaproperty name="apple.laf.useScreenMenuBar" value="true" />
@@ -234,7 +256,7 @@
 			</jarfileset>
 			<documenttype name="OpenFlexo document" extensions="prj" iconFile="${icons.dir}/FlexoDocument.icns" bundle="true" role="Editor" />
 			<documenttype name="OpenFlexo palette" extensions="iepalette" iconFile="${icons.dir}/FlexoDocument2.icns" bundle="true" role="Editor" />
-		</jarbundler>
+		</jarbundler>-->
 		<copy todir="${mac.app.dir.versioned}/${relative_res_path}">
 			<fileset dir="${dist.dir}">
 				<exclude name="lib/*" />
