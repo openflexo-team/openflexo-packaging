@@ -20,8 +20,8 @@ VIProductVersion "1.0.0.1"
 !define PRODUCT_NAME "Flexo"
  
 ; Definitions for Java 7.0
-!define JRE_VERSION "7.0"
-!define JRE_URL "http://www.java.com/en/download/manual_java7.jsp"
+!define JRE_VERSION "1.7"
+!define JRE_URL "http://javadl.sun.com/webapps/download/AutoDL?BundleId=104766"
  
 !define JAVAEXE "javaw.exe"
  
