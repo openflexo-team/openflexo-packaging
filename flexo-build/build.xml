@@ -239,7 +239,8 @@
 				<option value="-Dapple.laf.useScreenMenuBar=true"/>
 	      		<option value="-Dapple.awt.antialiasing=true"/>
 	            <option value="-Dapple.awt.antialiasedtext=true"/>
-                <option value="-Xmx512M -XX:MaxPermSize=128M"/>
+                <option value="-Xmx512M"/>
+                <option value="-XX:MaxPermSize=128M"/>
                 <argument value="-userType ${userType}"/>
 			
 			<!--<classpath>
