@@ -96,11 +96,6 @@ public class TestViewPointValidationModelInIntegrationContext extends OpenflexoT
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.foundation.fml.rt.editionaction.DeleteFlexoConceptInstance.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext().getModelEntity(org.openflexo.fge.shapes.Star.class) != null);
-		assertTrue(validationModel
-				.getValidationModelFactory()
-				.getModelContext()
-				.getModelEntity(
-						org.openflexo.technologyadapter.emf.fml.editionaction.AddEMFObjectIndividualAttributeObjectPropertyValue.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.foundation.fml.IntegerParameter.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
@@ -388,11 +383,6 @@ public class TestViewPointValidationModelInIntegrationContext extends OpenflexoT
 				.getModelEntity(org.openflexo.foundation.fml.FlexoConceptBehaviouralFacet.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.technologyadapter.powerpoint.fml.PowerpointShapeRole.class) != null);
-		assertTrue(validationModel
-				.getValidationModelFactory()
-				.getModelContext()
-				.getModelEntity(
-						org.openflexo.technologyadapter.emf.fml.editionaction.AddEMFObjectIndividualAttributeDataPropertyValue.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.foundation.fml.inspector.CheckboxInspectorEntry.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
