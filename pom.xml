@@ -4,7 +4,7 @@
      <parent>
           <groupId>org.openflexo</groupId>
           <artifactId>openflexo-production</artifactId>
-          <version>0.3-RC4</version>
+          <version>0.3-SNAPSHOT</version>
      </parent>
      <groupId>org.openflexo.packaging</groupId>
      <artifactId>openflexo-packaging</artifactId>
@@ -17,10 +17,10 @@
           <module>integration-tests</module>
      </modules>
      <properties>
-          <flexocore.version>1.7.1-RC4</flexocore.version>
-          <ta.version>1.7.1-RC4</ta.version>
-          <modules.version>1.7.1-RC4</modules.version>
-          <connie.version>1.2-RC4</connie.version>
+          <flexocore.version>1.7.1-SNAPSHOT</flexocore.version>
+          <ta.version>1.7.1-SNAPSHOT</ta.version>
+          <modules.version>1.7.1-SNAPSHOT</modules.version>
+          <connie.version>1.2-SNAPSHOT</connie.version>
      </properties>
      <scm>
           <connection>scm:git:ssh://git@github.com/openflexo-team/openflexo-packaging.git</connection>
