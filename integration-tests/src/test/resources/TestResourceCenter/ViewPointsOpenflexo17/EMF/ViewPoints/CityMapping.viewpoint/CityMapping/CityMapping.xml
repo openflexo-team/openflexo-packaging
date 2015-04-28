@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <VirtualModel id="0" useSpecificDescriptions="false" userID="FLX" isAbstract="false" flexoID="264" name="CityMapping">
   <FlexoConcept id="1" useSpecificDescriptions="false" userID="FLX" isAbstract="false" flexoID="35" name="City">
-    <Constraint id="2" flexoID="32" useSpecificDescriptions="false" userID="FLX" constraint="(cityInModel1.name.toUpperCase = cityInModel2.name.toUpperCase)" />
-    <Inspector id="3" flexoID="1" useSpecificDescriptions="false" userID="FLX" inspectorTitle="City" renderer="((instance.cityInModel1 != null) ? ((instance.cityInModel2 != null) ? (instance.cityInModel1.name + &quot; [sync]&quot;) : (instance.cityInModel1.name + &quot; [model1]&quot;)) : (instance.cityInModel2.name + &quot; [model2]&quot;))" />
+    <Inspector id="2" flexoID="1" useSpecificDescriptions="false" userID="FLX" inspectorTitle="City" renderer="((instance.cityInModel1 != null) ? ((instance.cityInModel2 != null) ? (instance.cityInModel1.name + &quot; [sync]&quot;) : (instance.cityInModel1.name + &quot; [model1]&quot;)) : (instance.cityInModel2.name + &quot; [model2]&quot;))" />
+    <Constraint id="3" flexoID="32" useSpecificDescriptions="false" userID="FLX" constraint="(cityInModel1.name.toUpperCase = cityInModel2.name.toUpperCase)" />
     <EMFObjectIndividualRole id="4" useSpecificDescriptions="false" userID="FLX" cloningStrategy="Clone" ontologicType="http://www.thalesgroup.com/openflexo/emf/model/city1/City" flexoID="33" name="cityInModel1" cardinality="ZeroOne">
       <EMFModelSlot idref="5" />
     </EMFObjectIndividualRole>
@@ -69,9 +69,9 @@
     <Inspector id="38" flexoID="9" useSpecificDescriptions="false" userID="FLX" inspectorTitle="House" />
   </FlexoConcept>
   <FlexoConcept id="39" useSpecificDescriptions="false" userID="FLX" isAbstract="false" flexoID="50" name="Appartment">
-    <Constraint id="40" flexoID="45" useSpecificDescriptions="false" userID="FLX" constraint="(houseInModel1.type.name = &quot;Appartment&quot;)" />
-    <Constraint id="41" flexoID="46" useSpecificDescriptions="false" userID="FLX" constraint="(houseInModel1.info = appartmentInModel2.label)" />
-    <Inspector id="42" flexoID="12" useSpecificDescriptions="false" userID="FLX" inspectorTitle="Appartment" renderer="(&quot;Appartment -  &quot; + ((instance.houseInModel1 != null) ? ((instance.appartmentInModel2 != null) ? (instance.houseInModel1.info + &quot; [sync]&quot;) : (instance.houseInModel1.info + &quot; [model1]&quot;)) : (instance.appartmentInModel2.label + &quot; [model2]&quot;)))" />
+    <Inspector id="40" flexoID="12" useSpecificDescriptions="false" userID="FLX" inspectorTitle="Appartment" renderer="(&quot;Appartment -  &quot; + ((instance.houseInModel1 != null) ? ((instance.appartmentInModel2 != null) ? (instance.houseInModel1.info + &quot; [sync]&quot;) : (instance.houseInModel1.info + &quot; [model1]&quot;)) : (instance.appartmentInModel2.label + &quot; [model2]&quot;)))" />
+    <Constraint id="41" flexoID="45" useSpecificDescriptions="false" userID="FLX" constraint="(houseInModel1.type.name = &quot;Appartment&quot;)" />
+    <Constraint id="42" flexoID="46" useSpecificDescriptions="false" userID="FLX" constraint="(houseInModel1.info = appartmentInModel2.label)" />
     <ParentFlexoConcept idref="37" />
     <EMFObjectIndividualRole id="43" useSpecificDescriptions="false" userID="FLX" cloningStrategy="Clone" ontologicType="http://www.thalesgroup.com/openflexo/emf/model/city1/House" flexoID="47" name="houseInModel1" cardinality="ZeroOne">
       <EMFModelSlot idref="5" />
@@ -110,9 +110,9 @@
     </DeletionScheme>
   </FlexoConcept>
   <FlexoConcept id="62" useSpecificDescriptions="false" userID="FLX" isAbstract="false" flexoID="61" name="Mansion">
-    <Constraint id="63" flexoID="56" useSpecificDescriptions="false" userID="FLX" constraint="(houseInModel1.type.name = &quot;Mansion&quot;)" />
-    <Constraint id="64" flexoID="57" useSpecificDescriptions="false" userID="FLX" constraint="(houseInModel1.info = mansionInModel2.number.toString)" />
-    <Inspector id="65" flexoID="18" useSpecificDescriptions="false" userID="FLX" inspectorTitle="Mansion" renderer="(&quot;Mansion - &quot; + ((instance.houseInModel1 != null) ? ((instance.mansionInModel2 != null) ? (instance.houseInModel1.info + &quot; [sync]&quot;) : (instance.houseInModel1.info + &quot; [model1]&quot;)) : (instance.mansionInModel2.number.toString + &quot; [model2]&quot;)))" />
+    <Inspector id="63" flexoID="18" useSpecificDescriptions="false" userID="FLX" inspectorTitle="Mansion" renderer="(&quot;Mansion - &quot; + ((instance.houseInModel1 != null) ? ((instance.mansionInModel2 != null) ? (instance.houseInModel1.info + &quot; [sync]&quot;) : (instance.houseInModel1.info + &quot; [model1]&quot;)) : (instance.mansionInModel2.number.toString + &quot; [model2]&quot;)))" />
+    <Constraint id="64" flexoID="56" useSpecificDescriptions="false" userID="FLX" constraint="(houseInModel1.type.name = &quot;Mansion&quot;)" />
+    <Constraint id="65" flexoID="57" useSpecificDescriptions="false" userID="FLX" constraint="(houseInModel1.info = mansionInModel2.number.toString)" />
     <ParentFlexoConcept idref="37" />
     <EMFObjectIndividualRole id="66" useSpecificDescriptions="false" userID="FLX" cloningStrategy="Clone" ontologicType="http://www.thalesgroup.com/openflexo/emf/model/city1/House" flexoID="58" name="houseInModel1" cardinality="ZeroOne">
       <EMFModelSlot idref="5" />
@@ -151,8 +151,8 @@
     </DeletionScheme>
   </FlexoConcept>
   <FlexoConcept id="85" useSpecificDescriptions="false" userID="FLX" isAbstract="true" flexoID="70" name="Resident">
-    <Constraint id="86" flexoID="67" useSpecificDescriptions="false" userID="FLX" constraint="(residentInModel1.name = houseInModel2.owner)" />
-    <Inspector id="87" flexoID="24" useSpecificDescriptions="false" userID="FLX" inspectorTitle="Resident" renderer="((instance.residentInModel1 != null) ? ((instance.houseInModel2 != null) ? (instance.residentInModel1.name + &quot; [sync]&quot;) : (instance.residentInModel1.name + &quot; [model1]&quot;)) : (instance.houseInModel2.owner + &quot; [model2]&quot;))" />
+    <Inspector id="86" flexoID="24" useSpecificDescriptions="false" userID="FLX" inspectorTitle="Resident" renderer="((instance.residentInModel1 != null) ? ((instance.houseInModel2 != null) ? (instance.residentInModel1.name + &quot; [sync]&quot;) : (instance.residentInModel1.name + &quot; [model1]&quot;)) : (instance.houseInModel2.owner + &quot; [model2]&quot;))" />
+    <Constraint id="87" flexoID="67" useSpecificDescriptions="false" userID="FLX" constraint="(residentInModel1.name = houseInModel2.owner)" />
     <EMFObjectIndividualRole id="88" useSpecificDescriptions="false" userID="FLX" cloningStrategy="Clone" ontologicType="http://www.thalesgroup.com/openflexo/emf/model/city1/Resident" flexoID="68" name="residentInModel1" cardinality="ZeroOne">
       <EMFModelSlot idref="5" />
     </EMFObjectIndividualRole>
