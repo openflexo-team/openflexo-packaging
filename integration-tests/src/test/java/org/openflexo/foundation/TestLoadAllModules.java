@@ -51,7 +51,8 @@ import org.openflexo.fme.FMEModule;
 import org.openflexo.fme.FreeModellingEditor;
 import org.openflexo.foundation.resource.FlexoResourceCenterService;
 import org.openflexo.foundation.technologyadapter.TechnologyAdapterService;
-import org.openflexo.icon.FMLIconLibrary;
+import org.openflexo.ism.ISMModule;
+import org.openflexo.ism.InformationSpaceModule;
 import org.openflexo.module.FlexoModule;
 import org.openflexo.module.ModuleLoader;
 import org.openflexo.module.ModuleLoadingException;
@@ -77,10 +78,9 @@ public class TestLoadAllModules extends OpenflexoTestCaseWithGUI {
 	 */
 	@Test
 	@TestOrder(1)
-	public void test0UseTestApplicationContext() {
-		log("test0UseTestApplicationContext()");
+	public void testUseTestApplicationContext() {
+		log("testUseTestApplicationContext()");
 		instanciateTestServiceManager();
-
 
 		logger.info("services: " + serviceManager.getRegisteredServices());
 
@@ -101,8 +101,8 @@ public class TestLoadAllModules extends OpenflexoTestCaseWithGUI {
 	 */
 	@Test
 	@TestOrder(2)
-	public void test1VPMModuleLoading() {
-		log("test1VPMModuleLoading()");
+	public void testVPMModuleLoading() {
+		log("testVPMModuleLoading()");
 
 		try {
 			FlexoModule<VPMModule> loadedModule = moduleLoader.getModuleInstance(ViewPointModeller.INSTANCE);
@@ -123,8 +123,8 @@ public class TestLoadAllModules extends OpenflexoTestCaseWithGUI {
 	 */
 	@Test
 	@TestOrder(3)
-	public void test2VEModuleLoading() {
-		log("test2VEModuleLoading()");
+	public void testVEModuleLoading() {
+		log("testVEModuleLoading()");
 
 		try {
 			FlexoModule<VEModule> loadedModule = moduleLoader.getModuleInstance(ViewEditor.INSTANCE);
@@ -146,8 +146,30 @@ public class TestLoadAllModules extends OpenflexoTestCaseWithGUI {
 	 */
 	@Test
 	@TestOrder(4)
-	public void test3FMEModuleLoading() {
-		log("test3FMEModuleLoading()");
+	public void testISMModuleLoading() {
+		log("testISMModuleLoading()");
+
+		try {
+			FlexoModule<ISMModule> loadedModule = moduleLoader.getModuleInstance(InformationSpaceModule.INSTANCE);
+			if (loadedModule == null) {
+				fail();
+			}
+			// This module is not in the classpath, normal
+		} catch (ModuleLoadingException e) {
+			fail();
+		}
+
+		assertNotNull(serviceManager.getService(TechnologyAdapterControllerService.class));
+
+	}
+
+	/**
+	 * Try to load FME module
+	 */
+	@Test
+	@TestOrder(5)
+	public void testFMEModuleLoading() {
+		log("testFMEModuleLoading()");
 
 		try {
 			FlexoModule<FMEModule> loadedModule = moduleLoader.getModuleInstance(FreeModellingEditor.INSTANCE);
