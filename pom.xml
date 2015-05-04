@@ -224,6 +224,18 @@
                     <version>${ta.version}</version>
                     <scope>runtime</scope>
                </dependency>
+               <dependency>
+                    <groupId>org.openflexo</groupId>
+                    <artifactId>odtconnector</artifactId>
+                    <version>${ta.version}</version>
+                    <scope>runtime</scope>
+               </dependency>
+               <dependency>
+                    <groupId>org.openflexo</groupId>
+                    <artifactId>odtconnector-ui</artifactId>
+                    <version>${ta.version}</version>
+                    <scope>runtime</scope>
+               </dependency>
                <!-- Now list test projects -->
                <dependency>
                     <groupId>org.openflexo</groupId>

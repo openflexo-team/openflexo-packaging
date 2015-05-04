@@ -100,6 +100,16 @@
 			<artifactId>docxconnector-ui</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.openflexo</groupId>
+			<artifactId>odtconnector</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.openflexo</groupId>
+			<artifactId>odtconnector-ui</artifactId>
+			<scope>runtime</scope>
+		</dependency>
 
 		<dependency>
 			<groupId>org.openflexo</groupId>
