@@ -109,7 +109,7 @@ public class FMLModelFactoryIntegrationTest extends OpenflexoTestCase {
 			System.out.println("Instanciating FMLModelFactory");
 			TechnologyAdapterService taService = DefaultTechnologyAdapterService.getNewInstance(null);
 			taService.addToTechnologyAdapters(ta);
-			FMLModelFactory factory = new FMLModelFactory(null, null, taService);
+			FMLModelFactory factory = new FMLModelFactory(null, serviceManager);
 			ModelContext modelContext = factory.getModelContext();
 			for (Iterator<ModelEntity> it = modelContext.getEntities(); it.hasNext();) {
 				ModelEntity e = it.next();
@@ -221,7 +221,7 @@ public class FMLModelFactoryIntegrationTest extends OpenflexoTestCase {
 	public void testInstantiateVirtualModelModelFactoryForAllTechnologyAdapters() {
 		try {
 			System.out.println("Instanciating ViewPointModelFactory");
-			FMLModelFactory factory = new FMLModelFactory(null, null, serviceManager.getTechnologyAdapterService());
+			FMLModelFactory factory = new FMLModelFactory(null, serviceManager);
 			ModelContext modelContext = factory.getModelContext();
 			for (Iterator<ModelEntity> it = modelContext.getEntities(); it.hasNext();) {
 				ModelEntity e = it.next();
