@@ -196,10 +196,10 @@ public class TestEMFCityMappingView extends OpenflexoProjectAtRunTimeTestCase {
 		assertEquals(3, newDiagram.getModelSlotInstances().size());
 		ModelSlotInstance<?, ?> diagramModelSlotInstance = newDiagram.getModelSlotInstance("diagram");
 		assertNotNull(diagramModelSlotInstance);
-		TypeAwareModelSlotInstance<?, ?, ?> city1ModelSlotInstance = (TypeAwareModelSlotInstance<?, ?, ?>) newDiagram
+		FlexoOntologyModelSlotInstance<?, ?, ?> city1ModelSlotInstance = (FlexoOntologyModelSlotInstance<?, ?, ?>) newDiagram
 				.getModelSlotInstance("city1");
 		assertNotNull(city1ModelSlotInstance);
-		TypeAwareModelSlotInstance<?, ?, ?> city2ModelSlotInstance = (TypeAwareModelSlotInstance<?, ?, ?>) newDiagram
+		FlexoOntologyModelSlotInstance<?, ?, ?> city2ModelSlotInstance = (FlexoOntologyModelSlotInstance<?, ?, ?>) newDiagram
 				.getModelSlotInstance("city2");
 		assertNotNull(city2ModelSlotInstance);
 		// System.out.println("DiagramModel=" + diagramModelSlotInstance.getModelURI());
