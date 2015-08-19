@@ -46,7 +46,6 @@ import org.junit.runner.RunWith;
 import org.openflexo.fge.ShapeGraphicalRepresentation.ShapeBorder;
 import org.openflexo.foundation.OpenflexoTestCase;
 import org.openflexo.foundation.fml.ViewPointValidationModel;
-import org.openflexo.foundation.ontology.fml.rt.ConceptActorReference;
 import org.openflexo.model.exceptions.ModelDefinitionException;
 import org.openflexo.model.validation.ValidationRule;
 import org.openflexo.model.validation.ValidationRuleSet;
@@ -438,7 +437,7 @@ public class TestViewPointValidationModelInIntegrationContext extends OpenflexoT
 				.getModelEntity(org.openflexo.fge.shapes.Circle.class) != null);
 		assertTrue(
 				validationModel.getValidationModelFactory().getModelContext().getModelEntity(org.openflexo.fge.shapes.Plus.class) != null);
-		assertTrue(validationModel.getValidationModelFactory().getModelContext().getModelEntity(ConceptActorReference.class) != null);
+		// assertTrue(validationModel.getValidationModelFactory().getModelContext().getModelEntity(ConceptActorReference.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
 				.getModelEntity(org.openflexo.fge.shapes.Rectangle.class) != null);
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
