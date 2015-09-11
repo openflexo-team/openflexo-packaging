@@ -189,7 +189,7 @@ public class TestEMFCityViews extends OpenflexoProjectAtRunTimeTestCase {
 				System.out.println("Searching " + modelFile1.getAbsolutePath());
 				assertTrue(modelFile1.exists());
 				System.out.println("Searching " + modelFile1.toURI().toString());
-				FlexoModelResource<?, ?, ?, ?> modelResource1 = project.getServiceManager().getInformationSpace()
+				FlexoModelResource<?, ?, ?, ?> modelResource1 = project.getServiceManager().getResourceManager()
 						.getModelWithURI(modelFile1.toURI().toString());
 				assertNotNull(modelResource1);
 				emfModelSlotConfiguration1.setModelResource(modelResource1);

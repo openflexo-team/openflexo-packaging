@@ -67,7 +67,6 @@ import org.openflexo.foundation.fml.rt.rm.ViewResource;
 import org.openflexo.foundation.fml.rt.rm.VirtualModelInstanceResource;
 import org.openflexo.foundation.resource.FileSystemBasedResourceCenter;
 import org.openflexo.foundation.resource.RepositoryFolder;
-import org.openflexo.foundation.resource.SaveResourceException;
 import org.openflexo.foundation.technologyadapter.FlexoModelResource;
 import org.openflexo.foundation.technologyadapter.ModelSlot;
 import org.openflexo.foundation.technologyadapter.TypeAwareModelSlotInstanceConfiguration;
@@ -84,19 +83,19 @@ public class TestCityMappingView extends OpenflexoProjectAtRunTimeTestCase {
 	private static View view;
 
 	/*public static void main(String[] args) {
-
+	
 		FlexoLoggingManager.forceInitialize(-1, true, null, Level.INFO, null);
-
+	
 		serviceManager = new DefaultFlexoServiceManager();
 		FlexoResourceCenterService rcService = serviceManager.getResourceCenterService();
 		FlexoResourceCenter resourceCenter = new DirectoryResourceCenter(new File("/Users/sylvain/Library/OpenFlexo/FlexoResourceCenter"));
 		rcService.addToResourceCenters(resourceCenter);
-
+	
 		// Access to CityMapping ViewPoint
 		ViewPointResource cityMappingVPRes = resourceCenter.getViewPointRepository().getResource(
 				"http://www.thalesgroup.com/openflexo/emf/CityMapping");
 		ViewPoint cityMappingVP = cityMappingVPRes.getViewPoint();
-
+	
 		// First define an editor factory: here instantiate the default flexo editor
 		FlexoEditorFactory editorFactory = new FlexoEditorFactory() {
 			@Override
@@ -104,10 +103,10 @@ public class TestCityMappingView extends OpenflexoProjectAtRunTimeTestCase {
 				return new DefaultFlexoEditor(project, serviceManager);
 			}
 		};
-
+	
 		// Then define where to create the project
 		File projectDirectory = new File("/Users/sylvain/tmp/TestProject.prj");
-
+	
 		// Instantiate an editor using provided directory, factory and service manager
 		FlexoEditor editor;
 		try {
@@ -117,18 +116,18 @@ public class TestCityMappingView extends OpenflexoProjectAtRunTimeTestCase {
 			fail(e.getMessage());
 			return;
 		}
-
+	
 		// You might now access to your newly created project
 		FlexoProject project = editor.getProject();
 		System.out.println("Created project " + project);
-
+	
 		// Programmmatically add a repository folder using FlexoAction API
 		AddRepositoryFolder addRepositoryFolder = AddRepositoryFolder.actionType.makeNewAction(project.getViewLibrary().getRootFolder(),
 				null, editor);
 		addRepositoryFolder.setNewFolderName("NewViewFolder");
 		addRepositoryFolder.doAction();
 		RepositoryFolder<ViewResource> viewFolder = addRepositoryFolder.getNewFolder();
-
+	
 		// Programmmatically create a new view conform to CityMapping viewpoint using FlexoAction API
 		CreateView addView = CreateView.actionType.makeNewAction(viewFolder, null, editor);
 		addView.newViewName = "TestNewView";
@@ -270,7 +269,7 @@ public class TestCityMappingView extends OpenflexoProjectAtRunTimeTestCase {
 		System.out.println("Searching " + modelFile1.getAbsolutePath());
 		assertTrue(modelFile1.exists());
 		System.out.println("Searching " + modelFile1.toURI().toString());
-		FlexoModelResource<?, ?, ?, ?> modelResource1 = project.getServiceManager().getInformationSpace()
+		FlexoModelResource<?, ?, ?, ?> modelResource1 = project.getServiceManager().getResourceManager()
 				.getModelWithURI(modelFile1.toURI().toString());
 		assertNotNull(modelResource1);
 		emfModelSlotConfiguration1.setModelResource(modelResource1);
@@ -285,7 +284,7 @@ public class TestCityMappingView extends OpenflexoProjectAtRunTimeTestCase {
 		System.out.println("Searching " + modelFile2.getAbsolutePath());
 		assertTrue(modelFile2.exists());
 		System.out.println("Searching " + modelFile2.toURI().toString());
-		FlexoModelResource<?, ?, ?, ?> modelResource2 = project.getServiceManager().getInformationSpace()
+		FlexoModelResource<?, ?, ?, ?> modelResource2 = project.getServiceManager().getResourceManager()
 				.getModelWithURI(modelFile2.toURI().toString());
 		assertNotNull(modelResource2);
 		emfModelSlotConfiguration2.setModelResource(modelResource2);

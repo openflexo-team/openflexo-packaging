@@ -51,19 +51,15 @@ import org.openflexo.foundation.FlexoEditor;
 import org.openflexo.foundation.FlexoProject;
 import org.openflexo.foundation.OpenflexoProjectAtRunTimeTestCase;
 import org.openflexo.foundation.action.AddRepositoryFolder;
-import org.openflexo.foundation.fml.FlexoConcept;
 import org.openflexo.foundation.fml.SynchronizationScheme;
 import org.openflexo.foundation.fml.ViewPoint;
 import org.openflexo.foundation.fml.VirtualModel;
 import org.openflexo.foundation.fml.rm.ViewPointResource;
-import org.openflexo.foundation.fml.rt.FlexoConceptInstance;
 import org.openflexo.foundation.fml.rt.View;
-import org.openflexo.foundation.fml.rt.VirtualModelInstance;
 import org.openflexo.foundation.fml.rt.action.CreateBasicVirtualModelInstance;
 import org.openflexo.foundation.fml.rt.action.CreateView;
 import org.openflexo.foundation.fml.rt.action.ModelSlotInstanceConfiguration.DefaultModelSlotInstanceConfigurationOption;
 import org.openflexo.foundation.fml.rt.rm.ViewResource;
-import org.openflexo.foundation.fml.rt.rm.VirtualModelInstanceResource;
 import org.openflexo.foundation.resource.FileSystemBasedResourceCenter;
 import org.openflexo.foundation.resource.RepositoryFolder;
 import org.openflexo.foundation.technologyadapter.FlexoModelResource;
@@ -81,7 +77,6 @@ public class TestCityMappingViewBigModels extends OpenflexoProjectAtRunTimeTestC
 	private static RepositoryFolder<ViewResource> viewFolder;
 	private static View view;
 
-	
 	/**
 	 * Instantiate test resource center
 	 */
@@ -211,7 +206,7 @@ public class TestCityMappingViewBigModels extends OpenflexoProjectAtRunTimeTestC
 		System.out.println("Searching " + modelFile1.getAbsolutePath());
 		assertTrue(modelFile1.exists());
 		System.out.println("Searching " + modelFile1.toURI().toString());
-		FlexoModelResource<?, ?, ?, ?> modelResource1 = project.getServiceManager().getInformationSpace()
+		FlexoModelResource<?, ?, ?, ?> modelResource1 = project.getServiceManager().getResourceManager()
 				.getModelWithURI(modelFile1.toURI().toString());
 		assertNotNull(modelResource1);
 		emfModelSlotConfiguration1.setModelResource(modelResource1);
@@ -226,14 +221,14 @@ public class TestCityMappingViewBigModels extends OpenflexoProjectAtRunTimeTestC
 		System.out.println("Searching " + modelFile2.getAbsolutePath());
 		assertTrue(modelFile2.exists());
 		System.out.println("Searching " + modelFile2.toURI().toString());
-		FlexoModelResource<?, ?, ?, ?> modelResource2 = project.getServiceManager().getInformationSpace()
+		FlexoModelResource<?, ?, ?, ?> modelResource2 = project.getServiceManager().getResourceManager()
 				.getModelWithURI(modelFile2.toURI().toString());
 		assertNotNull(modelResource2);
 		emfModelSlotConfiguration2.setModelResource(modelResource2);
 		assertTrue(emfModelSlotConfiguration2.isValidConfiguration());
 
 		// TODO : Fix Performance Issue with SelectEMFObjectIndividual
-		
+
 		// createVirtualModelInstance.doAction();
 		/*
 		System.out.println("exception thrown=" + createVirtualModelInstance.getThrownException());
@@ -248,34 +243,34 @@ public class TestCityMappingViewBigModels extends OpenflexoProjectAtRunTimeTestC
 		assertTrue(((VirtualModelInstanceResource) newVirtualModelInstance.getResource()).getFlexoIODelegate().exists());
 		assertEquals(project, ((VirtualModelInstanceResource) newVirtualModelInstance.getResource()).getProject());
 		assertEquals(project, newVirtualModelInstance.getProject());
-
+		
 		FlexoConcept cityEP = cityMappingVM.getFlexoConcept("City");
 		FlexoConcept houseEP = cityMappingVM.getFlexoConcept("House");
 		FlexoConcept appartmentEP = cityMappingVM.getFlexoConcept("Appartment");
 		FlexoConcept mansionEP = cityMappingVM.getFlexoConcept("Mansion");
 		FlexoConcept residentEP = cityMappingVM.getFlexoConcept("Resident");
-
+		
 		assertNotNull(cityEP);
 		assertNotNull(houseEP);
 		assertNotNull(appartmentEP);
 		assertNotNull(mansionEP);
 		assertNotNull(residentEP);
-
+		
 		System.out.println("FCI: " + newVirtualModelInstance.getFlexoConceptInstances(cityEP));
-
+		
 		for (FlexoConceptInstance fci : newVirtualModelInstance.getFlexoConceptInstances(cityEP)) {
 			System.out.println("> " + fci);
 		}
-*/
-	//	newVirtualModelInstance.synchronize(editor);
-/*
-		System.out.println("Les FCI2: " + newVirtualModelInstance.getFlexoConceptInstances(cityEP));
-
-		assertEquals(5, newVirtualModelInstance.getFlexoConceptInstances(cityEP).size());
-		assertEquals(3, newVirtualModelInstance.getFlexoConceptInstances(houseEP).size());
-		assertEquals(2, newVirtualModelInstance.getFlexoConceptInstances(appartmentEP).size());
-		assertEquals(1, newVirtualModelInstance.getFlexoConceptInstances(mansionEP).size());
-		assertEquals(3, newVirtualModelInstance.getFlexoConceptInstances(residentEP).size());
-*/
+		*/
+		// newVirtualModelInstance.synchronize(editor);
+		/*
+				System.out.println("Les FCI2: " + newVirtualModelInstance.getFlexoConceptInstances(cityEP));
+		
+				assertEquals(5, newVirtualModelInstance.getFlexoConceptInstances(cityEP).size());
+				assertEquals(3, newVirtualModelInstance.getFlexoConceptInstances(houseEP).size());
+				assertEquals(2, newVirtualModelInstance.getFlexoConceptInstances(appartmentEP).size());
+				assertEquals(1, newVirtualModelInstance.getFlexoConceptInstances(mansionEP).size());
+				assertEquals(3, newVirtualModelInstance.getFlexoConceptInstances(residentEP).size());
+		*/
 	}
 }
