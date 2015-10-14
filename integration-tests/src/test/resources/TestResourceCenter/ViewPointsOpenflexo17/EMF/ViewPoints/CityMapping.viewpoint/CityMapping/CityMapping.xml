@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <VirtualModel id="0" useSpecificDescriptions="false" userID="FLX" isAbstract="false" flexoID="264" name="CityMapping">
   <FlexoConcept id="1" useSpecificDescriptions="false" userID="FLX" isAbstract="false" flexoID="35" name="City">
-    <Inspector id="2" flexoID="1" useSpecificDescriptions="false" userID="FLX" inspectorTitle="City" renderer="((instance.cityInModel1 != null) ? ((instance.cityInModel2 != null) ? (instance.cityInModel1.name + &quot; [sync]&quot;) : (instance.cityInModel1.name + &quot; [model1]&quot;)) : (instance.cityInModel2.name + &quot; [model2]&quot;))" />
-    <Constraint id="3" flexoID="32" useSpecificDescriptions="false" userID="FLX" constraint="(cityInModel1.name.toUpperCase = cityInModel2.name.toUpperCase)" />
+    <Constraint id="2" flexoID="32" useSpecificDescriptions="false" userID="FLX" constraint="(cityInModel1.name.toUpperCase = cityInModel2.name.toUpperCase)" />
+    <Inspector id="3" flexoID="1" useSpecificDescriptions="false" userID="FLX" inspectorTitle="City" renderer="((instance.cityInModel1 != null) ? ((instance.cityInModel2 != null) ? (instance.cityInModel1.name + &quot; [sync]&quot;) : (instance.cityInModel1.name + &quot; [model1]&quot;)) : (instance.cityInModel2.name + &quot; [model2]&quot;))" />
     <EMFObjectIndividualRole id="4" useSpecificDescriptions="false" userID="FLX" cloningStrategy="Clone" ontologicType="http://www.thalesgroup.com/openflexo/emf/model/city1/City" flexoID="33" name="cityInModel1" cardinality="ZeroOne">
       <EMFModelSlot idref="5" />
     </EMFObjectIndividualRole>
@@ -69,9 +69,9 @@
     <Inspector id="38" flexoID="9" useSpecificDescriptions="false" userID="FLX" inspectorTitle="House" />
   </FlexoConcept>
   <FlexoConcept id="39" useSpecificDescriptions="false" userID="FLX" isAbstract="false" flexoID="50" name="Appartment">
-    <Inspector id="40" flexoID="12" useSpecificDescriptions="false" userID="FLX" inspectorTitle="Appartment" renderer="(&quot;Appartment -  &quot; + ((instance.houseInModel1 != null) ? ((instance.appartmentInModel2 != null) ? (instance.houseInModel1.info + &quot; [sync]&quot;) : (instance.houseInModel1.info + &quot; [model1]&quot;)) : (instance.appartmentInModel2.label + &quot; [model2]&quot;)))" />
-    <Constraint id="41" flexoID="45" useSpecificDescriptions="false" userID="FLX" constraint="(houseInModel1.type.name = &quot;Appartment&quot;)" />
-    <Constraint id="42" flexoID="46" useSpecificDescriptions="false" userID="FLX" constraint="(houseInModel1.info = appartmentInModel2.label)" />
+    <Constraint id="40" flexoID="45" useSpecificDescriptions="false" userID="FLX" constraint="(houseInModel1.type.name = &quot;Appartment&quot;)" />
+    <Constraint id="41" flexoID="46" useSpecificDescriptions="false" userID="FLX" constraint="(houseInModel1.info = appartmentInModel2.label)" />
+    <Inspector id="42" flexoID="12" useSpecificDescriptions="false" userID="FLX" inspectorTitle="Appartment" renderer="(&quot;Appartment -  &quot; + ((instance.houseInModel1 != null) ? ((instance.appartmentInModel2 != null) ? (instance.houseInModel1.info + &quot; [sync]&quot;) : (instance.houseInModel1.info + &quot; [model1]&quot;)) : (instance.appartmentInModel2.label + &quot; [model2]&quot;)))" />
     <ParentFlexoConcept idref="37" />
     <EMFObjectIndividualRole id="43" useSpecificDescriptions="false" userID="FLX" cloningStrategy="Clone" ontologicType="http://www.thalesgroup.com/openflexo/emf/model/city1/House" flexoID="47" name="houseInModel1" cardinality="ZeroOne">
       <EMFModelSlot idref="5" />
@@ -110,9 +110,9 @@
     </DeletionScheme>
   </FlexoConcept>
   <FlexoConcept id="62" useSpecificDescriptions="false" userID="FLX" isAbstract="false" flexoID="61" name="Mansion">
-    <Inspector id="63" flexoID="18" useSpecificDescriptions="false" userID="FLX" inspectorTitle="Mansion" renderer="(&quot;Mansion - &quot; + ((instance.houseInModel1 != null) ? ((instance.mansionInModel2 != null) ? (instance.houseInModel1.info + &quot; [sync]&quot;) : (instance.houseInModel1.info + &quot; [model1]&quot;)) : (instance.mansionInModel2.number.toString + &quot; [model2]&quot;)))" />
-    <Constraint id="64" flexoID="56" useSpecificDescriptions="false" userID="FLX" constraint="(houseInModel1.type.name = &quot;Mansion&quot;)" />
-    <Constraint id="65" flexoID="57" useSpecificDescriptions="false" userID="FLX" constraint="(houseInModel1.info = mansionInModel2.number.toString)" />
+    <Constraint id="63" flexoID="56" useSpecificDescriptions="false" userID="FLX" constraint="(houseInModel1.type.name = &quot;Mansion&quot;)" />
+    <Constraint id="64" flexoID="57" useSpecificDescriptions="false" userID="FLX" constraint="(houseInModel1.info = mansionInModel2.number.toString)" />
+    <Inspector id="65" flexoID="18" useSpecificDescriptions="false" userID="FLX" inspectorTitle="Mansion" renderer="(&quot;Mansion - &quot; + ((instance.houseInModel1 != null) ? ((instance.mansionInModel2 != null) ? (instance.houseInModel1.info + &quot; [sync]&quot;) : (instance.houseInModel1.info + &quot; [model1]&quot;)) : (instance.mansionInModel2.number.toString + &quot; [model2]&quot;)))" />
     <ParentFlexoConcept idref="37" />
     <EMFObjectIndividualRole id="66" useSpecificDescriptions="false" userID="FLX" cloningStrategy="Clone" ontologicType="http://www.thalesgroup.com/openflexo/emf/model/city1/House" flexoID="58" name="houseInModel1" cardinality="ZeroOne">
       <EMFModelSlot idref="5" />
@@ -151,8 +151,8 @@
     </DeletionScheme>
   </FlexoConcept>
   <FlexoConcept id="85" useSpecificDescriptions="false" userID="FLX" isAbstract="true" flexoID="70" name="Resident">
-    <Inspector id="86" flexoID="24" useSpecificDescriptions="false" userID="FLX" inspectorTitle="Resident" renderer="((instance.residentInModel1 != null) ? ((instance.houseInModel2 != null) ? (instance.residentInModel1.name + &quot; [sync]&quot;) : (instance.residentInModel1.name + &quot; [model1]&quot;)) : (instance.houseInModel2.owner + &quot; [model2]&quot;))" />
-    <Constraint id="87" flexoID="67" useSpecificDescriptions="false" userID="FLX" constraint="(residentInModel1.name = houseInModel2.owner)" />
+    <Constraint id="86" flexoID="67" useSpecificDescriptions="false" userID="FLX" constraint="(residentInModel1.name = houseInModel2.owner)" />
+    <Inspector id="87" flexoID="24" useSpecificDescriptions="false" userID="FLX" inspectorTitle="Resident" renderer="((instance.residentInModel1 != null) ? ((instance.houseInModel2 != null) ? (instance.residentInModel1.name + &quot; [sync]&quot;) : (instance.residentInModel1.name + &quot; [model1]&quot;)) : (instance.houseInModel2.owner + &quot; [model2]&quot;))" />
     <EMFObjectIndividualRole id="88" useSpecificDescriptions="false" userID="FLX" cloningStrategy="Clone" ontologicType="http://www.thalesgroup.com/openflexo/emf/model/city1/Resident" flexoID="68" name="residentInModel1" cardinality="ZeroOne">
       <EMFModelSlot idref="5" />
     </EMFObjectIndividualRole>
@@ -184,8 +184,12 @@
     </EMFObjectIndividualRole>
   </FlexoConcept>
   <Inspector id="101" flexoID="3" useSpecificDescriptions="false" userID="FLX" inspectorTitle="CityMapping" />
-  <ModelSlot_EMFModelSlot id="5" flexoID="161" isRequired="true" useSpecificDescriptions="false" userID="FLX" name="model1" metaModelURI="http://www.thalesgroup.com/openflexo/emf/model/city1" isReadOnly="false" cloningStrategy="Reference" cardinality="ZeroOne" />
-  <ModelSlot_EMFModelSlot id="7" flexoID="162" isRequired="true" useSpecificDescriptions="false" userID="FLX" name="model2" metaModelURI="http://www.thalesgroup.com/openflexo/emf/model/city2" isReadOnly="false" cloningStrategy="Reference" cardinality="ZeroOne" />
+  <ModelSlot_EMFModelSlot id="5" flexoID="161" isRequired="true" name="model1" userID="FLX" useSpecificDescriptions="false" isReadOnly="false" metaModelURI="http://www.thalesgroup.com/openflexo/emf/model/city1" cloningStrategy="Reference" cardinality="ZeroOne">
+    <EMFModelSlot idref="5" />
+  </ModelSlot_EMFModelSlot>
+  <ModelSlot_EMFModelSlot id="7" flexoID="162" isRequired="true" name="model2" userID="FLX" useSpecificDescriptions="false" isReadOnly="false" metaModelURI="http://www.thalesgroup.com/openflexo/emf/model/city2" cloningStrategy="Reference" cardinality="ZeroOne">
+    <EMFModelSlot idref="7" />
+  </ModelSlot_EMFModelSlot>
   <SynchronizationScheme id="102" userID="FLX" useSpecificDescriptions="false" width="800" label="synchronization" definePopupDefaultSize="false" height="600" flexoID="74" skipConfirmationPanel="false" name="synchronization">
     <BehaviourControlGraph_Sequence id="103" flexoID="4" userID="FLX" useSpecificDescriptions="false">
       <ControlGraph1_IterationAction id="104" iteratorName="city1" useSpecificDescriptions="false" userID="FLX" flexoID="26" ownerContext="controlGraph1">
@@ -216,7 +220,7 @@
               </ControlGraph1_ConditionalAction>
               <ControlGraph2_Sequence id="123" flexoID="10" ownerContext="controlGraph2" userID="FLX" useSpecificDescriptions="false">
                 <ControlGraph1_DeclarationAction id="124" flexoID="11" ownerContext="controlGraph1" variable="tempList" useSpecificDescriptions="false" userID="FLX">
-                  <AssignableAction_SelectFlexoConceptInstance id="125" useSpecificDescriptions="false" userID="FLX" flexoID="90" variableName="tempList" assignation="tempList" flexoConceptTypeURI="http://www.thalesgroup.com/openflexo/emf/CityMapping/CityMapping#City">
+                  <AssignableAction_SelectFlexoConceptInstance id="125" useSpecificDescriptions="false" userID="FLX" virtualModelInstance="virtualModelInstance" flexoID="90" variableName="tempList" assignation="tempList" flexoConceptTypeURI="http://www.thalesgroup.com/openflexo/emf/CityMapping/CityMapping#City">
                     <Condition id="126" flexoID="12" condition="(selected.cityInModel1 = city1)" useSpecificDescriptions="false" userID="FLX" />
                   </AssignableAction_SelectFlexoConceptInstance>
                 </ControlGraph1_DeclarationAction>
@@ -361,7 +365,7 @@
   <ActionScheme id="210" userID="FLX" useSpecificDescriptions="false" width="800" label="Synchronize model2 from model 1" definePopupDefaultSize="false" height="600" flexoID="153" skipConfirmationPanel="false" name="synchronizeModel2FromModel1">
     <BehaviourControlGraph_Sequence id="211" flexoID="37" userID="FLX" useSpecificDescriptions="false">
       <ControlGraph1_DeclarationAction id="212" flexoID="38" ownerContext="controlGraph1" variable="nonExistantCitiesInModel2" useSpecificDescriptions="false" userID="FLX">
-        <AssignableAction_SelectFlexoConceptInstance id="213" useSpecificDescriptions="false" userID="FLX" flexoID="154" variableName="nonExistantCitiesInModel2" assignation="nonExistantCitiesInModel2" flexoConceptTypeURI="http://www.thalesgroup.com/openflexo/emf/CityMapping/CityMapping#City">
+        <AssignableAction_SelectFlexoConceptInstance id="213" useSpecificDescriptions="false" userID="FLX" virtualModelInstance="virtualModelInstance" flexoID="154" variableName="nonExistantCitiesInModel2" assignation="nonExistantCitiesInModel2" flexoConceptTypeURI="http://www.thalesgroup.com/openflexo/emf/CityMapping/CityMapping#City">
           <Condition id="214" flexoID="39" condition="(selected.cityInModel2 = null)" useSpecificDescriptions="false" userID="FLX" />
         </AssignableAction_SelectFlexoConceptInstance>
       </ControlGraph1_DeclarationAction>
@@ -374,7 +378,7 @@
   <ActionScheme id="218" userID="FLX" useSpecificDescriptions="false" width="800" label="synchronizeModel1FromModel2" definePopupDefaultSize="false" height="600" flexoID="157" skipConfirmationPanel="false" name="synchronizeModel1FromModel2">
     <BehaviourControlGraph_Sequence id="219" flexoID="42" userID="FLX" useSpecificDescriptions="false">
       <ControlGraph1_DeclarationAction id="220" flexoID="43" ownerContext="controlGraph1" variable="nonExistingCitiesInModel1" useSpecificDescriptions="false" userID="FLX">
-        <AssignableAction_SelectFlexoConceptInstance id="221" useSpecificDescriptions="false" userID="FLX" flexoID="158" variableName="nonExistingCitiesInModel1" assignation="nonExistingCitiesInModel1" flexoConceptTypeURI="http://www.thalesgroup.com/openflexo/emf/CityMapping/CityMapping#City">
+        <AssignableAction_SelectFlexoConceptInstance id="221" useSpecificDescriptions="false" userID="FLX" virtualModelInstance="virtualModelInstance" flexoID="158" variableName="nonExistingCitiesInModel1" assignation="nonExistingCitiesInModel1" flexoConceptTypeURI="http://www.thalesgroup.com/openflexo/emf/CityMapping/CityMapping#City">
           <Condition id="222" flexoID="44" condition="(selected.cityInModel1 = null)" useSpecificDescriptions="false" userID="FLX" />
         </AssignableAction_SelectFlexoConceptInstance>
       </ControlGraph1_DeclarationAction>

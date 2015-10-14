@@ -345,6 +345,7 @@ public class TestCityMappingBindingModel extends OpenflexoProjectAtRunTimeTestCa
 	@Test
 	@TestOrder(10)
 	public void checkViewPointValidity() {
+		System.out.println("cityMappingVP FML=" + cityMappingVP.getFMLRepresentation());
 		assertViewPointIsValid(cityMappingVP);
 	}
 
