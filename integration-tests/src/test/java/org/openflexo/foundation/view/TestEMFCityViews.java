@@ -57,7 +57,7 @@ import org.openflexo.foundation.fml.rm.ViewPointResource;
 import org.openflexo.foundation.fml.rt.View;
 import org.openflexo.foundation.fml.rt.VirtualModelInstance;
 import org.openflexo.foundation.fml.rt.action.CreateBasicVirtualModelInstance;
-import org.openflexo.foundation.fml.rt.action.CreateView;
+import org.openflexo.foundation.fml.rt.action.CreateViewInFolder;
 import org.openflexo.foundation.fml.rt.action.ModelSlotInstanceConfiguration.DefaultModelSlotInstanceConfigurationOption;
 import org.openflexo.foundation.fml.rt.rm.ViewResource;
 import org.openflexo.foundation.fml.rt.rm.VirtualModelInstanceResource;
@@ -125,7 +125,7 @@ public class TestEMFCityViews extends OpenflexoProjectAtRunTimeTestCase {
 		assertTrue(viewFolder.getFile().exists());
 
 		// Create View
-		CreateView addView = CreateView.actionType.makeNewAction(viewFolder, null, editor);
+		CreateViewInFolder addView = CreateViewInFolder.actionType.makeNewAction(viewFolder, null, editor);
 		addView.setNewViewName("TestNewView");
 		addView.setNewViewTitle("A nice title for a new view");
 		addView.setViewpointResource((ViewPointResource) cityViewsViewPoint.getResource());

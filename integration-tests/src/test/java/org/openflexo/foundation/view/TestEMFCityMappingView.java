@@ -54,7 +54,7 @@ import org.openflexo.foundation.action.AddRepositoryFolder;
 import org.openflexo.foundation.fml.ViewPoint;
 import org.openflexo.foundation.fml.rm.ViewPointResource;
 import org.openflexo.foundation.fml.rt.View;
-import org.openflexo.foundation.fml.rt.action.CreateView;
+import org.openflexo.foundation.fml.rt.action.CreateViewInFolder;
 import org.openflexo.foundation.fml.rt.rm.ViewResource;
 import org.openflexo.foundation.resource.RepositoryFolder;
 import org.openflexo.technologyadapter.diagram.model.action.CreateDiagram;
@@ -97,7 +97,8 @@ public class TestEMFCityMappingView extends OpenflexoProjectAtRunTimeTestCase {
 		// Load CityMapping ViewPoint
 		ViewPoint cityMappingViewPoint = loadViewPoint("http://www.thalesgroup.com/openflexo/emf/CityMapping");
 		assertNotNull(cityMappingViewPoint);
-		System.out.println("Found view point in " + ((ViewPointResource) cityMappingViewPoint.getResource()).getFlexoIODelegate().toString());
+		System.out
+				.println("Found view point in " + ((ViewPointResource) cityMappingViewPoint.getResource()).getFlexoIODelegate().toString());
 
 		// Create View Folder
 		AddRepositoryFolder addRepositoryFolder = AddRepositoryFolder.actionType.makeNewAction(project.getViewLibrary().getRootFolder(),
@@ -109,7 +110,7 @@ public class TestEMFCityMappingView extends OpenflexoProjectAtRunTimeTestCase {
 		assertTrue(viewFolder.getFile().exists());
 
 		// Create View
-		CreateView addView = CreateView.actionType.makeNewAction(viewFolder, null, editor);
+		CreateViewInFolder addView = CreateViewInFolder.actionType.makeNewAction(viewFolder, null, editor);
 		addView.setNewViewName("TestNewView");
 		addView.setNewViewTitle("A nice title for a new view");
 		addView.setViewpointResource((ViewPointResource) cityMappingViewPoint.getResource());
@@ -191,7 +192,7 @@ public class TestEMFCityMappingView extends OpenflexoProjectAtRunTimeTestCase {
 		assertTrue(newDiagram.getResource().getFile().exists());
 		assertEquals(project, newDiagram.getResource().getProject());
 		assertEquals(project, newDiagram.getProject());
-
+		
 		// Test ModelSlotInstance well created and initialized
 		assertEquals(3, newDiagram.getModelSlotInstances().size());
 		ModelSlotInstance<?, ?> diagramModelSlotInstance = newDiagram.getModelSlotInstance("diagram");
@@ -209,14 +210,14 @@ public class TestEMFCityMappingView extends OpenflexoProjectAtRunTimeTestCase {
 		assertNotNull(city2ModelSlotInstance.getModelURI());
 		assertNotNull(city1ModelSlotInstance.getModel());
 		assertNotNull(city2ModelSlotInstance.getModel());
-
+		
 		// Populate Diagram
 		DiagramSpecification diagramSpecification = cityMappingViewPoint.getDefaultDiagramSpecification();
 		assertEquals(6, diagramSpecification.getFlexoConcepts().size());
 		FlexoConcept cityFlexoConcept = diagramSpecification.getFlexoConcept("City");
 		Vector<DropScheme> cityDropSchemes = cityFlexoConcept.getDropSchemes();
 		assertEquals(1, cityDropSchemes.size());
-
+		
 		DropSchemeAction cityDropSchemeAction = DropSchemeAction.actionType.makeNewAction(createDiagram.getNewDiagram().getRootPane(),
 				null, editor);
 		DropScheme cityDropScheme = cityDropSchemes.get(0);
