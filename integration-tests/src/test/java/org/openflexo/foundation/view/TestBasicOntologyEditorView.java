@@ -53,7 +53,7 @@ import org.openflexo.foundation.action.AddRepositoryFolder;
 import org.openflexo.foundation.fml.ViewPoint;
 import org.openflexo.foundation.fml.rm.ViewPointResource;
 import org.openflexo.foundation.fml.rt.View;
-import org.openflexo.foundation.fml.rt.action.CreateView;
+import org.openflexo.foundation.fml.rt.action.CreateViewInFolder;
 import org.openflexo.foundation.fml.rt.rm.ViewResource;
 import org.openflexo.foundation.resource.RepositoryFolder;
 import org.openflexo.technologyadapter.diagram.model.Diagram;
@@ -118,7 +118,8 @@ public class TestBasicOntologyEditorView extends OpenflexoProjectAtRunTimeTestCa
 	public void test2LoadBasicOntologyEditorViewPoint() {
 		basicOntologyEditor = loadViewPoint("http://www.agilebirds.com/openflexo/ViewPoints/Basic/BasicOntology.owl");
 		assertNotNull(basicOntologyEditor);
-		System.out.println("Found view point in " + ((ViewPointResource) basicOntologyEditor.getResource()).getFlexoIODelegate().toString());
+		System.out
+				.println("Found view point in " + ((ViewPointResource) basicOntologyEditor.getResource()).getFlexoIODelegate().toString());
 	}
 
 	@Test
@@ -136,7 +137,7 @@ public class TestBasicOntologyEditorView extends OpenflexoProjectAtRunTimeTestCa
 	@Test
 	@TestOrder(5)
 	public void test4CreateView() {
-		CreateView addView = CreateView.actionType.makeNewAction(viewFolder, null, editor);
+		CreateViewInFolder addView = CreateViewInFolder.actionType.makeNewAction(viewFolder, null, editor);
 		addView.setNewViewName("TestNewView");
 		addView.setNewViewTitle("A nice title for a new view");
 		addView.setViewpointResource((ViewPointResource) basicOntologyEditor.getResource());
@@ -198,7 +199,8 @@ public class TestBasicOntologyEditorView extends OpenflexoProjectAtRunTimeTestCa
 		// createDiagram.getThrownException().printStackTrace();
 		assertTrue(createDiagram.hasActionExecutionSucceeded());
 		Diagram newDiagram = createDiagram.getNewDiagram();
-		System.out.println("New diagram " + newDiagram + " created in " + ((DiagramResource) newDiagram.getResource()).getFlexoIODelegate().toString());
+		System.out.println("New diagram " + newDiagram + " created in "
+				+ ((DiagramResource) newDiagram.getResource()).getFlexoIODelegate().toString());
 		assertNotNull(newDiagram);
 		assertEquals(createDiagram.getDiagramName(), newDiagram.getName());
 		assertEquals(createDiagram.getDiagramTitle(), newDiagram.getTitle());

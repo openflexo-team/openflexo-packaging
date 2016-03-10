@@ -57,7 +57,7 @@ import org.openflexo.foundation.fml.VirtualModel;
 import org.openflexo.foundation.fml.rm.ViewPointResource;
 import org.openflexo.foundation.fml.rt.View;
 import org.openflexo.foundation.fml.rt.action.CreateBasicVirtualModelInstance;
-import org.openflexo.foundation.fml.rt.action.CreateView;
+import org.openflexo.foundation.fml.rt.action.CreateViewInFolder;
 import org.openflexo.foundation.fml.rt.action.ModelSlotInstanceConfiguration.DefaultModelSlotInstanceConfigurationOption;
 import org.openflexo.foundation.fml.rt.rm.ViewResource;
 import org.openflexo.foundation.resource.FileSystemBasedResourceCenter;
@@ -147,7 +147,7 @@ public class TestCityMappingViewBigModels extends OpenflexoProjectAtRunTimeTestC
 	@Test
 	@TestOrder(6)
 	public void test4CreateView() {
-		CreateView addView = CreateView.actionType.makeNewAction(viewFolder, null, editor);
+		CreateViewInFolder addView = CreateViewInFolder.actionType.makeNewAction(viewFolder, null, editor);
 		addView.setNewViewName("TestNewView");
 		addView.setNewViewTitle("A nice title for a new view");
 		addView.setViewpointResource((ViewPointResource) cityMappingVP.getResource());
