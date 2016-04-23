@@ -12,8 +12,7 @@
      <packaging>pom</packaging>
      <name>Openflexo-Packaging</name>
      <modules>
-          <module>flexo-build</module>
-          <module>flexo-exec</module>
+          <module>packages</module>
           <module>integration-tests</module>
      </modules>
      <properties>
