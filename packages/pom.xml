@@ -10,10 +10,10 @@
     <packaging>pom</packaging>
     <name>Executables and Packaging</name>
     <modules>
-        <module>flexomaintainer</module>
         <module>flexosemantics</module>
         <module>flexosemanticsplus</module>
         <module>freemodelling</module>
+        <module>flexomaintainer</module>
     </modules>
     <properties>
         <main.class>org.openflexo.Flexo</main.class>
@@ -37,7 +37,7 @@
                     <classpathScope>runtime</classpathScope>
                     <executable>java</executable>
                     <commandlineArgs>
-                        ${os.exec.args} ${logging.args} ${vm.args} ${debug.args} -classpath %classpath ${main.class} -userType ${userType}
+                        ${os.exec.args} ${logging.args} ${vm.args} ${debug.args} -classpath %classpath ${main.class}
                     </commandlineArgs>
                 </configuration>
             </plugin>

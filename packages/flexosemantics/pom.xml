@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<name>Executable :: Flexo Semantics Packaging</name>
 	<parent>
-		<groupId>org.openflexo.packaging</groupId>
-		<artifactId>flexo-exec</artifactId>
-		<version>1.8.0-SNAPSHOT</version>
+		<groupId>org.openflexo</groupId>
+		<artifactId>openflexo-production</artifactId>
+		<version>0.4-SNAPSHOT</version>
 	</parent>
+	<groupId>org.openflexo.packaging</groupId>
 	<artifactId>flexosemantics</artifactId>
-	<properties>
-		<userType>semantics_release</userType>
-	</properties>
+	<name>Diatomée - Flexo Semantics Packaging</name>
+	<version>1.8.0-SNAPSHOT</version>
 	<build>
 		<plugins>
 			<plugin>
@@ -22,141 +21,161 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.openflexo</groupId>
+			<artifactId>packaging-tools</artifactId>
+			<scope>compile</scope>
+			<version>${project.parent.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.openflexo</groupId>
 			<artifactId>informationspacemodule</artifactId>
 			<scope>runtime</scope>
+  	 	        <version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>flexovieweditor</artifactId>
 			<scope>runtime</scope>
+  	 	        <version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>flexodiagram</artifactId>
 			<scope>runtime</scope>
+  	 	        <version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>flexodiagram-ui</artifactId>
 			<scope>runtime</scope>
+  	 	        <version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>emfconnector</artifactId>
 			<scope>runtime</scope>
+  	 	        <version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>emfconnector-ui</artifactId>
 			<scope>runtime</scope>
+  	 	        <version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>xmlconnector</artifactId>
 			<scope>runtime</scope>
+  	 	        <version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>xmlconnector-ui</artifactId>
 			<scope>runtime</scope>
+  	 	        <version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>owlconnector</artifactId>
 			<scope>runtime</scope>
+  	 	        <version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>owlconnector-ui</artifactId>
 			<scope>runtime</scope>
+  	 	        <version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>excelconnector</artifactId>
 			<scope>runtime</scope>
+  	 	        <version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>excelconnector-ui</artifactId>
 			<scope>runtime</scope>
+  	 	        <version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>powerpointconnector</artifactId>
 			<scope>runtime</scope>
+  	 	        <version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>powerpointconnector-ui</artifactId>
 			<scope>runtime</scope>
+  	 	        <version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>docxconnector</artifactId>
 			<scope>runtime</scope>
+  	 	        <version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>docxconnector-ui</artifactId>
 			<scope>runtime</scope>
+  	 	        <version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>odtconnector</artifactId>
 			<scope>runtime</scope>
+  	 	        <version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>odtconnector-ui</artifactId>
 			<scope>runtime</scope>
+  	 	        <version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>pdfconnector</artifactId>
 			<scope>runtime</scope>
+  	 	        <version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>pdfconnector-ui</artifactId>
 			<scope>runtime</scope>
+  	 	        <version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>ginaconnector</artifactId>
 			<scope>runtime</scope>
+  	 	        <version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>ginaconnector-ui</artifactId>
 			<scope>runtime</scope>
+  	 	        <version>${project.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.openflexo</groupId>
-            <artifactId>freeplaneconnector</artifactId>
-            <scope>runtime</scope>
+           		<artifactId>freeplaneconnector</artifactId>
+            		<scope>runtime</scope>
+  	 	        <version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-            <artifactId>freeplaneconnector-ui</artifactId>
-            <scope>runtime</scope>
+            		<artifactId>freeplaneconnector-ui</artifactId>
+            		<scope>runtime</scope>
+  	 	        <version>${project.version}</version>
 		</dependency>
  	
-        <!-- CSV not yet functional --> 
- 		<!--  <dependency>
-			<groupId>org.openflexo</groupId>
-			<artifactId>csvconnector</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.openflexo</groupId>
-			<artifactId>csvconnector-ui</artifactId>
-			<scope>runtime</scope>
-		</dependency> -->
  		<dependency>
  			<groupId>org.openflexo</groupId>
  			<artifactId>flexodocresourcecenter</artifactId>
  			<scope>runtime</scope>
+  	 	        <version>${project.version}</version>
  		</dependency>
     </dependencies>
 </project>

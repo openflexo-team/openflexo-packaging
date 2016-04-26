@@ -1,53 +1,39 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<name>Executable :: Flexo Maintainer Packaging</name>
 	<parent>
-		<groupId>org.openflexo.packaging</groupId>
-		<artifactId>flexo-exec</artifactId>
-		<version>1.8.0-SNAPSHOT</version>
+		<groupId>org.openflexo</groupId>
+		<artifactId>openflexo-production</artifactId>
+		<version>0.4-SNAPSHOT</version>
 	</parent>
-		<artifactId>flexomaintainer</artifactId>
-	<properties>
-		<userType>developer_release</userType>
-		<vm.args>-Xmx1G -XX:MaxPermSize=256M</vm.args>
-	</properties>
-	<build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-assembly-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+	<artifactId>flexomaintainer</artifactId>
+	<groupId>org.openflexo.packaging</groupId>
+	<name>Diatomée - Flexo Maintainer Packaging</name>
+	<version>1.8.0-SNAPSHOT</version>
 	<dependencies>
+		<dependency>
+			<groupId>org.openflexo</groupId>
+			<artifactId>packaging-tools</artifactId>
+			<scope>compile</scope>
+			<version>${project.parent.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.openflexo.packaging</groupId>
 			<artifactId>flexosemanticsplus</artifactId>
+  	 	        <version>${project.version}</version>
 			<scope>runtime</scope>
 			<type>pom</type>
 		</dependency>
-        <dependency>
-            <groupId>org.openflexo</groupId>
-            <artifactId>free-modelling-editor</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.openflexo</groupId>
-            <artifactId>flexodocresourcecenter</artifactId>
-            <scope>runtime</scope>
-        </dependency>
 		<dependency>
-			<groupId>org.openflexo</groupId>
-			<artifactId>flexo-foundation</artifactId>
-			<classifier>tests</classifier>
-			<scope>test</scope>
+		    <groupId>org.openflexo</groupId>
+		    <artifactId>free-modelling-editor</artifactId>
+	 	    <version>${project.version}</version>
+		    <scope>runtime</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.openflexo</groupId>
-			<artifactId>flexo-ui</artifactId>
-			<classifier>tests</classifier>
-			<scope>test</scope>
+		    <groupId>org.openflexo</groupId>
+		    <artifactId>flexodocresourcecenter</artifactId>
+	 	    <version>${project.version}</version>
+		    <scope>runtime</scope>
 		</dependency>
-		
 	</dependencies>
 </project>
