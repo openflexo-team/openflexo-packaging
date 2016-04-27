@@ -10,6 +10,10 @@
 	<artifactId>flexosemantics</artifactId>
 	<name>Diatomée - Flexo Semantics Packaging</name>
 	<version>1.8.0-SNAPSHOT</version>
+	<properties>
+		<product.name>Diatomée - Flexo Semantics Packaging</product.name>
+		<main.class>org.openflexo.Flexo</main.class>
+	</properties>
 	<build>
 		<plugins>
 			<plugin>
