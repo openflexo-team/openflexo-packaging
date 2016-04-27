@@ -11,7 +11,7 @@
 	<name>Diatomée - Free Modeling Editor</name>
 	<version>1.8.0-SNAPSHOT</version>
 	<properties>
-		<product.name>Diatomée - Free Modeling Editor</product.name>
+		<product.name>FreeModelingEditor</product.name>
 		<main.class>org.openflexo.Flexo</main.class>
 	</properties>
 	<dependencies>

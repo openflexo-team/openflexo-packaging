@@ -11,7 +11,7 @@
 	<name>Diatomée - Flexo Semantics Plus Packaging</name>
 	<version>1.8.0-SNAPSHOT</version>
 	<properties>
-		<product.name>Diatomée - Flexo Semantics Plus Packaging</product.name>
+		<product.name>FlexoSemanticsPlus</product.name>
 		<main.class>org.openflexo.Flexo</main.class>
 	</properties>
 	<build>

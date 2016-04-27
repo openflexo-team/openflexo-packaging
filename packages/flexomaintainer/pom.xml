@@ -10,7 +10,7 @@
 	<name>Diatomée - Flexo Maintainer Packaging</name>
 	<version>1.8.0-SNAPSHOT</version>
 	<properties>
-		<product.name>Diatomée - Flexo Maintainer Packaging</product.name>
+		<product.name>FlexoMaintainer</product.name>
 		<main.class>org.openflexo.Flexo</main.class>
 	</properties>
 	<dependencies>
