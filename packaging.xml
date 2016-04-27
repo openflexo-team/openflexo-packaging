@@ -9,43 +9,10 @@
 	<dependencySets>
 		<dependencySet>
 			<includes>
-				<include>*:jar:*</include>
+				<include>*:pom:*</include>
 			</includes>
-			<excludes>
-				<exclude>*:zip:*</exclude>
-				<exclude>org.openflexo</exclude>
-				<exclude>org.openflexo.packaging</exclude>
-			</excludes>
-			<outputDirectory>deps</outputDirectory>
-		</dependencySet>
-		<dependencySet>
-			<includes>
-				<include>org.openflexo</include>
-				<include>org.openflexo.packaging</include>
-			</includes>
-			<excludes>
-				<exclude>*:zip:*</exclude>
-				<exclude>*:pom:*</exclude>
-			</excludes>
-			<outputDirectory>lib</outputDirectory>
-		</dependencySet>
-		<dependencySet>
-			<unpack>true</unpack>
-			<outputDirectory></outputDirectory>
-			<includes>
-				<include>*:zip:*</include>
-			</includes>
-			<excludes>
-				<exclude>*:jar:*</exclude>
-			</excludes>
-			<unpackOptions>
-				<excludes>
-					<exclude>*.class</exclude>
-					<exclude>**/*.class</exclude>
-					<exclude>META-INF</exclude>
-				</excludes>
-			</unpackOptions>
+			<outputDirectory>poms</outputDirectory>
 		</dependencySet>
 	</dependencySets>
 </assembly>
-  
+ 
