@@ -42,7 +42,6 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import java.io.File;
 import java.util.logging.Logger;
 
 import org.junit.Test;
@@ -52,10 +51,8 @@ import org.openflexo.foundation.OpenflexoTestCase;
 import org.openflexo.foundation.fml.ViewPoint;
 import org.openflexo.foundation.fml.VirtualModel;
 import org.openflexo.foundation.fml.rm.ViewPointResource;
-import org.openflexo.foundation.fml.rm.ViewPointResourceImpl;
 import org.openflexo.foundation.fml.rm.VirtualModelResource;
 import org.openflexo.foundation.resource.FlexoResource;
-import org.openflexo.technologyadapter.diagram.TypedDiagramModelSlot;
 import org.openflexo.technologyadapter.diagram.metamodel.DiagramPalette;
 import org.openflexo.technologyadapter.diagram.model.Diagram;
 import org.openflexo.technologyadapter.diagram.rm.DiagramPaletteResource;
@@ -69,7 +66,7 @@ public class TestLoadViewPointsOpenflexo16 extends OpenflexoTestCase {
 	protected static final Logger logger = Logger.getLogger(TestLoadViewPointsOpenflexo16.class.getPackage().getName());
 
 	public static FlexoServiceManager serviceManager;
-	
+
 	/**
 	 * Instantiate test resource center
 	 */
@@ -77,7 +74,7 @@ public class TestLoadViewPointsOpenflexo16 extends OpenflexoTestCase {
 	@TestOrder(1)
 	public void test0InstantiateResourceCenter() {
 		log("test0InstantiateResourceCenter()");
-		
+
 		instanciateTestServiceManager();
 	}
 
@@ -121,11 +118,11 @@ public class TestLoadViewPointsOpenflexo16 extends OpenflexoTestCase {
 				}
 			}
 		}
-		
+
 		return vp;
 
 	}
-	
+
 	@Test
 	@TestOrder(2)
 	public void test1LoadBasicOntology() {
@@ -173,7 +170,7 @@ public class TestLoadViewPointsOpenflexo16 extends OpenflexoTestCase {
 	public void test8LoadUMLUseCases() {
 		testLoadViewPoint("http://www.agilebirds.com/openflexo/ViewPoints16/UML/UseCaseDiagram.owl");
 	}
-	
+
 	/*@Test
 	@TestOrder(2)
 	public void test1LoadCityMappingViewpoint() {
