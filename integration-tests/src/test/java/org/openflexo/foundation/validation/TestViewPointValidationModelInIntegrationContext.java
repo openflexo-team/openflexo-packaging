@@ -44,7 +44,7 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openflexo.foundation.OpenflexoTestCase;
-import org.openflexo.foundation.fml.ViewPointValidationModel;
+import org.openflexo.foundation.fml.FMLValidationModel;
 import org.openflexo.model.exceptions.ModelDefinitionException;
 import org.openflexo.model.validation.ValidationRule;
 import org.openflexo.model.validation.ValidationRuleSet;
@@ -65,14 +65,14 @@ import org.openflexo.test.TestOrder;
 @RunWith(OrderedRunner.class)
 public class TestViewPointValidationModelInIntegrationContext extends OpenflexoTestCase {
 
-	static ViewPointValidationModel validationModel;
+	static FMLValidationModel validationModel;
 
 	@Test
 	@TestOrder(1)
 	public void testCreateViewPointValidationModel() throws ModelDefinitionException {
 
 		instanciateTestServiceManager();
-		validationModel = new ViewPointValidationModel(serviceManager.getTechnologyAdapterService());
+		validationModel = new FMLValidationModel(serviceManager.getTechnologyAdapterService());
 		System.out.println("class number= " + validationModel.getValidationModelFactory().getModelContext().getEntityCount());
 
 		assertTrue(validationModel.getValidationModelFactory().getModelContext()
