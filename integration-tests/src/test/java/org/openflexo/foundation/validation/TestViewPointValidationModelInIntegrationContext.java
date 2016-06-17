@@ -69,7 +69,7 @@ public class TestViewPointValidationModelInIntegrationContext extends OpenflexoT
 
 	@Test
 	@TestOrder(1)
-	public void testCreateViewPointValidationModel() throws ModelDefinitionException {
+	public void testCreateFMLValidationModel() throws ModelDefinitionException {
 
 		instanciateTestServiceManager();
 		validationModel = new FMLValidationModel(serviceManager.getTechnologyAdapterService());
