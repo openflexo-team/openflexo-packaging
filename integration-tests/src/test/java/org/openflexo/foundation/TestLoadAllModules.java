@@ -46,11 +46,11 @@ import java.util.logging.Logger;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.openflexo.OpenflexoTestCaseWithGUI;
 import org.openflexo.fme.FMEModule;
 import org.openflexo.fme.FreeModellingEditor;
 import org.openflexo.foundation.resource.FlexoResourceCenterService;
 import org.openflexo.foundation.technologyadapter.TechnologyAdapterService;
+import org.openflexo.gina.test.OpenflexoTestCaseWithGUI;
 import org.openflexo.ism.ISMModule;
 import org.openflexo.ism.InformationSpaceModule;
 import org.openflexo.module.FlexoModule;

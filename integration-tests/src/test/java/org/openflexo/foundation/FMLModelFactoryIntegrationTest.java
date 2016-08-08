@@ -53,6 +53,7 @@ import org.openflexo.foundation.resource.FlexoResourceCenterService;
 import org.openflexo.foundation.technologyadapter.DefaultTechnologyAdapterService;
 import org.openflexo.foundation.technologyadapter.TechnologyAdapter;
 import org.openflexo.foundation.technologyadapter.TechnologyAdapterService;
+import org.openflexo.foundation.test.OpenflexoTestCase;
 import org.openflexo.logging.FlexoLogger;
 import org.openflexo.model.ModelContext;
 import org.openflexo.model.ModelEntity;
@@ -137,8 +138,8 @@ public class FMLModelFactoryIntegrationTest extends OpenflexoTestCase {
 	public void checkFMLTechnologyAdapter() {
 		log("checkFMLTechnologyAdapter()");
 
-		testVirtualModelModelFactoryWithTechnologyAdapter(serviceManager.getTechnologyAdapterService().getTechnologyAdapter(
-				FMLTechnologyAdapter.class));
+		testVirtualModelModelFactoryWithTechnologyAdapter(
+				serviceManager.getTechnologyAdapterService().getTechnologyAdapter(FMLTechnologyAdapter.class));
 	}
 
 	/**
@@ -149,8 +150,8 @@ public class FMLModelFactoryIntegrationTest extends OpenflexoTestCase {
 	public void checkDiagramTechnologyAdapter() {
 		log("checkDiagramTechnologyAdapter()");
 
-		testVirtualModelModelFactoryWithTechnologyAdapter(serviceManager.getTechnologyAdapterService().getTechnologyAdapter(
-				DiagramTechnologyAdapter.class));
+		testVirtualModelModelFactoryWithTechnologyAdapter(
+				serviceManager.getTechnologyAdapterService().getTechnologyAdapter(DiagramTechnologyAdapter.class));
 	}
 
 	/**
@@ -161,8 +162,8 @@ public class FMLModelFactoryIntegrationTest extends OpenflexoTestCase {
 	public void checkEMFTechnologyAdapter() {
 		log("checkEMFTechnologyAdapter()");
 
-		testVirtualModelModelFactoryWithTechnologyAdapter(serviceManager.getTechnologyAdapterService().getTechnologyAdapter(
-				EMFTechnologyAdapter.class));
+		testVirtualModelModelFactoryWithTechnologyAdapter(
+				serviceManager.getTechnologyAdapterService().getTechnologyAdapter(EMFTechnologyAdapter.class));
 	}
 
 	/**
@@ -173,8 +174,8 @@ public class FMLModelFactoryIntegrationTest extends OpenflexoTestCase {
 	public void checkExcelTechnologyAdapter() {
 		log("checkExcelTechnologyAdapter()");
 
-		testVirtualModelModelFactoryWithTechnologyAdapter(serviceManager.getTechnologyAdapterService().getTechnologyAdapter(
-				ExcelTechnologyAdapter.class));
+		testVirtualModelModelFactoryWithTechnologyAdapter(
+				serviceManager.getTechnologyAdapterService().getTechnologyAdapter(ExcelTechnologyAdapter.class));
 	}
 
 	/**
@@ -185,8 +186,8 @@ public class FMLModelFactoryIntegrationTest extends OpenflexoTestCase {
 	public void checkOWLTechnologyAdapter() {
 		log("checkOWLTechnologyAdapter()");
 
-		testVirtualModelModelFactoryWithTechnologyAdapter(serviceManager.getTechnologyAdapterService().getTechnologyAdapter(
-				OWLTechnologyAdapter.class));
+		testVirtualModelModelFactoryWithTechnologyAdapter(
+				serviceManager.getTechnologyAdapterService().getTechnologyAdapter(OWLTechnologyAdapter.class));
 	}
 
 	/**
@@ -197,8 +198,8 @@ public class FMLModelFactoryIntegrationTest extends OpenflexoTestCase {
 	public void checkPowerpointTechnologyAdapter() {
 		log("checkPowerpointTechnologyAdapter()");
 
-		testVirtualModelModelFactoryWithTechnologyAdapter(serviceManager.getTechnologyAdapterService().getTechnologyAdapter(
-				PowerpointTechnologyAdapter.class));
+		testVirtualModelModelFactoryWithTechnologyAdapter(
+				serviceManager.getTechnologyAdapterService().getTechnologyAdapter(PowerpointTechnologyAdapter.class));
 	}
 
 	/**
@@ -209,8 +210,8 @@ public class FMLModelFactoryIntegrationTest extends OpenflexoTestCase {
 	public void checkXMLTechnologyAdapter() {
 		log("checkXMLTechnologyAdapter()");
 
-		testVirtualModelModelFactoryWithTechnologyAdapter(serviceManager.getTechnologyAdapterService().getTechnologyAdapter(
-				XMLTechnologyAdapter.class));
+		testVirtualModelModelFactoryWithTechnologyAdapter(
+				serviceManager.getTechnologyAdapterService().getTechnologyAdapter(XMLTechnologyAdapter.class));
 	}
 
 	/**

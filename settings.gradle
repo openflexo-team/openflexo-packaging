@@ -1,0 +1,3 @@
+rootProject.name = 'openflexo-packaging'
+
+include 'integration-tests', 'packages:flexomaintainer', 'packages:flexosemantics', 'packages:flexosemanticsplus', 'packages:freemodelling'

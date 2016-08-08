@@ -48,6 +48,7 @@ import org.junit.runner.RunWith;
 import org.openflexo.foundation.fml.FMLTechnologyAdapter;
 import org.openflexo.foundation.resource.FlexoResourceCenterService;
 import org.openflexo.foundation.technologyadapter.TechnologyAdapterService;
+import org.openflexo.foundation.test.OpenflexoTestCase;
 import org.openflexo.logging.FlexoLogger;
 import org.openflexo.technologyadapter.diagram.DiagramTechnologyAdapter;
 import org.openflexo.technologyadapter.emf.EMFTechnologyAdapter;
@@ -165,6 +166,5 @@ public class TestLoadAllTechnologyAdapters extends OpenflexoTestCase {
 
 		assertNotNull(taService.getTechnologyAdapter(XMLTechnologyAdapter.class));
 	}
-
 
 }

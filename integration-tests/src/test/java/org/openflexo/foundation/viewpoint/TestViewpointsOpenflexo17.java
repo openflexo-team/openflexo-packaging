@@ -46,9 +46,9 @@ import java.util.logging.Logger;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.openflexo.foundation.OpenflexoTestCase;
 import org.openflexo.foundation.fml.ViewPoint;
 import org.openflexo.foundation.fml.rm.ViewPointResource;
+import org.openflexo.foundation.test.OpenflexoTestCase;
 import org.openflexo.test.OrderedRunner;
 import org.openflexo.test.TestOrder;
 
@@ -103,13 +103,13 @@ public class TestViewpointsOpenflexo17 extends OpenflexoTestCase {
 		// TODO: rewrite this
 
 		/*FlexoConcept conceptEP = basicOntologyEditor.getDefaultDiagramSpecification().getFlexoConcept("Concept");
-
+		
 		for (FlexoConcept ep : basicOntologyEditor.getDefaultDiagramSpecification().getFlexoConcepts()) {
 			System.out.println("ep=" + ep);
 		}
-
+		
 		assertNotNull(conceptEP);
-
+		
 		DropScheme ds = (DropScheme) conceptEP.getEditionScheme("DropConceptAtTopLevel");
 		assertNotNull(ds);*/
 
@@ -121,7 +121,8 @@ public class TestViewpointsOpenflexo17 extends OpenflexoTestCase {
 	@TestOrder(3)
 	public void test2BDN() {
 		log("test2BDN()");
-		assertViewPointIsValid(testLoadViewPoint("http://www.agilebirds.com/openflexo/ViewPoints/ScopeDefinition/BenefitDependancyNetwork.owl"));
+		assertViewPointIsValid(
+				testLoadViewPoint("http://www.agilebirds.com/openflexo/ViewPoints/ScopeDefinition/BenefitDependancyNetwork.owl"));
 	}
 
 	@Test
@@ -142,7 +143,8 @@ public class TestViewpointsOpenflexo17 extends OpenflexoTestCase {
 	@TestOrder(6)
 	public void test5OrganizationalUnitDefinition() {
 		log("test5OrganizationalUnitDefinition()");
-		assertViewPointIsValid(testLoadViewPoint("http://www.agilebirds.com/openflexo/ViewPoints/ScopeDefinition/OrganizationalUnitDefinition.owl"));
+		assertViewPointIsValid(
+				testLoadViewPoint("http://www.agilebirds.com/openflexo/ViewPoints/ScopeDefinition/OrganizationalUnitDefinition.owl"));
 	}
 
 	@Test
