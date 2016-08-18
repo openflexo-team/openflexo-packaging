@@ -4,9 +4,8 @@
 	<parent>
 		<artifactId>packages</artifactId>
 		<version>1.8.0-SNAPSHOT</version>
-		<groupId>org.openflexo</groupId>
+		<groupId>org.openflexo.packaging</groupId>
 	</parent>
-	<groupId>org.openflexo.packaging</groupId>
 	<artifactId>freemodelling</artifactId>
 	<name>Diatomée - Free Modeling Editor</name>
 	<properties>
