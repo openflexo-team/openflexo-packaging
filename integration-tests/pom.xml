@@ -9,6 +9,7 @@
 		<version>0.4-RC1</version>
     </parent>
 	<artifactId>integration-tests</artifactId>
+  <version>1.8.0-RC1</version>
 	<packaging>pom</packaging> 
 
 
@@ -159,4 +160,8 @@
 			</build>
 		</profile>
 	</profiles>
+
+  <scm>
+    <tag>Openflexo-Packaging-1.8.0-RC1</tag>
+  </scm>
 </project>
