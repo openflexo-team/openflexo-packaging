@@ -2,13 +2,12 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.openflexo</groupId>
-		<artifactId>openflexo-production</artifactId>
-		<version>0.4-RC1</version>
+		<artifactId>packages</artifactId>
+		<version>1.8.0-SNAPSHOT</version>
 	</parent>
 	<artifactId>flexomaintainer</artifactId>
 	<groupId>org.openflexo.packaging</groupId>
 	<name>Diatomée - Flexo Maintainer Packaging</name>
-	<version>1.8.0-SNAPSHOT</version>
 	<properties>
 		<product.name>Openflexo</product.name>
 		<main.class>org.openflexo.Flexo</main.class>
@@ -18,7 +17,6 @@
 			<groupId>org.openflexo</groupId>
 			<artifactId>packaging-tools</artifactId>
 			<scope>compile</scope>
-			<version>${project.parent.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo.packaging</groupId>
@@ -30,13 +28,13 @@
 		<dependency>
 		    <groupId>org.openflexo</groupId>
 		    <artifactId>free-modelling-editor</artifactId>
-	 	    <version>${project.version}</version>
+	 	    <version>${modules.version}</version>
 		    <scope>runtime</scope>
 		</dependency>
 		<dependency>
 		    <groupId>org.openflexo</groupId>
 		    <artifactId>flexodocresourcecenter</artifactId>
-	 	    <version>${project.version}</version>
+	 	    <version>${modules.version}</version>
 		    <scope>runtime</scope>
 		</dependency>
 	</dependencies>
