@@ -16,13 +16,10 @@
         <module>flexomaintainer</module>
     </modules>
     <properties>
-     	<modules.version>1.8.0-RC1</modules.version>
-     	<ta.version>1.8.0-RC1</ta.version>
         <main.class>org.openflexo.Flexo</main.class>
         <vm.args>-Xmx512M -XX:MaxPermSize=128M</vm.args>
         <logging.args>-Djava.util.logging.config.file=Config/logging.properties</logging.args>
         <debug.args />
-        <productiontools.version>0.4-RC1</productiontools.version>
     </properties>
     <build>
         <plugins>
