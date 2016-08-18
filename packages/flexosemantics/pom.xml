@@ -181,7 +181,7 @@
   	 	        <version>${project.version}</version>
  		</dependency>
     </dependencies>
-	<version>1.8.0-RC1</version>
+	<version>1.8.0-SNAPSHOT</version>
 
   <scm>
     <tag>Openflexo-Packaging-1.8.0-RC1</tag>
