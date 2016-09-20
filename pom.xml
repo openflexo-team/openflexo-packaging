@@ -4,7 +4,7 @@
      <parent>
           <groupId>org.openflexo</groupId>
           <artifactId>openflexo-root-pom</artifactId>
-          <version>0.4-SNAPSHOT</version>
+          <version>0.4-RC1</version>
      </parent>
      <groupId>org.openflexo.packaging</groupId>
      <artifactId>openflexo-packaging</artifactId>
@@ -19,7 +19,7 @@
      <scm>
           <connection>scm:git:ssh://git@github.com/openflexo-team/openflexo-packaging.git</connection>
           <url>https://github.com/openflexo-team/openflexo-packaging</url>
-          <tag>1.8.0</tag>
+          <tag>Openflexo-Packaging-1.8.0-RC1</tag>
      </scm>
      <build>
           <pluginManagement>
