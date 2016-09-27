@@ -6,21 +6,26 @@
     <parent>
         <groupId>org.openflexo</groupId>
         <artifactId>openflexo-production</artifactId>
-		<version>0.4-RC1</version>
+		<version>0.4-SNAPSHOT</version>
     </parent>
 	<artifactId>integration-tests</artifactId>
-  <version>1.8.0-RC1</version>
+  <version>1.8.0-SNAPSHOT</version>
 	<packaging>pom</packaging> 
 
-
      <properties>
-          <flexocore.version>1.8.0-RC1</flexocore.version>
-          <ta.version>1.8.0-RC1</ta.version>
-          <modules.version>1.8.0-RC1</modules.version>
-          <connie.version>1.3-RC1</connie.version>
+          <flexocore.version>1.8.0-SNAPSHOT</flexocore.version>
+          <ta.version>1.8.0-SNAPSHOT</ta.version>
+          <modules.version>1.8.0-SNAPSHOT</modules.version>
+          <connie.version>1.3-SNAPSHOT</connie.version>
      </properties>
 
 	<dependencies>
+	
+		<dependency>
+			<groupId>org.openflexo.rc</groupId>
+			<artifactId>integration-tests-rc</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 	
 		<!--  We list here all modules we want to include in our integration test environment -->
 	
@@ -28,28 +33,28 @@
             <groupId>org.openflexo</groupId>
             <artifactId>flexovieweditor</artifactId>
             <scope>runtime</scope>
-	   <version>${modules.version}</version>
+	   		<version>${modules.version}</version>
         </dependency>
 	
 	    <dependency>
             <groupId>org.openflexo</groupId>
             <artifactId>flexoviewpointmodeler</artifactId>
             <scope>runtime</scope>
-	   <version>${modules.version}</version>
+	   		<version>${modules.version}</version>
         </dependency>
         
         <dependency>
             <groupId>org.openflexo</groupId>
             <artifactId>free-modelling-editor</artifactId>
             <scope>runtime</scope>
-	   <version>${modules.version}</version>
+	  		<version>${modules.version}</version>
         </dependency>
 	
         <dependency>
             <groupId>org.openflexo</groupId>
             <artifactId>informationspacemodule</artifactId>
             <scope>runtime</scope>
-	   <version>${modules.version}</version>
+	   		<version>${modules.version}</version>
         </dependency>
 	
 	
@@ -126,6 +131,7 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	
 	<profiles>
 		<!-- overriding profile in this context -->
 		<profile>
@@ -162,6 +168,6 @@
 	</profiles>
 
   <scm>
-    <tag>Openflexo-Packaging-1.8.0-RC1</tag>
+    <tag>Openflexo-Packaging-1.8.0-SNAPSHOT</tag>
   </scm>
 </project>
