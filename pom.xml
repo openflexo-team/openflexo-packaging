@@ -14,9 +14,7 @@
 
      <modules>
           <module>packages</module>
-          <module>integration-tests</module>
-          <module>integration-tests-rc</module>
-     </modules>
+    </modules>
      <scm>
           <connection>scm:git:ssh://git@github.com/openflexo-team/openflexo-packaging.git</connection>
           <url>https://github.com/openflexo-team/openflexo-packaging</url>
