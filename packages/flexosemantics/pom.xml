@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.openflexo</groupId>
-	<version>0.4-RC1</version>
+	<version>0.4-SNAPSHOT</version>
 	<artifactId>openflexo-production</artifactId>
 	</parent>
 	<groupId>org.openflexo.packaging</groupId>
@@ -184,6 +184,6 @@
 	<version>1.8.0-SNAPSHOT</version>
 
   <scm>
-    <tag>Openflexo-Packaging-1.8.0-RC1</tag>
+    <tag>Openflexo-Packaging-1.8.0-SNAPSHOT</tag>
   </scm>
 </project>
