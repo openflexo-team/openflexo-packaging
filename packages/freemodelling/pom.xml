@@ -26,7 +26,7 @@
 			<scope>runtime</scope>
 		</dependency>
 	</dependencies>
-	<version>1.8.0</version>
+	<version>1.8.0-SNAPSHOT</version>
 
   <scm>
     <tag>Openflexo-Packaging-1.8.0</tag>
