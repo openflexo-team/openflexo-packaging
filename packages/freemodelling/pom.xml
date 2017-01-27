@@ -7,6 +7,7 @@
 		<groupId>org.openflexo</groupId>
 	</parent>
 	<artifactId>freemodelling</artifactId>
+	<groupId>org.openflexo.packaging</groupId>
 	<name>Diatomée - Free Modeling Editor</name>
 	<properties>
 		<product.name>Openflexo</product.name>
