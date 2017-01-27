@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>org.openflexo</groupId>
 		<artifactId>openflexo-production</artifactId>
-		<version>0.4-SNAPSHOT</version>
+		<version>0.4</version>
 	</parent>
 	<groupId>org.openflexo.packaging</groupId>
 	<artifactId>flexosemanticsplus</artifactId>
@@ -12,6 +12,7 @@
 	<properties>
 		<product.name>Openflexo</product.name>
 		<main.class>org.openflexo.Flexo</main.class>
+		<flexocore.version>1.8.0</flexocore.version>
 	</properties>
 	<build>
 		<plugins>
@@ -31,19 +32,19 @@
 			<groupId>org.openflexo.packaging</groupId>
 			<artifactId>flexosemantics</artifactId>
 			<scope>runtime</scope>
-  	 	        <version>${project.version}</version>
+			<version>${project.version}</version>
 			<type>pom</type>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>flexoviewpointmodeler</artifactId>
-  	 	        <version>${project.version}</version>
+			<version>${flexocore.version}</version>
 			<scope>runtime</scope>
 		</dependency>
 	</dependencies>
 	<version>1.8.0-SNAPSHOT</version>
 
   <scm>
-    <tag>Openflexo-Packaging-1.8.0-SNAPSHOT</tag>
+    <tag>Openflexo-Packaging-1.8.0</tag>
   </scm>
 </project>

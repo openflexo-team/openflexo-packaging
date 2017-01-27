@@ -3,7 +3,7 @@
 	<parent>
 		<groupId>org.openflexo</groupId>
 		<artifactId>openflexo-production</artifactId>
-		<version>0.4-SNAPSHOT</version>
+		<version>0.4</version>
 	</parent>
 	<artifactId>flexomaintainer</artifactId>
 	<groupId>org.openflexo.packaging</groupId>
@@ -11,7 +11,9 @@
 	<properties>
 		<product.name>Openflexo</product.name>
 		<main.class>org.openflexo.Flexo</main.class>
+		<flexocore.version>1.8.0</flexocore.version>
 	</properties>
+	
 	<dependencies>
 		<dependency>
 			<groupId>org.openflexo</groupId>
@@ -22,26 +24,26 @@
 		<dependency>
 			<groupId>org.openflexo.packaging</groupId>
 			<artifactId>flexosemanticsplus</artifactId>
-  	 	        <version>${project.version}</version>
+			<version>${project.version}</version>
 			<scope>runtime</scope>
 			<type>pom</type>
 		</dependency>
 		<dependency>
 		    <groupId>org.openflexo</groupId>
 		    <artifactId>free-modelling-editor</artifactId>
-	 	    <version>${project.version}</version>
+			<version>${flexocore.version}</version>
 		    <scope>runtime</scope>
 		</dependency>
 		<dependency>
 		    <groupId>org.openflexo</groupId>
 		    <artifactId>flexodocresourcecenter</artifactId>
-	 	    <version>${project.version}</version>
+			<version>${flexocore.version}</version>
 		    <scope>runtime</scope>
 		</dependency>
 	</dependencies>
 	<version>1.8.0-SNAPSHOT</version>
 
   <scm>
-    <tag>Openflexo-Packaging-1.8.0-SNAPSHOT</tag>
+    <tag>Openflexo-Packaging-1.8.0</tag>
   </scm>
 </project>
