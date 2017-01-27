@@ -193,7 +193,7 @@
 			<version>${flexocore.version}</version>
  		</dependency>
     </dependencies>
-	<version>1.8.0-SNAPSHOT</version>
+	<version>1.8.0</version>
 
   <scm>
     <tag>Openflexo-Packaging-1.8.0</tag>
