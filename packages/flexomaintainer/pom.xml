@@ -3,7 +3,7 @@
 	<parent>
 		<groupId>org.openflexo</groupId>
 		<artifactId>openflexo-production</artifactId>
-		<version>0.4</version>
+		<version>0.5-SNAPSHOT</version>
 	</parent>
 	<artifactId>flexomaintainer</artifactId>
 	<groupId>org.openflexo.packaging</groupId>
@@ -11,7 +11,7 @@
 	<properties>
 		<product.name>Openflexo</product.name>
 		<main.class>org.openflexo.Flexo</main.class>
-		<flexocore.version>1.8.0</flexocore.version>
+		<flexocore.version>1.8.1-SNAPSHOT</flexocore.version>
 	</properties>
 	
 	<dependencies>
