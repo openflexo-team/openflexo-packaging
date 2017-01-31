@@ -1,4 +1,5 @@
 **/target
+**/build
 
 # IDE Files #
 **/.classpath
@@ -8,4 +9,3 @@
 *.idea
 *.iws
 *.iml
-/.project

@@ -1,0 +1,4 @@
+include 'packages:flexomaintainer',
+        'packages:flexosemantics',
+        'packages:flexosemanticsplus',
+        'packages:freemodelling'
