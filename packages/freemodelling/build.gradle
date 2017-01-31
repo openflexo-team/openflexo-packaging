@@ -1,6 +1,5 @@
 dependencies {
-  runtime 'org.openflexo:freemodellingeditor:1.8.1-SNAPSHOT'
-  // runtime openflexo('free-modelling-editor')
+  runtime openflexo('freemodellingeditor')
 }
 
 apply plugin: 'application'
