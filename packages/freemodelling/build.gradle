@@ -1,7 +1,6 @@
 dependencies {
-  // testing dep
-  runtime group: "org.openflexo", name: "freemodellingeditor", version: "1.+"
-  runtime group: "org.openflexo", name: "flexodocresourcecenter", version: "1.+"
+  runtime 'org.openflexo:freemodellingeditor:1.8.1-SNAPSHOT'
+  // runtime openflexo('free-modelling-editor')
 }
 
 apply plugin: 'application'

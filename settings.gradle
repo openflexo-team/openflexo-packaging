@@ -1,3 +1,4 @@
-rootProject.name = 'openflexo-packaging'
-
-include 'packages:flexomaintainer', 'packages:flexosemantics', 'packages:flexosemanticsplus', 'packages:freemodelling'
+include 'packages:flexomaintainer',
+        'packages:flexosemantics',
+        'packages:flexosemanticsplus',
+        'packages:freemodelling'
