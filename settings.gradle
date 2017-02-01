@@ -2,3 +2,20 @@ include 'packages:flexomaintainer',
         'packages:flexosemantics',
         'packages:flexosemanticsplus',
         'packages:freemodelling'
+
+// includeBuild '../connie'
+// includeBuild '../pamela'
+// includeBuild '../gina'
+// includeBuild '../diana'
+// includeBuild '../openflexo-utils'
+// includeBuild '../openflexo-core'
+// includeBuild '../openflexo-technology-adapters'
+// includeBuild '../openflexo-modules'
+
+file('../').listFiles().each { File otherProject ->
+    //includeBuild moduleBuild
+    if (!otherProject.equals(file('.')) && new File(otherProject, "build.gradle").exists()) {
+        includeBuild otherProject
+    }
+}
+
