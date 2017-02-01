@@ -12,10 +12,9 @@ include 'packages:flexomaintainer',
 // includeBuild '../openflexo-technology-adapters'
 // includeBuild '../openflexo-modules'
 
-file('../').listFiles().each { File otherProject ->
-    //includeBuild moduleBuild
-    if (!otherProject.equals(file('.')) && new File(otherProject, "build.gradle").exists()) {
-        includeBuild otherProject
-    }
-}
+// file('../').listFiles().each { File otherProject ->
+//    if (!otherProject.equals(file('.')) && new File(otherProject, "build.gradle").exists()) {
+//        includeBuild otherProject
+//    }
+// }
 
