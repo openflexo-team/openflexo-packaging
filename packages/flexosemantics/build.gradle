@@ -1,4 +1,5 @@
 dependencies {
+    runtime openflexo("freemodellingeditor")
     runtime openflexo("informationspacemodule")
     runtime openflexo("flexovieweditor")
     runtime openflexo("flexodiagram")
