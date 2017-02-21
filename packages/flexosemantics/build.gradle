@@ -1,5 +1,4 @@
 dependencies {
-    runtime openflexo("enterprise-architecture-module")
     runtime openflexo("freemodellingeditor")
     runtime openflexo("informationspacemodule")
     runtime openflexo("flexovieweditor")
