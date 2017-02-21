@@ -1,4 +1,5 @@
 dependencies {
     runtime project(':packages:flexosemanticsplus')
+    runtime openflexo("enterprise-architecture-module")
     runtime flexoDocResourceCenter()
 }
