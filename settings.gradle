@@ -1,7 +1,8 @@
 include 'packages:flexomaintainer',
         'packages:flexosemantics',
         'packages:flexosemanticsplus',
-        'packages:freemodelling'
+        'packages:freemodelling',
+        'packages:openflexo-designer'
 
 // includeBuild '../connie'
 // includeBuild '../pamela'
