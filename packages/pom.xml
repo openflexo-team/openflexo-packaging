@@ -14,6 +14,7 @@
         <module>flexosemanticsplus</module>
         <module>freemodelling</module>
         <module>flexomaintainer</module>
+        <module>openflexo-designer</module>
     </modules>
     <properties>
         <main.class>org.openflexo.Flexo</main.class>
