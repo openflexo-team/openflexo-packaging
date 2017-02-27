@@ -1,4 +1,5 @@
 dependencies {
-    runtime 'org.openflexo.packaging:flexosemanticsplus:1.8.1-SNAPSHOT'
-    runtime 'org.openflexo:flexodocresourcecenter:1.8.1-SNAPSHOT'
+    runtime project(':packages:flexosemanticsplus')
+    runtime openflexo("enterprise-architecture-module")
+    runtime flexoDocResourceCenter()
 }

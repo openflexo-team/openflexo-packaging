@@ -1,0 +1,11 @@
+dependencies {
+    runtime openflexo("enterprise-architecture-module")
+    runtime openflexo("freemodellingeditor")
+    runtime openflexo("flexodiagram")
+    runtime openflexo("flexodiagram-ui")
+    runtime openflexo("owlconnector")
+    runtime openflexo("owlconnector-ui")
+    runtime openflexo("ginaconnector")
+    runtime openflexo("ginaconnector-ui")
+    runtime openflexo("flexodocresourcecenter")
+}
