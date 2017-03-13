@@ -22,28 +22,6 @@
         <logging.args>-Djava.util.logging.config.file=Config/logging.properties</logging.args>
         <debug.args />
     </properties>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>exec</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <classpathScope>runtime</classpathScope>
-                    <executable>java</executable>
-                    <commandlineArgs>
-                        ${os.exec.args} ${logging.args} ${vm.args} ${debug.args} -classpath %classpath ${main.class}
-                    </commandlineArgs>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
     <profiles>
         <profile>
             <id>mac-osx</id>
