@@ -174,7 +174,7 @@
             		<scope>runtime</scope>
 			<version>${flexocore.version}</version>
 		</dependency>
-		<!--  <dependency>
+		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>jdbcconnector</artifactId>
 			<version>${flexocore.version}</version>
@@ -185,7 +185,7 @@
 			<artifactId>jdbcconnector-ui</artifactId>
 			<version>${flexocore.version}</version>
 			<scope>runtime</scope>
-		</dependency>-->
+		</dependency>
  		<dependency>
  			<groupId>org.openflexo</groupId>
  			<artifactId>flexodocresourcecenter</artifactId>
