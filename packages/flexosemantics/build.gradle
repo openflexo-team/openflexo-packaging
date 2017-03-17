@@ -26,5 +26,7 @@ dependencies {
     runtime openflexo("freeplaneconnector-ui")
     runtime openflexo("jdbcconnector")
     runtime openflexo("jdbcconnector-ui")
+    runtime openflexo("httpconnector")
+    runtime openflexo("httpconnector-ui")
     runtime openflexo("flexodocresourcecenter")
 }
