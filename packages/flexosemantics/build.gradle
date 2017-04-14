@@ -28,5 +28,7 @@ dependencies {
     runtime openflexo("jdbcconnector-ui")
     runtime openflexo("http-connector")
     runtime openflexo("http-connector-ui")
+    runtime openflexo("kafkaconnector")
+    runtime openflexo("kafkaconnector-ui")
     runtime openflexo("flexodocresourcecenter")
 }
