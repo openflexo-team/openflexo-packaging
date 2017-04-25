@@ -186,6 +186,30 @@
 			<version>${flexocore.version}</version>
 			<scope>runtime</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.openflexo</groupId>
+			<artifactId>http-connector</artifactId>
+			<version>${flexocore.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.openflexo</groupId>
+			<artifactId>http-connector-ui</artifactId>
+			<version>${flexocore.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.openflexo</groupId>
+			<artifactId>kafkaconnector</artifactId>
+			<version>${flexocore.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.openflexo</groupId>
+			<artifactId>kafkaconnector-ui</artifactId>
+			<version>${flexocore.version}</version>
+			<scope>runtime</scope>
+		</dependency>
  		<dependency>
  			<groupId>org.openflexo</groupId>
  			<artifactId>flexodocresourcecenter</artifactId>
