@@ -1,4 +1,0 @@
-dependencies {
-    runtime project(":packages:flexosemantics")
-    runtime openflexo("flexoviewpointmodeler")
-}

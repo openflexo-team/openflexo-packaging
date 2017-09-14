@@ -31,13 +31,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>informationspacemodule</artifactId>
-			<scope>runtime</scope>
-			<version>${flexocore.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.openflexo</groupId>
-			<artifactId>flexovieweditor</artifactId>
+			<artifactId>openflexo-modeller</artifactId>
 			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
 		</dependency>
