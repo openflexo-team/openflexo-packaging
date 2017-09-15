@@ -23,16 +23,10 @@
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo.packaging</groupId>
-			<artifactId>flexosemanticsplus</artifactId>
+			<artifactId>openflexo-designer</artifactId>
 			<version>${project.version}</version>
 			<scope>runtime</scope>
 			<type>pom</type>
-		</dependency>
-		<dependency>
-		    <groupId>org.openflexo</groupId>
-		    <artifactId>freemodellingeditor</artifactId>
-			<version>${flexocore.version}</version>
-		    <scope>runtime</scope>
 		</dependency>
 		<dependency>
 		    <groupId>org.openflexo</groupId>
