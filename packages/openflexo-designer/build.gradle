@@ -38,3 +38,6 @@ dependencies {
     runtime openflexo("flexodocresourcecenter")
 
 }
+
+apply plugin: 'application'
+mainClassName = "org.openflexo.Flexo"

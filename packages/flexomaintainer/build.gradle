@@ -2,3 +2,5 @@ dependencies {
     runtime project(':packages:openflexo-designer')
     runtime flexoDocResourceCenter()
 }
+apply plugin: 'application'
+mainClassName = "org.openflexo.Flexo"
