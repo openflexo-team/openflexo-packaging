@@ -26,8 +26,6 @@ dependencies {
     runtime openflexo("pdfconnector-ui")
     runtime openflexo("ginaconnector")
     runtime openflexo("ginaconnector-ui")
-    runtime openflexo("freeplaneconnector")
-    runtime openflexo("freeplaneconnector-ui")
     runtime openflexo("jdbcconnector")
     runtime openflexo("jdbcconnector-ui")
     runtime openflexo("http-connector")
