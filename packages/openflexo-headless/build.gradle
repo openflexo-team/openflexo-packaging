@@ -1,0 +1,26 @@
+dependencies {
+
+	// embed FML command-line interpreter
+    compile fmlCli()
+ 
+	// technology adapters
+    runtime openflexo("flexodiagram")
+    runtime openflexo("emfconnector")
+    runtime openflexo("xmlconnector")
+    runtime openflexo("owlconnector")
+    runtime openflexo("excelconnector")
+    runtime openflexo("powerpointconnector")
+    runtime openflexo("docxconnector")
+    runtime openflexo("odtconnector")
+    runtime openflexo("pdfconnector")
+    runtime openflexo("ginaconnector")
+    runtime openflexo("jdbcconnector")
+    runtime openflexo("http-connector")
+    runtime openflexo("http-connector-rc")
+    runtime openflexo("kafkaconnector")
+    runtime openflexo("flexodocresourcecenter")
+
+}
+
+apply plugin: 'application'
+mainClassName = "org.openflexo.Flexo"

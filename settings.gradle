@@ -1,6 +1,7 @@
 include 'packages:flexomaintainer',
         'packages:freemodelling',
         'packages:openflexo-designer',
+        'packages:openflexo-headless',
         'packages:openflexo-server'
 
 // includeBuild '../connie'
@@ -17,4 +18,11 @@ include 'packages:flexomaintainer',
 //        includeBuild otherProject
 //    }
 // }
+  
+// file('../dynalec-odoo').listFiles().each { File otherProject ->
+//    if (!otherProject.equals(file('.')) && new File(otherProject, "build.gradle").exists()) {
+//        includeBuild otherProject
+//    }
+//  }
+  
 
