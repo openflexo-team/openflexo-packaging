@@ -12,7 +12,7 @@
 	<properties>
 		<product.name>Openflexo</product.name>
 		<main.class>org.openflexo.Flexo</main.class>
-		<flexocore.version>1.9.0-SNAPSHOT</flexocore.version>
+		<flexocore.version>2.0.0-SNAPSHOT</flexocore.version>
 	</properties>
 	<build>
 		<plugins>
@@ -61,13 +61,13 @@
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>emfconnector</artifactId>
+			<artifactId>emf-ta</artifactId>
 			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>emfconnector-ui</artifactId>
+			<artifactId>emf-ta-ui</artifactId>
 			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
 		</dependency>
@@ -85,13 +85,13 @@
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>owlconnector</artifactId>
+			<artifactId>owl-ta</artifactId>
 			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>owlconnector-ui</artifactId>
+			<artifactId>owl-ta-ui</artifactId>
 			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
 		</dependency>
@@ -145,13 +145,13 @@
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>pdfconnector</artifactId>
+			<artifactId>pdf-ta</artifactId>
 			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>pdfconnector-ui</artifactId>
+			<artifactId>pdf-ta-ui</artifactId>
 			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
 		</dependency>
@@ -168,18 +168,6 @@
 			<version>${flexocore.version}</version>
 		</dependency>
 
-		<dependency>
-			<groupId>org.openflexo</groupId>
-           		<artifactId>freeplaneconnector</artifactId>
-            		<scope>runtime</scope>
-			<version>${flexocore.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.openflexo</groupId>
-            		<artifactId>freeplaneconnector-ui</artifactId>
-            		<scope>runtime</scope>
-			<version>${flexocore.version}</version>
-		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>jdbcconnector</artifactId>
@@ -223,9 +211,9 @@
 			<version>${flexocore.version}</version>
  		</dependency>
      </dependencies>
-	<version>1.9.0-SNAPSHOT</version>
+	<version>2.0.0-SNAPSHOT</version>
 
   <scm>
-    <tag>1.9.0</tag>
+    <tag>2.0.0</tag>
   </scm>
 </project>
