@@ -1,7 +1,8 @@
 dependencies {
 
 	// embed FML command-line interpreter
-    compile fmlCli()
+    runtime fmlCli()
+    //runtime openflexo("fml-cli")
  
 	// technology adapters
     runtime openflexo("flexodiagram")
