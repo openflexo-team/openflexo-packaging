@@ -50,40 +50,5 @@
                </plugins>
           </pluginManagement>
      </build>
-                <repositories>
-                <repository>
-                    <id>openflexo</id>
-                    <name>openflexo dependency repository</name>
-                    <url>https://maven.openflexo.org/artifactory/openflexo-deps/</url>
-                    <snapshots>
-                        <enabled>true</enabled>
-                        <updatePolicy>always</updatePolicy>
-                    </snapshots>
-                </repository>
-                <repository>
-                    <id>openflexo-snapshot</id>
-                    <name>openflexo Snapshot repository</name>
-                    <url>https://maven.openflexo.org/artifactory/openflexo-snapshot/</url>
-                    <releases>
-                        <enabled>false</enabled>
-                    </releases>
-                    <snapshots>
-                        <enabled>true</enabled>
-                        <updatePolicy>always</updatePolicy>
-                    </snapshots>
-                </repository>
-                <repository>
-                    <id>openflexo-release</id>
-                    <name>openflexo Release repository</name>
-                    <url>https://maven.openflexo.org/artifactory/openflexo-release/</url>
-                    <releases>
-                        <enabled>true</enabled>
-                    </releases>
-                    <snapshots>
-                        <enabled>false</enabled>
-                        <updatePolicy>always</updatePolicy>
-                    </snapshots>
-                </repository>
-            </repositories>
      
 </project>
