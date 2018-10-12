@@ -31,6 +31,12 @@
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
+			<artifactId>fml-cli</artifactId>
+			<scope>runtime</scope>
+			<version>${flexocore.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.openflexo</groupId>
 			<artifactId>flexodiagram</artifactId>
 			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
