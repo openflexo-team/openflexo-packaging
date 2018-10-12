@@ -3,8 +3,8 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.openflexo</groupId>
-	<version>0.5-SNAPSHOT</version>
-	<artifactId>openflexo-production</artifactId>
+	    <artifactId>openflexo-production</artifactId>
+	    <version>0.5-SNAPSHOT</version>
 	</parent>
 	<groupId>org.openflexo.packaging</groupId>
 	<artifactId>openflexo-headless</artifactId>
