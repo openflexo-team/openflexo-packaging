@@ -24,4 +24,4 @@ dependencies {
 }
 
 apply plugin: 'application'
-mainClassName = "org.openflexo.Flexo"
+mainClassName = "org.openflexo.foundation.fml.cli.LaunchHeadlessFMLCLI"
