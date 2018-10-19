@@ -3,15 +3,15 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.openflexo</groupId>
-	<version>0.5-SNAPSHOT</version>
-	<artifactId>openflexo-production</artifactId>
+	    <artifactId>openflexo-production</artifactId>
+	    <version>0.5-SNAPSHOT</version>
 	</parent>
 	<groupId>org.openflexo.packaging</groupId>
 	<artifactId>openflexo-headless</artifactId>
 	<name>Diatomée - Openflexo Headless Environment</name>
 	<properties>
 		<product.name>Openflexo</product.name>
-		<main.class>org.openflexo.Flexo</main.class>
+		<main.class>org.openflexo.foundation.fml.cli.LaunchHeadlessFMLCLI</main.class>
 		<flexocore.version>1.9.0-SNAPSHOT</flexocore.version>
 	</properties>
 	<build>
@@ -28,6 +28,12 @@
 			<artifactId>packaging-tools</artifactId>
   	 	        <version>${project.parent.version}</version>
 			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.openflexo</groupId>
+			<artifactId>fml-cli</artifactId>
+			<scope>runtime</scope>
+			<version>${flexocore.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
