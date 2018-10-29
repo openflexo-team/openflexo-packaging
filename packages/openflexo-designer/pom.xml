@@ -170,18 +170,6 @@
 
 		<dependency>
 			<groupId>org.openflexo</groupId>
-           		<artifactId>freeplaneconnector</artifactId>
-            		<scope>runtime</scope>
-			<version>${flexocore.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.openflexo</groupId>
-            		<artifactId>freeplaneconnector-ui</artifactId>
-            		<scope>runtime</scope>
-			<version>${flexocore.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.openflexo</groupId>
 			<artifactId>jdbcconnector</artifactId>
 			<version>${flexocore.version}</version>
 			<scope>runtime</scope>
