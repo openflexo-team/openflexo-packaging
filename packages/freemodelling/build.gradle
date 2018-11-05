@@ -1,0 +1,6 @@
+dependencies {
+  runtime openflexo('freemodellingeditor')
+}
+
+apply plugin: 'application'
+mainClassName = "org.openflexo.Flexo"

@@ -1,0 +1,28 @@
+include 'packages:flexomaintainer',
+        'packages:freemodelling',
+        'packages:openflexo-designer',
+        'packages:openflexo-headless',
+        'packages:openflexo-server'
+
+// includeBuild '../connie'
+// includeBuild '../pamela'
+// includeBuild '../gina'
+// includeBuild '../diana'
+// includeBuild '../openflexo-utils'
+// includeBuild '../openflexo-core'
+// includeBuild '../openflexo-technology-adapters'
+// includeBuild '../openflexo-modules'
+
+// file('../').listFiles().each { File otherProject ->
+//    if (!otherProject.equals(file('.')) && new File(otherProject, "build.gradle").exists()) {
+//        includeBuild otherProject
+//    }
+// }
+  
+// file('../dynalec-odoo').listFiles().each { File otherProject ->
+//    if (!otherProject.equals(file('.')) && new File(otherProject, "build.gradle").exists()) {
+//        includeBuild otherProject
+//    }
+//  }
+  
+

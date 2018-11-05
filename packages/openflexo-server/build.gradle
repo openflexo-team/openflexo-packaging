@@ -1,0 +1,41 @@
+
+dependencies {
+    runtime openflexo("http-server")
+
+    runtime docxConnector()
+    runtime excelConnector()
+    runtime pdfConnector()
+    runtime powerpointConnector()
+    runtime openflexo("ginaconnector")
+    runtime openflexo("flexodiagram")
+
+    runtime openflexo("jdbcconnector")
+    runtime openflexo("kafkaconnector")
+}
+
+def deployDir = "/Users/charlie/Documents/dev/openflexo/deploy/openshift/app";
+def appDir = file(buildDir.canonicalPath + "/app");
+
+task cleanApp(group: "deployement" ) {
+    doLast {
+        if (appDir.exists()) {
+            appDir.deleteDir();
+        }
+    }
+}
+
+task copyDockerfile(type: Copy, group: "deployement") {
+    from "Dockerfile"
+    from "start.sh"
+    into appDir.canonicalPath
+}
+
+task copyJars (type: Copy, group: "deployement") {
+    from configurations.runtime.resolve()
+    into appDir.canonicalPath + "/libs"
+}
+
+task deploy (dependsOn: ["cleanApp", "copyJars", "copyDockerfile"], type: Sync, group: "deployement") {
+    from appDir
+    into deployDir
+}

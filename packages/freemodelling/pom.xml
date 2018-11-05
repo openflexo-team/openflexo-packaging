@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>openflexo-production</artifactId>
+		<version>0.5-SNAPSHOT</version>
+		<groupId>org.openflexo</groupId>
+	</parent>
+	<artifactId>freemodelling</artifactId>
+	<groupId>org.openflexo.packaging</groupId>
+	<name>Diatomée - Free Modeling Editor</name>
+	<properties>
+		<product.name>Openflexo</product.name>
+		<main.class>org.openflexo.Flexo</main.class>
+		<flexocore.version>1.9.0</flexocore.version>
+	</properties>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>org.openflexo</groupId>
+			<artifactId>packaging-tools</artifactId>
+			<version>${project.parent.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.openflexo</groupId>
+			<artifactId>freemodellingeditor</artifactId>
+			<version>${flexocore.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+	</dependencies>
+	<version>1.9.0</version>
+
+  <scm>
+    <tag>1.9.0</tag>
+  </scm>
+</project>

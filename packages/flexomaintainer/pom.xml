@@ -1,0 +1,43 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.openflexo</groupId>
+		<artifactId>openflexo-production</artifactId>
+		<version>0.5-SNAPSHOT</version>
+	</parent>
+	<artifactId>flexomaintainer</artifactId>
+	<groupId>org.openflexo.packaging</groupId>
+	<name>Diatomée - Flexo Maintainer Packaging</name>
+	<properties>
+		<product.name>Openflexo</product.name>
+		<main.class>org.openflexo.Flexo</main.class>
+		<flexocore.version>1.9.0</flexocore.version>
+	</properties>
+	
+	<dependencies>
+		<dependency>
+			<groupId>org.openflexo</groupId>
+			<artifactId>packaging-tools</artifactId>
+  	 	    <version>${project.parent.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.openflexo.packaging</groupId>
+			<artifactId>openflexo-designer</artifactId>
+			<version>${project.version}</version>
+			<scope>runtime</scope>
+			<type>pom</type>
+		</dependency>
+		<dependency>
+		    <groupId>org.openflexo</groupId>
+		    <artifactId>flexodocresourcecenter</artifactId>
+			<version>${flexocore.version}</version>
+		    <scope>runtime</scope>
+		</dependency>
+	</dependencies>
+	<version>1.9.0</version>
+
+  <scm>
+    <tag>1.9.0</tag>
+  </scm>
+</project>
