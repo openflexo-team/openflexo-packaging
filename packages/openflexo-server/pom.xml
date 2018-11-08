@@ -7,11 +7,11 @@
 	    <version>0.5-SNAPSHOT</version>
 	</parent>
 	<groupId>org.openflexo.packaging</groupId>
-	<artifactId>openflexo-headless</artifactId>
-	<name>Diatomée - Openflexo Headless Environment</name>
+	<artifactId>openflexo-server</artifactId>
+	<name>Diatomée - Openflexo Server Environment</name>
 	<properties>
 		<product.name>Openflexo</product.name>
-		<main.class>org.openflexo.foundation.fml.cli.LaunchHeadlessFMLCLI</main.class>
+		<main.class>org.openflexo.Flexo</main.class>
 		<flexocore.version>2.0.0-SNAPSHOT</flexocore.version>
 	</properties>
 	<build>
