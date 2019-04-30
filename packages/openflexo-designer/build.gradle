@@ -6,8 +6,8 @@ dependencies {
     runtime openflexo("openflexo-modeller")
  
  	// technology adapters
-    runtime flexoDiagram()
-    runtime flexoDiagramUi()
+    runtime diagramConnector()
+    runtime diagramConnectorUi()
     runtime emfConnector()
     runtime emfConnectorUi()
     runtime xmlConnector()

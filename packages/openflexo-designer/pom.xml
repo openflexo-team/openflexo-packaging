@@ -49,13 +49,13 @@
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>flexodiagram</artifactId>
+			<artifactId>diagram-ta</artifactId>
 			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>flexodiagram-ui</artifactId>
+			<artifactId>diagram-ta-ui</artifactId>
 			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
 		</dependency>

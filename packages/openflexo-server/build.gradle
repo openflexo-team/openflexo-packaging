@@ -6,7 +6,7 @@ dependencies {
     runtime excelConnector()
     runtime pdfConnector()
     runtime powerpointConnector()
-    runtime flexoDiagram()
+    runtime diagramConnector()
     runtime ginaConnector()
     runtime jdbcConnector()
     runtime kafkaConnector()

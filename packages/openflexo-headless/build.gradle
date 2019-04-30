@@ -5,7 +5,7 @@ dependencies {
     //runtime openflexo("fml-cli")
  
 	// technology adapters    
-    runtime flexoDiagram()
+    runtime diagramConnector()
     runtime emfConnector()
     runtime xmlConnector()
     runtime owlConnector()
