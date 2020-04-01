@@ -8,5 +8,12 @@ buildscript {
     }
 }
 
+subprojects {
+	repositories {
+        maven { url "https://maven.openflexo.org/artifactory/openflexo-deps/" }
+  		maven { url "https://dl.bintray.com/plug-obp/maven/" }
+    }
+}
+ 
 version = "2.0.0"
 apply plugin: 'org.openflexo.buildconfig'
