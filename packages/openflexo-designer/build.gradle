@@ -33,6 +33,9 @@ dependencies {
     runtime httpConnectorRc()
     runtime kafkaConnector()
     runtime kafkaConnectorUi()
+    runtime obp2Connector()
+    runtime obp2ConnectorRc()
+    runtime obp2ConnectorUi()
     runtime flexoDocResourceCenter()
 
 }

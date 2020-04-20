@@ -1,6 +1,33 @@
+plugins {
+  id "edu.sc.seis.macAppBundle" version "2.3.0"
+}
+
 dependencies {
   runtime openflexo('freemodellingeditor')
 }
 
 apply plugin: 'application'
 mainClassName = "org.openflexo.Flexo"
+
+macAppBundle {
+    mainClassName = "org.openflexo.Flexo"
+    appName = "Openflexo FreeModelling ${project.version}"
+    icon = "resources/main/Icons/IconOpenflexo.icns"
+//    bundleJRE = false
+//    javaProperties.put("apple.laf.useScreenMenuBar", "true")
+//    backgroundImage = "doc/macbackground.png"
+}
+
+task copyIconInside(type: Copy) {
+    from 'src/main/resources/Icons/IconOpenflexo.icns'
+    into "build/macApp/${macAppBundle.appName}.app/Contents/Resources"
+    dependsOn('copyStub')
+}
+
+task copyConfig(type: Copy) {
+    from 'src/main/resources/Config'
+    into "build/macApp/${macAppBundle.appName}.app/Contents/Resources/Config"
+    dependsOn('copyIconInside')
+}
+
+tasks.getByName('createApp').dependsOn(copyConfig)
