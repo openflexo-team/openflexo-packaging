@@ -43,7 +43,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>emfconnector</artifactId>
+			<artifactId>emf-ta</artifactId>
 			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
 		</dependency>
@@ -55,7 +55,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>owlconnector</artifactId>
+			<artifactId>owl-ta</artifactId>
 			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
 		</dependency>
@@ -85,7 +85,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>pdfconnector</artifactId>
+			<artifactId>pdf-ta</artifactId>
 			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
 		</dependency>
