@@ -2,13 +2,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-	    <artifactId>openflexo-production</artifactId>
 		<groupId>org.openflexo</groupId>
+	    <artifactId>openflexo-production</artifactId>
 	    <version>0.5-SNAPSHOT</version>
 	</parent>
 	<groupId>org.openflexo.packaging</groupId>
-	<artifactId>openflexo-designer</artifactId>
-	<name>Diatomée - Openflexo Designer</name>
+	<artifactId>openflexo-server</artifactId>
+	<name>Diatomée - Openflexo Server Environment</name>
 	<properties>
 		<product.name>Openflexo</product.name>
 		<main.class>org.openflexo.Flexo</main.class>
@@ -31,21 +31,9 @@
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>openflexo-modeller</artifactId>
+			<artifactId>fml-cli</artifactId>
 			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.openflexo</groupId>
-			<artifactId>freemodellingeditor</artifactId>
-			<version>${flexocore.version}</version>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.openflexo</groupId>
-			<artifactId>enterprise-architecture-module</artifactId>
-			<version>${flexocore.version}</version>
-			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
@@ -55,19 +43,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>diagram-ta-ui</artifactId>
-			<scope>runtime</scope>
-			<version>${flexocore.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.openflexo</groupId>
-			<artifactId>emf-ta</artifactId>
-			<scope>runtime</scope>
-			<version>${flexocore.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.openflexo</groupId>
-			<artifactId>emf-ta-ui</artifactId>
+			<artifactId>emfconnector</artifactId>
 			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
 		</dependency>
@@ -79,19 +55,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>xmlconnector-ui</artifactId>
-			<scope>runtime</scope>
- 			<version>${flexocore.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.openflexo</groupId>
-			<artifactId>owl-ta</artifactId>
-			<scope>runtime</scope>
-			<version>${flexocore.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.openflexo</groupId>
-			<artifactId>owl-ta-ui</artifactId>
+			<artifactId>owlconnector</artifactId>
 			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
 		</dependency>
@@ -103,19 +67,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>excelconnector-ui</artifactId>
-			<scope>runtime</scope>
-			<version>${flexocore.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.openflexo</groupId>
 			<artifactId>powerpointconnector</artifactId>
-			<scope>runtime</scope>
-			<version>${flexocore.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.openflexo</groupId>
-			<artifactId>powerpointconnector-ui</artifactId>
 			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
 		</dependency>
@@ -127,31 +79,13 @@
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>docxconnector-ui</artifactId>
-			<scope>runtime</scope>
-			<version>${flexocore.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.openflexo</groupId>
 			<artifactId>odtconnector</artifactId>
 			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>odtconnector-ui</artifactId>
-			<scope>runtime</scope>
-			<version>${flexocore.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.openflexo</groupId>
-			<artifactId>pdf-ta</artifactId>
-			<scope>runtime</scope>
-			<version>${flexocore.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.openflexo</groupId>
-			<artifactId>pdf-ta-ui</artifactId>
+			<artifactId>pdfconnector</artifactId>
 			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
 		</dependency>
@@ -163,20 +97,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>ginaconnector-ui</artifactId>
-			<scope>runtime</scope>
-			<version>${flexocore.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.openflexo</groupId>
 			<artifactId>jdbcconnector</artifactId>
-			<version>${flexocore.version}</version>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.openflexo</groupId>
-			<artifactId>jdbcconnector-ui</artifactId>
 			<version>${flexocore.version}</version>
 			<scope>runtime</scope>
 		</dependency>
@@ -188,30 +109,13 @@
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>http-connector-ui</artifactId>
-			<version>${flexocore.version}</version>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.openflexo</groupId>
 			<artifactId>kafkaconnector</artifactId>
 			<version>${flexocore.version}</version>
 			<scope>runtime</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.openflexo</groupId>
-			<artifactId>kafkaconnector-ui</artifactId>
-			<version>${flexocore.version}</version>
-			<scope>runtime</scope>
-		</dependency>
- 		<dependency>
- 			<groupId>org.openflexo</groupId>
- 			<artifactId>flexodocresourcecenter</artifactId>
- 			<scope>runtime</scope>
-			<version>${flexocore.version}</version>
- 		</dependency>
      </dependencies>
 	<version>2.0.0-SNAPSHOT</version>
+
   <scm>
     <tag>2.0.0</tag>
   </scm>

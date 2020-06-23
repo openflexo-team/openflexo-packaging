@@ -6,11 +6,10 @@ dependencies {
     runtime excelConnector()
     runtime pdfConnector()
     runtime powerpointConnector()
-    runtime openflexo("ginaconnector")
-    runtime openflexo("flexodiagram")
-
-    runtime openflexo("jdbcconnector")
-    runtime openflexo("kafkaconnector")
+    runtime diagramConnector()
+    runtime ginaConnector()
+    runtime jdbcConnector()
+    runtime kafkaConnector()
 }
 
 def deployDir = "/Users/charlie/Documents/dev/openflexo/deploy/openshift/app";

@@ -4,23 +4,22 @@ dependencies {
     runtime fmlCli()
     //runtime openflexo("fml-cli")
  
-	// technology adapters
-    runtime openflexo("flexodiagram")
-    runtime openflexo("emfconnector")
-    runtime openflexo("xmlconnector")
-    runtime openflexo("owlconnector")
-    runtime openflexo("excelconnector")
-    runtime openflexo("powerpointconnector")
-    runtime openflexo("docxconnector")
-    runtime openflexo("odtconnector")
-    runtime openflexo("pdfconnector")
-    runtime openflexo("ginaconnector")
-    runtime openflexo("jdbcconnector")
-    runtime openflexo("http-connector")
-    runtime openflexo("http-connector-rc")
-    runtime openflexo("kafkaconnector")
-    runtime openflexo("flexodocresourcecenter")
-
+	// technology adapters    
+    runtime diagramConnector()
+    runtime emfConnector()
+    runtime xmlConnector()
+    runtime owlConnector()
+    runtime excelConnector()
+    runtime powerpointConnector()
+    runtime docxConnector()
+    runtime odtConnector()
+    runtime pdfConnector()
+    runtime ginaConnector()
+    runtime jdbcConnector()
+    runtime httpConnector()
+    runtime httpConnectorRc()
+    runtime kafkaConnector()
+    runtime flexoDocResourceCenter()
 }
 
 apply plugin: 'application'
