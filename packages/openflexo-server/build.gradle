@@ -1,15 +1,15 @@
 
 dependencies {
-    runtime openflexo("http-server")
+    runtimeOnly openflexo("http-server")
 
-    runtime docxConnector()
-    runtime excelConnector()
-    runtime pdfConnector()
-    runtime powerpointConnector()
-    runtime diagramConnector()
-    runtime ginaConnector()
-    runtime jdbcConnector()
-    runtime kafkaConnector()
+    runtimeOnly docxConnector()
+    runtimeOnly excelConnector()
+    runtimeOnly pdfConnector()
+    runtimeOnly powerpointConnector()
+    runtimeOnly diagramConnector()
+    runtimeOnly ginaConnector()
+    runtimeOnly jdbcConnector()
+    runtimeOnly kafkaConnector()
 }
 
 def deployDir = "/Users/charlie/Documents/dev/openflexo/deploy/openshift/app";

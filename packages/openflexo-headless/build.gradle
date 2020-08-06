@@ -1,25 +1,24 @@
 dependencies {
+    // embed FML command-line interpreter
+    runtimeOnly fmlCli()
+    //runtimeOnly openflexo("fml-cli")
 
-	// embed FML command-line interpreter
-    runtime fmlCli()
-    //runtime openflexo("fml-cli")
- 
-	// technology adapters    
-    runtime diagramConnector()
-    runtime emfConnector()
-    runtime xmlConnector()
-    runtime owlConnector()
-    runtime excelConnector()
-    runtime powerpointConnector()
-    runtime docxConnector()
-    runtime odtConnector()
-    runtime pdfConnector()
-    runtime ginaConnector()
-    runtime jdbcConnector()
-    runtime httpConnector()
-    runtime httpConnectorRc()
-    runtime kafkaConnector()
-    runtime flexoDocResourceCenter()
+    // technology adapters
+    runtimeOnly diagramConnector()
+    runtimeOnly emfConnector()
+    runtimeOnly xmlConnector()
+    runtimeOnly owlConnector()
+    runtimeOnly excelConnector()
+    runtimeOnly powerpointConnector()
+    runtimeOnly docxConnector()
+    runtimeOnly odtConnector()
+    runtimeOnly pdfConnector()
+    runtimeOnly ginaConnector()
+    runtimeOnly jdbcConnector()
+    runtimeOnly httpConnector()
+    runtimeOnly httpConnectorRc()
+    runtimeOnly kafkaConnector()
+    runtimeOnly flexoDocResourceCenter()
 }
 
 apply plugin: 'application'

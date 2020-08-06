@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-  runtime openflexo('freemodellingeditor')
+  runtimeOnly openflexo('freemodellingeditor')
 }
 
 apply plugin: 'application'
