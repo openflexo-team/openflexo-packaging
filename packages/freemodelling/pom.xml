@@ -12,7 +12,7 @@
 	<properties>
 		<product.name>Openflexo</product.name>
 		<main.class>org.openflexo.Flexo</main.class>
-		<flexocore.version>2.0.0</flexocore.version>
+		<flexocore.version>2.0.1</flexocore.version>
 	</properties>
 	<build>
 		<plugins>
@@ -35,9 +35,9 @@
 			<scope>runtime</scope>
 		</dependency>
 	</dependencies>
-	<version>2.0.0</version>
+	<version>2.0.1</version>
 
   <scm>
-    <tag>2.0.0</tag>
+    <tag>2.0.1</tag>
   </scm>
 </project>
