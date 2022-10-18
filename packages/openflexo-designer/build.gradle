@@ -36,7 +36,7 @@ dependencies {
     //runtimeOnly obp2Connector()
     //runtimeOnly obp2ConnectorRc()
     //runtimeOnly obp2ConnectorUi()
-    runtimeOnly flexoDocResourceCenter()
+    //runtimeOnly flexoDocResourceCenter()
 
 }
 

@@ -18,7 +18,7 @@ dependencies {
     runtimeOnly httpConnector()
     runtimeOnly httpConnectorRc()
     runtimeOnly kafkaConnector()
-    runtimeOnly flexoDocResourceCenter()
+    //runtimeOnly flexoDocResourceCenter()
 }
 
 apply plugin: 'application'
