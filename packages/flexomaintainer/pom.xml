@@ -28,12 +28,6 @@
 			<scope>runtime</scope>
 			<type>pom</type>
 		</dependency>
-		<dependency>
-		    <groupId>org.openflexo</groupId>
-		    <artifactId>flexodocresourcecenter</artifactId>
-			<version>${flexocore.version}</version>
-		    <scope>runtime</scope>
-		</dependency>
 	</dependencies>
 	<version>2.99-SNAPSHOT</version>
 

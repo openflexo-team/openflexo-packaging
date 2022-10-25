@@ -204,13 +204,7 @@
 			<version>${flexocore.version}</version>
 			<scope>runtime</scope>
 		</dependency>
- 		<dependency>
- 			<groupId>org.openflexo</groupId>
- 			<artifactId>flexodocresourcecenter</artifactId>
- 			<scope>runtime</scope>
-			<version>${flexocore.version}</version>
- 		</dependency>
-     </dependencies>
+      </dependencies>
 	<version>2.99-SNAPSHOT</version>
   <scm>
     <tag>2.99</tag>
