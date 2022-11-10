@@ -1,9 +1,9 @@
 dependencies {
 
 	// modules
-    runtimeOnly openflexo("freemodellingeditor")
-    runtimeOnly openflexo("enterprise-architecture-module")
-    runtimeOnly openflexo("openflexo-modeller")
+    runtimeOnly openflexo("om-module")
+    runtimeOnly openflexo("fme-module")
+    runtimeOnly openflexo("ea-module")
  
  	// technology adapters
     runtimeOnly diagramConnector()

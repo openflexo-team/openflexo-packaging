@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-  runtimeOnly openflexo('freemodellingeditor')
+    runtimeOnly openflexo("fme-module")
 }
 
 apply plugin: 'application'
