@@ -30,7 +30,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>freemodellingeditor</artifactId>
+			<artifactId>fme-module</artifactId>
 			<version>${flexocore.version}</version>
 			<scope>runtime</scope>
 		</dependency>
