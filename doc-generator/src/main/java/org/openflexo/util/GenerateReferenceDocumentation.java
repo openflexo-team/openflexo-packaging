@@ -39,7 +39,9 @@
 package org.openflexo.util;
 
 import org.openflexo.ApplicationContext;
-import org.openflexo.docgenerator.md.MDTADocGenerator;
+import org.openflexo.docgenerator.html.HTMLMasterGenerator;
+import org.openflexo.docgenerator.icongenerator.IconsMasterGenerator;
+import org.openflexo.docgenerator.md.MDMasterGenerator;
 import org.openflexo.foundation.fml.FMLTechnologyAdapter;
 import org.openflexo.foundation.fml.rt.FMLRTTechnologyAdapter;
 import org.openflexo.foundation.technologyadapter.TechnologyAdapter;
@@ -50,21 +52,40 @@ import org.openflexo.technologyadapter.diagram.DiagramTechnologyAdapter;
  * Generate documentation for all TA
  * 
  */
-public class GenerateAll extends OpenflexoTestCaseWithGUI {
+public class GenerateReferenceDocumentation extends OpenflexoTestCaseWithGUI {
 
 	public static void main(String[] args) {
 		ApplicationContext applicationContext = instanciateTestServiceManager(FMLTechnologyAdapter.class, FMLRTTechnologyAdapter.class,
 				DiagramTechnologyAdapter.class);
-		generateDocForTechnologyAdapter(FMLTechnologyAdapter.class, "openflexo-core", "flexo-foundation", applicationContext);
-		generateDocForTechnologyAdapter(FMLRTTechnologyAdapter.class, "openflexo-core", "flexo-foundation", applicationContext);
-		generateDocForTechnologyAdapter(DiagramTechnologyAdapter.class, "openflexo-diagram", "diagram-ta", applicationContext);
+		generateDocumentationForTechnologyAdapter(FMLTechnologyAdapter.class, "openflexo-core", "flexo-foundation", applicationContext);
+		generateDocumentationForTechnologyAdapter(FMLRTTechnologyAdapter.class, "openflexo-core", "flexo-foundation", applicationContext);
+		generateDocumentationForTechnologyAdapter(DiagramTechnologyAdapter.class, "openflexo-diagram", "diagram-ta", applicationContext);
 		// generateDocForTechnologyAdapter(OWLTechnologyAdapter.class, "openflexo-owl/owl-ta", applicationContext);
 		System.exit(0);
 	}
 
-	private static <TA extends TechnologyAdapter<TA>> void generateDocForTechnologyAdapter(Class<TA> taClass, String repositoryName,
+	private static <TA extends TechnologyAdapter<TA>> void generateDocumentationForTechnologyAdapter(Class<TA> taClass,
+			String repositoryName, String modelProjectName, ApplicationContext applicationContext) {
+		generateIconsForTechnologyAdapter(taClass, repositoryName, modelProjectName, applicationContext);
+		generateMarkDownForTechnologyAdapter(taClass, repositoryName, modelProjectName, applicationContext);
+		generateHTMLForTechnologyAdapter(taClass, repositoryName, modelProjectName, applicationContext);
+	}
+
+	private static <TA extends TechnologyAdapter<TA>> void generateIconsForTechnologyAdapter(Class<TA> taClass, String repositoryName,
 			String modelProjectName, ApplicationContext applicationContext) {
-		MDTADocGenerator<?> generator = new MDTADocGenerator<>(taClass, repositoryName, modelProjectName, applicationContext);
+		IconsMasterGenerator<?> generator = new IconsMasterGenerator<>(taClass, repositoryName, modelProjectName, applicationContext);
+		generator.generate();
+	}
+
+	private static <TA extends TechnologyAdapter<TA>> void generateMarkDownForTechnologyAdapter(Class<TA> taClass, String repositoryName,
+			String modelProjectName, ApplicationContext applicationContext) {
+		MDMasterGenerator<?> generator = new MDMasterGenerator<>(taClass, repositoryName, modelProjectName, applicationContext);
+		generator.generate();
+	}
+
+	private static <TA extends TechnologyAdapter<TA>> void generateHTMLForTechnologyAdapter(Class<TA> taClass, String repositoryName,
+			String modelProjectName, ApplicationContext applicationContext) {
+		HTMLMasterGenerator<?> generator = new HTMLMasterGenerator<>(taClass, repositoryName, modelProjectName, applicationContext);
 		generator.generate();
 	}
 
