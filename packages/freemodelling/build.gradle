@@ -1,6 +1,6 @@
-plugins {
-  id "edu.sc.seis.macAppBundle" version "2.3.0"
-}
+//plugins {
+//  id "edu.sc.seis.macAppBundle" version "2.3.0"
+//}
 
 dependencies {
     runtimeOnly openflexo("fme-module")
@@ -9,25 +9,37 @@ dependencies {
 apply plugin: 'application'
 mainClassName = "org.openflexo.Flexo"
 
-macAppBundle {
-    mainClassName = "org.openflexo.Flexo"
-    appName = "Openflexo FreeModelling ${project.version}"
-    icon = "resources/main/Icons/IconOpenflexo.icns"
-//    bundleJRE = false
-//    javaProperties.put("apple.laf.useScreenMenuBar", "true")
-//    backgroundImage = "doc/macbackground.png"
+jar {
+    manifest {
+        attributes "Main-Class": "org.openflexo.Flexo"
+    }
+
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from {
+        configurations.runtimeClasspath.collect { println "$it"; it.isDirectory() ? it : zipTree(it) }
+    }
 }
 
-task copyIconInside(type: Copy) {
-    from 'src/main/resources/Icons/IconOpenflexo.icns'
-    into "build/macApp/${macAppBundle.appName}.app/Contents/Resources"
-    dependsOn('copyStub')
-}
-
-task copyConfig(type: Copy) {
-    from 'src/main/resources/Config'
-    into "build/macApp/${macAppBundle.appName}.app/Contents/Resources/Config"
-    dependsOn('copyIconInside')
-}
-
-tasks.getByName('createApp').dependsOn(copyConfig)
+//macAppBundle {
+//    mainClassName = "org.openflexo.Flexo"
+//    appName = "Openflexo FreeModelling ${project.version}"
+//    icon = "resources/main/Icons/IconOpenflexo.icns"
+////    bundleJRE = false
+////    javaProperties.put("apple.laf.useScreenMenuBar", "true")
+////    backgroundImage = "doc/macbackground.png"
+//}
+//
+//task copyIconInside(type: Copy) {
+//    from 'src/main/resources/Icons/IconOpenflexo.icns'
+//    into "build/macApp/${macAppBundle.appName}.app/Contents/Resources"
+//    dependsOn('copyStub')
+//}
+//
+//task copyConfig(type: Copy) {
+//    from 'src/main/resources/Config'
+//    into "build/macApp/${macAppBundle.appName}.app/Contents/Resources/Config"
+//    dependsOn('copyIconInside')
+//}
+//
+//tasks.getByName('createApp').dependsOn(copyConfig)
+//
