@@ -10,7 +10,7 @@ dependencies {
     //implementation testUtils()
     implementation flexoUi()
     implementation flexoUiTest()
-    //implementation flexoFoundationTest()
+    implementation flexoFoundationTest()
     //implementation fmlTechnologyAdapter();
     implementation fmlTechnologyAdapterUi();
     //implementation fmlRtTechnologyAdapter();
