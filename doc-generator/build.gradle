@@ -8,7 +8,7 @@ dependencies {
    //api group: 'org.openflexo', name: 'flexo-foundation-rm', version: '2.1.0-SNAPSHOT'
  
     //implementation testUtils()
-    //implementation flexoUi()
+    implementation flexoUi()
     implementation flexoUiTest()
     //implementation flexoFoundationTest()
     //implementation fmlTechnologyAdapter();
