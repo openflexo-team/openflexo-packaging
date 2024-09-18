@@ -33,6 +33,8 @@ dependencies {
     runtimeOnly httpConnectorRc()
     runtimeOnly kafkaConnector()
     runtimeOnly kafkaConnectorUi()
+    runtimeOnly javaConnector()
+    runtimeOnly javaConnectorUi()
     //runtimeOnly obp2Connector()
     //runtimeOnly obp2ConnectorRc()
     //runtimeOnly obp2ConnectorUi()
