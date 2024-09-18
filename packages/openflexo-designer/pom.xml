@@ -4,7 +4,7 @@
 	<parent>
 	    <artifactId>openflexo-production</artifactId>
 		<groupId>org.openflexo</groupId>
-	    <version>0.5-SNAPSHOT</version>
+	    <version>0.5</version>
 	</parent>
 	<groupId>org.openflexo.packaging</groupId>
 	<artifactId>openflexo-designer</artifactId>
