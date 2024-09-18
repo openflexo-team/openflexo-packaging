@@ -73,13 +73,13 @@
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>xmlconnector</artifactId>
+			<artifactId>xml-ta</artifactId>
 			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>xmlconnector-ui</artifactId>
+			<artifactId>xml-ta-ui</artifactId>
 			<scope>runtime</scope>
  			<version>${flexocore.version}</version>
 		</dependency>
@@ -97,49 +97,49 @@
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>excelconnector</artifactId>
+			<artifactId>xlsx-ta</artifactId>
 			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>excelconnector-ui</artifactId>
+			<artifactId>xlsx-ta-ui</artifactId>
 			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>powerpointconnector</artifactId>
+			<artifactId>pptx-ta</artifactId>
 			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>powerpointconnector-ui</artifactId>
+			<artifactId>pptx-ta-ui</artifactId>
 			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>docxconnector</artifactId>
+			<artifactId>docx-ta</artifactId>
 			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>docxconnector-ui</artifactId>
+			<artifactId>docx-ta-ui</artifactId>
 			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>odtconnector</artifactId>
+			<artifactId>odt-ta</artifactId>
 			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>odtconnector-ui</artifactId>
+			<artifactId>odt-ta-ui</artifactId>
 			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
 		</dependency>
@@ -157,13 +157,13 @@
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>ginaconnector</artifactId>
+			<artifactId>gina-ta</artifactId>
 			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>ginaconnector-ui</artifactId>
+			<artifactId>gina-ta-ui</artifactId>
 			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
 		</dependency>
