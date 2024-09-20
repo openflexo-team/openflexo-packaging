@@ -49,7 +49,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>xmlconnector</artifactId>
+			<artifactId>xml-ta</artifactId>
 			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
 		</dependency>
@@ -61,25 +61,25 @@
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>excelconnector</artifactId>
+			<artifactId>xlsx-ta</artifactId>
 			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>powerpointconnector</artifactId>
+			<artifactId>pptx-ta</artifactId>
 			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>docxconnector</artifactId>
+			<artifactId>docx-ta</artifactId>
 			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>odtconnector</artifactId>
+			<artifactId>odt-ta</artifactId>
 			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
 		</dependency>
@@ -91,7 +91,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>ginaconnector</artifactId>
+			<artifactId>gina-ta</artifactId>
 			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
 		</dependency>
