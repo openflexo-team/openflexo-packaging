@@ -1,6 +1,6 @@
 dependencies {
 
-	implementation group: 'org.openflexo', name: 'ta-doc-generator', version: '2.99-SNAPSHOT'
+	implementation group: 'org.openflexo', name: 'ta-doc-generator', version: '3.0-SNAPSHOT'
 
    //implementation group: 'junit', name: 'junit', version: '4.13'
    //api group: 'org.swinglabs.swingx', name: 'swingx-core', version: '1.6.5-1'
