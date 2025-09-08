@@ -11,7 +11,7 @@
 	<properties>
 		<product.name>Openflexo</product.name>
 		<main.class>org.openflexo.Flexo</main.class>
-		<flexocore.version>2.99-SNAPSHOT</flexocore.version>
+		<flexocore.version>3.0-SNAPSHOT</flexocore.version>
 	</properties>
 	
 	<dependencies>
@@ -29,9 +29,9 @@
 			<type>pom</type>
 		</dependency>
 	</dependencies>
-	<version>2.99-SNAPSHOT</version>
+	<version>3.0-SNAPSHOT</version>
 
   <scm>
-    <tag>2.99</tag>
+    <tag>3.0</tag>
   </scm>
 </project>
