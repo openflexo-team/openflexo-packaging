@@ -1,6 +1,10 @@
 dependencies {
     runtimeOnly project(':packages:openflexo-designer')
     //runtimeOnly flexoDocResourceCenter()
+    runtimeOnly group: 'org.openflexo', name: 'capella-ta', version: project.openflexo.openflexoVersion
+    runtimeOnly group: 'org.openflexo', name: 'capella-ta-ui', version: project.openflexo.openflexoVersion
+    runtimeOnly group: 'org.openflexo', name: 'json-ta', version: project.openflexo.openflexoVersion
+    runtimeOnly group: 'org.openflexo', name: 'json-ta-ui', version: project.openflexo.openflexoVersion
     runtimeOnly group: 'org.openflexo', name: 'xx-ta', version: project.openflexo.openflexoVersion
     runtimeOnly group: 'org.openflexo', name: 'xx-ta-ui', version: project.openflexo.openflexoVersion
     runtimeOnly group: 'org.openflexo', name: 'dsl-ta', version: project.openflexo.openflexoVersion
