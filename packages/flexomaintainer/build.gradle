@@ -1,6 +1,10 @@
 dependencies {
     runtimeOnly project(':packages:openflexo-designer')
     //runtimeOnly flexoDocResourceCenter()
+    runtimeOnly group: 'org.openflexo', name: 'rest-ta', version: project.openflexo.openflexoVersion
+    runtimeOnly group: 'org.openflexo', name: 'rest-ta-ui', version: project.openflexo.openflexoVersion
+    //runtimeOnly group: 'org.openflexo', name: 'markdown-ta', version: project.openflexo.openflexoVersion
+    //runtimeOnly group: 'org.openflexo', name: 'markdown-ta-ui', version: project.openflexo.openflexoVersion
     runtimeOnly group: 'org.openflexo', name: 'capella-ta', version: project.openflexo.openflexoVersion
     runtimeOnly group: 'org.openflexo', name: 'capella-ta-ui', version: project.openflexo.openflexoVersion
     runtimeOnly group: 'org.openflexo', name: 'json-ta', version: project.openflexo.openflexoVersion
