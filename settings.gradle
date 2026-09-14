@@ -1,5 +1,3 @@
-include 'doc-generator'
-
 include 'packages:flexomaintainer',
         'packages:freemodelling',
         'packages:openflexo-designer',

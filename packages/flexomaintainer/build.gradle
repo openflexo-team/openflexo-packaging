@@ -1,20 +1,20 @@
 dependencies {
     runtimeOnly project(':packages:openflexo-designer')
     //runtimeOnly flexoDocResourceCenter()
-    runtimeOnly group: 'org.openflexo', name: 'rest-ta', version: project.openflexo.openflexoVersion
-    runtimeOnly group: 'org.openflexo', name: 'rest-ta-ui', version: project.openflexo.openflexoVersion
-    //runtimeOnly group: 'org.openflexo', name: 'markdown-ta', version: project.openflexo.openflexoVersion
-    //runtimeOnly group: 'org.openflexo', name: 'markdown-ta-ui', version: project.openflexo.openflexoVersion
-    runtimeOnly group: 'org.openflexo', name: 'capella-ta', version: project.openflexo.openflexoVersion
-    runtimeOnly group: 'org.openflexo', name: 'capella-ta-ui', version: project.openflexo.openflexoVersion
-    runtimeOnly group: 'org.openflexo', name: 'json-ta', version: project.openflexo.openflexoVersion
-    runtimeOnly group: 'org.openflexo', name: 'json-ta-ui', version: project.openflexo.openflexoVersion
-    runtimeOnly group: 'org.openflexo', name: 'xx-ta', version: project.openflexo.openflexoVersion
-    runtimeOnly group: 'org.openflexo', name: 'xx-ta-ui', version: project.openflexo.openflexoVersion
-    runtimeOnly group: 'org.openflexo', name: 'dsl-ta', version: project.openflexo.openflexoVersion
-    runtimeOnly group: 'org.openflexo', name: 'dsl-ta-ui', version: project.openflexo.openflexoVersion
-    runtimeOnly group: 'org.openflexo', name: 'rhapsody-ta', version: project.openflexo.openflexoVersion
-    runtimeOnly group: 'org.openflexo', name: 'rhapsody-ta-ui', version: project.openflexo.openflexoVersion
+    runtimeOnly restConnector()
+    runtimeOnly restConnectorUi()
+    //runtimeOnly markdownConnector()
+    //runtimeOnly markdownConnectorUi()
+    runtimeOnly oslcConnector()
+    runtimeOnly oslcConnectorUi()
+    runtimeOnly jsonConnector()
+    runtimeOnly jsonConnectorUi()
+    runtimeOnly xxConnector()
+    runtimeOnly xxConnectorUi()
+    runtimeOnly dslConnector()
+    runtimeOnly dslConnectorUi()
+    runtimeOnly rhapsodyConnector()
+    runtimeOnly rhapsodyConnectorUi()
 }
 apply plugin: 'application'
 mainClassName = "org.openflexo.Flexo"
