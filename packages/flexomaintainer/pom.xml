@@ -28,6 +28,80 @@
 			<scope>runtime</scope>
 			<type>pom</type>
 		</dependency>
+
+		<!-- technology adapters added on top of the designer -->
+		<dependency>
+			<groupId>org.openflexo</groupId>
+			<artifactId>rest-ta</artifactId>
+			<version>${flexocore.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.openflexo</groupId>
+			<artifactId>rest-ta-ui</artifactId>
+			<version>${flexocore.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.openflexo</groupId>
+			<artifactId>oslc-ta</artifactId>
+			<version>${flexocore.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.openflexo</groupId>
+			<artifactId>oslc-ta-ui</artifactId>
+			<version>${flexocore.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.openflexo</groupId>
+			<artifactId>json-ta</artifactId>
+			<version>${flexocore.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.openflexo</groupId>
+			<artifactId>json-ta-ui</artifactId>
+			<version>${flexocore.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.openflexo</groupId>
+			<artifactId>xx-ta</artifactId>
+			<version>${flexocore.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.openflexo</groupId>
+			<artifactId>xx-ta-ui</artifactId>
+			<version>${flexocore.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.openflexo</groupId>
+			<artifactId>dsl-ta</artifactId>
+			<version>${flexocore.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.openflexo</groupId>
+			<artifactId>dsl-ta-ui</artifactId>
+			<version>${flexocore.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.openflexo</groupId>
+			<artifactId>rhapsody-ta</artifactId>
+			<version>${flexocore.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.openflexo</groupId>
+			<artifactId>rhapsody-ta-ui</artifactId>
+			<version>${flexocore.version}</version>
+			<scope>runtime</scope>
+		</dependency>
 	</dependencies>
 	<version>2.99-SNAPSHOT</version>
 

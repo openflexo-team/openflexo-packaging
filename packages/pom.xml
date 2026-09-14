@@ -14,6 +14,7 @@
         <module>flexomaintainer</module>
         <module>openflexo-designer</module>
         <module>openflexo-headless</module>
+        <module>openflexo-server-package</module>
     </modules>
     <properties>
         <main.class>org.openflexo.Flexo</main.class>

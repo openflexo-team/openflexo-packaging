@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="project" default="package" basedir="."
+	xmlns:artifact="antlib:org.apache.maven.artifact.ant">
+
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties" />
+	<typedef resource="org/apache/maven/artifact/ant/antlib.xml"
+		uri="antlib:org.apache.maven.artifact.ant" />
+
+	<propertyregex property="resources.dir" input="${project.build.sourceDirectory}"
+			regexp="(.*)(java)" replace="\1resources" />
+
+	<!-- ./target/../Icons -->
+	<property name="icons.dir" value="${resources.dir}/Icons" />
+	<!-- ./target/../License -->
+	<property name="license.dir" value="${resources.dir}/License" />
+
+	<import>
+		<javaresource name="build-packaging.xml">
+			<classpath>
+				<pathelement location="${org.openflexo:packaging-tools:jar}"></pathelement>
+			</classpath>
+		</javaresource>
+	</import>
+
+	<target name="package" depends="defineProperties">
+		<delete dir="${mac.app.dir}" failonerror="false" />
+		<mkdir dir="${mac.app.dir}" />
+		<loadproperties srcfile="packaging.properties" />
+		<antcall target="createPackage" />
+	</target>
+
+	<!-- The server is only delivered as a Linux archive: the targets below override the ones of
+	     packaging-tools so that no Windows nor MacOS package is built or deployed. -->
+
+	<target name="createPackage">
+		<antcall target="cleanTempDir" />
+		<property name="qualified_app_name" value="${product.name} ${productSuffix}" />
+		<property name="qualified_and_versioned_app_name" value="${qualified_app_name} ${flexo_version}" />
+		<property name="package_name" value="${qualified_and_versioned_app_name} Setup" />
+		<echoproperties destfile="${build.properties}" />
+		<antcall target="checkoutArtifact" />
+		<antcall target="generateFlexoProperties" />
+		<antcall target="packageLinux" />
+	</target>
+
+	<!-- The generic start.sh changes directory and does not forward its arguments, while the server
+	     is configured through them (port, host, resource centers, projects, preload file). -->
+	<target name="packageLinux">
+		<property name="start.script.file" value="${dist.dir}/start.sh" />
+		<echo file="${start.script.file}"><![CDATA[#!/bin/bash
+openflexo_dir="$(cd "$(dirname "$0")" && pwd)"
+exec java ${vm.arg0} ${vm.arg1} ${vm.arg2} ${vm.arg3} ${vm.arg4} -classpath "$openflexo_dir/lib/*:$openflexo_dir/deps/*" ${main.class} "$@"
+]]></echo>
+		<chmod perm="755" file="${start.script.file}" />
+		<antcall target="linux-packaging" />
+	</target>
+
+	<target name="copyPackagesOnServer" if="deploy">
+		<antcall target="copyOnServerLinuxRelease" />
+		<antcall target="copyOnServerLinuxNightly" />
+	</target>
+
+</project>

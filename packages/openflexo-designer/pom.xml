@@ -29,11 +29,13 @@
   	 	        <version>${project.parent.version}</version>
 			<scope>compile</scope>
 		</dependency>
+
+		<!-- modules -->
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>om-module</artifactId>
-			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
+			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
@@ -47,160 +49,173 @@
 			<version>${flexocore.version}</version>
 			<scope>runtime</scope>
 		</dependency>
+
+		<!-- technology adapters -->
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>diagram-ta</artifactId>
-			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
+			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>diagram-ta-ui</artifactId>
-			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
+			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>emf-ta</artifactId>
-			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
+			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>emf-ta-ui</artifactId>
-			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
+			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>xml-ta</artifactId>
-			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
+			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>xml-ta-ui</artifactId>
+			<version>${flexocore.version}</version>
 			<scope>runtime</scope>
- 			<version>${flexocore.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>owl-ta</artifactId>
-			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
+			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>owl-ta-ui</artifactId>
-			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
+			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>xlsx-ta</artifactId>
-			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
+			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>xlsx-ta-ui</artifactId>
-			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
+			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>pptx-ta</artifactId>
-			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
+			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>pptx-ta-ui</artifactId>
-			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
+			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>docx-ta</artifactId>
-			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
+			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>docx-ta-ui</artifactId>
-			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
+			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>odt-ta</artifactId>
-			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
+			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>odt-ta-ui</artifactId>
-			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
+			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>pdf-ta</artifactId>
-			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
+			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>pdf-ta-ui</artifactId>
-			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
+			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>gina-ta</artifactId>
-			<scope>runtime</scope>
 			<version>${flexocore.version}</version>
+			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
 			<artifactId>gina-ta-ui</artifactId>
-			<scope>runtime</scope>
-			<version>${flexocore.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.openflexo</groupId>
-			<artifactId>jdbcconnector</artifactId>
 			<version>${flexocore.version}</version>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>jdbcconnector-ui</artifactId>
+			<artifactId>jdbc-ta</artifactId>
 			<version>${flexocore.version}</version>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>http-connector</artifactId>
+			<artifactId>jdbc-ta-ui</artifactId>
 			<version>${flexocore.version}</version>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>http-connector-ui</artifactId>
+			<artifactId>kafka-ta</artifactId>
 			<version>${flexocore.version}</version>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>kafkaconnector</artifactId>
+			<artifactId>kafka-ta-ui</artifactId>
 			<version>${flexocore.version}</version>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.openflexo</groupId>
-			<artifactId>kafkaconnector-ui</artifactId>
+			<artifactId>java-ta</artifactId>
+			<version>${flexocore.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.openflexo</groupId>
+			<artifactId>java-ta-ui</artifactId>
+			<version>${flexocore.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.openflexo</groupId>
+			<artifactId>opc-ua-ta</artifactId>
+			<version>${flexocore.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.openflexo</groupId>
+			<artifactId>opc-ua-ta-ui</artifactId>
 			<version>${flexocore.version}</version>
 			<scope>runtime</scope>
 		</dependency>
