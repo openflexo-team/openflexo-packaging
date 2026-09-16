@@ -31,4 +31,47 @@
 	</target>
 
 
+	<!-- launch4j 3.12 goes through XStream, which reflects into java.util / java.lang. Since Java 9
+	     those packages are not open, so the nested Maven fails with "module java.base does not
+	     open java.util" and NO .exe is produced. The generic macro of packaging-tools forks that
+	     Maven with -Xmx512m only, and inherits neither MAVEN_OPTS nor any module opening, so this
+	     target replaces it with the same invocation plus the required openings. -->
+	<target name="generateFlexoLauncher">
+		<copy tofile="${flexobuild.work.dir}/pom.xml" filtering="true" failonerror="true"
+			overwrite="true">
+			<resources>
+				<javaresource name="Windows/pom_launch4j.xml.tpl">
+					<classpath>
+						<pathelement location="${org.openflexo:packaging-tools:jar}"></pathelement>
+					</classpath>
+				</javaresource>
+			</resources>
+			<filterset>
+				<filtersfile file="${build.properties}" />
+			</filterset>
+		</copy>
+		<java classname="org.codehaus.classworlds.Launcher" fork="true"
+			dir="${flexobuild.work.dir}" resultproperty="maven.build.result" failonerror="true">
+			<jvmarg value="-Xmx512m" />
+			<jvmarg value="--add-opens" /><jvmarg value="java.base/java.util=ALL-UNNAMED" />
+			<jvmarg value="--add-opens" /><jvmarg value="java.base/java.lang=ALL-UNNAMED" />
+			<jvmarg value="--add-opens" /><jvmarg value="java.base/java.lang.reflect=ALL-UNNAMED" />
+			<jvmarg value="--add-opens" /><jvmarg value="java.base/java.text=ALL-UNNAMED" />
+			<jvmarg value="--add-opens" /><jvmarg value="java.desktop/java.awt.font=ALL-UNNAMED" />
+			<classpath>
+				<fileset dir="${maven.home}/boot">
+					<include name="*.jar" />
+				</fileset>
+				<fileset dir="${maven.home}/lib">
+					<include name="*.jar" />
+				</fileset>
+			</classpath>
+			<sysproperty key="classworlds.conf" value="${maven.home}/bin/m2.conf" />
+			<sysproperty key="maven.home" value="${maven.home}" />
+			<sysproperty key="maven.repo.local" value="${maven.repo.local}" />
+			<sysproperty key="maven.multiModuleProjectDirectory" value="false" />
+			<arg line="--batch-mode package" />
+		</java>
+	</target>
+
 </project>
