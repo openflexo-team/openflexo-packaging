@@ -10,6 +10,14 @@
      <artifactId>openflexo-packaging</artifactId>
     <version>2.99-SNAPSHOT</version>
      <packaging>pom</packaging>
+
+     <properties>
+          <!-- The jacoco agent inherited from openflexo-production cannot attach to a JVM newer
+               than 8 ("Class java/util/UUID could not be instrumented"), which aborts the surefire
+               JVM and prints "There are test failures" on every package. These packaging modules
+               hold no test, so coverage is pointless here. -->
+          <jacoco.skip>true</jacoco.skip>
+     </properties>
      <name>Openflexo-Packaging</name>
 
      <modules>
