@@ -27,6 +27,11 @@
 		<delete dir="${mac.app.dir}" failonerror="false" />
 		<mkdir dir="${mac.app.dir}" />
 		<loadproperties srcfile="packaging.properties" />
+		<!-- One volume name per product, e.g. FlexoMaintainer-2.99, instead of the generic
+		     Openflexo-2.99 shared by every image: otherwise two mounted images are indistinguishable.
+		     Ant properties are immutable and antcall passes them on, so this value wins over the one
+		     createPackage sets. ISO 9660 limits a volume name to 32 characters. -->
+		<property name="volume_name" value="${productSuffix}-${flexo_version}" />
 		<antcall target="createPackage" />
 	</target>
 
@@ -72,55 +77,6 @@
 			<sysproperty key="maven.multiModuleProjectDirectory" value="false" />
 			<arg line="--batch-mode package" />
 		</java>
-	</target>
-
-	<!-- The generic osx-packaging runs genisoimage, which produces an ISO 9660 image, and names it
-	     .dmg. It is not a real macOS disk image (no UDIF format): recent macOS versions refuse to
-	     open it, while the very same file mounts fine as .iso. Building a real .dmg on the Linux agent
-	     would need extra tools, so the image is simply published under its true extension. The two
-	     upload targets below are overridden accordingly, since the generic ones only send .dmg files. -->
-	<target name="osx-packaging">
-		<exec executable="genisoimage">
-			<arg value="-D" />
-			<arg value="-quiet" />
-			<arg value="-V" />
-			<arg value="${volume_name}" />
-			<arg value="-A" />
-			<arg value="${qualified_and_versioned_app_name}" />
-			<arg value="-p" />
-			<arg value="${organization.name}" />
-			<arg value="-r" />
-			<arg value="-apple" />
-			<arg value="-o" />
-			<arg value="${project.build.directory}/${qualified_and_versioned_app_name}.iso" />
-			<arg value="${mac.app.dir.versioned}" />
-		</exec>
-	</target>
-
-	<target name="copyOnServerMacRelease" unless="isNightly">
-		<property name="folder"
-			value="${deployment.root.folder}/${flexo_version}/${daily_folder}/Mac" />
-		<antcall target="createRemoteFolder" />
-		<scp todir="${deployment.user.name}@${deployment.server.name}:${folder}"
-			trust="true" keyfile="${ssh.private.keyfile}" passphrase="${ssh.passphrase}"
-			failonerror="true">
-			<fileset dir="${project.build.directory}">
-				<include name="*.iso" />
-			</fileset>
-		</scp>
-	</target>
-
-	<target name="copyOnServerMacNightly" if="isNightly">
-		<property name="folder"
-			value="${deployment.root.folder}/${flexo_version}/nightly/Mac" />
-		<antcall target="createRemoteFolder" />
-		<scp todir="${deployment.user.name}@${deployment.server.name}:${folder}"
-			trust="true" keyfile="${ssh.private.keyfile}" passphrase="${ssh.passphrase}"
-			failonerror="true">
-			<fileset dir="${project.build.directory}">
-				<include name="*.iso" />
-			</fileset>
-		</scp>
 	</target>
 
 </project>
