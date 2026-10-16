@@ -152,7 +152,7 @@ hidden by `ignoreFailures`.
 | Component | Failing UI tests | Observation |
 |---|---|---|
 | `openflexo-docx` | 42 tests of `docx-ta-ui` (for example `TestDocXFragmentRoleInspector`, `TestDocXImageRoleInspector`) | Fail with `HeadlessException` in the daily job. Never run with a display; unknown whether they pass. |
-| `openflexo-owl` | `TestFIBOWLClassSelector.selectRootClass` (assertion, line 193) | With a display, 47 of 48 UI tests pass. After `setRootClass(collection)` the browser model does not hold exactly one root. |
+| `openflexo-owl` | `TestFIBOWLClassSelector.selectRootClass` (assertion, line 193) | With a display, 47 of 48 UI tests pass. After `setRootClass(collection)` the browser model holds one root, but it is not `collection` (the assertion of line 193 compares them). |
 | `openflexo-xlsx` | `TestFIBCellRangeSelector`, 3 tests (`NullPointerException` at the first instruction) | `getWorkbook("PersonListing.xlsx")` returns nothing in the UI test environment. |
 
 None of them is a regression of this release. They should be recorded as defects in the `KNOWN_DEFECTS.md`
