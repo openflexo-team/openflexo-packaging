@@ -1,10 +1,8 @@
-include 'doc-generator'
-
 include 'packages:flexomaintainer',
         'packages:freemodelling',
         'packages:openflexo-designer',
         'packages:openflexo-headless',
-        'packages:openflexo-server'
+        'packages:openflexo-server-package'
 
 // includeBuild '../connie'
 // includeBuild '../pamela'
