@@ -12,6 +12,15 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Fixed: an implementation class loaded by a child class loader was replaced by another copy of it (PAMELA-D-4)
 - Version 2.0, requires Java 17 or later; documentation updated
 
+## connie (2.1.0)
+
+- Fixed: the search of a class by name failed on Java 9 and later, breaking the fix proposal for an unresolved type (CONNIE-D-2)
+
+## gina (2.4)
+
+- Fixed: the type field of the inspector failed on Java 9 and later, throwing an exception when an object was selected (GINA-D-1)
+  - the class search now also finds classes that are not loaded yet
+
 ## openflexo-buildplugin
 
 - Openflexo 3.0 uses pamela 2.0
