@@ -24,6 +24,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 ## openflexo-buildplugin
 
 - Openflexo 3.0 uses pamela 2.0
+- One version per shared third-party library (Jackson 2.22, Guava 33.7, Gson 2.14, HttpClient 4.5.14, commons 2.22/3.21, JGit 7.8, HSQLDB 2.7, Batik 1.19, slf4j 2.0, JUNG 2.1), declared in the plugin instead of in each module
 
 ## diana, openflexo-server, pamela-editor
 
