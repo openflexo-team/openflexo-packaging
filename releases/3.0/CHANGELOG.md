@@ -48,3 +48,5 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - All repositories build with Gradle 8.14.3 (formod, csv, markdown, rest, packaging, pamela-editor, website, the build plugin and the SableCC plugin were still on older versions)
 - The build plugin compiles for Java 17 (`--release 17`) and can run the whole build on another JDK with `-PjavaVersion=<n>`; the test suites give the same results on Java 17 and 25
 - The build plugin and the SableCC plugin no longer use the retired JCenter repository and the deprecated Groovy property syntax
+- The JAX-WS libraries and several unused JAXB declarations are removed from the build
+- docx: docx4j 17 (was 6.1.2), JAXB on Jakarta
