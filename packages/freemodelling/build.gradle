@@ -3,11 +3,13 @@
 //}
 
 dependencies {
-    runtimeOnly openflexo("fme-module")
+    runtimeOnly openflexoModule("fme-module")
 }
 
 apply plugin: 'application'
-mainClassName = "org.openflexo.Flexo"
+application {
+    mainClass = "org.openflexo.Flexo"
+}
 
 jar {
     manifest {

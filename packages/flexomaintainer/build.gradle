@@ -17,4 +17,6 @@ dependencies {
     runtimeOnly rhapsodyConnectorUi()
 }
 apply plugin: 'application'
-mainClassName = "org.openflexo.Flexo"
+application {
+    mainClass = "org.openflexo.Flexo"
+}

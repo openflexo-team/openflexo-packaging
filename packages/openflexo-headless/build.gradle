@@ -1,7 +1,7 @@
 dependencies {
     // embed FML command-line interpreter
     runtimeOnly fmlCli()
-    //runtimeOnly openflexo("fml-cli")
+    //runtimeOnly openflexoModule("fml-cli")
 
     // technology adapters
     runtimeOnly diagramConnector()
@@ -20,4 +20,6 @@ dependencies {
 }
 
 apply plugin: 'application'
-mainClassName = "org.openflexo.foundation.fml.cli.LaunchHeadlessFMLCLI"
+application {
+    mainClass = "org.openflexo.foundation.fml.cli.LaunchHeadlessFMLCLI"
+}

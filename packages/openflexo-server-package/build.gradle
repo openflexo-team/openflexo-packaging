@@ -1,6 +1,6 @@
 
 dependencies {
-    runtimeOnly openflexo("http-server")
+    runtimeOnly openflexoModule("http-server")
 
     runtimeOnly docxConnector()
     runtimeOnly excelConnector()

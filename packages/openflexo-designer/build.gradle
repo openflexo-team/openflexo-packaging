@@ -1,9 +1,9 @@
 dependencies {
 
 	// modules
-    runtimeOnly openflexo("om-module")
-    runtimeOnly openflexo("fme-module")
-    runtimeOnly openflexo("ea-module")
+    runtimeOnly openflexoModule("om-module")
+    runtimeOnly openflexoModule("fme-module")
+    runtimeOnly openflexoModule("ea-module")
  
  	// technology adapters
     runtimeOnly diagramConnector()
@@ -45,4 +45,6 @@ dependencies {
 }
 
 apply plugin: 'application'
-mainClassName = "org.openflexo.Flexo"
+application {
+    mainClass = "org.openflexo.Flexo"
+}
