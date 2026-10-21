@@ -50,3 +50,11 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - The build plugin and the SableCC plugin no longer use the retired JCenter repository and the deprecated Groovy property syntax
 - The JAX-WS libraries and several unused JAXB declarations are removed from the build
 - docx: docx4j 17 (was 6.1.2), JAXB on Jakarta
+- jdbc: Hibernate 6.6 (was 5.2), Jakarta Persistence
+- xlsx, pptx, diagram: Apache POI 5.5 (was 3.17), also for the import of binary PowerPoint slides
+
+## openflexo-ui
+
+- The application starts on Java runtimes without a `jmods` directory (JDK 25, some JREs); the class completion of the FML editor reads the runtime image (UI-D-3)
+- The build runs on Gradle 9: the dependency helpers of the build plugin are no longer a project convention (`openflexo(name)` is `openflexoModule(name)`), the applications declare `application { mainClass }`
+- SableCC plugin 1.4.0: works with Gradle 9, and a parser can be generated several times in a row without error (SABLECC-D-1)
