@@ -62,3 +62,4 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - The application starts on Java runtimes without a `jmods` directory (JDK 25, some JREs); the class completion of the FML editor reads the runtime image (UI-D-3)
 - All repositories build with Gradle 9.8.2 (wrapper); the dependency helpers of the build plugin are no longer a project convention (`openflexo(name)` is `openflexoModule(name)`), the applications declare `application { mainClass }`
 - SableCC plugin 1.4.0: works with Gradle 9, and a parser can be generated several times in a row without error (SABLECC-D-1)
+- Security updates: PDFBox 2.0.37 and Vert.x 4.5 (BUILD-F-7)
