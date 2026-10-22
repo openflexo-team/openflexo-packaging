@@ -30,6 +30,10 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 
 - Moved to the pamela 2.0 API (`PamelaProxies`)
 
+## openflexo-core
+
+- Added: a complete specification of the FML language (syntax, types, declarations, expressions, actions, FML-script, execution model and known deviations)
+
 ## openflexo-jdbc
 
 - Declares the javassist version Hibernate needs on Java 17 (pamela no longer brings it)
@@ -41,11 +45,11 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 ## website
 
 - The component versions page lists pamela 2.0 for Openflexo 3.0
+- The user guide gains the FML specification, generated from the one maintained with the core
 
 ## Build infrastructure
 
 - New Jenkins job `pamela-2.0` builds pamela for the 3.0 line; `pamela-1.6.1` is disabled
-- All repositories build with Gradle 8.14.3 (formod, csv, markdown, rest, packaging, pamela-editor, website, the build plugin and the SableCC plugin were still on older versions)
 - The build plugin compiles for Java 17 (`--release 17`) and can run the whole build on another JDK with `-PjavaVersion=<n>`; the test suites give the same results on Java 17 and 25
 - The build plugin and the SableCC plugin no longer use the retired JCenter repository and the deprecated Groovy property syntax
 - The JAX-WS libraries and several unused JAXB declarations are removed from the build
@@ -56,5 +60,5 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 ## openflexo-ui
 
 - The application starts on Java runtimes without a `jmods` directory (JDK 25, some JREs); the class completion of the FML editor reads the runtime image (UI-D-3)
-- The build runs on Gradle 9: the dependency helpers of the build plugin are no longer a project convention (`openflexo(name)` is `openflexoModule(name)`), the applications declare `application { mainClass }`
+- All repositories build with Gradle 9.8.2 (wrapper); the dependency helpers of the build plugin are no longer a project convention (`openflexo(name)` is `openflexoModule(name)`), the applications declare `application { mainClass }`
 - SableCC plugin 1.4.0: works with Gradle 9, and a parser can be generated several times in a row without error (SABLECC-D-1)
