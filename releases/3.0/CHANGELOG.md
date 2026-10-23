@@ -15,11 +15,14 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 ## connie (2.1.0)
 
 - Fixed: the search of a class by name failed on Java 9 and later, breaking the fix proposal for an unresolved type (CONNIE-D-2)
+- `ClassScope` no longer uses a `SecurityManager` (replaced by `StackWalker`, which Java 24+ requires) (CONNIE-F-1)
 
 ## gina (2.4)
 
 - Fixed: the type field of the inspector failed on Java 9 and later, throwing an exception when an object was selected (GINA-D-1)
   - the class search now also finds classes that are not loaded yet
+- A colour selector usable in the cells of a table (`FIBColorSelector`, as a custom column) (GINA-F-1)
+- `ClassScope` is no longer duplicated: gina uses the one of connie (CONNIE-F-1)
 
 ## openflexo-buildplugin
 
@@ -33,6 +36,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 ## openflexo-core
 
 - Added: a complete specification of the FML language (syntax, types, declarations, expressions, actions, FML-script, execution model and known deviations)
+- The task thread factory no longer relies on the `SecurityManager`
 
 ## openflexo-jdbc
 
@@ -62,4 +66,8 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - The application starts on Java runtimes without a `jmods` directory (JDK 25, some JREs); the class completion of the FML editor reads the runtime image (UI-D-3)
 - All repositories build with Gradle 9.8.2 (wrapper); the dependency helpers of the build plugin are no longer a project convention (`openflexo(name)` is `openflexoModule(name)`), the applications declare `application { mainClass }`
 - SableCC plugin 1.4.0: works with Gradle 9, and a parser can be generated several times in a row without error (SABLECC-D-1)
-- Security updates: PDFBox 2.0.37 and Vert.x 4.5 (BUILD-F-7)
+- FML editor: annotations (`@Name`, `@a.b.Name`) are coloured; `String` and the eight primitive types are coloured as types, `create` and `delete` as keywords
+- Security updates: PDFBox 2.0.37, Vert.x 4.5, Kafka client 4.4 (needs a Kafka broker 2.1 or newer) Velocity 2.4 for the documentation generator and Jena 5.6 for OWL (BUILD-F-7)
+- Build plugin: the UI tests (`uiTest`) run again with Gradle 9 (they were silently skipped)
+- FML editor: colouring themes (default, eclipse, dark, and your own), edited in a new "FML editor" page of the preferences and applied live to every editor (UI-F-1)
+- Debug `finalize()` methods removed (deprecated for removal in Java); no behaviour change
