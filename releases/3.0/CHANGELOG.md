@@ -12,7 +12,18 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Fixed: an implementation class loaded by a child class loader was replaced by another copy of it (PAMELA-D-4)
 - Version 2.0, requires Java 17 or later; documentation updated
 
+## openflexo-utils (2.0)
+
+- Becomes the bottom layer of the infrastructure: it now contains the resource locator, the logging, the toolbox and the test utilities that were in `connie-utils` and `testutils` (the `org.openflexo` packages are unchanged)
+- `p2pp-core` moves out into its own repository, `p2pp` (1.0), because it needs connie
+
+## p2pp (1.0)
+
+- New repository holding the parser / pretty-printer framework (`p2pp-core`), formerly in `openflexo-utils`
+
 ## connie (2.1.0)
+
+- `connie-utils` and `testutils` are removed: connie depends on `openflexo-utils` 2.0 instead
 
 - Fixed: the search of a class by name failed on Java 9 and later, breaking the fix proposal for an unresolved type (CONNIE-D-2)
 - `ClassScope` no longer uses a `SecurityManager` (replaced by `StackWalker`, which Java 24+ requires) (CONNIE-F-1)
@@ -22,7 +33,8 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Fixed: the type field of the inspector failed on Java 9 and later, throwing an exception when an object was selected (GINA-D-1)
   - the class search now also finds classes that are not loaded yet
 - A colour selector usable in the cells of a table (`FIBColorSelector`, as a custom column) (GINA-F-1)
-- `ClassScope` is no longer duplicated: gina uses the one of connie (CONNIE-F-1)
+- `ClassScope` and `LoadedClassesInfo` are no longer duplicated: gina uses the ones of connie, which now live in `connie-utils` (`org.openflexo.toolbox`) (CONNIE-F-1)
+- The class selector no longer fails on a class whose optional dependencies are missing: such a class is ignored (CONNIE-F-1)
 
 ## openflexo-buildplugin
 
