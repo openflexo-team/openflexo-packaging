@@ -62,9 +62,13 @@ trap 'rm -rf "$workdir"' EXIT
 api="https://api.github.com/repos/$REPO"
 # A transfer slower than 10 kB/s for 60 seconds is a stall: curl gives up on it, tries again and,
 # for a file, resumes where it stopped (-C -). Seen: a download stuck at 42% for 9 minutes.
+# --retry-all-errors needs curl 7.71 (the Jenkins agent has 7.64): used only when curl knows it, the retry loop below
+# and --retry (which covers timeouts) do the rest.
+retry_all=""
+curl --help all 2>/dev/null | grep -q -- '--retry-all-errors' && retry_all="--retry-all-errors"
 gh_get() {   # gh_get <url> [output file]: the JSON of the API, or a file when redirected to the storage
   curl -sSfL --connect-timeout 30 --speed-limit 10240 --speed-time 60 \
-       --retry 5 --retry-delay 5 --retry-all-errors ${2:+-C -} \
+       --retry 5 --retry-delay 5 $retry_all ${2:+-C -} \
        -H "Authorization: Bearer ${GH_TOKEN:?GH_TOKEN is required}" -H "Accept: application/vnd.github+json" \
        -H "X-GitHub-Api-Version: 2022-11-28" "$1" ${2:+-o "$2"}
 }
