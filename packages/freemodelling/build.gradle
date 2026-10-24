@@ -11,17 +11,6 @@ application {
     mainClass = "org.openflexo.Flexo"
 }
 
-jar {
-    manifest {
-        attributes "Main-Class": "org.openflexo.Flexo"
-    }
-
-    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-    from {
-        configurations.runtimeClasspath.collect { println "$it"; it.isDirectory() ? it : zipTree(it) }
-    }
-}
-
 //macAppBundle {
 //    mainClassName = "org.openflexo.Flexo"
 //    appName = "Openflexo FreeModelling ${project.version}"
