@@ -6,8 +6,8 @@
 #
 # The installers are the artifacts installers-Linux, installers-macOS and installers-Windows of a
 # successful run of the workflow. They land on the download server as
-#   <root>/<version without dashes>/<yyyy-MM-dd>/{Linux,Mac,Windows}/<files> + SHA256SUMS
-# like the ones of the former Maven chain.
+#   <root>/<version>/<yyyy-MM-dd>/{Linux,Mac,Windows}/<files> + SHA256SUMS
+# The version is used as given (3.0-SNAPSHOT stays 3.0-SNAPSHOT; the former Maven chain removed the dashes).
 #
 # Needs curl and python3 (the GitHub REST API is called directly, gh is not required).
 #
@@ -52,7 +52,7 @@ done
 
 [ -n "$version" ] || die "--version is required"
 echo "$date_dir" | grep -Eq '^[0-9]{4}-[0-9]{2}-[0-9]{2}$' || die "--date must read yyyy-MM-dd"
-remote_version="${version//-/}"     # 3.0-SNAPSHOT -> 3.0SNAPSHOT, as the former chain did
+remote_version="$version"
 
 # --- which run -------------------------------------------------------------------------------
 workdir="$(mktemp -d)"
@@ -60,8 +60,12 @@ trap 'rm -rf "$workdir"' EXIT
 
 # The GitHub REST API, with curl; python3 reads the JSON
 api="https://api.github.com/repos/$REPO"
+# A transfer slower than 10 kB/s for 60 seconds is a stall: curl gives up on it, tries again and,
+# for a file, resumes where it stopped (-C -). Seen: a download stuck at 42% for 9 minutes.
 gh_get() {   # gh_get <url> [output file]: the JSON of the API, or a file when redirected to the storage
-  curl -sSfL -H "Authorization: Bearer ${GH_TOKEN:?GH_TOKEN is required}" -H "Accept: application/vnd.github+json" \
+  curl -sSfL --connect-timeout 30 --speed-limit 10240 --speed-time 60 \
+       --retry 5 --retry-delay 5 --retry-all-errors ${2:+-C -} \
+       -H "Authorization: Bearer ${GH_TOKEN:?GH_TOKEN is required}" -H "Accept: application/vnd.github+json" \
        -H "X-GitHub-Api-Version: 2022-11-28" "$1" ${2:+-o "$2"}
 }
 json() { python3 -c "import json,sys; d=json.load(sys.stdin); print($1)"; }
@@ -95,14 +99,24 @@ if [ -z "$from_dir" ]; then
     n=$((n + 1))
     echo "[$n/$total] $name ($((size / 1048576)) MB)"
     # A progress line every 10 seconds: the console of a job shows nothing of a silent curl
-    gh_get "$api/actions/artifacts/$id/zip" "$workdir/$name.zip" &
-    curl_pid=$!
-    while kill -0 "$curl_pid" 2>/dev/null; do
-      sleep 10
-      got="$(wc -c < "$workdir/$name.zip" 2>/dev/null | tr -d ' ')" ; got="${got:-0}"
-      [ "$size" -gt 0 ] && echo "    $((got / 1048576)) MB of $((size / 1048576)) MB ($((got * 100 / size))%)"
+    # up to 3 attempts, each one resuming the partial file of the previous one
+    attempt=1
+    while :; do
+      gh_get "$api/actions/artifacts/$id/zip" "$workdir/$name.zip" &
+      curl_pid=$!
+      last=-1
+      while kill -0 "$curl_pid" 2>/dev/null; do
+        sleep 10
+        got="$(wc -c < "$workdir/$name.zip" 2>/dev/null | tr -d ' ')" ; got="${got:-0}"
+        # a line only when something moved
+        [ "$got" != "$last" ] && [ "$size" -gt 0 ] && echo "    $((got / 1048576)) MB of $((size / 1048576)) MB ($((got * 100 / size))%)"
+        last="$got"
+      done
+      wait "$curl_pid" && break
+      [ "$attempt" -lt 3 ] || die "download of $name failed after $attempt attempts"
+      attempt=$((attempt + 1))
+      echo "    interrupted, resuming (attempt $attempt of 3)"
     done
-    wait "$curl_pid" || die "download of $name failed"
     echo "    unpacking"
     python3 -c "import zipfile,sys; zipfile.ZipFile(sys.argv[1]).extractall(sys.argv[2])" "$workdir/$name.zip" "$from_dir/$name"
     rm -f "$workdir/$name.zip"
