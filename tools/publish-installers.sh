@@ -87,12 +87,23 @@ if [ -z "$from_dir" ]; then
 
   echo "Downloading the artifacts of run $run ..."
   api_json "$api/actions/runs/$run/artifacts?per_page=100" \
-    "'\\n'.join('%s %s' % (a['id'], a['name']) for a in d['artifacts'] if not a['expired'])" > "$workdir/artifacts.list"
+    "'\\n'.join('%s %s %s' % (a['id'], a['size_in_bytes'], a['name']) for a in d['artifacts'] if not a['expired'])" > "$workdir/artifacts.list"
   [ -s "$workdir/artifacts.list" ] || die "run $run has no artifact left (they expire after 90 days)"
   from_dir="$workdir/artifacts"
-  while read -r id name; do
-    echo "  $name"
-    gh_get "$api/actions/artifacts/$id/zip" "$workdir/$name.zip" || die "download of $name failed"
+  total="$(wc -l < "$workdir/artifacts.list" | tr -d ' ')" ; n=0
+  while read -r id size name; do
+    n=$((n + 1))
+    echo "[$n/$total] $name ($((size / 1048576)) MB)"
+    # A progress line every 10 seconds: the console of a job shows nothing of a silent curl
+    gh_get "$api/actions/artifacts/$id/zip" "$workdir/$name.zip" &
+    curl_pid=$!
+    while kill -0 "$curl_pid" 2>/dev/null; do
+      sleep 10
+      got="$(wc -c < "$workdir/$name.zip" 2>/dev/null | tr -d ' ')" ; got="${got:-0}"
+      [ "$size" -gt 0 ] && echo "    $((got / 1048576)) MB of $((size / 1048576)) MB ($((got * 100 / size))%)"
+    done
+    wait "$curl_pid" || die "download of $name failed"
+    echo "    unpacking"
     python3 -c "import zipfile,sys; zipfile.ZipFile(sys.argv[1]).extractall(sys.argv[2])" "$workdir/$name.zip" "$from_dir/$name"
     rm -f "$workdir/$name.zip"
   done < "$workdir/artifacts.list"
@@ -114,7 +125,7 @@ for pair in Linux:installers-Linux Mac:installers-macOS Windows:installers-Windo
   count="$(find "$stage/$os" -type f | wc -l | tr -d ' ')"
   [ "$count" -gt 0 ] || die "no installer found in $artifact"
   ( cd "$stage/$os" && { sha256sum -- * 2>/dev/null || shasum -a 256 -- * ; } > SHA256SUMS )
-  echo "$os: $count file(s)"
+  echo "Staged $os: $count file(s)"
   ls -l "$stage/$os" | sed 's/^/    /'
 done
 
