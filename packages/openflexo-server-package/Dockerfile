@@ -3,6 +3,10 @@
 #   docker build -f Dockerfile <directory of the unpacked archive>
 FROM eclipse-temurin:17-jre
 
+# Links the package of ghcr.io to the repository (access rights, description)
+LABEL org.opencontainers.image.source="https://github.com/openflexo-team/openflexo-packaging" \
+      org.opencontainers.image.description="Openflexo Server - An HTTP server exposing the Openflexo infrastructure"
+
 RUN useradd --system --create-home --home-dir /openflexo openflexo
 COPY --chown=openflexo . /opt/openflexo-server
 

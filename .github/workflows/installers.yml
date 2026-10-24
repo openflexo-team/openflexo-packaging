@@ -5,6 +5,15 @@ name: Installers
 
 on:
   workflow_dispatch:
+    inputs:
+      publish_docker:
+        description: Push the server Docker image to ghcr.io/openflexo-team/openflexo-server
+        type: boolean
+        default: false
+      docker_tag:
+        description: Tag of the pushed image (also pushed as latest)
+        type: string
+        default: '3.0'
 
 jobs:
   installers:
@@ -13,6 +22,9 @@ jobs:
       matrix:
         os: [ubuntu-22.04, macos-14, windows-2022]
     runs-on: ${{ matrix.os }}
+    permissions:
+      contents: read
+      packages: write
     steps:
       - uses: actions/checkout@v4
 
@@ -73,6 +85,19 @@ jobs:
           done
           docker logs server
           exit 1
+
+      # Only on request (publish_docker): the image is public once pushed
+      - name: Push the server Docker image
+        if: runner.os == 'Linux' && inputs.publish_docker
+        env:
+          IMAGE: ghcr.io/openflexo-team/openflexo-server
+          TAG: ${{ inputs.docker_tag }}
+        run: |
+          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+          docker tag openflexo-server:test "$IMAGE:$TAG"
+          docker tag openflexo-server:test "$IMAGE:latest"
+          docker push "$IMAGE:$TAG"
+          docker push "$IMAGE:latest"
 
       - uses: actions/upload-artifact@v4
         with:
