@@ -46,7 +46,17 @@ jobs:
             :packages:openflexo-designer:distTar \
             :packages:flexomaintainer:distTar \
             :packages:freemodelling:distTar \
-            :packages:openflexo-headless:distTar
+            :packages:openflexo-headless:distTar \
+            :packages:openflexo-server-package:distTar
+
+      # The server is not installed: besides its portable archive it is delivered as an application
+      # image with its own Java runtime, tarred to keep the execution rights
+      - name: Build the server image
+        if: runner.os == 'Linux'
+        run: |
+          ./gradlew :packages:openflexo-server-package:jpackage
+          tar czf packages/openflexo-server-package/build/openflexo-server-linux-image.tar.gz \
+            -C packages/openflexo-server-package/build/jpackage/dist/app-image openflexo-server
 
       - uses: actions/upload-artifact@v4
         with:
@@ -54,4 +64,6 @@ jobs:
           path: |
             packages/*/build/jpackage/dist/*/*
             packages/*/build/distributions/*.tar.gz
+            packages/openflexo-server-package/build/openflexo-server-linux-image.tar.gz
+            !packages/openflexo-server-package/build/jpackage/**
           if-no-files-found: error

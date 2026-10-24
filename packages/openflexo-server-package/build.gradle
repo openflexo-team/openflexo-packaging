@@ -38,3 +38,20 @@ dependencies {
 //    from appDir
 //    into deployDir
 //}
+
+// The server is not installed: it is delivered as a portable archive (distTar: jars in lib/, start script in bin/, which
+// needs a Java) and as an application image with its own Java runtime (jpackage). Both start with the arguments of the server
+// (--port, --host, --center, --project, --preload).
+apply plugin: 'application'
+application {
+    mainClass = "org.openflexo.http.server.OpenFlexoServer"
+    applicationName = 'openflexo-server'
+}
+
+jpackage {
+    appName = 'openflexo-server'
+    description = 'Openflexo Server - An HTTP server exposing the Openflexo infrastructure'
+    type = 'app-image'
+    console = true
+    jvmOptions = ['-Xms1g', '-Xmx1g']
+}
