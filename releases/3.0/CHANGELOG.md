@@ -24,6 +24,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 ## connie (2.1.0)
 
 - `connie-utils` and `testutils` are removed: connie depends on `openflexo-utils` 2.0 instead
+- connie-core no longer brings Guava: the modules that use it declare it themselves (CONNIE-F-2)
 
 - Fixed: the search of a class by name failed on Java 9 and later, breaking the fix proposal for an unresolved type (CONNIE-D-2)
 - `ClassScope` no longer uses a `SecurityManager` (replaced by `StackWalker`, which Java 24+ requires) (CONNIE-F-1)
@@ -62,6 +63,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 
 - The component versions page lists pamela 2.0 for Openflexo 3.0
 - The user guide gains the FML specification, generated from the one maintained with the core
+- The architecture, repository map, component versions and setup pages describe the new bottom layer (`openflexo-utils` 2.0) and the `p2pp` repository
 
 ## Build infrastructure
 
