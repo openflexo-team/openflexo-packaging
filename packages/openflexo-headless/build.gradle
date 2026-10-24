@@ -23,3 +23,12 @@ apply plugin: 'application'
 application {
     mainClass = "org.openflexo.foundation.fml.cli.LaunchHeadlessFMLCLI"
 }
+
+// ./gradlew :packages:openflexo-headless:jpackage builds the native installer of the platform (see the buildplugin)
+jpackage {
+    appName = 'Openflexo Headless'
+    description = 'Openflexo Headless Environment'
+    iconMac = file('src/main/resources/Icons/IconOpenflexo.icns')
+    iconWindows = file('src/main/resources/Icons/Openflexo.ico')
+    console = true
+}

@@ -1,0 +1,38 @@
+# Builds the native installers of the Openflexo applications with jpackage.
+# jpackage cannot cross-build: each installer is produced on a runner of its own operating system.
+# Run it by hand (Actions tab, "Run workflow"); the installers are attached to the run.
+name: Installers
+
+on:
+  workflow_dispatch:
+
+jobs:
+  installers:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-22.04, macos-14, windows-2022]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      # Linux: .deb, macOS: .dmg, Windows: .msi (WiX is installed on the runner). Not signed.
+      - name: Build the installers
+        shell: bash
+        run: >
+          ./gradlew
+          :packages:openflexo-designer:jpackage
+          :packages:flexomaintainer:jpackage
+          :packages:freemodelling:jpackage
+          :packages:openflexo-headless:jpackage
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: installers-${{ runner.os }}
+          path: packages/*/build/jpackage/dist/*
+          if-no-files-found: error

@@ -45,3 +45,11 @@ jar {
 //
 //tasks.getByName('createApp').dependsOn(copyConfig)
 //
+
+// ./gradlew :packages:freemodelling:jpackage builds the native installer of the platform (see the buildplugin)
+jpackage {
+    appName = 'Openflexo FreeModelling'
+    description = 'Free Modeling Editor - build business models easily'
+    iconMac = file('src/main/resources/Icons/IconOpenflexo.icns')
+    iconWindows = file('src/main/resources/Icons/Openflexo.ico')
+}

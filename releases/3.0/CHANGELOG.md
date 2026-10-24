@@ -34,12 +34,15 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Fixed: the type field of the inspector failed on Java 9 and later, throwing an exception when an object was selected (GINA-D-1)
   - the class search now also finds classes that are not loaded yet
 - A colour selector usable in the cells of a table (`FIBColorSelector`, as a custom column) (GINA-F-1)
-- `ClassScope` and `LoadedClassesInfo` are no longer duplicated: gina uses the ones of connie, which now live in `connie-utils` (`org.openflexo.toolbox`) (CONNIE-F-1)
+- `ClassScope` and `LoadedClassesInfo` are no longer duplicated: gina uses the ones of connie, which now live in `openflexo-utils` (`org.openflexo.toolbox`) (CONNIE-F-1)
 - The class selector no longer fails on a class whose optional dependencies are missing: such a class is ignored (CONNIE-F-1)
+- A UI test of the list widget no longer fails when the event queue is slow (GINA-D-2)
 
 ## openflexo-buildplugin
 
 - Openflexo 3.0 uses pamela 2.0
+- New `jpackage` task for any application project: builds a native installer with an embedded Java runtime (replaces the Maven + Ant chain)
+- The Designer, FlexoMaintainer, FreeModelling and Headless packages declare their installer; a GitHub Actions workflow builds them on Linux, macOS and Windows (unsigned)
 - One version per shared third-party library (Jackson 2.22, Guava 33.7, Gson 2.14, HttpClient 4.5.14, commons 2.22/3.21, JGit 7.8, HSQLDB 2.7, Batik 1.19, slf4j 2.0, JUNG 2.1), declared in the plugin instead of in each module
 
 ## diana, openflexo-server, pamela-editor

@@ -20,3 +20,11 @@ apply plugin: 'application'
 application {
     mainClass = "org.openflexo.Flexo"
 }
+
+// ./gradlew :packages:flexomaintainer:jpackage builds the native installer of the platform (see the buildplugin)
+jpackage {
+    appName = 'Openflexo FlexoMaintainer'
+    description = 'Flexo Maintainer - all the Openflexo modules, for integration'
+    iconMac = file('src/main/resources/Icons/IconOpenflexo.icns')
+    iconWindows = file('src/main/resources/Icons/Openflexo.ico')
+}
