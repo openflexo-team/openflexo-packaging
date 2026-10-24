@@ -58,6 +58,22 @@ jobs:
           tar czf packages/openflexo-server-package/build/openflexo-server-linux-image.tar.gz \
             -C packages/openflexo-server-package/build/jpackage/dist/app-image openflexo-server
 
+      # Docker image of the server, built from its portable archive and checked by starting it.
+      # It is not pushed anywhere.
+      - name: Build and check the server Docker image
+        if: runner.os == 'Linux'
+        run: |
+          mkdir docker-context
+          tar xzf packages/openflexo-server-package/build/distributions/*.tar.gz -C docker-context --strip-components=1
+          docker build -f packages/openflexo-server-package/Dockerfile -t openflexo-server:test docker-context
+          docker run -d --name server -p 9090:9090 openflexo-server:test
+          for i in $(seq 1 30); do
+            curl -sf -o /dev/null http://localhost:9090/ && echo "server is up" && exit 0
+            sleep 2
+          done
+          docker logs server
+          exit 1
+
       - uses: actions/upload-artifact@v4
         with:
           name: installers-${{ runner.os }}
