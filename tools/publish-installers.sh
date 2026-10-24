@@ -9,8 +9,10 @@
 #   <root>/<version without dashes>/<yyyy-MM-dd>/{Linux,Mac,Windows}/<files> + SHA256SUMS
 # like the ones of the former Maven chain.
 #
+# Needs curl and python3 (the GitHub REST API is called directly, gh is not required).
+#
 # Environment:
-#   GH_TOKEN         token able to read the artifacts of the repository (permission "Actions: read"), read by gh
+#   GH_TOKEN         GitHub token, to download the artifacts (any valid token for a public repository)
 #   DOWNLOAD_TARGET  user@host of the download server (required unless --dry-run)
 #   DOWNLOAD_ROOT    directory on that server, default ~/downloads/openflexo
 #   REPO             default openflexo-team/openflexo-packaging
@@ -43,7 +45,7 @@ while [ $# -gt 0 ]; do
     --date) date_dir="${2:?}" ; shift 2 ;;
     --from-dir) from_dir="${2:?}" ; shift 2 ;;
     --resolve-only) resolve_only=1 ; shift ;;
-    -h|--help) sed -n '2,29p' "$0" ; exit 0 ;;
+    -h|--help) sed -n '2,30p' "$0" ; exit 0 ;;
     *) die "unknown option $1" ;;
   esac
 done
@@ -56,23 +58,44 @@ remote_version="${version//-/}"     # 3.0-SNAPSHOT -> 3.0SNAPSHOT, as the former
 workdir="$(mktemp -d)"
 trap 'rm -rf "$workdir"' EXIT
 
+# The GitHub REST API, with curl; python3 reads the JSON
+api="https://api.github.com/repos/$REPO"
+gh_get() {   # gh_get <url> [output file]: the JSON of the API, or a file when redirected to the storage
+  curl -sSfL -H "Authorization: Bearer ${GH_TOKEN:?GH_TOKEN is required}" -H "Accept: application/vnd.github+json" \
+       -H "X-GitHub-Api-Version: 2022-11-28" "$1" ${2:+-o "$2"}
+}
+json() { python3 -c "import json,sys; d=json.load(sys.stdin); print($1)"; }
+api_json() {   # api_json <url> <python expression on d>: fails with a clear message when the call does not succeed
+  local body
+  body="$(gh_get "$1")" || die "GitHub API call failed: ${1#https://api.github.com}"
+  printf '%s' "$body" | json "$2"
+}
+
 if [ -z "$from_dir" ]; then
-  command -v gh >/dev/null || die "gh is required"
+  command -v curl >/dev/null || die "curl is required"
+  command -v python3 >/dev/null || die "python3 is required"
   if [ "$run" = "latest" ]; then
-    run="$(gh run list --repo "$REPO" --workflow "$WORKFLOW" --branch "$BRANCH" --status success --limit 1 \
-            --json databaseId --jq '.[0].databaseId')"
-    [ -n "$run" ] && [ "$run" != "null" ] || die "no successful run of $WORKFLOW on $BRANCH"
+    run="$(api_json "$api/actions/workflows/$WORKFLOW/runs?branch=$BRANCH&status=success&per_page=1" \
+            "d['workflow_runs'][0]['id'] if d['workflow_runs'] else ''")"
+    [ -n "$run" ] || die "no successful run of $WORKFLOW on $BRANCH"
   fi
-  info="$(gh run view "$run" --repo "$REPO" --json conclusion,headSha,headBranch,createdAt \
-           --jq '"\(.conclusion) \(.headSha) \(.headBranch) \(.createdAt)"')"
+  info="$(api_json "$api/actions/runs/$run" "' '.join([str(d['conclusion']), d['head_sha'], d['head_branch'], d['created_at']])")"
   set -- $info
   [ "$1" = "success" ] || die "run $run did not succeed (conclusion: $1)"
   echo "Run $run: commit $2, branch $3, created $4"
   [ "$resolve_only" = 1 ] && exit 0
 
   echo "Downloading the artifacts of run $run ..."
-  gh run download "$run" --repo "$REPO" --dir "$workdir/artifacts"
+  api_json "$api/actions/runs/$run/artifacts?per_page=100" \
+    "'\\n'.join('%s %s' % (a['id'], a['name']) for a in d['artifacts'] if not a['expired'])" > "$workdir/artifacts.list"
+  [ -s "$workdir/artifacts.list" ] || die "run $run has no artifact left (they expire after 90 days)"
   from_dir="$workdir/artifacts"
+  while read -r id name; do
+    echo "  $name"
+    gh_get "$api/actions/artifacts/$id/zip" "$workdir/$name.zip" || die "download of $name failed"
+    python3 -c "import zipfile,sys; zipfile.ZipFile(sys.argv[1]).extractall(sys.argv[2])" "$workdir/$name.zip" "$from_dir/$name"
+    rm -f "$workdir/$name.zip"
+  done < "$workdir/artifacts.list"
 else
   [ -d "$from_dir" ] || die "$from_dir is not a directory"
   [ "$resolve_only" = 1 ] && { echo "Artifacts taken from $from_dir"; exit 0; }
@@ -90,7 +113,7 @@ for pair in Linux:installers-Linux Mac:installers-macOS Windows:installers-Windo
        -exec cp {} "$stage/$os/" \;
   count="$(find "$stage/$os" -type f | wc -l | tr -d ' ')"
   [ "$count" -gt 0 ] || die "no installer found in $artifact"
-  ( cd "$stage/$os" && shasum -a 256 -- * > SHA256SUMS )
+  ( cd "$stage/$os" && { sha256sum -- * 2>/dev/null || shasum -a 256 -- * ; } > SHA256SUMS )
   echo "$os: $count file(s)"
   ls -l "$stage/$os" | sed 's/^/    /'
 done
