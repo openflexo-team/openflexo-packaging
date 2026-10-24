@@ -97,15 +97,17 @@ done
 
 # --- send ------------------------------------------------------------------------------------
 dest="$DOWNLOAD_ROOT/$remote_version"
+# Same as the former Ant chain (scp trust="true"): no question asked, a new host key is accepted
+ssh_opts="-o BatchMode=yes -o StrictHostKeyChecking=accept-new"
 if [ "$dry" = 1 ]; then
   echo "Dry run: nothing sent. Would copy $stage to ${DOWNLOAD_TARGET:-<DOWNLOAD_TARGET>}:$dest/$date_dir"
   exit 0
 fi
 
 [ -n "${DOWNLOAD_TARGET:-}" ] || die "DOWNLOAD_TARGET is required"
-if ssh "$DOWNLOAD_TARGET" "test -e $dest/$date_dir"; then
+if ssh $ssh_opts "$DOWNLOAD_TARGET" "test -e $dest/$date_dir"; then
   [ "$force" = 1 ] || die "$dest/$date_dir already exists on the server (use --force to overwrite)"
 fi
-ssh "$DOWNLOAD_TARGET" "mkdir -p $dest"
-scp -r "$stage" "$DOWNLOAD_TARGET:$dest/"
+ssh $ssh_opts "$DOWNLOAD_TARGET" "mkdir -p $dest"
+scp $ssh_opts -r "$stage" "$DOWNLOAD_TARGET:$dest/"
 echo "Published in $DOWNLOAD_TARGET:$dest/$date_dir"
