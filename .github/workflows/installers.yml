@@ -31,8 +31,27 @@ jobs:
           :packages:freemodelling:jpackage
           :packages:openflexo-headless:jpackage
 
+      # Linux also gets a .rpm (the .deb above is the default type) and the portable archives
+      # (jars in lib/, start script in bin/; they need a Java on the machine)
+      - name: Build the .rpm and the portable archives
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update && sudo apt-get install -y rpm
+          ./gradlew -Pjpackage.type=rpm \
+            :packages:openflexo-designer:jpackage \
+            :packages:flexomaintainer:jpackage \
+            :packages:freemodelling:jpackage \
+            :packages:openflexo-headless:jpackage
+          ./gradlew \
+            :packages:openflexo-designer:distTar \
+            :packages:flexomaintainer:distTar \
+            :packages:freemodelling:distTar \
+            :packages:openflexo-headless:distTar
+
       - uses: actions/upload-artifact@v4
         with:
           name: installers-${{ runner.os }}
-          path: packages/*/build/jpackage/dist/*
+          path: |
+            packages/*/build/jpackage/dist/*/*
+            packages/*/build/distributions/*.tar.gz
           if-no-files-found: error

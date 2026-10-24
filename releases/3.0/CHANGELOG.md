@@ -42,7 +42,8 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 
 - Openflexo 3.0 uses pamela 2.0
 - New `jpackage` task for any application project: builds a native installer with an embedded Java runtime (replaces the Maven + Ant chain)
-- The Designer, FlexoMaintainer, FreeModelling and Headless packages declare their installer; a GitHub Actions workflow builds them on Linux, macOS and Windows (unsigned)
+- The Designer, FlexoMaintainer, FreeModelling and Headless packages declare their installer; a GitHub Actions workflow builds them on Linux (.deb, .rpm), macOS (.dmg) and Windows (.exe), unsigned
+- Each application is also available as a portable archive (jars and a start script), which needs a Java on the machine
 - One version per shared third-party library (Jackson 2.22, Guava 33.7, Gson 2.14, HttpClient 4.5.14, commons 2.22/3.21, JGit 7.8, HSQLDB 2.7, Batik 1.19, slf4j 2.0, JUNG 2.1), declared in the plugin instead of in each module
 
 ## diana, openflexo-server, pamela-editor
