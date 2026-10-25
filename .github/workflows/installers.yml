@@ -4,6 +4,9 @@
 name: Installers
 
 on:
+  # every Monday at 02:00 UTC, on the default branch (3.0); the weekly artifacts are kept 7 days
+  schedule:
+    - cron: '0 2 * * 1'
   workflow_dispatch:
     inputs:
       publish_docker:
@@ -107,4 +110,5 @@ jobs:
             packages/*/build/distributions/*.tar.gz
             packages/openflexo-server-package/build/openflexo-server-linux-image.tar.gz
             !packages/openflexo-server-package/build/jpackage/**
+          retention-days: ${{ github.event_name == 'schedule' && 7 || 90 }}
           if-no-files-found: error
