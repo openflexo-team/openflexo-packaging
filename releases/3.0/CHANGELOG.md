@@ -72,6 +72,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - The component versions page lists pamela 2.0 for Openflexo 3.0
 - The user guide gains the FML specification, generated from the one maintained with the core
 - The architecture, repository map, component versions and setup pages describe the new bottom layer (`openflexo-utils` 2.0) and the `p2pp` repository
+- The Downloads page lists the 3.0 snapshot installers and explains how to run them; the roadmap, FAQ and installation guide say that 2.99 is released and that 3.0 snapshots embed their own Java
 
 ## Build infrastructure
 
@@ -79,6 +80,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - The build plugin compiles for Java 17 (`--release 17`) and can run the whole build on another JDK with `-PjavaVersion=<n>`; the test suites give the same results on Java 17 and 25
 - The build plugin and the SableCC plugin no longer use the retired JCenter repository and the deprecated Groovy property syntax
 - The JAX-WS libraries and several unused JAXB declarations are removed from the build
+- The leftover Maven `pom.xml` files are removed from the repositories: Gradle is the only build
 - docx: docx4j 17 (was 6.1.2), JAXB on Jakarta
 - jdbc: Hibernate 6.6 (was 5.2), Jakarta Persistence
 - xlsx, pptx, diagram: Apache POI 5.5 (was 3.17), also for the import of binary PowerPoint slides
