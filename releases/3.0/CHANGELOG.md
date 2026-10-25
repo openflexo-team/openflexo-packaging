@@ -83,6 +83,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - The build plugin and the SableCC plugin no longer use the retired JCenter repository and the deprecated Groovy property syntax
 - The JAX-WS libraries and several unused JAXB declarations are removed from the build
 - The leftover Maven `pom.xml` files are removed from the repositories: Gradle is the only build
+- The build files and both build plugins no longer use the syntaxes that Gradle 10 turns into errors (map dependency notation, `url x` property assignment, `afterSuite(Closure)`) (BUILD-F-1)
 - docx: docx4j 17 (was 6.1.2), JAXB on Jakarta
 - jdbc: Hibernate 6.6 (was 5.2), Jakarta Persistence
 - xlsx, pptx, diagram: Apache POI 5.5 (was 3.17), also for the import of binary PowerPoint slides
