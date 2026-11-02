@@ -69,6 +69,18 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 
 - The test suites run again (dependency on the generated SableCC parser declared)
 
+## openflexo-pptx
+
+- Added: eight sample presentations of fictional businesses in the test resource center (company profile, incident post-mortem, project kick-off, marketing plan, public consultation, training module, strategic plan, design review), each with its own visual style and the concepts and instances expected from it
+- The elements of a slide can be selected in the slideshow view, the rendering being unchanged (PPTX-F-1)
+- The shapes of a group are now available, from FML and in the slideshow view; ESCAPE selects the enclosing group, ENTER its first shape (PPTX-F-1)
+- A browser shows the slides and shapes of a presentation, synchronized with the selection in the slides (PPTX-F-1)
+- The slides are chosen from a column of thumbnails; each kind of element has its own icon and a read-only inspector (PPTX-F-1)
+- The shown slide is zoomed to fit the available space, the thumbnails to the width of their resizable column, and the browser shows the contents of the shown slide (PPTX-F-1)
+- The model reflects the tables (rows, cells), the charts (series and their data), the shapes connectors are glued to, the speaker notes and the paragraphs of the texts, each with its browser node, icon, inspector and selection (PPTX-F-2)
+- The charts (column, bar, line, pie, doughnut, radar and their combinations) are drawn in the slides and their thumbnails, which POI does not do (PPTX-F-3)
+- The pattern fills of the backgrounds and shapes (grids, hatchings) are painted, which POI does not do (PPTX-F-4)
+
 ## website
 
 - The component versions page lists pamela 2.0 for Openflexo 3.0
