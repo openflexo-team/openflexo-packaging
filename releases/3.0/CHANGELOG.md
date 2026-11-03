@@ -62,6 +62,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 
 - Added: a complete specification of the FML language (syntax, types, declarations, expressions, actions, FML-script, execution model and known deviations)
 - The task thread factory no longer relies on the `SecurityManager`
+- A project nature can bring into the project model the entities of extensions loaded at runtime
 
 ## openflexo-jdbc
 
@@ -72,6 +73,11 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - The installers are built with `jpackage` by a GitHub Actions workflow (Linux, macOS, Windows) and published to the Formose download directory
 
 - The test suites run again (dependency on the generated SableCC parser declared)
+
+## free-modelling-editor
+
+- The FreeModellingEditor is split into a generic core and one extension per technology; diagrams are the first extension, in their own module (FME-F-1)
+- The unfinished PowerPoint free model is removed, to be rebuilt as an extension (FME-F-2)
 
 ## openflexo-pptx
 
@@ -85,6 +91,10 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - The charts (column, bar, line, pie, doughnut, radar and their combinations) are drawn in the slides and their thumbnails, which POI does not do (PPTX-F-3)
 - The pattern fills of the backgrounds and shapes (grids, hatchings) are painted, which POI does not do (PPTX-F-4)
 - The paragraphs of a text box can be selected one by one in the slide; a text box with a single paragraph shows its text in the browser (PPTX-F-1)
+- Fixed: the shape role was typed as a slide (PPTX-D-4)
+- Fixed: an instance pointing at slides or shapes could not be saved (PPTX-D-5)
+- The slides and shapes an instance points at are found again after a reload, and after the slides are reordered: they are identified by the ids stored in the file (PPTX-F-5)
+- The slideshow view can be embedded in another module: contextual menu on the slides and their elements, and an overlay painting a border, a tint and a badge over chosen elements (PPTX-F-6)
 
 ## website
 
