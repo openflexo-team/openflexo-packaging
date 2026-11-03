@@ -37,6 +37,10 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - `ClassScope` and `LoadedClassesInfo` are no longer duplicated: gina uses the ones of connie, which now live in `openflexo-utils` (`org.openflexo.toolbox`) (CONNIE-F-1)
 - The class selector no longer fails on a class whose optional dependencies are missing: such a class is ignored (CONNIE-F-1)
 - A UI test of the list widget no longer fails when the event queue is slow (GINA-D-2)
+- Fixed: a browser node sometimes showed no children although its object had some, depending on the threads updating the browser (GINA-D-3)
+- Fixed: a list could throw an error while painted, when its contents were updated from another thread (GINA-D-4)
+- Fixed: a browser could show an object with the element of one of its super types (no children, wrong label), depending on the run (GINA-D-5)
+- Fixed: a browser could miss children added while it was being refreshed, e.g. resources found while a resource center is scanned (GINA-D-6)
 
 ## openflexo-buildplugin
 
@@ -80,6 +84,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - The model reflects the tables (rows, cells), the charts (series and their data), the shapes connectors are glued to, the speaker notes and the paragraphs of the texts, each with its browser node, icon, inspector and selection (PPTX-F-2)
 - The charts (column, bar, line, pie, doughnut, radar and their combinations) are drawn in the slides and their thumbnails, which POI does not do (PPTX-F-3)
 - The pattern fills of the backgrounds and shapes (grids, hatchings) are painted, which POI does not do (PPTX-F-4)
+- The paragraphs of a text box can be selected one by one in the slide; a text box with a single paragraph shows its text in the browser (PPTX-F-1)
 
 ## website
 
