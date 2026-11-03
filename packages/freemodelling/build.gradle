@@ -4,6 +4,7 @@
 
 dependencies {
     runtimeOnly openflexoModule("fme-module")
+    runtimeOnly openflexoModule("fme-diagram")
 }
 
 apply plugin: 'application'

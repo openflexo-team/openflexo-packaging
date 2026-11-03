@@ -3,6 +3,7 @@ dependencies {
 	// modules
     runtimeOnly openflexoModule("om-module")
     runtimeOnly openflexoModule("fme-module")
+    runtimeOnly openflexoModule("fme-diagram")
     runtimeOnly openflexoModule("ea-module")
  
  	// technology adapters
