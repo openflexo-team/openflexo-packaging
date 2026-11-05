@@ -41,6 +41,8 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Fixed: a list could throw an error while painted, when its contents were updated from another thread (GINA-D-4)
 - Fixed: a browser could show an object with the element of one of its super types (no children, wrong label), depending on the run (GINA-D-5)
 - Fixed: a browser could miss children added while it was being refreshed, e.g. resources found while a resource center is scanned (GINA-D-6)
+- Fixed: a browser with a hidden root could fail to refresh a node expanded automatically, e.g. in the free-modelling perspective (GINA-D-7)
+- Fixed: inserting a panel at the top of a group of collapsible panels failed on an empty group, and otherwise left a panel out of the group (GINA-D-8)
 
 ## openflexo-buildplugin
 
@@ -78,6 +80,14 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 
 - The FreeModellingEditor is split into a generic core and one extension per technology; diagrams are the first extension, in their own module (FME-F-1)
 - The unfinished PowerPoint free model is removed, to be rebuilt as an extension (FME-F-2)
+- Fixed: when declaring a diagram element as an instance of an existing concept, the chosen representation strategy is now applied (FME-D-1)
+- The free modelling actions (new concept from an element, declare as an instance of an existing concept, disconnect, relationship or property from a link) are shared by all technologies (FME-F-3)
+- An element can stand for an instance that already exists, possibly represented elsewhere; disconnecting it deletes the instance only when nothing else represents it (FME-F-3)
+- Fixed: declaring a diagram element as an instance of the concept proposed by default failed (FME-D-2)
+- Fixed: a concept first declared from a plain shape of a diagram now gets its element in the concepts palette (FME-D-3)
+- PowerPoint extension: annotate the shapes of an existing slideshow as instances of new or existing concepts, without modifying it; a slideshow is annotated once per project, with a vocabulary shared by all its slideshows (FME-F-2)
+- Fixed: instantiating a free model offered the free models of the other technologies (FME-F-2)
+- The project panel offers one button per technology (new diagram, annotate a PowerPoint slideshow); the inactive import buttons are removed (FME-F-1)
 
 ## openflexo-pptx
 
@@ -95,6 +105,8 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Fixed: an instance pointing at slides or shapes could not be saved (PPTX-D-5)
 - The slides and shapes an instance points at are found again after a reload, and after the slides are reordered: they are identified by the ids stored in the file (PPTX-F-5)
 - The slideshow view can be embedded in another module: contextual menu on the slides and their elements, and an overlay painting a border, a tint and a badge over chosen elements (PPTX-F-6)
+- A shape annotated by an instance is no longer deleted with it (PPTX-F-5)
+- The slideshow view lets the module embedding it place the browser of the shown slide (PPTX-F-6)
 
 ## website
 
