@@ -16,6 +16,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 
 - Becomes the bottom layer of the infrastructure: it now contains the resource locator, the logging, the toolbox and the test utilities that were in `connie-utils` and `testutils` (the `org.openflexo` packages are unchanged)
 - `p2pp-core` moves out into its own repository, `p2pp` (1.0), because it needs connie
+- Fixed: the localization dictionaries saved by the application are sorted again on Java 9 and later, so a new entry changes one line and not the whole file (UTILS-D-1)
 
 ## p2pp (1.0)
 
@@ -45,6 +46,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Fixed: inserting a panel at the top of a group of collapsible panels failed on an empty group, and otherwise left a panel out of the group (GINA-D-8)
 - No more error on quit when a view with an iteration is closed (GINA-D-9)
 - Swing components follow the language and the edition of a translation without a restart: the menus, labels, buttons, tooltips and titles of the editors and of the print preview, and every FIB view (GINA-F-3)
+- The Metaphase HTML editor (toolbar, link, image, table, find/replace and about dialogs) is translated (GINA-F-3)
 - A localizer can rely on several parent dictionaries, and a new entry can be created in the dictionary of a given context; an installation no longer creates entries for unknown keys, it shows the key read as English words (GINA-F-2)
 
 ## openflexo-buildplugin
@@ -62,6 +64,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 ## diana, openflexo-server, pamela-editor
 
 - Moved to the pamela 2.0 API (`PamelaProxies`)
+- GeomEdit: the contextual menu, and the save questions of the three diana editors, are translated
 
 ## openflexo-core
 
@@ -76,6 +79,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 ## formod
 
 - The installers are built with `jpackage` by a GitHub Actions workflow (Linux, macOS, Windows) and published to the Formose download directory
+- The "missing model" labels of the B mapping view are translated
 
 - The test suites run again (dependency on the generated SableCC parser declared)
 
@@ -151,6 +155,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - FML editor: colouring themes (default, eclipse, dark, and your own), edited in a new "FML editor" page of the preferences and applied live to every editor (UI-F-1)
 - Debug `finalize()` methods removed (deprecated for removal in Java); no behaviour change
 - Faster startup: the FIB editor is built when first opened, no longer at startup (UI-F-2)
+- The document editor dialogs (table, margins, paragraph), the inspector placeholders ("No selection"), the version line of the splash screen and about box, and the search bar of the FML editor are translated
 - Loading a module or a project: the progress bar moves steadily with time, based on the previous loading, and never goes back (UI-F-2)
 - Opening a project in the Free Modelling Editor no longer freezes the window: its models are loaded with the project; the "Select default object" bar is gone (UI-F-2)
 - Opening a project from the File menu, the recent projects or a module welcome panel no longer freezes the window: it is loaded in a task, with its progress bar (UI-F-2)
