@@ -110,6 +110,15 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - The slideshow view lets the module embedding it place the browser of the shown slide (PPTX-F-6)
 - Faster opening of a slideshow: the view of a slide is built when the slide is first shown (PPTX-F-7)
 
+## Localization (several repositories)
+
+- Fixed: about 230 messages, dialog titles and labels that were never in a dictionary now have an entry (core, diagram, OWL, PDF, PowerPoint, Kafka, XML, JDBC, free modelling editor, enterprise architecture editor, formod, GINA)
+- Fixed: the Basic and Advanced tabs of the inspectors are translated in French, from the shared dictionary instead of a copy in each component
+- Evolution: the common labels Name, Description, Cancel and URI of the inspectors and panels now come from the shared dictionary, no longer duplicated in each component
+- Removed: stray entries (temporary paths, ontology URIs) from the OWL dictionary
+- Removed: about 190 entries copied from the shared dictionary into technology adapter, module and FML dictionaries
+- Fixed: about 35 common labels (Property, Value, Delete, Behaviour...) are now translated in the shared dictionary, so every module shows them in French
+
 ## website
 
 - The component versions page lists pamela 2.0 for Openflexo 3.0
