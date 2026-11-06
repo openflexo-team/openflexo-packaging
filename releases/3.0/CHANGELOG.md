@@ -43,6 +43,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Fixed: a browser could miss children added while it was being refreshed, e.g. resources found while a resource center is scanned (GINA-D-6)
 - Fixed: a browser with a hidden root could fail to refresh a node expanded automatically, e.g. in the free-modelling perspective (GINA-D-7)
 - Fixed: inserting a panel at the top of a group of collapsible panels failed on an empty group, and otherwise left a panel out of the group (GINA-D-8)
+- No more error on quit when a view with an iteration is closed (GINA-D-9)
 
 ## openflexo-buildplugin
 
@@ -107,6 +108,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - The slideshow view can be embedded in another module: contextual menu on the slides and their elements, and an overlay painting a border, a tint and a badge over chosen elements (PPTX-F-6)
 - A shape annotated by an instance is no longer deleted with it (PPTX-F-5)
 - The slideshow view lets the module embedding it place the browser of the shown slide (PPTX-F-6)
+- Faster opening of a slideshow: the view of a slide is built when the slide is first shown (PPTX-F-7)
 
 ## website
 
@@ -137,3 +139,11 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Build plugin: the UI tests (`uiTest`) run again with Gradle 9 (they were silently skipped)
 - FML editor: colouring themes (default, eclipse, dark, and your own), edited in a new "FML editor" page of the preferences and applied live to every editor (UI-F-1)
 - Debug `finalize()` methods removed (deprecated for removal in Java); no behaviour change
+- Faster startup: the FIB editor is built when first opened, no longer at startup (UI-F-2)
+- Loading a module or a project: the progress bar moves steadily with time, based on the previous loading, and never goes back (UI-F-2)
+- Opening a project in the Free Modelling Editor no longer freezes the window: its models are loaded with the project; the "Select default object" bar is gone (UI-F-2)
+- Opening a project from the File menu, the recent projects or a module welcome panel no longer freezes the window: it is loaded in a task, with its progress bar (UI-F-2)
+- The splash screen shows the progress of the startup and its current step (UI-F-2)
+- Faster module loading: the inspectors and actions of a technology are no longer initialized twice (UI-D-5)
+- Faster loading of modules using diagrams: the floating Diana inspectors are built when first opened (UI-F-2)
+- Faster project opening: virtual models and instances are validated in the background, their error reports appearing a moment later (UI-F-2)
