@@ -44,6 +44,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Fixed: a browser with a hidden root could fail to refresh a node expanded automatically, e.g. in the free-modelling perspective (GINA-D-7)
 - Fixed: inserting a panel at the top of a group of collapsible panels failed on an empty group, and otherwise left a panel out of the group (GINA-D-8)
 - No more error on quit when a view with an iteration is closed (GINA-D-9)
+- A localizer can rely on several parent dictionaries, and a new entry can be created in the dictionary of a given context; an installation no longer creates entries for unknown keys, it shows the key read as English words (GINA-F-2)
 
 ## openflexo-buildplugin
 
