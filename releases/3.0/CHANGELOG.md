@@ -58,6 +58,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - The Server is delivered as a portable archive and, on Linux, as an application image with its own Java runtime
 - The Server has a Docker image (Java 17), built and checked by the workflow and published to ghcr.io on request
 - A script publishes the installers built by GitHub to the download server; the installers are also built every week
+- The macOS installers are built on macOS 15 (GitHub retired its macOS 14 runner), for openflexo-packaging and formod
 - The Maven + Ant packaging chain (poms, assemblies, launch4j and appbundler targets) is removed from openflexo-packaging and formod
 - One version per shared third-party library (Jackson 2.22, Guava 33.7, Gson 2.14, HttpClient 4.5.14, commons 2.22/3.21, JGit 7.8, HSQLDB 2.7, Batik 1.19, slf4j 2.0, JUNG 2.1), declared in the plugin instead of in each module
 
@@ -76,6 +77,12 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - VirtualModels serialized in the deprecated XML format (`.fml.xml`) are no longer read nor converted: a warning names them (CORE-F-8)
 - The deprecated edition actions that only the XML format could hold are removed (`AddFlexoConceptInstance`, `AddToListAction`, `IncrementalIterationAction`, …): use `new`, `list.add(…)`, `for` (CORE-F-8)
 - FML editor: "Add to list" writes `list.add(value)` in the textual FML (CORE-F-8)
+- The deprecated URI-string accessors of the FML model (`_getFlexoConceptTypeURI`, `_getParentFlexoConceptsList`, …) are removed: references are typed properties (CORE-F-8)
+- Fixed: the FML editor follows a reference retargeted in the text (type of a role, `extends`, `match`, criteria, listened event) (CORE-D-43)
+- The behaviour options that only the XML format held are removed: long-running action, popup size, `conditional` (use `@Enable`) (CORE-F-8)
+- The old inspector model of a concept (inspector entries) is removed: a concept's inspector is its `.inspector` component; the "Define inspector" step of the concept-creation wizards is gone for now (CORE-F-8, CORE-F-9)
+- Other dead deprecated API is removed; the use declarations are read from the compilation unit only (CORE-F-8)
+- FML model classes renamed: `FlexoBehaviourParameter` → `FlexoBehaviourArgument`, `JavaRole` → `FMLVariable`, `JavaActorReference` → `FMLVariableActorReference` (older instances still load) (CORE-F-8)
 - Fixed: a `match` may create its missing instances with `container.new`, or with `new` on a concept without constructor, without a validation error (CORE-D-41)
 - Fixed: the FML technology adapter can be used from textual FML (model slot type, `CreateFlexoConcept` attributes) (CORE-D-42)
 
