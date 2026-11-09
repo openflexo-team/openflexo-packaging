@@ -65,12 +65,27 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 
 - Moved to the pamela 2.0 API (`PamelaProxies`)
 - GeomEdit: the contextual menu, and the save questions of the three diana editors, are translated
+- http-server: the REST routes `add-to-list` and `remove-from-list` of behaviours are removed (CORE-F-8)
 
 ## openflexo-core
 
 - Added: a complete specification of the FML language (syntax, types, declarations, expressions, actions, FML-script, execution model and known deviations)
 - The task thread factory no longer relies on the `SecurityManager`
 - A project nature can bring into the project model the entities of extensions loaded at runtime
+- Removal of the deprecated XML serialization of VirtualModels started: the test models and migration tests that only existed for it are removed (CORE-F-8)
+- VirtualModels serialized in the deprecated XML format (`.fml.xml`) are no longer read nor converted: a warning names them (CORE-F-8)
+- The deprecated edition actions that only the XML format could hold are removed (`AddFlexoConceptInstance`, `AddToListAction`, `IncrementalIterationAction`, …): use `new`, `list.add(…)`, `for` (CORE-F-8)
+- FML editor: "Add to list" writes `list.add(value)` in the textual FML (CORE-F-8)
+- Fixed: a `match` may create its missing instances with `container.new`, or with `new` on a concept without constructor, without a validation error (CORE-D-41)
+- Fixed: the FML technology adapter can be used from textual FML (model slot type, `CreateFlexoConcept` attributes) (CORE-D-42)
+
+## openflexo-diagram
+
+- The model of the FML class diagram (Modeller) is migrated to textual FML and runs again (CORE-F-8)
+
+## openflexo-technology-adapters
+
+- The template VirtualModel of the XX adapter is written in textual FML, with a script that runs it (CORE-F-8)
 
 ## openflexo-jdbc
 
