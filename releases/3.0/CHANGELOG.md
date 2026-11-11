@@ -26,7 +26,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 ## p2pp (1.0)
 
 - New repository holding the parser / pretty-printer framework (`p2pp-core`), formerly in `openflexo-utils`
-- New `p2pp-test` module: own tests of p2pp, with a small fixture language (Mini) to test the pretty-print
+- New `p2pp-test` module: own tests of p2pp, with a small fixture language (Mini), and a test harness (scenarios, generated edits) that other pretty-printers can reuse
 
 ## connie (2.1.0)
 
@@ -67,6 +67,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - The macOS installers are built on macOS 15 (GitHub retired its macOS 14 runner), for openflexo-packaging and formod
 - The Maven + Ant packaging chain (poms, assemblies, launch4j and appbundler targets) is removed from openflexo-packaging and formod
 - One version per shared third-party library (Jackson 2.22, Guava 33.7, Gson 2.14, HttpClient 4.5.14, commons 2.22/3.21, JGit 7.8, HSQLDB 2.7, Batik 1.19, slf4j 2.0, JUNG 2.1), declared in the plugin instead of in each module
+- New dependency helper `p2ppTest()` for the test harness of p2pp
 
 ## diana, openflexo-server, pamela-editor
 
@@ -92,12 +93,14 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - The FML model classes, those of every technology adapter included, no longer carry XML annotations: VirtualModels are only saved as textual FML (CORE-F-8)
 - Fixed: a `match` may create its missing instances with `container.new`, or with `new` on a concept without constructor, without a validation error (CORE-D-41)
 - Fixed: the FML technology adapter can be used from textual FML (model slot type, `CreateFlexoConcept` attributes) (CORE-D-42)
+- Fixed: validating or printing a VirtualModel nobody edited no longer marks it modified, so the application no longer offers to save it (CORE-D-45)
 
 ## openflexo-diagram
 
 - The model of the FML class diagram (Modeller) is migrated to textual FML and runs again (CORE-F-8)
 - Drop, link and draw-rectangle schemes keep their targets only as types (`targetType`, `fromType`, `toType`, `childrenType`): the former URI strings of the XML format are removed (CORE-F-8)
 - Fixed: a draw-rectangle scheme declaring a `targetType` was still taken as drawing at top level (CORE-F-8)
+- Fixed: loading the example diagrams and palettes of a diagram specification no longer marks them modified (CORE-D-45)
 
 ## openflexo-technology-adapters
 
