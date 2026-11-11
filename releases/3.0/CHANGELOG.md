@@ -10,6 +10,10 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
   - `PamelaProxies` replaces the javassist `ProxyObject` API for testing a proxy and reaching its handler
 - Fixed: an implementation class set at run time in another package was reported as a generated class (PAMELA-D-3)
 - Fixed: an implementation class loaded by a child class loader was replaced by another copy of it (PAMELA-D-4)
+- A property can be declared transient (`@Getter(isTransient = true)`): not persistent, not compared, not cloned; a property is persistent when it is neither derived nor transient, independently of XML (PAMELA-F-3)
+  - the models of openflexo-core, GINA, DIANA, documents, Excel, JDBC and XML mark their transient properties
+- Entities without XML mapping may share their simple name in a model (PAMELA-F-3)
+- Fixed: a model entity that failed to import broke every later import (PAMELA-D-5)
 - Version 2.0, requires Java 17 or later; documentation updated
 
 ## openflexo-utils (2.0)
@@ -83,6 +87,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - The old inspector model of a concept (inspector entries) is removed: a concept's inspector is its `.inspector` component; the "Define inspector" step of the concept-creation wizards is gone for now (CORE-F-8, CORE-F-9)
 - Other dead deprecated API is removed; the use declarations are read from the compilation unit only (CORE-F-8)
 - FML model classes renamed: `FlexoBehaviourParameter` → `FlexoBehaviourArgument`, `JavaRole` → `FMLVariable`, `JavaActorReference` → `FMLVariableActorReference` (older instances still load) (CORE-F-8)
+- The FML model classes, those of every technology adapter included, no longer carry XML annotations: VirtualModels are only saved as textual FML (CORE-F-8)
 - Fixed: a `match` may create its missing instances with `container.new`, or with `new` on a concept without constructor, without a validation error (CORE-D-41)
 - Fixed: the FML technology adapter can be used from textual FML (model slot type, `CreateFlexoConcept` attributes) (CORE-D-42)
 
