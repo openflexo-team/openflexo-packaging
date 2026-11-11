@@ -13,6 +13,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - A property can be declared transient (`@Getter(isTransient = true)`): not persistent, not compared, not cloned; a property is persistent when it is neither derived nor transient, independently of XML (PAMELA-F-3)
   - the models of openflexo-core, GINA, DIANA, documents, Excel, JDBC and XML mark their transient properties
 - Entities without XML mapping may share their simple name in a model (PAMELA-F-3)
+- `@Getter(ignoreForEquality)` is removed: equality compares every property that is neither derived nor transient (PAMELA-F-4)
 - Fixed: a model entity that failed to import broke every later import (PAMELA-D-5)
 - Version 2.0, requires Java 17 or later; documentation updated
 
@@ -25,6 +26,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 ## p2pp (1.0)
 
 - New repository holding the parser / pretty-printer framework (`p2pp-core`), formerly in `openflexo-utils`
+- New `p2pp-test` module: own tests of p2pp, with a small fixture language (Mini) to test the pretty-print
 
 ## connie (2.1.0)
 
@@ -94,6 +96,8 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 ## openflexo-diagram
 
 - The model of the FML class diagram (Modeller) is migrated to textual FML and runs again (CORE-F-8)
+- Drop, link and draw-rectangle schemes keep their targets only as types (`targetType`, `fromType`, `toType`, `childrenType`): the former URI strings of the XML format are removed (CORE-F-8)
+- Fixed: a draw-rectangle scheme declaring a `targetType` was still taken as drawing at top level (CORE-F-8)
 
 ## openflexo-technology-adapters
 
