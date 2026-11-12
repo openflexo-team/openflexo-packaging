@@ -34,7 +34,8 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Fixed: a source laid out differently from the canonical layout is no longer reformatted by the preserving pretty-print when nothing changed (P2PP-D-6)
 - Fixed: adding or removing the last child of a list no longer corrupts a source whose closing delimiter is on the same row, nor reads the final line separator of the file as a separator of the child (P2PP-D-14)
 - Fixed: an annotation or another child written before an indented declaration no longer pushes the declaration to column 0 (P2PP-D-1)
-- New: re-indentation of a parsed text, or of some of its rows, from the structure of the language: comments follow the block they are in, a statement written over several rows is indented one level more on its following rows, nothing but the indentation changes (P2PP-F-1)
+- Fixed: an element added by the model right after one written without its usual space is no longer glued to it; a role declared without `with` was saved as `nameXwith ConceptInstance()`, which could not be read again (CORE-D-60)
+- New: re-indentation of a parsed text, or of some of its rows, from the structure of the language: comments follow the block they are in, a statement written over several rows is indented one level more on its following rows, or aligned on the first argument of a parenthesis left open, nothing but the indentation changes (P2PP-F-1)
 
 ## connie (2.1.0)
 
@@ -85,6 +86,12 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 
 ## openflexo-core
 
+- Fixed: `extends` of a concept that does not resolve (a missing import) is no longer dropped; the other parents are still attached (CORE-D-62)
+- Fixed: a local variable declared `Object` with a value is no longer written back with the type of its value (`Object o = 1;` became `long o = 1;`) (CORE-D-61)
+- Fixed: a statement referring to a concept that does not resolve (a missing import) is no longer dropped from the model; it is kept with the name written and reported (CORE-D-58)
+- Fixed: `end match … unmatched: someBehaviour(args)` runs that behaviour, no longer the first action scheme of the concept (which could delete); the `unmatched:` clause is optional, without it nothing runs (CORE-D-2)
+- Fixed: the FML written from the model (a new object, a unit created from scratch) keeps the `unmatched:` clause of an `end match` and the `;` of a statement in a loop, and `use …ModelSlot` no longer breaks the parser (CORE-D-57)
+- Fixed: creating a concept in the Free Modelling Editor no longer freezes the application (CORE-D-59)
 - Added: a complete specification of the FML language (syntax, types, declarations, expressions, actions, FML-script, execution model and known deviations)
 - The task thread factory no longer relies on the `SecurityManager`
 - A project nature can bring into the project model the entities of extensions loaded at runtime
