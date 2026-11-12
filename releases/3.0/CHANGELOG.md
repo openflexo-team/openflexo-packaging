@@ -27,6 +27,14 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 
 - New repository holding the parser / pretty-printer framework (`p2pp-core`), formerly in `openflexo-utils`
 - New `p2pp-test` module: own tests of p2pp, with a small fixture language (Mini), and a test harness (scenarios, generated edits) that other pretty-printers can reuse
+- Fixed: the pretty-print keeps the final line separator of a source, and the node of a whole source covers it (P2PP-D-5); an empty source is accepted (P2PP-D-2)
+- Fixed: removing a conditional part, or the first or the last item of a list, no longer leaves a stray space or separator (P2PP-D-7, P2PP-D-11)
+- Fixed: a value that is `null` is no longer written as "null", and a child added where there was none is written at its place (P2PP-D-12, P2PP-D-13)
+- Fixed: a child added before the first one of a list is written first, reordering the children of a node is taken into account, and children added to or removed from a nested node keep the indentation of the source (P2PP-D-8, P2PP-D-9, P2PP-D-10)
+- Fixed: a source laid out differently from the canonical layout is no longer reformatted by the preserving pretty-print when nothing changed (P2PP-D-6)
+- Fixed: adding or removing the last child of a list no longer corrupts a source whose closing delimiter is on the same row, nor reads the final line separator of the file as a separator of the child (P2PP-D-14)
+- Fixed: an annotation or another child written before an indented declaration no longer pushes the declaration to column 0 (P2PP-D-1)
+- New: re-indentation of a parsed text, or of some of its rows, from the structure of the language; comments follow the block they are in, nothing but the indentation changes (P2PP-F-1)
 
 ## connie (2.1.0)
 
@@ -94,6 +102,8 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Fixed: a `match` may create its missing instances with `container.new`, or with `new` on a concept without constructor, without a validation error (CORE-D-41)
 - Fixed: the FML technology adapter can be used from textual FML (model slot type, `CreateFlexoConcept` attributes) (CORE-D-42)
 - Fixed: validating or printing a VirtualModel nobody edited no longer marks it modified, so the application no longer offers to save it (CORE-D-45)
+- FML specification: the workaround given for the ignored `where` of `begin match` was wrong (it let `end match … delete()` delete the instances meant to be kept) and is replaced (CORE-D-12)
+- Fixed: FML statements keep their meaning when a behaviour is built — unbraced statements nested in an `if/else`, the empty statement, `do … while`, compound assignments (`n += 2`), `n++` as a statement, `for` without condition or update; a statement that cannot be built is reported instead of dropped (CORE-D-46, CORE-D-6, CORE-D-7, CORE-D-9, CORE-D-18)
 
 ## openflexo-diagram
 
@@ -116,6 +126,8 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - The "missing model" labels of the B mapping view are translated
 
 - The test suites run again (dependency on the generated SableCC parser declared)
+- New test of the B pretty-print on every B component of the test resource centers: the preserving pretty-print of an untouched source is the source, and both pretty-prints read back to the same model
+- New generated edits of the B components (add, remove, move, rename sets, constants and variables) checked against the pretty-print
 
 ## free-modelling-editor
 
