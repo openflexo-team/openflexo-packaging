@@ -34,7 +34,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Fixed: a source laid out differently from the canonical layout is no longer reformatted by the preserving pretty-print when nothing changed (P2PP-D-6)
 - Fixed: adding or removing the last child of a list no longer corrupts a source whose closing delimiter is on the same row, nor reads the final line separator of the file as a separator of the child (P2PP-D-14)
 - Fixed: an annotation or another child written before an indented declaration no longer pushes the declaration to column 0 (P2PP-D-1)
-- New: re-indentation of a parsed text, or of some of its rows, from the structure of the language; comments follow the block they are in, nothing but the indentation changes (P2PP-F-1)
+- New: re-indentation of a parsed text, or of some of its rows, from the structure of the language: comments follow the block they are in, a statement written over several rows is indented one level more on its following rows, nothing but the indentation changes (P2PP-F-1)
 
 ## connie (2.1.0)
 
@@ -209,3 +209,4 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Faster module loading: the inspectors and actions of a technology are no longer initialized twice (UI-D-5)
 - Faster loading of modules using diagrams: the floating Diana inspectors are built when first opened (UI-F-2)
 - Faster project opening: virtual models and instances are validated in the background, their error reports appearing a moment later (UI-F-2)
+- FML editor: "Re-indent" (context menu, Cmd/Ctrl+I) re-indents the selected rows, or the whole text, from the structure of the FML (P2PP-F-1)
