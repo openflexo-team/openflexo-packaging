@@ -37,6 +37,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Fixed: an element added by the model right after one written without its usual space is no longer glued to it; a role declared without `with` was saved as `nameXwith ConceptInstance()`, which could not be read again (CORE-D-60)
 - New: re-indentation of a parsed text, or of some of its rows, from the structure of the language: comments follow the block they are in, a statement written over several rows is indented one level more on its following rows, or aligned on the first argument of a parenthesis left open, nothing but the indentation changes (P2PP-F-1)
 - The scenarios of the test harness can have several steps on the same document
+- New: a printed value can keep the text it was parsed from as long as it does not change, instead of being written again in its normalized form (P2PP-F-2)
 
 ## connie (2.1.0)
 
@@ -45,6 +46,8 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 
 - Fixed: the search of a class by name failed on Java 9 and later, breaking the fix proposal for an unresolved type (CONNIE-D-2)
 - `ClassScope` no longer uses a `SecurityManager` (replaced by `StackWalker`, which Java 24+ requires) (CONNIE-F-1)
+- Fixed: the text of a binding no longer keeps the former name of a renamed element (CONNIE-D-3)
+- New: a binding can be written back as it was written (`getPrettyPrint()`), its normalized text staying in `toString()` (CONNIE-F-3)
 
 ## gina (2.4)
 
@@ -87,6 +90,14 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 
 ## openflexo-core
 
+- Fixed: saving an FML unit no longer rewrites the expressions and types nobody edited: spacing, parentheses, qualified names, `log("x")`, argument and `where` lists and annotation values stay as written (CORE-D-33, CORE-D-65)
+- An expression typed in an inspector is written in the FML text as it was typed (`1+2`, not `1 + 2`) (CORE-D-33, CONNIE-F-3)
+- Fixed: a renamed concept, constructor or property is written with its new name in the expressions that use it, in the FML text and in the text of the bindings, also after several renames (CORE-D-67)
+- Fixed: a call of a behaviour renamed twice in a row no longer keeps the intermediate name (CORE-D-71)
+- Fixed: a concept-typed role declared without `with` (`ConceptB b;`) is no longer written back with `with ConceptInstance()`, and a role written `with FlexoConceptInstanceRole` keeps its text (CORE-D-33)
+- Fixed: the parameter of a setter keeps its name (`set(int aValue)` was written `set(int value)`) (CORE-D-68)
+- Fixed: `use` of a model slot class that cannot be found keeps the class written instead of the generic `ModelSlot` (CORE-D-63)
+- Fixed: `new X() with (...)` on a concept that does not resolve keeps its clause, and its arguments no longer double at each save (CORE-D-64, CORE-D-66)
 - Fixed: `extends` of a concept that does not resolve (a missing import) is no longer dropped; the other parents are still attached (CORE-D-62)
 - Fixed: a local variable declared `Object` with a value is no longer written back with the type of its value (`Object o = 1;` became `long o = 1;`) (CORE-D-61)
 - Fixed: a statement referring to a concept that does not resolve (a missing import) is no longer dropped from the model; it is kept with the name written and reported (CORE-D-58)
@@ -112,9 +123,10 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Fixed: validating or printing a VirtualModel nobody edited no longer marks it modified, so the application no longer offers to save it (CORE-D-45)
 - FML specification: the workaround given for the ignored `where` of `begin match` was wrong (it let `end match … delete()` delete the instances meant to be kept) and is replaced (CORE-D-12)
 - Fixed: FML statements keep their meaning when a behaviour is built — unbraced statements nested in an `if/else`, the empty statement, `do … while`, compound assignments (`n += 2`), `n++` as a statement, `for` without condition or update; a statement that cannot be built is reported instead of dropped (CORE-D-46, CORE-D-6, CORE-D-7, CORE-D-9, CORE-D-18)
-- New test of the FML pretty-print on the FML examples of the test resources: the preserving pretty-print of an untouched source must be that source, and both pretty-prints must read back to the same model (it currently fails on 28 files, tolerated for now, see CORE-D-33 and CORE-D-63 to CORE-D-66)
+- New test of the FML pretty-print on the FML examples of the test resources: the preserving pretty-print of an untouched source must be that source, and both pretty-prints must read back to the same model (all of them pass)
 - The FML pretty-print tests (concepts, behaviours, imports, properties, invariants and the update from text) are also available as p2pp scenarios, with a small language of edits of FML
 - New generated edits of FML units (rename, abstract, visibility, body, properties, failure clauses) checked against the pretty-print
+- A test of the rename of a VirtualModel no longer destroys a shared test fixture when run under Eclipse (CORE-D-72)
 
 ## openflexo-diagram
 
