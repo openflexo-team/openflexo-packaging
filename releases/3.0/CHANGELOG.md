@@ -38,6 +38,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - New: re-indentation of a parsed text, or of some of its rows, from the structure of the language: comments follow the block they are in, a statement written over several rows is indented one level more on its following rows, or aligned on the first argument of a parenthesis left open, nothing but the indentation changes (P2PP-F-1)
 - The scenarios of the test harness can have several steps on the same document
 - New: a printed value can keep the text it was parsed from as long as it does not change, instead of being written again in its normalized form (P2PP-F-2)
+- The method in which a node declares how it is printed is renamed `definePrettyPrint` (it was `preparePrettyPrint`)
 
 ## connie (2.1.0)
 
