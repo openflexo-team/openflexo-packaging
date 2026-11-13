@@ -36,6 +36,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Fixed: an annotation or another child written before an indented declaration no longer pushes the declaration to column 0 (P2PP-D-1)
 - Fixed: an element added by the model right after one written without its usual space is no longer glued to it; a role declared without `with` was saved as `nameXwith ConceptInstance()`, which could not be read again (CORE-D-60)
 - New: re-indentation of a parsed text, or of some of its rows, from the structure of the language: comments follow the block they are in, a statement written over several rows is indented one level more on its following rows, or aligned on the first argument of a parenthesis left open, nothing but the indentation changes (P2PP-F-1)
+- The scenarios of the test harness can have several steps on the same document
 
 ## connie (2.1.0)
 
@@ -111,6 +112,9 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Fixed: validating or printing a VirtualModel nobody edited no longer marks it modified, so the application no longer offers to save it (CORE-D-45)
 - FML specification: the workaround given for the ignored `where` of `begin match` was wrong (it let `end match … delete()` delete the instances meant to be kept) and is replaced (CORE-D-12)
 - Fixed: FML statements keep their meaning when a behaviour is built — unbraced statements nested in an `if/else`, the empty statement, `do … while`, compound assignments (`n += 2`), `n++` as a statement, `for` without condition or update; a statement that cannot be built is reported instead of dropped (CORE-D-46, CORE-D-6, CORE-D-7, CORE-D-9, CORE-D-18)
+- New test of the FML pretty-print on the FML examples of the test resources: the preserving pretty-print of an untouched source must be that source, and both pretty-prints must read back to the same model (it currently fails on 28 files, tolerated for now, see CORE-D-33 and CORE-D-63 to CORE-D-66)
+- The FML pretty-print tests (concepts, behaviours, imports, properties, invariants and the update from text) are also available as p2pp scenarios, with a small language of edits of FML
+- New generated edits of FML units (rename, abstract, visibility, body, properties, failure clauses) checked against the pretty-print
 
 ## openflexo-diagram
 
