@@ -128,6 +128,8 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - The FML pretty-print tests (concepts, behaviours, imports, properties, invariants and the update from text) are also available as p2pp scenarios, with a small language of edits of FML
 - New generated edits of FML units (rename, abstract, visibility, body, properties, failure clauses) checked against the pretty-print
 - A test of the rename of a VirtualModel no longer destroys a shared test fixture when run under Eclipse (CORE-D-72)
+- Fixed: an FML execution failure reaches the caller — a failing creation scheme fails the `new` and leaves no partly built instance, a failing listener fails the `fire`, a failing deletion scheme fails the `delete` (the instance is kept), and so does the `end match`; an invalid `if` / `while` / `for` condition is an error instead of being taken as true (CORE-D-47, CORE-D-8)
+- FML: a bare `new` of a concept that is not nested in the concept of the behaviour is reported as an invalid binding (it silently gave `null`); use `container.new`
 
 ## openflexo-diagram
 
@@ -135,6 +137,11 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Drop, link and draw-rectangle schemes keep their targets only as types (`targetType`, `fromType`, `toType`, `childrenType`): the former URI strings of the XML format are removed (CORE-F-8)
 - Fixed: a draw-rectangle scheme declaring a `targetType` was still taken as drawing at top level (CORE-F-8)
 - Fixed: loading the example diagrams and palettes of a diagram specification no longer marks them modified (CORE-D-45)
+- Deleting diagram elements stops when the deletion scheme of an instance fails: the instance and its shapes are kept, and the error is shown (CORE-D-47)
+
+## openflexo-integration-tests
+
+- Multi-process challenge: two behaviours of the Acme meta-model created their artifact with a bare `new`, which gave nothing; they use `container.new`
 
 ## openflexo-technology-adapters
 
