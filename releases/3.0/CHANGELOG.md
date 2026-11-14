@@ -15,6 +15,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Entities without XML mapping may share their simple name in a model (PAMELA-F-3)
 - `@Getter(ignoreForEquality)` is removed: equality compares every property that is neither derived nor transient (PAMELA-F-4)
 - Fixed: a model entity that failed to import broke every later import (PAMELA-D-5)
+- Fixed: `ModelExecutionException` lost the exception it wrapped and printed it (PAMELA-D-6)
 - Version 2.0, requires Java 17 or later; documentation updated
 
 ## openflexo-utils (2.0)
@@ -49,6 +50,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - `ClassScope` no longer uses a `SecurityManager` (replaced by `StackWalker`, which Java 24+ requires) (CONNIE-F-1)
 - Fixed: the text of a binding no longer keeps the former name of a renamed element (CONNIE-D-3)
 - New: a binding can be written back as it was written (`getPrettyPrint()`), its normalized text staying in `toString()` (CONNIE-F-3)
+- New: a strict evaluation mode, asked by the evaluation context, where a binding that cannot be evaluated fails instead of giving null; exceptions keep their message and their cause (CONNIE-F-4)
 
 ## gina (2.4)
 
