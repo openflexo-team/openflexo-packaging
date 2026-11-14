@@ -133,6 +133,8 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Fixed: after its block, the name of a local variable is the property of the same name again; redeclaring a visible local (in an inner block, the same block, or as a loop variable) is now reported by validation, as in Java (CORE-D-48)
 - Fixed: `new Child()` through a creation scheme inherited from the parent creates a `Child` (concepts and virtual models); default values of inherited properties are set (CORE-D-15, CORE-D-50)
 - Fixed: property declarations keep their initializer and cardinality; an edition action can initialize a property (`Person p = select unique Person from container;`), run when the instance is created; the printed text parses again (CORE-D-51, CORE-D-52)
+- FML execution failures carry their FML stack (behaviour, statement, line) and are reported by the action that started the execution, in the FML console or the log; a defect of the platform is told apart from an FML error; a bare `return` in a creation or a deletion scheme is no longer an error, a valued one in a creation scheme is; a loop variable no longer outlives a failing loop (CORE-F-11, CORE-D-76)
+  - For developers: `FMLExecutionException` moved to the package `org.openflexo.foundation.fml.rt.error`, with the typed FML errors (CORE-F-11)
 
 ## openflexo-diagram
 
@@ -195,6 +197,11 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - A shape annotated by an instance is no longer deleted with it (PPTX-F-5)
 - The slideshow view lets the module embedding it place the browser of the shown slide (PPTX-F-6)
 - Faster opening of a slideshow: the view of a slide is built when the slide is first shown (PPTX-F-7)
+- Fixed: deleting an instance pointing at slides or shapes could fail once its model slot was gone (PPTX-D-6)
+
+## openflexo-xml
+
+- Fixed: deleting an instance that plays an XML role failed once its model slot was gone (XML-D-1)
 
 ## Localization (several repositories)
 
