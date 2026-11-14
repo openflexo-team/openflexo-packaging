@@ -130,6 +130,9 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - A test of the rename of a VirtualModel no longer destroys a shared test fixture when run under Eclipse (CORE-D-72)
 - Fixed: an FML execution failure reaches the caller — a failing creation scheme fails the `new` and leaves no partly built instance, a failing listener fails the `fire`, a failing deletion scheme fails the `delete` (the instance is kept), and so does the `end match`; an invalid `if` / `while` / `for` condition is an error instead of being taken as true (CORE-D-47, CORE-D-8)
 - FML: a bare `new` of a concept that is not nested in the concept of the behaviour is reported as an invalid binding (it silently gave `null`); use `container.new`
+- Fixed: after its block, the name of a local variable is the property of the same name again; redeclaring a visible local (in an inner block, the same block, or as a loop variable) is now reported by validation, as in Java (CORE-D-48)
+- Fixed: `new Child()` through a creation scheme inherited from the parent creates a `Child` (concepts and virtual models); default values of inherited properties are set (CORE-D-15, CORE-D-50)
+- Fixed: property declarations keep their initializer and cardinality; an edition action can initialize a property (`Person p = select unique Person from container;`), run when the instance is created; the printed text parses again (CORE-D-51, CORE-D-52)
 
 ## openflexo-diagram
 
