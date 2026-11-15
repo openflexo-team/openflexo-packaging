@@ -92,6 +92,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Moved to the pamela 2.0 API (`PamelaProxies`)
 - GeomEdit: the contextual menu, and the save questions of the three diana editors, are translated
 - http-server: the REST routes `add-to-list` and `remove-from-list` of behaviours are removed (CORE-F-8)
+- http-server: a failing FML action (creating an instance, running a behaviour, a terminal command) answers a JSON error (kind, key, message, FML location and stack) with status 400 for an FML error, 500 for an internal error and 409 for a behaviour that is not enabled, and saves nothing (CORE-F-11)
 
 ## openflexo-core
 
@@ -143,6 +144,9 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Fixed: a failing action that changed nothing no longer undoes the previous action (a failing behaviour could delete the instance it ran on) (CORE-D-81)
 - The FML console records an FML failure with its kind (null reference, type error…, translated) and its FML stack; a failure is reported once, wherever it is received again (CORE-F-11)
 - Cancelling a behaviour called by another one (its parameters dialog) cancels the caller too: nothing is reported as an error (CORE-F-11)
+- fml-cli: a failing command reports its line (and its script, when run by `execute`), the kind of the error, its message and its FML stack; the interactive shell goes on after any failure; a failed assertion always gives a message (CORE-F-11)
+- fml-cli: `return` (with or without a value) ends a script successfully (CORE-F-11)
+- fml-cli: run headless with a script (`fml-cli script.fmlscript`), it exits with 0 on success, 1 on an FML error or a failed assertion, 2 on an invalid script, 3 on an internal error (CORE-F-11)
 
 ## openflexo-diagram
 
@@ -231,6 +235,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - The architecture, repository map, component versions and setup pages describe the new bottom layer (`openflexo-utils` 2.0) and the `p2pp` repository
 - The Downloads page lists the 3.0 snapshot installers and explains how to run them; the roadmap, FAQ and installation guide say that 2.99 is released and that 3.0 snapshots embed their own Java
 - The FML specification and the FML pages of the user guide state the strict evaluation of 3.0: an unresolved path or a null in a condition is an error, `&&` and `||` short-circuit (CORE-F-11)
+- The FML specification describes how an FML-script reports a failure, `return` in a script, and the exit codes of fml-cli (CORE-F-11)
 
 ## Build infrastructure
 
@@ -266,3 +271,4 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - FML editor: "Re-indent" (context menu, Cmd/Ctrl+I) re-indents the selected rows, or the whole text, from the structure of the FML (P2PP-F-1)
 - An FML error during an action is shown in a dialog: its kind, its message and its FML stack, with "Show in console" and "Open in the FML editor" at the line of the selected frame; the edits of the action are undone first; a defect of the platform proposes the bug report; a cancelled action shows nothing (CORE-F-11)
 - An FML failure started by the user interface itself (a button or a binding of a component, a listener) goes to the FML console only, once; the FML console opens the FML editor at the line of a failure (CORE-F-11)
+- The FML terminal describes a failing command with its kind and its FML stack, and goes on after any failure (CORE-F-11)
