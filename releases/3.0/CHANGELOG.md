@@ -51,6 +51,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Fixed: the text of a binding no longer keeps the former name of a renamed element (CONNIE-D-3)
 - New: a binding can be written back as it was written (`getPrettyPrint()`), its normalized text staying in `toString()` (CONNIE-F-3)
 - New: a strict evaluation mode, asked by the evaluation context, where a binding that cannot be evaluated fails instead of giving null; exceptions keep their message and their cause (CONNIE-F-4)
+- A failure of Java code called from an expression is no longer printed by Connie before it reaches the caller (CONNIE-F-4)
 
 ## gina (2.4)
 
@@ -137,6 +138,8 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Fixed: property declarations keep their initializer and cardinality; an edition action can initialize a property (`Person p = select unique Person from container;`), run when the instance is created; the printed text parses again (CORE-D-51, CORE-D-52)
 - FML execution failures carry their FML stack (behaviour, statement, line) and are reported by the action that started the execution, in the FML console or the log; a defect of the platform is told apart from an FML error; a bare `return` in a creation or a deletion scheme is no longer an error, a valued one in a creation scheme is; a loop variable no longer outlives a failing loop (CORE-F-11, CORE-D-76)
   - For developers: `FMLExecutionException` moved to the package `org.openflexo.foundation.fml.rt.error`, with the typed FML errors (CORE-F-11)
+- FML evaluation is strict: an expression that does not resolve, goes through `null` (in conditions too: `if`, loops, `where`, `@Enable`) or makes Java code fail is an error of its kind (null reference, resolution, type, host…) with its FML location, no longer a silent `null` or `false`; `&&` and `||` short-circuit, so a null check can guard a condition (CORE-F-11, CORE-D-75, CORE-D-77, CORE-D-78, CORE-D-79)
+- Fixed: a failing action that changed nothing no longer undoes the previous action (a failing behaviour could delete the instance it ran on) (CORE-D-81)
 
 ## openflexo-diagram
 
@@ -149,10 +152,13 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 ## openflexo-integration-tests
 
 - Multi-process challenge: two behaviours of the Acme meta-model created their artifact with a bare `new`, which gave nothing; they use `container.new`
+- The FML of city-mapping and multi-process-challenge checks for null where a null used to be taken as false (CORE-F-11)
 
 ## openflexo-technology-adapters
 
 - The template VirtualModel of the XX adapter is written in textual FML, with a script that runs it (CORE-F-8)
+- For developers: the edition actions of the technology adapters declare `FMLExecutionException` where the core helpers now throw it (CORE-F-11)
+- For developers: the REST and JDBC concept instances override the strict property accessors, so that FML execution reaches their mapping (CORE-F-11)
 
 ## openflexo-jdbc
 
@@ -220,6 +226,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - The user guide gains the FML specification, generated from the one maintained with the core
 - The architecture, repository map, component versions and setup pages describe the new bottom layer (`openflexo-utils` 2.0) and the `p2pp` repository
 - The Downloads page lists the 3.0 snapshot installers and explains how to run them; the roadmap, FAQ and installation guide say that 2.99 is released and that 3.0 snapshots embed their own Java
+- The FML specification and the FML pages of the user guide state the strict evaluation of 3.0: an unresolved path or a null in a condition is an error, `&&` and `||` short-circuit (CORE-F-11)
 
 ## Build infrastructure
 
