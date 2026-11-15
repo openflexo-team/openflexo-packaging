@@ -71,6 +71,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Swing components follow the language and the edition of a translation without a restart: the menus, labels, buttons, tooltips and titles of the editors and of the print preview, and every FIB view (GINA-F-3)
 - The Metaphase HTML editor (toolbar, link, image, table, find/replace and about dialogs) is translated (GINA-F-3)
 - A localizer can rely on several parent dictionaries, and a new entry can be created in the dictionary of a given context; an installation no longer creates entries for unknown keys, it shows the key read as English words (GINA-F-2)
+- A failure of model code invoked by a widget (a button, setting a value, click and value-changed actions, table and browser actions) is handed to the controller (`FIBController.handleException`) instead of being printed (CORE-F-11)
 
 ## openflexo-buildplugin
 
@@ -140,6 +141,8 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
   - For developers: `FMLExecutionException` moved to the package `org.openflexo.foundation.fml.rt.error`, with the typed FML errors (CORE-F-11)
 - FML evaluation is strict: an expression that does not resolve, goes through `null` (in conditions too: `if`, loops, `where`, `@Enable`) or makes Java code fail is an error of its kind (null reference, resolution, type, host…) with its FML location, no longer a silent `null` or `false`; `&&` and `||` short-circuit, so a null check can guard a condition (CORE-F-11, CORE-D-75, CORE-D-77, CORE-D-78, CORE-D-79)
 - Fixed: a failing action that changed nothing no longer undoes the previous action (a failing behaviour could delete the instance it ran on) (CORE-D-81)
+- The FML console records an FML failure with its kind (null reference, type error…, translated) and its FML stack; a failure is reported once, wherever it is received again (CORE-F-11)
+- Cancelling a behaviour called by another one (its parameters dialog) cancels the caller too: nothing is reported as an error (CORE-F-11)
 
 ## openflexo-diagram
 
@@ -148,6 +151,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Fixed: a draw-rectangle scheme declaring a `targetType` was still taken as drawing at top level (CORE-F-8)
 - Fixed: loading the example diagrams and palettes of a diagram specification no longer marks them modified (CORE-D-45)
 - Deleting diagram elements stops when the deletion scheme of an instance fails: the instance and its shapes are kept, and the error is shown (CORE-D-47)
+- A failing drop, link or draw-rectangle scheme is reported as an FML error like any action (no more "not implemented yet" message), and the diagram tools no longer go on as if it had succeeded (CORE-F-11)
 
 ## openflexo-integration-tests
 
@@ -260,3 +264,5 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Faster loading of modules using diagrams: the floating Diana inspectors are built when first opened (UI-F-2)
 - Faster project opening: virtual models and instances are validated in the background, their error reports appearing a moment later (UI-F-2)
 - FML editor: "Re-indent" (context menu, Cmd/Ctrl+I) re-indents the selected rows, or the whole text, from the structure of the FML (P2PP-F-1)
+- An FML error during an action is shown in a dialog: its kind, its message and its FML stack, with "Show in console" and "Open in the FML editor" at the line of the selected frame; the edits of the action are undone first; a defect of the platform proposes the bug report; a cancelled action shows nothing (CORE-F-11)
+- An FML failure started by the user interface itself (a button or a binding of a component, a listener) goes to the FML console only, once; the FML console opens the FML editor at the line of a failure (CORE-F-11)
