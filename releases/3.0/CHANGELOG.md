@@ -72,6 +72,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - The Metaphase HTML editor (toolbar, link, image, table, find/replace and about dialogs) is translated (GINA-F-3)
 - A localizer can rely on several parent dictionaries, and a new entry can be created in the dictionary of a given context; an installation no longer creates entries for unknown keys, it shows the key read as English words (GINA-F-2)
 - A failure of model code invoked by a widget (a button, setting a value, click and value-changed actions, table and browser actions) is handed to the controller (`FIBController.handleException`) instead of being printed (CORE-F-11)
+- A disabled browser element greys its label only: its icon keeps its colours
 
 ## openflexo-buildplugin
 
@@ -344,3 +345,4 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - An FML error during an action is shown in a dialog: its kind, its message and its FML stack, with "Show in console" and "Open in the FML editor" at the line of the selected frame; the edits of the action are undone first; a defect of the platform proposes the bug report; a cancelled action shows nothing (CORE-F-11)
 - An FML failure started by the user interface itself (a button or a binding of a component, a listener) goes to the FML console only, once; the FML console opens the FML editor at the line of a failure (CORE-F-11)
 - The FML terminal describes a failing command with its kind and its FML stack, and goes on after any failure (CORE-F-11)
+- Resource browsers: a modified resource is shown with a "> " before its name (the resource notifies its modified state to the bindings); an unloaded resource keeps its icon in colour, only its name is greyed
