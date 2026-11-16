@@ -147,6 +147,9 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - fml-cli: a failing command reports its line (and its script, when run by `execute`), the kind of the error, its message and its FML stack; the interactive shell goes on after any failure; a failed assertion always gives a message (CORE-F-11)
 - fml-cli: `return` (with or without a value) ends a script successfully (CORE-F-11)
 - fml-cli: run headless with a script (`fml-cli script.fmlscript`), it exits with 0 on success, 1 on an FML error or a failed assertion, 2 on an invalid script, 3 on an internal error (CORE-F-11)
+- `select unique` that finds several instances is an error (cardinality), no longer one of them; a `select` from a null model is an error (null reference), no longer an empty list (CORE-F-11)
+- The FML technology adapter (`CreateFlexoConcept`, `CreateFlexoBehaviour`, the role creations…) and resource creations raise typed errors instead of returning null; a creation through a technology action whose creation scheme fails, or is cancelled, leaves no partly built instance (CORE-F-11, CORE-D-73)
+- Fixed: `FMLRT::NewInstance` runs the creation scheme once, with its arguments, and no longer leaves an extra instance in the model (CORE-D-84)
 
 ## openflexo-diagram
 
@@ -156,6 +159,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Fixed: loading the example diagrams and palettes of a diagram specification no longer marks them modified (CORE-D-45)
 - Deleting diagram elements stops when the deletion scheme of an instance fails: the instance and its shapes are kept, and the error is shown (CORE-D-47)
 - A failing drop, link or draw-rectangle scheme is reported as an FML error like any action (no more "not implemented yet" message), and the diagram tools no longer go on as if it had succeeded (CORE-F-11)
+- The diagram edition actions raise typed FML errors (no container, no common ancestor to the shapes of a connector, no graphical feature…) instead of returning null after a warning (DIAGRAM-F-1, CORE-F-11)
 
 ## openflexo-integration-tests
 
@@ -167,10 +171,12 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - The template VirtualModel of the XX adapter is written in textual FML, with a script that runs it (CORE-F-8)
 - For developers: the edition actions of the technology adapters declare `FMLExecutionException` where the core helpers now throw it (CORE-F-11)
 - For developers: the REST and JDBC concept instances override the strict property accessors, so that FML execution reaches their mapping (CORE-F-11)
+- The DSL and XX template edition actions and selects raise typed FML errors; adding a DSL link returns the link (TA-F-1, CORE-F-11)
 
 ## openflexo-jdbc
 
 - Declares the javassist version Hibernate needs on Java 17 (pamela no longer brings it)
+- The JDBC and Hibernate edition actions and selects raise typed FML errors (null table or connection, unknown column, failing query or transaction…) instead of returning null after a warning; the creation scheme of a Hibernate object creation now runs, and its failure leaves no object (JDBC-F-1, CORE-F-11, CORE-D-73)
 
 ## formod
 
@@ -180,6 +186,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - The test suites run again (dependency on the generated SableCC parser declared)
 - New test of the B pretty-print on every B component of the test resource centers: the preserving pretty-print of an untouched source is the source, and both pretty-prints read back to the same model
 - New generated edits of the B components (add, remove, move, rename sets, constants and variables) checked against the pretty-print
+- The B edition actions raise typed FML errors (missing name, operand or component, unknown operator, a text that is not an integer…) instead of returning null after a warning; a text that is not B still gives no predicate, as the B methodology expects (FORMOD-F-5, CORE-F-11)
 
 ## free-modelling-editor
 
@@ -193,6 +200,10 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - PowerPoint extension: annotate the shapes of an existing slideshow as instances of new or existing concepts, without modifying it; a slideshow is annotated once per project, with a vocabulary shared by all its slideshows (FME-F-2)
 - Fixed: instantiating a free model offered the free models of the other technologies (FME-F-2)
 - The project panel offers one button per technology (new diagram, annotate a PowerPoint slideshow); the inactive import buttons are removed (FME-F-1)
+
+## openflexo-docx
+
+- The DocX edition actions raise typed FML errors (a generated part not found in the document, a role without actor, a document that cannot be created or loaded…) instead of returning null after a warning (DOCX-F-1, CORE-F-11)
 
 ## openflexo-pptx
 
@@ -214,10 +225,64 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - The slideshow view lets the module embedding it place the browser of the shown slide (PPTX-F-6)
 - Faster opening of a slideshow: the view of a slide is built when the slide is first shown (PPTX-F-7)
 - Fixed: deleting an instance pointing at slides or shapes could fail once its model slot was gone (PPTX-D-6)
+- The PowerPoint edition actions and selects raise typed FML errors (null slideshow or slide) instead of returning null after a warning (PPTX-F-8, CORE-F-11)
+
+## openflexo-xlsx
+
+- The Excel edition actions and selects raise typed FML errors (null sheet, row or name, refused merge, failing workbook creation…) instead of returning null after a warning; `createReflectedInstance` raises an error for an unknown concept or a missing sheet; a reflected cell whose content does not fit its property is a type error (XLSX-F-2, CORE-F-11)
+
+## openflexo-rest
+
+- The failures of a REST select (unreachable server, HTTP error, bad credentials, a concept without endpoint…) are typed FML errors naming the call and the access point, instead of untyped errors or a null result; the access point is loaded when a select needs it (REST-F-1, CORE-F-11)
+
+## openflexo-owl
+
+- The OWL edition actions and selects raise typed FML errors (no ontology, duplicate URI, a statement without subject or object…) instead of returning null after a warning (OWL-F-1, CORE-F-11)
+
+## openflexo-csv
+
+- The CSV edition actions and selects raise typed FML errors (null document, row or index, a failing creation…) instead of returning null after a warning (CSV-F-1, CORE-F-11)
+
+## openflexo-emf
+
+- The EMF edition actions and selects raise typed FML errors (no model, a new enumeration value, a failing creation…) instead of returning null after a warning (EMF-F-1, CORE-F-11)
+
+## openflexo-json
+
+- The JSON edition actions and selects raise typed FML errors (null content or document, unsupported content) instead of internal errors or an empty result (JSON-F-1, CORE-F-11)
+
+## openflexo-markdown
+
+- The Markdown edition actions and selects raise typed FML errors (null document, a document that cannot be created) instead of returning null after a warning (MARKDOWN-F-1, CORE-F-11)
+
+## openflexo-opc-ua
+
+- Reading an OPC UA value raises typed FML errors (null node, a node that is not a variable, a read refused by the server) instead of returning null after a warning (OPCUA-F-1, CORE-F-11)
+
+## openflexo-capella
+
+- The Capella edition actions and selects raise typed FML errors instead of returning null (CAPELLA-F-1, CORE-F-11)
+
+## openflexo-kafka
+
+- The Kafka edition actions raise typed FML errors (null server or consumer, a record refused) instead of returning null after a warning (KAFKA-F-1, CORE-F-11)
+
+## openflexo-oslc
+
+- The OSLC edition actions evaluate their expressions strictly (OSLC-F-1, CORE-F-11)
+
+## openflexo-gina
+
+- Configuring an FML-controlled user interface raises typed FML errors (no template, a template that cannot be loaded) instead of returning null after a warning (GINATA-F-1, CORE-F-11)
+
+## openflexo-odt
+
+- The ODT edition actions declare their FML errors (ODT-F-1, CORE-F-11)
 
 ## openflexo-xml
 
 - Fixed: deleting an instance that plays an XML role failed once its model slot was gone (XML-D-1)
+- The XML edition actions and selects raise typed FML errors (null model, metamodel or root, duplicate or missing URI…) instead of returning null after a warning; the condition of an ontology assertion (XML, EMF, OWL individuals) that fails or is null is an error, no longer taken as true (XML-F-1, CORE-F-11)
 
 ## Localization (several repositories)
 
