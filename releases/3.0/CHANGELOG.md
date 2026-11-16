@@ -149,6 +149,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - fml-cli: `return` (with or without a value) ends a script successfully (CORE-F-11)
 - fml-cli: run headless with a script (`fml-cli script.fmlscript`), it exits with 0 on success, 1 on an FML error or a failed assertion, 2 on an invalid script, 3 on an internal error (CORE-F-11)
 - FML exceptions: `exception` declares an exception (a concept), `throw` raises it, `try … catch … finally` handles it or any FML runtime error by its type (`FMLError`, `FMLNullReferenceError`…); a defect of the platform and a cancellation are never caught; a caught error is not reported (CORE-F-11)
+- FML behaviours declare the exceptions they let go (`throws`); as in Java, an exception defined in FML must be caught or declared, which the validation checks (CORE-F-11)
 - fml-cli: a failed `assert` is an FML error of kind "Assertion failed" (CORE-F-11)
 - `select unique` that finds several instances is an error (cardinality), no longer one of them; a `select` from a null model is an error (null reference), no longer an empty list (CORE-F-11)
 - The FML technology adapter (`CreateFlexoConcept`, `CreateFlexoBehaviour`, the role creations…) and resource creations raise typed errors instead of returning null; a creation through a technology action whose creation scheme fails, or is cancelled, leaves no partly built instance (CORE-F-11, CORE-D-73)
@@ -306,7 +307,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - The Downloads page lists the 3.0 snapshot installers and explains how to run them; the roadmap, FAQ and installation guide say that 2.99 is released and that 3.0 snapshots embed their own Java
 - The FML specification and the FML pages of the user guide state the strict evaluation of 3.0: an unresolved path or a null in a condition is an error, `&&` and `||` short-circuit (CORE-F-11)
 - The FML specification describes how an FML-script reports a failure, `return` in a script, and the exit codes of fml-cli (CORE-F-11)
-- The FML specification describes exceptions, `throw` and `try … catch … finally` (CORE-F-11)
+- The FML specification describes exceptions, `throw`, `try … catch … finally` and `throws` (CORE-F-11)
 
 ## Build infrastructure
 
