@@ -93,6 +93,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - GeomEdit: the contextual menu, and the save questions of the three diana editors, are translated
 - http-server: the REST routes `add-to-list` and `remove-from-list` of behaviours are removed (CORE-F-8)
 - http-server: a failing FML action (creating an instance, running a behaviour, a terminal command) answers a JSON error (kind, key, message, FML location and stack) with status 400 for an FML error, 500 for an internal error and 409 for a behaviour that is not enabled, and saves nothing (CORE-F-11)
+- http-server: a failed assertion of the terminal answers the kind "Assertion failed" (CORE-F-11)
 
 ## openflexo-core
 
@@ -147,6 +148,8 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - fml-cli: a failing command reports its line (and its script, when run by `execute`), the kind of the error, its message and its FML stack; the interactive shell goes on after any failure; a failed assertion always gives a message (CORE-F-11)
 - fml-cli: `return` (with or without a value) ends a script successfully (CORE-F-11)
 - fml-cli: run headless with a script (`fml-cli script.fmlscript`), it exits with 0 on success, 1 on an FML error or a failed assertion, 2 on an invalid script, 3 on an internal error (CORE-F-11)
+- FML exceptions: `exception` declares an exception (a concept), `throw` raises it, `try … catch … finally` handles it or any FML runtime error by its type (`FMLError`, `FMLNullReferenceError`…); a defect of the platform and a cancellation are never caught; a caught error is not reported (CORE-F-11)
+- fml-cli: a failed `assert` is an FML error of kind "Assertion failed" (CORE-F-11)
 - `select unique` that finds several instances is an error (cardinality), no longer one of them; a `select` from a null model is an error (null reference), no longer an empty list (CORE-F-11)
 - The FML technology adapter (`CreateFlexoConcept`, `CreateFlexoBehaviour`, the role creations…) and resource creations raise typed errors instead of returning null; a creation through a technology action whose creation scheme fails, or is cancelled, leaves no partly built instance (CORE-F-11, CORE-D-73)
 - Fixed: `FMLRT::NewInstance` runs the creation scheme once, with its arguments, and no longer leaves an extra instance in the model (CORE-D-84)
@@ -187,6 +190,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - New test of the B pretty-print on every B component of the test resource centers: the preserving pretty-print of an untouched source is the source, and both pretty-prints read back to the same model
 - New generated edits of the B components (add, remove, move, rename sets, constants and variables) checked against the pretty-print
 - The B edition actions raise typed FML errors (missing name, operand or component, unknown operator, a text that is not an integer…) instead of returning null after a warning; a text that is not B still gives no predicate, as the B methodology expects (FORMOD-F-5, CORE-F-11)
+- A text that is not B is an error, which the B methodology catches (FORMOD-F-5, CORE-F-11)
 
 ## free-modelling-editor
 
@@ -274,6 +278,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 ## openflexo-gina
 
 - Configuring an FML-controlled user interface raises typed FML errors (no template, a template that cannot be loaded) instead of returning null after a warning (GINATA-F-1, CORE-F-11)
+- A missing template of an FML-controlled user interface is an error, no longer an instance without user interface (GINATA-F-1, CORE-F-11)
 
 ## openflexo-odt
 
@@ -301,6 +306,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - The Downloads page lists the 3.0 snapshot installers and explains how to run them; the roadmap, FAQ and installation guide say that 2.99 is released and that 3.0 snapshots embed their own Java
 - The FML specification and the FML pages of the user guide state the strict evaluation of 3.0: an unresolved path or a null in a condition is an error, `&&` and `||` short-circuit (CORE-F-11)
 - The FML specification describes how an FML-script reports a failure, `return` in a script, and the exit codes of fml-cli (CORE-F-11)
+- The FML specification describes exceptions, `throw` and `try … catch … finally` (CORE-F-11)
 
 ## Build infrastructure
 
