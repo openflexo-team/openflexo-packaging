@@ -98,6 +98,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 
 ## openflexo-core
 
+- A resource whose VirtualModel, required resource or technology adapter cannot be found is marked as in error at the resource layer, without being loaded (red cross in the browsers, message in the tooltip, listed by Validate project), instead of opening a modal dialog (CORE-F-13)
 - Fixed: saving an FML unit no longer rewrites the expressions and types nobody edited: spacing, parentheses, qualified names, `log("x")`, argument and `where` lists and annotation values stay as written (CORE-D-33, CORE-D-65)
 - An expression typed in an inspector is written in the FML text as it was typed (`1+2`, not `1 + 2`) (CORE-D-33, CONNIE-F-3)
 - Fixed: a renamed concept, constructor or property is written with its new name in the expressions that use it, in the FML text and in the text of the bindings, also after several renames (CORE-D-67)
@@ -324,6 +325,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 
 ## openflexo-ui
 
+- Validate project is also available from the contextual menu of the project (CORE-F-13)
 - The application starts on Java runtimes without a `jmods` directory (JDK 25, some JREs); the class completion of the FML editor reads the runtime image (UI-D-3)
 - All repositories build with Gradle 9.8.2 (wrapper); the dependency helpers of the build plugin are no longer a project convention (`openflexo(name)` is `openflexoModule(name)`), the applications declare `application { mainClass }`
 - SableCC plugin 1.4.0: works with Gradle 9, and a parser can be generated several times in a row without error (SABLECC-D-1)
