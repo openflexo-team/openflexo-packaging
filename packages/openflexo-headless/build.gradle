@@ -1,6 +1,8 @@
 dependencies {
     // embed FML command-line interpreter
     runtimeOnly fmlCli()
+    // implementation of the resources (CompilationUnitResourceImpl...), not brought by fml-cli
+    runtimeOnly flexoFoundationRm()
     //runtimeOnly openflexoModule("fml-cli")
 
     // technology adapters
@@ -31,4 +33,33 @@ jpackage {
     iconMac = file('src/main/resources/Icons/IconOpenflexo.icns')
     iconWindows = file('src/main/resources/Icons/Openflexo.ico')
     console = true
+}
+
+// Migration of the FML of resource centers to the current notation of the arguments of a behaviour (CORE-F-14). Dry run by default:
+//   ./gradlew :openflexo-packaging:packages:openflexo-headless:migrateLegacyParameters -Proots=/a/resources,/b/resources [-Pskip=Fragment,Other] [-Papply=true]
+// the technology adapters that the headless package does not embed but whose FML must be loaded to be migrated
+configurations {
+    legacyParametersMigration {
+        canBeConsumed = false
+        canBeResolved = true
+    }
+}
+dependencies {
+    legacyParametersMigration csvConnector()
+    legacyParametersMigration jsonConnector()
+    legacyParametersMigration markdownConnector()
+    legacyParametersMigration restConnector()
+    legacyParametersMigration opcUaConnector()
+    legacyParametersMigration oslcConnector()
+    legacyParametersMigration javaConnector()
+    legacyParametersMigration xxConnector()
+    legacyParametersMigration openflexoModule("b-ta")
+}
+tasks.register('migrateLegacyParameters', JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath + configurations.legacyParametersMigration
+    mainClass = 'org.openflexo.foundation.fml.cli.tools.MigrateLegacyParametersNotation'
+    jvmArgs += ['-Djava.awt.headless=true']
+    def rootList = (project.findProperty('roots') ?: '').toString().split(',').findAll { it }
+    def skipList = (project.findProperty('skip') ?: '').toString().split(',').findAll { it }.collect { '--skip=' + it }
+    args = (project.findProperty('apply') == 'true' ? ['--apply'] : []) + skipList + rootList
 }

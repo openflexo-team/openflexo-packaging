@@ -95,6 +95,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - http-server: the REST routes `add-to-list` and `remove-from-list` of behaviours are removed (CORE-F-8)
 - http-server: a failing FML action (creating an instance, running a behaviour, a terminal command) answers a JSON error (kind, key, message, FML location and stack) with status 400 for an FML error, 500 for an internal error and 409 for a behaviour that is not enabled, and saves nothing (CORE-F-11)
 - http-server: a failed assertion of the terminal answers the kind "Assertion failed" (CORE-F-11)
+- http-server: an assignation of a behaviour accepts the name of an argument and `this.name` for a property (CORE-F-14)
 
 ## openflexo-core
 
@@ -156,6 +157,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - `select unique` that finds several instances is an error (cardinality), no longer one of them; a `select` from a null model is an error (null reference), no longer an empty list (CORE-F-11)
 - The FML technology adapter (`CreateFlexoConcept`, `CreateFlexoBehaviour`, the role creations…) and resource creations raise typed errors instead of returning null; a creation through a technology action whose creation scheme fails, or is cancelled, leaves no partly built instance (CORE-F-11, CORE-D-73)
 - Fixed: `FMLRT::NewInstance` runs the creation scheme once, with its arguments, and no longer leaves an extra instance in the model (CORE-D-84)
+- The argument of a behaviour is designated by its name (`label`, not `parameters.label`), like a local variable, and can be assigned; it hides a property of the same name (`this.label` reaches the property). `parameters.label` still works but is reported as deprecated by the validation, with a fix; a local variable named like an argument is an error. A migration tool rewrites the FML of resource centers (`label = parameters.label;` becomes `this.label = label;`), and the generators of FML write the new notation (CORE-F-14)
 
 ## openflexo-diagram
 
@@ -166,6 +168,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Deleting diagram elements stops when the deletion scheme of an instance fails: the instance and its shapes are kept, and the error is shown (CORE-D-47)
 - A failing drop, link or draw-rectangle scheme is reported as an FML error like any action (no more "not implemented yet" message), and the diagram tools no longer go on as if it had succeeded (CORE-F-11)
 - The diagram edition actions raise typed FML errors (no container, no common ancestor to the shapes of a connector, no graphical feature…) instead of returning null after a warning (DIAGRAM-F-1, CORE-F-11)
+- The FML generated for a diagram concept uses the name of the argument, and `this.` for the property it assigns (CORE-F-14)
 
 ## openflexo-integration-tests
 
@@ -183,6 +186,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 
 - Declares the javassist version Hibernate needs on Java 17 (pamela no longer brings it)
 - The JDBC and Hibernate edition actions and selects raise typed FML errors (null table or connection, unknown column, failing query or transaction…) instead of returning null after a warning; the creation scheme of a Hibernate object creation now runs, and its failure leaves no object (JDBC-F-1, CORE-F-11, CORE-D-73)
+- The FML generated for a JDBC mapping uses the name of the argument, and `this.` for the property it assigns (CORE-F-14)
 
 ## formod
 
@@ -207,6 +211,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - PowerPoint extension: annotate the shapes of an existing slideshow as instances of new or existing concepts, without modifying it; a slideshow is annotated once per project, with a vocabulary shared by all its slideshows (FME-F-2)
 - Fixed: instantiating a free model offered the free models of the other technologies (FME-F-2)
 - The project panel offers one button per technology (new diagram, annotate a PowerPoint slideshow); the inactive import buttons are removed (FME-F-1)
+- The FML generated for a free model uses the name of the argument, and `this.` for the property it assigns (CORE-F-14)
 
 ## openflexo-docx
 
@@ -282,6 +287,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 
 - Configuring an FML-controlled user interface raises typed FML errors (no template, a template that cannot be loaded) instead of returning null after a warning (GINATA-F-1, CORE-F-11)
 - A missing template of an FML-controlled user interface is an error, no longer an instance without user interface (GINATA-F-1, CORE-F-11)
+- The FML generated for a controlled FIB uses the name of the argument, and `this.` for the property it assigns (CORE-F-14)
 
 ## openflexo-odt
 
@@ -322,6 +328,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - docx: docx4j 17 (was 6.1.2), JAXB on Jakarta
 - jdbc: Hibernate 6.6 (was 5.2), Jakarta Persistence
 - xlsx, pptx, diagram: Apache POI 5.5 (was 3.17), also for the import of binary PowerPoint slides
+- openflexo-headless: the package embeds `flexo-foundation-rm` (the FML resources could not be loaded without it), and has a `migrateLegacyParameters` task that migrates FML to the new notation of the arguments of a behaviour (CORE-F-14)
 
 ## openflexo-ui
 
