@@ -161,6 +161,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 
 ## openflexo-diagram
 
+- The pretty-print test of the diagram model slot expects the current node positions and the current FML of its resource again
 - The model of the FML class diagram (Modeller) is migrated to textual FML and runs again (CORE-F-8)
 - Drop, link and draw-rectangle schemes keep their targets only as types (`targetType`, `fromType`, `toType`, `childrenType`): the former URI strings of the XML format are removed (CORE-F-8)
 - Fixed: a draw-rectangle scheme declaring a `targetType` was still taken as drawing at top level (CORE-F-8)
@@ -266,6 +267,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 ## openflexo-markdown
 
 - The Markdown edition actions and selects raise typed FML errors (null document, a document that cannot be created) instead of returning null after a warning (MARKDOWN-F-1, CORE-F-11)
+- The Markdown test model queries headings and paragraphs with `select ... from`, so the edition-actions script runs again
 
 ## openflexo-opc-ua
 
