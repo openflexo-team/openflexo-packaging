@@ -10,6 +10,8 @@ Status legend: `TODO` · `IN PROGRESS` · `BLOCKED` · `DONE` · `DEFERRED`.
 
 ### PKG-F-1 — Native installers with jpackage  ·  `DONE` (2026-10-24), follow-ups open
 
+**GitHub:** [openflexo-team/openflexo-packaging#1](https://github.com/openflexo-team/openflexo-packaging/issues/1)
+
 **Problem.** The installers of 2.99 came from a Maven + Ant chain (launch4j, appbundler, no Java runtime, Java 8 only).
 
 **Done.** `jpackage` blocks in the application packages (see `README.md`), a GitHub Actions workflow building Linux (`.deb`, `.rpm`,
@@ -27,6 +29,8 @@ publication: `3.0-SNAPSHOT/2026-10-24`.
 - **Run the workflow without a person**: a trigger on a tag or a schedule, then the PUBLISH job.
 
 ### PKG-F-2 — Remove what is left of the Maven world  ·  `TODO`
+
+**GitHub:** [openflexo-team/openflexo-packaging#2](https://github.com/openflexo-team/openflexo-packaging/issues/2)
 
 **Problem.** The `pom.xml` files of the workspace were removed on 3.0, but four remain, and the repository that fed the former chain too.
 
