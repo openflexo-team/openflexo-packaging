@@ -161,6 +161,8 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - The argument of a behaviour is designated by its name (`label`, not `parameters.label`), like a local variable, and can be assigned; it hides a property of the same name (`this.label` reaches the property). `parameters.label` still works but is reported as deprecated by the validation, with a fix; a local variable named like an argument is an error. A migration tool rewrites the FML of resource centers (`label = parameters.label;` becomes `this.label = label;`), and the generators of FML write the new notation (CORE-F-14)
 - Fixed: a `match … where (…)` criterion that is not a property of the matched concept is reported by the validation and by the execution (an FML error instead of a `NullPointerException`), and `selected.x = …` gets an explicit syntax message (CORE-D-88)
 - Renamed: the Java base exception `FlexoException` is now `OpenflexoRuntimeException`, and the FML exception concept `FlexoExceptionConcept` is now `FlexoException` (the name no longer clashes)
+- A `new` finds its container by climbing the containment tree: from a `ConceptB` nested in a `ConceptA`, `new ConceptA()` creates the instance in the model and `new ConceptB()` a sibling; `c.new X()` climbs from `c`. The same for root concepts and virtual models nested in another one; an event or an exception stays in the model instance it is fired from (CORE-F-18)
+- Fixed: a concept of a child virtual model instantiates a concept inherited from the parent virtual model (CORE-D-89)
 
 ## openflexo-diagram
 
