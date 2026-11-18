@@ -52,6 +52,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - New: a binding can be written back as it was written (`getPrettyPrint()`), its normalized text staying in `toString()` (CONNIE-F-3)
 - New: a strict evaluation mode, asked by the evaluation context, where a binding that cannot be evaluated fails instead of giving null; exceptions keep their message and their cause (CONNIE-F-4)
 - A failure of Java code called from an expression is no longer printed by Connie before it reaches the caller (CONNIE-F-4)
+- Fixed: a property initialised with a diamond (`new HashMap<>()`) no longer fails with an `ArrayIndexOutOfBoundsException` (CORE-D-87)
 
 ## gina (2.4)
 
@@ -158,6 +159,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - The FML technology adapter (`CreateFlexoConcept`, `CreateFlexoBehaviour`, the role creations…) and resource creations raise typed errors instead of returning null; a creation through a technology action whose creation scheme fails, or is cancelled, leaves no partly built instance (CORE-F-11, CORE-D-73)
 - Fixed: `FMLRT::NewInstance` runs the creation scheme once, with its arguments, and no longer leaves an extra instance in the model (CORE-D-84)
 - The argument of a behaviour is designated by its name (`label`, not `parameters.label`), like a local variable, and can be assigned; it hides a property of the same name (`this.label` reaches the property). `parameters.label` still works but is reported as deprecated by the validation, with a fix; a local variable named like an argument is an error. A migration tool rewrites the FML of resource centers (`label = parameters.label;` becomes `this.label = label;`), and the generators of FML write the new notation (CORE-F-14)
+- Fixed: a `match … where (…)` criterion that is not a property of the matched concept is reported by the validation and by the execution (an FML error instead of a `NullPointerException`), and `selected.x = …` gets an explicit syntax message (CORE-D-88)
 
 ## openflexo-diagram
 
