@@ -160,6 +160,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Fixed: `FMLRT::NewInstance` runs the creation scheme once, with its arguments, and no longer leaves an extra instance in the model (CORE-D-84)
 - The argument of a behaviour is designated by its name (`label`, not `parameters.label`), like a local variable, and can be assigned; it hides a property of the same name (`this.label` reaches the property). `parameters.label` still works but is reported as deprecated by the validation, with a fix; a local variable named like an argument is an error. A migration tool rewrites the FML of resource centers (`label = parameters.label;` becomes `this.label = label;`), and the generators of FML write the new notation (CORE-F-14)
 - Fixed: a `match … where (…)` criterion that is not a property of the matched concept is reported by the validation and by the execution (an FML error instead of a `NullPointerException`), and `selected.x = …` gets an explicit syntax message (CORE-D-88)
+- Renamed: the Java base exception `FlexoException` is now `OpenflexoRuntimeException`, and the FML exception concept `FlexoExceptionConcept` is now `FlexoException` (the name no longer clashes)
 
 ## openflexo-diagram
 
