@@ -163,6 +163,10 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Renamed: the Java base exception `FlexoException` is now `OpenflexoRuntimeException`, and the FML exception concept `FlexoExceptionConcept` is now `FlexoException` (the name no longer clashes)
 - A `new` finds its container by climbing the containment tree: from a `ConceptB` nested in a `ConceptA`, `new ConceptA()` creates the instance in the model and `new ConceptB()` a sibling; `c.new X()` climbs from `c`. The same for root concepts, events, exceptions and virtual models nested in another one (CORE-F-18)
 - Fixed: a concept of a child virtual model instantiates a concept inherited from the parent virtual model (CORE-D-89)
+- A concept now has a single container (the concept it is declared in, or its virtual model); the former owner / embedded-concepts accessors are deprecated. `inside X` naming a concept of another unit is reported as an error (CORE-F-19, in progress)
+- Fixed: closing a project no longer fails on a missing root folder of the VirtualModel instance repository, which left its resources open (CORE-D-92)
+- Fixed: opening a project again after closing it no longer shows its resources twice in the browser (CORE-D-93)
+- A project cannot be created inside another project
 
 ## openflexo-diagram
 
@@ -313,6 +317,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Removed: stray entries (temporary paths, ontology URIs) from the OWL dictionary
 - Removed: about 190 entries copied from the shared dictionary into technology adapter, module and FML dictionaries
 - Fixed: about 35 common labels (Property, Value, Delete, Behaviour...) are now translated in the shared dictionary, so every module shows them in French
+- Fixed: the "FML-controlled diagram" entry of the New menu and the "project name" message of the project creation wizard are read from their own dictionaries, instead of creating entries in the shared one
 
 ## website
 
@@ -363,3 +368,5 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - An FML failure started by the user interface itself (a button or a binding of a component, a listener) goes to the FML console only, once; the FML console opens the FML editor at the line of a failure (CORE-F-11)
 - The FML terminal describes a failing command with its kind and its FML stack, and goes on after any failure (CORE-F-11)
 - Resource browsers: a modified resource is shown with a "> " before its name (the resource notifies its modified state to the bindings); an unloaded resource has its name greyed and its icon lightened, in colour
+- Fixed: a concept pasted into another concept is also listed among the concepts of its virtual model (CORE-F-19)
+- A project can be closed, and validated, from the contextual menu of its root folder (Close project), as from the File menu
