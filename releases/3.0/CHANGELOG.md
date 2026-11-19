@@ -74,6 +74,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - A localizer can rely on several parent dictionaries, and a new entry can be created in the dictionary of a given context; an installation no longer creates entries for unknown keys, it shows the key read as English words (GINA-F-2)
 - A failure of model code invoked by a widget (a button, setting a value, click and value-changed actions, table and browser actions) is handed to the controller (`FIBController.handleException`) instead of being printed (CORE-F-11)
 - A disabled browser element greys its label and shows its icon lightened, in its own colours (not greyed)
+- Fixed: a browser allowing external drag and drop no longer loses the drag and drop between its own elements (e.g. moving a concept into another in the FML editor, in containment mode); the external listener can be unregistered
 
 ## openflexo-buildplugin
 
@@ -100,6 +101,8 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 
 ## openflexo-core
 
+- Fixed: a concept declared at the root that extends a nested concept stays at the root when the unit is saved, instead of moving into the container of its parent (CORE-D-91)
+- Fixed: a concept extending a concept nested in another one must be declared in the same container (or a subtype of it); validation now reports an error otherwise (CORE-D-95)
 - A resource whose VirtualModel, required resource or technology adapter cannot be found is marked as in error at the resource layer, without being loaded (red cross in the browsers, message in the tooltip, listed by Validate project), instead of opening a modal dialog (CORE-F-13)
 - Fixed: saving an FML unit no longer rewrites the expressions and types nobody edited: spacing, parentheses, qualified names, `log("x")`, argument and `where` lists and annotation values stay as written (CORE-D-33, CORE-D-65)
 - An expression typed in an inspector is written in the FML text as it was typed (`1+2`, not `1 + 2`) (CORE-D-33, CONNIE-F-3)
@@ -179,6 +182,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - A failing drop, link or draw-rectangle scheme is reported as an FML error like any action (no more "not implemented yet" message), and the diagram tools no longer go on as if it had succeeded (CORE-F-11)
 - The diagram edition actions raise typed FML errors (no container, no common ancestor to the shapes of a connector, no graphical feature…) instead of returning null after a warning (DIAGRAM-F-1, CORE-F-11)
 - The FML generated for a diagram concept uses the name of the argument, and `this.` for the property it assigns (CORE-F-14)
+- The FML class diagram gives the browser of concepts its own drag and drop back when the diagram is hidden
 
 ## openflexo-integration-tests
 
@@ -370,3 +374,4 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Resource browsers: a modified resource is shown with a "> " before its name (the resource notifies its modified state to the bindings); an unloaded resource has its name greyed and its icon lightened, in colour
 - Fixed: a concept pasted into another concept is also listed among the concepts of its virtual model (CORE-F-19)
 - A project can be closed, and validated, from the contextual menu of its root folder (Close project), as from the File menu
+- When a project is opened, the resource browser expands its first level
