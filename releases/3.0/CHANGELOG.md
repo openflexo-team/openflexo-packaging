@@ -10,12 +10,14 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
   - `PamelaProxies` replaces the javassist `ProxyObject` API for testing a proxy and reaching its handler
 - Fixed: an implementation class set at run time in another package was reported as a generated class (PAMELA-D-3)
 - Fixed: an implementation class loaded by a child class loader was replaced by another copy of it (PAMELA-D-4)
+- Fixed: undoing a deletion restores the objects as not deleted, at their place in their lists (PAMELA-D-8)
 - A property can be declared transient (`@Getter(isTransient = true)`): not persistent, not compared, not cloned; a property is persistent when it is neither derived nor transient, independently of XML (PAMELA-F-3)
   - the models of openflexo-core, GINA, DIANA, documents, Excel, JDBC and XML mark their transient properties
 - Entities without XML mapping may share their simple name in a model (PAMELA-F-3)
 - `@Getter(ignoreForEquality)` is removed: equality compares every property that is neither derived nor transient (PAMELA-F-4)
 - Fixed: a model entity that failed to import broke every later import (PAMELA-D-5)
 - Fixed: `ModelExecutionException` lost the exception it wrapped and printed it (PAMELA-D-6)
+- Fixed: a concept with a `void` behaviour could not be cloned or copied (PAMELA-D-7)
 - Version 2.0, requires Java 17 or later; documentation updated
 
 ## openflexo-utils (2.0)
@@ -186,6 +188,8 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 
 ## openflexo-integration-tests
 
+- The Acme metamodel of multi-process-challenge declares its task types in `AcmeProcessType` and `Coding` in `AcmeProcess`, as the containment rule requires (CORE-D-95)
+- Multi-process challenge: the process type editor creates Acme process types on an Acme model, and the stored Acme instance loads completely (its first task type was lost) (ITEST-D-1)
 - Multi-process challenge: two behaviours of the Acme meta-model created their artifact with a bare `new`, which gave nothing; they use `container.new`
 - The FML of city-mapping and multi-process-challenge checks for null where a null used to be taken as false (CORE-F-11)
 
