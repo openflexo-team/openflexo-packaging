@@ -168,10 +168,12 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Renamed: the Java base exception `FlexoException` is now `OpenflexoRuntimeException`, and the FML exception concept `FlexoExceptionConcept` is now `FlexoException` (the name no longer clashes)
 - A `new` finds its container by climbing the containment tree: from a `ConceptB` nested in a `ConceptA`, `new ConceptA()` creates the instance in the model and `new ConceptB()` a sibling; `c.new X()` climbs from `c`. The same for root concepts, events, exceptions and virtual models nested in another one (CORE-F-18)
 - Fixed: a concept of a child virtual model instantiates a concept inherited from the parent virtual model (CORE-D-89)
-- A concept now has a single container (the concept it is declared in, or its virtual model); the former owner / embedded-concepts accessors are deprecated. `inside X` naming a concept of another unit is reported as an error (CORE-F-19, in progress)
+- A concept now has a single container (the concept it is declared in, or its virtual model); the former ways of changing it are deprecated (CORE-F-19, in progress)
 - Fixed: closing a project no longer fails on a missing root folder of the VirtualModel instance repository, which left its resources open (CORE-D-92)
 - Fixed: opening a project again after closing it no longer shows its resources twice in the browser (CORE-D-93)
 - A project cannot be created inside another project
+- Fixed: an event or an enum declared inside a concept is no longer dropped from the model (CORE-D-86)
+- Removed: the `inside X` clause of model, concept, event and exception declarations; a concept is contained where it is declared, and `inside` is no longer a keyword (CORE-F-19)
 
 ## openflexo-diagram
 
@@ -185,6 +187,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - The diagram edition actions raise typed FML errors (no container, no common ancestor to the shapes of a connector, no graphical feature…) instead of returning null after a warning (DIAGRAM-F-1, CORE-F-11)
 - The FML generated for a diagram concept uses the name of the argument, and `this.` for the property it assigns (CORE-F-14)
 - The FML class diagram gives the browser of concepts its own drag and drop back when the diagram is hidden
+- Fixed: the concept list of "Create palette element binding" only offers concepts with a drop scheme (DIAGRAM-D-5)
 
 ## openflexo-integration-tests
 
@@ -379,3 +382,4 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Fixed: a concept pasted into another concept is also listed among the concepts of its virtual model (CORE-F-19)
 - A project can be closed, and validated, from the contextual menu of its root folder (Close project), as from the File menu
 - When a project is opened, the resource browser expands its first level
+- Concept container editing follows the single containment (CORE-F-19): the inspector shows the VirtualModel of a root concept, the container selector lists the VirtualModel and its nested concepts only, and a concept can no longer be moved into another VirtualModel or into one of its own nested concepts
