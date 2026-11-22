@@ -105,6 +105,8 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 
 - Fixed: a concept declared at the root that extends a nested concept stays at the root when the unit is saved, instead of moving into the container of its parent (CORE-D-91)
 - Fixed: a concept extending a concept nested in another one must be declared in the same container (or a subtype of it); validation now reports an error otherwise (CORE-D-95)
+- Fixed: a concept extending a root concept must be declared at the root of that concept's model, or of a model extending it; validation now reports an error otherwise, also for a concept that only inherits the constraint through an ancestor (CORE-D-96)
+- Fixed: an event or an exception nested in a concept has the instance hosting it as `container`, like any concept: its container's properties and `new` work from it, and one with no creation scheme is no longer stored as a plain instance (CORE-D-96)
 - A resource whose VirtualModel, required resource or technology adapter cannot be found is marked as in error at the resource layer, without being loaded (red cross in the browsers, message in the tooltip, listed by Validate project), instead of opening a modal dialog (CORE-F-13)
 - Fixed: saving an FML unit no longer rewrites the expressions and types nobody edited: spacing, parentheses, qualified names, `log("x")`, argument and `where` lists and annotation values stay as written (CORE-D-33, CORE-D-65)
 - An expression typed in an inspector is written in the FML text as it was typed (`1+2`, not `1 + 2`) (CORE-D-33, CONNIE-F-3)
@@ -192,6 +194,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 ## openflexo-integration-tests
 
 - The Acme metamodel of multi-process-challenge declares its task types in `AcmeProcessType` and `Coding` in `AcmeProcess`, as the containment rule requires (CORE-D-95)
+- Multi-process challenge: task types, gateways and tasks no longer extend the root concepts `Type` / `Instance`, which a nested concept cannot extend (CORE-D-96)
 - Multi-process challenge: the process type editor creates Acme process types on an Acme model, and the stored Acme instance loads completely (its first task type was lost) (ITEST-D-1)
 - Multi-process challenge: two behaviours of the Acme meta-model created their artifact with a bare `new`, which gave nothing; they use `container.new`
 - The FML of city-mapping and multi-process-challenge checks for null where a null used to be taken as false (CORE-F-11)
@@ -211,6 +214,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 
 ## formod
 
+- Requirement references of the document annotation methodology are declared at the root and point at their element reference, as the containment rule requires; they are still deleted with it (CORE-D-96)
 - The installers are built with `jpackage` by a GitHub Actions workflow (Linux, macOS, Windows) and published to the Formose download directory
 - The "missing model" labels of the B mapping view are translated
 
@@ -339,6 +343,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - The FML specification and the FML pages of the user guide state the strict evaluation of 3.0: an unresolved path or a null in a condition is an error, `&&` and `||` short-circuit (CORE-F-11)
 - The FML specification describes how an FML-script reports a failure, `return` in a script, and the exit codes of fml-cli (CORE-F-11)
 - The FML specification describes exceptions, `throw`, `try … catch … finally` and `throws` (CORE-F-11)
+- The FML specification states the containment rule of inheritance (a concept is declared in the container of each of its ancestors, events and exceptions included) and the container of an event or an exception (CORE-D-96)
 
 ## Build infrastructure
 
