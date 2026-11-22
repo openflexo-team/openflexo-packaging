@@ -176,6 +176,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - A project cannot be created inside another project
 - Fixed: an event or an enum declared inside a concept is no longer dropped from the model (CORE-D-86)
 - Removed: the `inside X` clause of model, concept, event and exception declarations; a concept is contained where it is declared, and `inside` is no longer a keyword (CORE-F-19)
+- A concept's container is never inherited from its parents: instances of a concept live in instances of the concept it is declared in (CORE-F-19)
 
 ## openflexo-diagram
 
