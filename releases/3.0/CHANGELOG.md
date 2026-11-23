@@ -11,6 +11,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Fixed: an implementation class set at run time in another package was reported as a generated class (PAMELA-D-3)
 - Fixed: an implementation class loaded by a child class loader was replaced by another copy of it (PAMELA-D-4)
 - Fixed: undoing a deletion restores the objects as not deleted, at their place in their lists (PAMELA-D-8)
+- Fixed: an object moved to another parent can again be removed from it, detached or deleted (PAMELA-D-9)
 - A property can be declared transient (`@Getter(isTransient = true)`): not persistent, not compared, not cloned; a property is persistent when it is neither derived nor transient, independently of XML (PAMELA-F-3)
   - the models of openflexo-core, GINA, DIANA, documents, Excel, JDBC and XML mark their transient properties
 - Entities without XML mapping may share their simple name in a model (PAMELA-F-3)
@@ -170,7 +171,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Renamed: the Java base exception `FlexoException` is now `OpenflexoRuntimeException`, and the FML exception concept `FlexoExceptionConcept` is now `FlexoException` (the name no longer clashes)
 - A `new` finds its container by climbing the containment tree: from a `ConceptB` nested in a `ConceptA`, `new ConceptA()` creates the instance in the model and `new ConceptB()` a sibling; `c.new X()` climbs from `c`. The same for root concepts, events, exceptions and virtual models nested in another one (CORE-F-18)
 - Fixed: a concept of a child virtual model instantiates a concept inherited from the parent virtual model (CORE-D-89)
-- A concept now has a single container (the concept it is declared in, or its virtual model); the former ways of changing it are deprecated (CORE-F-19, in progress)
+- A concept now has a single container (the concept it is declared in, or its virtual model); the former, duplicated containment API is removed (CORE-F-19)
 - Fixed: closing a project no longer fails on a missing root folder of the VirtualModel instance repository, which left its resources open (CORE-D-92)
 - Fixed: opening a project again after closing it no longer shows its resources twice in the browser (CORE-D-93)
 - A project cannot be created inside another project
@@ -362,6 +363,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 
 ## openflexo-ui
 
+- The container of a concept can only be chosen, in the inspector, the creation wizard or by drag and drop, where the containment rule of inheritance allows it (UI-F-4)
 - Validate project is also available from the contextual menu of the project (CORE-F-13)
 - The application starts on Java runtimes without a `jmods` directory (JDK 25, some JREs); the class completion of the FML editor reads the runtime image (UI-D-3)
 - All repositories build with Gradle 9.8.2 (wrapper); the dependency helpers of the build plugin are no longer a project convention (`openflexo(name)` is `openflexoModule(name)`), the applications declare `application { mainClass }`
