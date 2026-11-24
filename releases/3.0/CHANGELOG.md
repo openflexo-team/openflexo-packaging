@@ -92,10 +92,12 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - The Maven + Ant packaging chain (poms, assemblies, launch4j and appbundler targets) is removed from openflexo-packaging and formod
 - One version per shared third-party library (Jackson 2.22, Guava 33.7, Gson 2.14, HttpClient 4.5.14, commons 2.22/3.21, JGit 7.8, HSQLDB 2.7, Batik 1.19, slf4j 2.0, JUNG 2.1), declared in the plugin instead of in each module
 - New dependency helper `p2ppTest()` for the test harness of p2pp
+- Version policy of the build plugins: build plugin 0.4, SableCC plugin 1.4.0, wrappers on Gradle 9 (BUILD-F-6)
 
 ## diana, openflexo-server, pamela-editor
 
 - Moved to the pamela 2.0 API (`PamelaProxies`)
+- diana: richer shape palettes (rectangles, basic shapes, arrows, flowchart, stars and banners, equations, 3D shapes, emojis), shown as collapsible panels in the DIANA, FML diagram and Free Modelling editors; the Basic palette gains a rounded rectangle, a square, a circle and labelled rectangles (DIANA-F-1)
 - GeomEdit: the contextual menu, and the save questions of the three diana editors, are translated
 - http-server: the REST routes `add-to-list` and `remove-from-list` of behaviours are removed (CORE-F-8)
 - http-server: a failing FML action (creating an instance, running a behaviour, a terminal command) answers a JSON error (kind, key, message, FML location and stack) with status 400 for an FML error, 500 for an internal error and 409 for a behaviour that is not enabled, and saves nothing (CORE-F-11)
@@ -178,6 +180,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Fixed: an event or an enum declared inside a concept is no longer dropped from the model (CORE-D-86)
 - Removed: the `inside X` clause of model, concept, event and exception declarations; a concept is contained where it is declared, and `inside` is no longer a keyword (CORE-F-19)
 - A concept's container is never inherited from its parents: instances of a concept live in instances of the concept it is declared in (CORE-F-19)
+- Fixed: loading FML units that import each other no longer logs transient "Unresolved type" and "still invalid" warnings (CORE-D-34)
 
 ## openflexo-diagram
 
