@@ -181,6 +181,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Removed: the `inside X` clause of model, concept, event and exception declarations; a concept is contained where it is declared, and `inside` is no longer a keyword (CORE-F-19)
 - A concept's container is never inherited from its parents: instances of a concept live in instances of the concept it is declared in (CORE-F-19)
 - Fixed: loading FML units that import each other no longer logs transient "Unresolved type" and "still invalid" warnings (CORE-D-34)
+- FML specification: new section on the lexical context of a behaviour (`this`, `container`, `super`, bare names), with a test that runs its example
 
 ## openflexo-diagram
 
