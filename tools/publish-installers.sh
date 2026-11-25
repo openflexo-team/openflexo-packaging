@@ -24,6 +24,8 @@
 #   --date <date>      directory date, default today
 #   --from-dir <dir>   use artifacts already downloaded in <dir> (one directory per artifact), for tests
 #   --resolve-only     print the run that would be used and stop
+#   --max-age-days <n> refuse a run created more than n days ago (for a scheduled publication: "latest" is the last
+#                      SUCCESSFUL run, so when the run of the week failed it would republish an old one under today's date)
 
 set -euo pipefail
 
@@ -32,7 +34,7 @@ BRANCH="${BRANCH:-3.0}"
 WORKFLOW="installers.yml"
 DOWNLOAD_ROOT="${DOWNLOAD_ROOT:-~/downloads/openflexo}"
 
-version="" ; run="latest" ; dry=0 ; force=0 ; date_dir="$(date +%Y-%m-%d)" ; from_dir="" ; resolve_only=0
+version="" ; run="latest" ; dry=0 ; force=0 ; date_dir="$(date +%Y-%m-%d)" ; from_dir="" ; resolve_only=0 ; max_age=""
 
 die() { echo "publish-installers: $*" >&2 ; exit 1 ; }
 
@@ -45,6 +47,7 @@ while [ $# -gt 0 ]; do
     --date) date_dir="${2:?}" ; shift 2 ;;
     --from-dir) from_dir="${2:?}" ; shift 2 ;;
     --resolve-only) resolve_only=1 ; shift ;;
+    --max-age-days) max_age="${2:?}" ; shift 2 ;;
     -h|--help) sed -n '2,30p' "$0" ; exit 0 ;;
     *) die "unknown option $1" ;;
   esac
@@ -91,6 +94,10 @@ if [ -z "$from_dir" ]; then
   set -- $info
   [ "$1" = "success" ] || die "run $run did not succeed (conclusion: $1)"
   echo "Run $run: commit $2, branch $3, created $4"
+  if [ -n "$max_age" ]; then
+    age="$(python3 -c "import sys,datetime as d; t=d.datetime.strptime(sys.argv[1],'%Y-%m-%dT%H:%M:%SZ').replace(tzinfo=d.timezone.utc); print((d.datetime.now(d.timezone.utc)-t).days)" "$4")"
+    [ "$age" -le "$max_age" ] || die "run $run is $age days old (limit $max_age): the run of the week probably failed, nothing published"
+  fi
   [ "$resolve_only" = 1 ] && exit 0
 
   echo "Downloading the artifacts of run $run ..."
