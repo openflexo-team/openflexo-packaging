@@ -106,6 +106,10 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 
 ## openflexo-core
 
+- FML names are a single kind of identifier: their case no longer matters, so `UML` or `A` can name a concept (CORE-F-5)
+  - `Foo.bar()` is a static call when `Foo` names a type and no variable `Foo` is visible; a variable hides a type of the same name, and validation warns about it
+  - a cast to a generic type is written `x as List<String>`; `(T) x` is kept for a plain name, and `(Foo) -x` is now a subtraction
+  - call arguments can no longer contain an assignment (`f(a = 1)`); `where (...)` still can
 - Fixed: a concept declared at the root that extends a nested concept stays at the root when the unit is saved, instead of moving into the container of its parent (CORE-D-91)
 - Fixed: a concept extending a concept nested in another one must be declared in the same container (or a subtype of it); validation now reports an error otherwise (CORE-D-95)
 - Fixed: a concept extending a root concept must be declared at the root of that concept's model, or of a model extending it; validation now reports an error otherwise, also for a concept that only inherits the constraint through an ancestor (CORE-D-96)
