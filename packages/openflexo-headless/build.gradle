@@ -19,6 +19,7 @@ dependencies {
     runtimeOnly kafkaConnector()
     runtimeOnly csvConnector()
     runtimeOnly markdownConnector()
+    runtimeOnly mcpConnector()
     //runtimeOnly flexoDocResourceCenter()
 }
 

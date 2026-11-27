@@ -412,6 +412,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 
 - FlexoMaintainer includes the CSV technology adapter
 - The Designer, Headless and Server distributions include the CSV and Markdown technology adapters (FlexoMaintainer through the Designer)
+- The Designer, Headless and Server distributions include the MCP technology adapter
 
 ## openflexo-mcp
 

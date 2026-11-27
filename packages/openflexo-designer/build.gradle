@@ -41,6 +41,7 @@ dependencies {
     runtimeOnly csvConnectorUi()
     runtimeOnly markdownConnector()
     runtimeOnly markdownConnectorUi()
+    runtimeOnly mcpConnector()
     //runtimeOnly obp2Connector()
     //runtimeOnly obp2ConnectorRc()
     //runtimeOnly obp2ConnectorUi()
