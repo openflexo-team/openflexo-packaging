@@ -7,7 +7,6 @@ dependencies {
     runtimeOnly pdfConnector()
     runtimeOnly powerpointConnector()
     runtimeOnly diagramConnector()
-    runtimeOnly ginaConnector()
     runtimeOnly jdbcConnector()
     runtimeOnly kafkaConnector()
 }

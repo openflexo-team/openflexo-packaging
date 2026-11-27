@@ -15,7 +15,6 @@ dependencies {
     runtimeOnly docxConnector()
     runtimeOnly odtConnector()
     runtimeOnly pdfConnector()
-    runtimeOnly ginaConnector()
     runtimeOnly jdbcConnector()
     runtimeOnly kafkaConnector()
     //runtimeOnly flexoDocResourceCenter()

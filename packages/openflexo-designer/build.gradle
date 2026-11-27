@@ -26,8 +26,6 @@ dependencies {
     runtimeOnly odtConnectorUi()
     runtimeOnly pdfConnector()
     runtimeOnly pdfConnectorUi()
-    runtimeOnly ginaConnector()
-    runtimeOnly ginaConnectorUi()
     runtimeOnly jdbcConnector()
     runtimeOnly jdbcConnectorUi()
     //runtimeOnly httpConnector()

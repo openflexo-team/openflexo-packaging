@@ -103,6 +103,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - http-server: a failing FML action (creating an instance, running a behaviour, a terminal command) answers a JSON error (kind, key, message, FML location and stack) with status 400 for an FML error, 500 for an internal error and 409 for a behaviour that is not enabled, and saves nothing (CORE-F-11)
 - http-server: a failed assertion of the terminal answers the kind "Assertion failed" (CORE-F-11)
 - http-server: an assignation of a behaviour accepts the name of an argument and `this.name` for a property (CORE-F-14)
+- gina-http, the HTTP bridge of the GINA technology adapter, is removed with it
 
 ## openflexo-core
 
@@ -328,9 +329,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 
 ## openflexo-gina
 
-- Configuring an FML-controlled user interface raises typed FML errors (no template, a template that cannot be loaded) instead of returning null after a warning (GINATA-F-1, CORE-F-11)
-- A missing template of an FML-controlled user interface is an error, no longer an instance without user interface (GINATA-F-1, CORE-F-11)
-- The FML generated for a controlled FIB uses the name of the argument, and `this.` for the property it assigns (CORE-F-14)
+- The GINA technology adapter is removed from the platform: the user interface of a VirtualModel is a `.fib` / `.inspector` stored in its `.fml` directory
 
 ## openflexo-odt
 
