@@ -17,6 +17,8 @@ dependencies {
     runtimeOnly pdfConnector()
     runtimeOnly jdbcConnector()
     runtimeOnly kafkaConnector()
+    runtimeOnly csvConnector()
+    runtimeOnly markdownConnector()
     //runtimeOnly flexoDocResourceCenter()
 }
 
@@ -44,9 +46,7 @@ configurations {
     }
 }
 dependencies {
-    legacyParametersMigration csvConnector()
     legacyParametersMigration jsonConnector()
-    legacyParametersMigration markdownConnector()
     legacyParametersMigration restConnector()
     legacyParametersMigration opcUaConnector()
     legacyParametersMigration oslcConnector()

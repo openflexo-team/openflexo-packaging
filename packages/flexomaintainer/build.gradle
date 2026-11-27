@@ -9,6 +9,8 @@ dependencies {
     runtimeOnly oslcConnectorUi()
     runtimeOnly jsonConnector()
     runtimeOnly jsonConnectorUi()
+    runtimeOnly csvConnector()
+    runtimeOnly csvConnectorUi()
     runtimeOnly xxConnector()
     runtimeOnly xxConnectorUi()
     runtimeOnly dslConnector()

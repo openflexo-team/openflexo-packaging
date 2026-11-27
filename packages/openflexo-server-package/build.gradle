@@ -9,6 +9,8 @@ dependencies {
     runtimeOnly diagramConnector()
     runtimeOnly jdbcConnector()
     runtimeOnly kafkaConnector()
+    runtimeOnly csvConnector()
+    runtimeOnly markdownConnector()
 }
 
 //def deployDir = "/Users/charlie/Documents/dev/openflexo/deploy/openshift/app";

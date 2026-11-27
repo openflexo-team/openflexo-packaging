@@ -204,6 +204,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 
 ## openflexo-integration-tests
 
+- New use case mom-challenge: a federation prototype of the MoM Challenge 2026 (satellite configuration), covering change propagation, the communications view and requirement validation over OWL, JSON, CSV and DocX artefacts (ITEST-F-1 to ITEST-F-3 for what remains)
 - The Acme metamodel of multi-process-challenge declares its task types in `AcmeProcessType` and `Coding` in `AcmeProcess`, as the containment rule requires (CORE-D-95)
 - Multi-process challenge: task types, gateways and tasks no longer extend the root concepts `Type` / `Instance`, which a nested concept cannot extend (CORE-D-96)
 - Multi-process challenge: the process type editor creates Acme process types on an Acme model, and the stored Acme instance loads completely (its first task type was lost) (ITEST-D-1)
@@ -406,3 +407,12 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - A project can be closed, and validated, from the contextual menu of its root folder (Close project), as from the File menu
 - When a project is opened, the resource browser expands its first level
 - Concept container editing follows the single containment (CORE-F-19): the inspector shows the VirtualModel of a root concept, the container selector lists the VirtualModel and its nested concepts only, and a concept can no longer be moved into another VirtualModel or into one of its own nested concepts
+
+## openflexo-packaging
+
+- FlexoMaintainer includes the CSV technology adapter
+- The Designer, Headless and Server distributions include the CSV and Markdown technology adapters (FlexoMaintainer through the Designer)
+
+## openflexo-mcp
+
+- The MCP technology adapter joins the 3.0 platform: ported to Java 17 and to the typed FML errors; the scenarios that need live MCP servers run apart (task liveServerTest)
