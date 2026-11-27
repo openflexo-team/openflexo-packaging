@@ -215,6 +215,13 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - For developers: the edition actions of the technology adapters declare `FMLExecutionException` where the core helpers now throw it (CORE-F-11)
 - For developers: the REST and JDBC concept instances override the strict property accessors, so that FML execution reaches their mapping (CORE-F-11)
 - The DSL and XX template edition actions and selects raise typed FML errors; adding a DSL link returns the link (TA-F-1, CORE-F-11)
+- For developers: the adapter catalogue states the standards every adapter converges to, with a status per adapter and a conformity grid of the 24 adapters
+- For developers: the XX template meets these standards; new adapters copy it with the package `org.openflexo.technologyadapter.xx` (was `org.openflexo.ta.xx`) and the test resource center `http://openflexo.org/xx-test`
+  - `AddXXLine` really inserts a line, with its `value`; its arguments were ignored when written in FML
+  - inserting a line can be undone; the index of a line follows insertions and removals
+  - error-kind scripts, a save round trip, an undo test and inspector validations show how an adapter is tested
+- Every adapter has a README (status, technology, FML surface, example, build), a licence file and its records of known defects and planned features; the former shared backlog and lists of known issues are spread into them
+- The leftovers of the Maven site are removed from the adapters; the documentation sites of diagram and owl stay
 
 ## openflexo-jdbc
 
@@ -354,6 +361,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - The FML specification describes how an FML-script reports a failure, `return` in a script, and the exit codes of fml-cli (CORE-F-11)
 - The FML specification describes exceptions, `throw`, `try … catch … finally` and `throws` (CORE-F-11)
 - The FML specification states the containment rule of inheritance (a concept is declared in the container of each of its ancestors, events and exceptions included) and the container of an event or an exception (CORE-D-96)
+- The guide "Write a technology adapter" explains where an adapter sits in FML, its packages, its adapter class, its model slots and its tests
 
 ## Build infrastructure
 
