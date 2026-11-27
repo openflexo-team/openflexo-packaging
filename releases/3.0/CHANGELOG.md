@@ -26,6 +26,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Becomes the bottom layer of the infrastructure: it now contains the resource locator, the logging, the toolbox and the test utilities that were in `connie-utils` and `testutils` (the `org.openflexo` packages are unchanged)
 - `p2pp-core` moves out into its own repository, `p2pp` (1.0), because it needs connie
 - Fixed: the localization dictionaries saved by the application are sorted again on Java 9 and later, so a new entry changes one line and not the whole file (UTILS-D-1)
+- Fixed: removing a metadata value of a file removes that file's entry, instead of leaving it or removing the directory's one (UTILS-D-2)
 
 ## p2pp (1.0)
 
@@ -92,6 +93,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - The Maven + Ant packaging chain (poms, assemblies, launch4j and appbundler targets) is removed from openflexo-packaging and formod
 - One version per shared third-party library (Jackson 2.22, Guava 33.7, Gson 2.14, HttpClient 4.5.14, commons 2.22/3.21, JGit 7.8, HSQLDB 2.7, Batik 1.19, slf4j 2.0, JUNG 2.1), declared in the plugin instead of in each module
 - New dependency helper `p2ppTest()` for the test harness of p2pp
+- New dependency helper `xsom()` (XSOM, read by the XML adapter)
 - Version policy of the build plugins: build plugin 0.4, SableCC plugin 1.4.0, wrappers on Gradle 9 (BUILD-F-6)
 
 ## diana, openflexo-server, pamela-editor
@@ -187,6 +189,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - A concept's container is never inherited from its parents: instances of a concept live in instances of the concept it is declared in (CORE-F-19)
 - Fixed: loading FML units that import each other no longer logs transient "Unresolved type" and "still invalid" warnings (CORE-D-34)
 - FML specification: new section on the lexical context of a behaviour (`this`, `container`, `super`, bare names), with a test that runs its example
+- Fixed: the cached information of a FML unit (dependencies, technologies, concepts) is refreshed after the file is edited outside the application; loading a unit no longer parses its file twice (CORE-D-100)
 
 ## openflexo-diagram
 
@@ -340,6 +343,9 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 
 - Fixed: deleting an instance that plays an XML role failed once its model slot was gone (XML-D-1)
 - The XML edition actions and selects raise typed FML errors (null model, metamodel or root, duplicate or missing URI…) instead of returning null after a warning; the condition of an ontology assertion (XML, EMF, OWL individuals) that fails or is null is an error, no longer taken as true (XML-F-1, CORE-F-11)
+- Fixed: saving an XML document silently did nothing; a free XML document is now written back (XML-D-3); a typed one (conform to an XSD) is still not written, and a warning now says so (XML-D-4)
+- Fixed: changing a property of a typed XML element or an attribute of a free one did not mark the document modified (XML-D-5)
+- The adapter logs its failures instead of printing them, and its classes and packages are documented
 
 ## Localization (several repositories)
 
@@ -395,6 +401,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Opening a project in the Free Modelling Editor no longer freezes the window: its models are loaded with the project; the "Select default object" bar is gone (UI-F-2)
 - Opening a project from the File menu, the recent projects or a module welcome panel no longer freezes the window: it is loaded in a task, with its progress bar (UI-F-2)
 - The splash screen shows the progress of the startup and its current step (UI-F-2)
+- Opening a FML unit is faster, and the window no longer freezes for several seconds once it is loaded: the FML editor does not parse and validate again the text the unit was just loaded from (UI-F-2)
 - Faster module loading: the inspectors and actions of a technology are no longer initialized twice (UI-D-5)
 - Faster loading of modules using diagrams: the floating Diana inspectors are built when first opened (UI-F-2)
 - Faster project opening: virtual models and instances are validated in the background, their error reports appearing a moment later (UI-F-2)
