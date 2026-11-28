@@ -402,6 +402,8 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Opening a project from the File menu, the recent projects or a module welcome panel no longer freezes the window: it is loaded in a task, with its progress bar (UI-F-2)
 - The splash screen shows the progress of the startup and its current step (UI-F-2)
 - Opening a FML unit is faster, and the window no longer freezes for several seconds once it is loaded: the FML editor does not parse and validate again the text the unit was just loaded from (UI-F-2)
+- Opening a FML unit shows what it loads: a task per technology to activate and per unit it imports, each with its progress bar, in the task panel (UI-F-2)
+- Opening a FML unit is faster: the technologies it needs are activated while the units it imports load (UI-F-2)
 - Faster module loading: the inspectors and actions of a technology are no longer initialized twice (UI-D-5)
 - Faster loading of modules using diagrams: the floating Diana inspectors are built when first opened (UI-F-2)
 - Faster project opening: virtual models and instances are validated in the background, their error reports appearing a moment later (UI-F-2)
