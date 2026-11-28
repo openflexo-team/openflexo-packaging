@@ -8,6 +8,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - PAMELA proxies are generated with Byte Buddy; javassist is removed (PAMELA-F-1)
   - creating objects is faster (about 25%) and uses less memory (about 30%)
   - `PamelaProxies` replaces the javassist `ProxyObject` API for testing a proxy and reaching its handler
+- Faster first use of large model entities, such as the first opening of an FML unit: proxy classes are generated in linear time in their number of methods (PAMELA-F-5)
 - Fixed: an implementation class set at run time in another package was reported as a generated class (PAMELA-D-3)
 - Fixed: an implementation class loaded by a child class loader was replaced by another copy of it (PAMELA-D-4)
 - Fixed: undoing a deletion restores the objects as not deleted, at their place in their lists (PAMELA-D-8)
@@ -387,6 +388,8 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 
 - The container of a concept can only be chosen, in the inspector, the creation wizard or by drag and drop, where the containment rule of inheritance allows it (UI-F-4)
 - Validate project is also available from the contextual menu of the project (CORE-F-13)
+- FML editor: selecting an object that spans several lines highlights only its identifier (concept, virtual model) or its signature (behaviour), and nothing for the compilation unit
+- FML editor: re-indentation moves to Cmd/Ctrl+Shift+F, Cmd/Ctrl+I being the shortcut of the inspector
 - The application starts on Java runtimes without a `jmods` directory (JDK 25, some JREs); the class completion of the FML editor reads the runtime image (UI-D-3)
 - All repositories build with Gradle 9.8.2 (wrapper); the dependency helpers of the build plugin are no longer a project convention (`openflexo(name)` is `openflexoModule(name)`), the applications declare `application { mainClass }`
 - SableCC plugin 1.4.0: works with Gradle 9, and a parser can be generated several times in a row without error (SABLECC-D-1)
