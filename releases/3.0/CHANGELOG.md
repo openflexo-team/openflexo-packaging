@@ -191,6 +191,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Fixed: loading FML units that import each other no longer logs transient "Unresolved type" and "still invalid" warnings (CORE-D-34)
 - FML specification: new section on the lexical context of a behaviour (`this`, `container`, `super`, bare names), with a test that runs its example
 - Fixed: the cached information of a FML unit (dependencies, technologies, concepts) is refreshed after the file is edited outside the application; loading a unit no longer parses its file twice (CORE-D-100)
+- Creating a VirtualModel: `New > Virtual model` is a single entry (no more sub-menu); its wizard first offers a plain VirtualModel or a template contributed by a technology adapter, whose own steps follow (CORE-F-30)
 
 ## openflexo-diagram
 
@@ -205,6 +206,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - The FML generated for a diagram concept uses the name of the argument, and `this.` for the property it assigns (CORE-F-14)
 - The FML class diagram gives the browser of concepts its own drag and drop back when the diagram is hidden
 - Fixed: the concept list of "Create palette element binding" only offers concepts with a drop scheme (DIAGRAM-D-5)
+- "Create diagram virtual model" becomes the "FML-controlled diagram" template of the VirtualModel creation (new or existing diagram specification) (CORE-F-30)
 
 ## openflexo-integration-tests
 
@@ -234,6 +236,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - Declares the javassist version Hibernate needs on Java 17 (pamela no longer brings it)
 - The JDBC and Hibernate edition actions and selects raise typed FML errors (null table or connection, unknown column, failing query or transaction…) instead of returning null after a warning; the creation scheme of a Hibernate object creation now runs, and its failure leaves no object (JDBC-F-1, CORE-F-11, CORE-D-73)
 - The FML generated for a JDBC mapping uses the name of the argument, and `this.` for the property it assigns (CORE-F-14)
+- The two JDBC VirtualModel creations become templates of the VirtualModel creation: Hibernate mapping of chosen tables, and federation of a whole schema (contained VirtualModels only) (CORE-F-30)
 
 ## formod
 
@@ -419,6 +422,7 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - A project can be closed, and validated, from the contextual menu of its root folder (Close project), as from the File menu
 - When a project is opened, the resource browser expands its first level
 - Concept container editing follows the single containment (CORE-F-19): the inspector shows the VirtualModel of a root concept, the container selector lists the VirtualModel and its nested concepts only, and a concept can no longer be moved into another VirtualModel or into one of its own nested concepts
+- The VirtualModel creation wizards offer the templates of the technology adapters and insert their configuration steps (CORE-F-30)
 
 ## openflexo-packaging
 
