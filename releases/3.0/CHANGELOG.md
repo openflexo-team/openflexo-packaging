@@ -192,6 +192,8 @@ What changed since 2.99, one line per change, by repository. Identifiers in pare
 - FML specification: new section on the lexical context of a behaviour (`this`, `container`, `super`, bare names), with a test that runs its example
 - Fixed: the cached information of a FML unit (dependencies, technologies, concepts) is refreshed after the file is edited outside the application; loading a unit no longer parses its file twice (CORE-D-100)
 - Creating a VirtualModel: `New > Virtual model` is a single entry (no more sub-menu); its wizard first offers a plain VirtualModel or a template contributed by a technology adapter, whose own steps follow (CORE-F-30)
+- Fixed: creating a FlexoConcept while its VirtualModel is shown in the FML editor could freeze the application (CORE-D-102)
+- Fixed: generating a creation scheme for a new concept now produces the anonymous `create() { }` instead of `create::_create() { }`
 
 ## openflexo-diagram
 
